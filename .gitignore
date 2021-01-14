@@ -1,0 +1,14 @@
+.vagrant
+.UlyssesRoot
+*.plist
+.idea
+_site
+.DS_Store
+.sass-cache
+.jekyll-metadata
+src/api-reference/import-swagger.sh
+build/swagger-converter/converted/
+.jekyll-metadata
+.env
+tmp
+

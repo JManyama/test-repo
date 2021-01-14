@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:8.10.0
+    steps:
+      - checkout
+      - run:
+          name: Build Fresh Slate Static Files
+          no_output_timeout: 30m
+          command: cd ./src/Slate-API-Explorer-Reference/slate && bundle install && bundle exec middleman build
+        

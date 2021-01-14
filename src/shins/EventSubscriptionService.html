@@ -1,0 +1,1647 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Event Service Api v1.0.1</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+    <script src="pub/js/shins.js"></script>
+      
+<script type="text/javascript">
+$(function() {
+  loadToc($('#toc'), '.toc-link', '.toc-list-h2, .toc-list-h3, .toc-list-h4, .toc-list-h5, .toc-list-h6', 10);
+  setupLanguages($('body').data('languages'));
+  $('.content').imagesLoaded( function() {
+    recacheHeights();
+    refreshToc();
+  });
+});
+
+window.onpopstate = function() {
+  activateLanguage(getLanguageFromQueryString());
+};
+</script>
+
+    
+    <meta name="theme-color" content="#F3F7F9" />
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+  </head>
+
+  <body data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;php&quot;,&quot;java&quot;,&quot;go&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png" class="undefined" alt="Navigation">
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="http://localhost:4000">
+        <img src="source/images/logo.png" class="logo" alt="Logo">
+      </a>
+    
+        <div class="lang-selector">
+          
+            
+              <a href="#" data-language-name="shell">Shell</a>
+            
+          
+            
+              <a href="#" data-language-name="http">HTTP</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript">JavaScript</a>
+            
+          
+            
+              <a href="#" data-language-name="ruby">Ruby</a>
+            
+          
+            
+              <a href="#" data-language-name="python">Python</a>
+            
+          
+            
+              <a href="#" data-language-name="php">PHP</a>
+            
+          
+            
+              <a href="#" data-language-name="java">Java</a>
+            
+          
+            
+              <a href="#" data-language-name="go">Go</a>
+            
+          
+        </div>
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc" class="toc-list-h1">
+	  	<ul class="toc-list-h1">
+        
+          <li>
+            <a href="#event-service-api" class="toc-h1 toc-link" data-title="Event Service Api v1.0.1">Event Service Api v1.0.1</a>
+            
+          </li>
+        
+          <li>
+            <a href="#event-service-api-subscriptions-management" class="toc-h1 toc-link" data-title="Subscriptions Management">Subscriptions Management</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#listusingget_2" class="toc-h2 toc-link" data-title="">listUsingGET_2</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#savewebhookusingput_1" class="toc-h2 toc-link" data-title="">saveWebhookUsingPUT_1</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#getusingget_2" class="toc-h2 toc-link" data-title="">getUsingGET_2</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#deleteusingdelete_1" class="toc-h2 toc-link" data-title="">deleteUsingDELETE_1</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#event-service-api-topics-management" class="toc-h1 toc-link" data-title="Topics Management">Topics Management</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#listusingget_3" class="toc-h2 toc-link" data-title="">listUsingGET_3</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#tocs_publicwebhooksubscription" class="toc-h2 toc-link" data-title="">PublicWebhookSubscription</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_publicwebhooksubscriptionapiadapter" class="toc-h2 toc-link" data-title="">PublicWebhookSubscriptionApiAdapter</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_subscriptiondeletesuccess" class="toc-h2 toc-link" data-title="">SubscriptionDeleteSuccess</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_subscriptionsavesuccess" class="toc-h2 toc-link" data-title="">SubscriptionSaveSuccess</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_topicapiadapter" class="toc-h2 toc-link" data-title="">TopicApiAdapter</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_webhookconfig" class="toc-h2 toc-link" data-title="">WebhookConfig</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+		</ul>
+      </div>
+      
+        <ul class="toc-footer">
+          
+          <li><a href="/shins/api-explorer.html">API EXPLORER</a></li>
+          <li><a href="/">BACK TO DEVELOPER CENTER</a></li>
+        </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="event-service-api">Event Service Api v1.0.1</h1>
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+<p>Event Service Api.</p>
+<p>Base URLs:</p>
+<ul>
+<li><a href="//awsqa-event-mgmt.nonprod.cnqr.tech/">//awsqa-event-mgmt.nonprod.cnqr.tech/</a></li>
+</ul>
+<p><a href="http://concur.com">Terms of service</a></p>
+<p>License: <a href="https://concur.com">Concur License</a></p>
+<h1 id="event-service-api-subscriptions-management">Subscriptions Management</h1>
+<p>Subscriptions CRUD</p>
+<h2 id="listusingget_2">listUsingGET_2</h2>
+<p><a id="opIdlistUsingGET_2"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET /awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions</span> HTTP/1.1
+
+<span class="http"><span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Authorization</span>: string
+
+</span></code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /v4/subscriptions</code></p>
+<p><em>Fetch all of your subscriptions and subscription details</em></p>
+<p>Allows you to fetch all of your subscriptions based on your Application ID found in the JWT (web token).</p>
+<h3 id="listusingget_2-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>true</td>
+<td>Web token</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>[
+  {
+    <span class="hljs-attr">&quot;applicationId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;companyIds&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;filter&quot;</span>: <span class="hljs-string">&quot;.*&quot;</span>,
+    <span class="hljs-attr">&quot;groups&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;scope&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;topic&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;webHookConfig&quot;</span>: {
+      <span class="hljs-attr">&quot;endpoint&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  }
+]
+</code></pre>
+<h3 id="listusingget_2-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+<td>Inline</td>
+</tr>
+</tbody>
+</table>
+<h3 id="listusingget_2-responseschema">Response Schema</h3>
+<p>Status Code <strong>200</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>anonymous</em></td>
+<td>[<a href="#schemapublicwebhooksubscription">PublicWebhookSubscription</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» PublicWebhookSubscription</td>
+<td><a href="#schemapublicwebhooksubscription">PublicWebhookSubscription</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» applicationId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» companyIds</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+<td>Only events corresponding to one of the provided company IDs will be delivered to the subscription. Required for public subscriptions. If a single value of '.*' is provided in the array, companies will not be filtered out.</td>
+</tr>
+<tr>
+<td>»» filter</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The regex pattern which will be applied to the event type to filter events.Ignore if no filter is needed</td>
+</tr>
+<tr>
+<td>»» groups</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+<td>Only events corresponding to one of the provided group IDs will be delivered to the subscription. If left blank or omitted, groups will not be filtered out.</td>
+</tr>
+<tr>
+<td>»» id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The name of the subscription, must be globally unique</td>
+</tr>
+<tr>
+<td>»» scope</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»» topic</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The name of the topic from which this subscription is receiving event</td>
+</tr>
+<tr>
+<td>»» webHookConfig</td>
+<td><a href="#schemawebhookconfig">WebhookConfig</a></td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>»»» endpoint</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>A URL locating the endpoint to which event should be pushed. For example, a Webhook endpoint might use &quot;<a href="https://example.com/push">https://example.com/push</a>&quot;</td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="savewebhookusingput_1">saveWebhookUsingPUT_1</h2>
+<p><a id="opIdsaveWebhookUsingPUT_1"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X PUT /awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/webhook \
+  -H <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept: */*&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">PUT</span> <span class="hljs-string">/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/webhook</span> HTTP/1.1
+
+<span class="http"><span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">Accept</span>: */*
+<span class="hljs-attribute">Authorization</span>: string
+
+</span></code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">const</span> inputBody = <span class="hljs-string">&#x27;{
+  &quot;filter&quot;: &quot;.*&quot;,
+  &quot;id&quot;: &quot;string&quot;,
+  &quot;topic&quot;: &quot;string&quot;,
+  &quot;webHookConfig&quot;: {
+    &quot;endpoint&quot;: &quot;string&quot;
+  }
+}&#x27;</span>;
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;*/*&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/webhook&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;PUT&#x27;</span>,
+  <span class="hljs-attr">body</span>: inputBody,
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;*/*&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.put <span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/webhook&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;*/*&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.put(<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/webhook&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;*/*&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;PUT&#x27;</span>,<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/webhook&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/webhook&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;PUT&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;*/*&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;PUT&quot;</span>, <span class="hljs-string">&quot;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/webhook&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>PUT /v4/subscriptions/webhook</code></p>
+<p><em>Create or update subscription webhook</em></p>
+<p>Allows you to create or update subscription webhook for allowed topic (look up Topic Management for details).</p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;filter&quot;</span>: <span class="hljs-string">&quot;.*&quot;</span>,
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;topic&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;webHookConfig&quot;</span>: {
+    <span class="hljs-attr">&quot;endpoint&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  }
+}
+</code></pre>
+<h3 id="savewebhookusingput_1-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>true</td>
+<td>Web token</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemapublicwebhooksubscriptionapiadapter">PublicWebhookSubscriptionApiAdapter</a></td>
+<td>true</td>
+<td>Subscription</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<h3 id="savewebhookusingput_1-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+<td><a href="#schemasubscriptionsavesuccess">SubscriptionSaveSuccess</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="getusingget_2">getUsingGET_2</h2>
+<p><a id="opIdgetUsingGET_2"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET /awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id} \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}</span> HTTP/1.1
+
+<span class="http"><span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Authorization</span>: string
+
+</span></code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /v4/subscriptions/{id}</code></p>
+<p><em>Fetch your subscription details</em></p>
+<p>Allows you to fetch certain subscription details.</p>
+<h3 id="getusingget_2-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>true</td>
+<td>Web token</td>
+</tr>
+<tr>
+<td>id</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Subscription id</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;applicationId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;companyIds&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;filter&quot;</span>: <span class="hljs-string">&quot;.*&quot;</span>,
+  <span class="hljs-attr">&quot;groups&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;scope&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;topic&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;webHookConfig&quot;</span>: {
+    <span class="hljs-attr">&quot;endpoint&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  }
+}
+</code></pre>
+<h3 id="getusingget_2-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+<td><a href="#schemapublicwebhooksubscription">PublicWebhookSubscription</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="deleteusingdelete_1">deleteUsingDELETE_1</h2>
+<p><a id="opIddeleteUsingDELETE_1"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X DELETE /awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id} \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">DELETE</span> <span class="hljs-string">/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}</span> HTTP/1.1
+
+<span class="http"><span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Authorization</span>: string
+
+</span></code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;DELETE&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.delete <span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.delete(<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;DELETE&#x27;</span>,<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;DELETE&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;DELETE&quot;</span>, <span class="hljs-string">&quot;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/subscriptions/{id}&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>DELETE /v4/subscriptions/{id}</code></p>
+<p><em>Delete your subscription</em></p>
+<p>Allows you to delete an existing subscription.</p>
+<h3 id="deleteusingdelete_1-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>true</td>
+<td>Web token</td>
+</tr>
+<tr>
+<td>id</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Subscription id</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<h3 id="deleteusingdelete_1-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+<td><a href="#schemasubscriptiondeletesuccess">SubscriptionDeleteSuccess</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h1 id="event-service-api-topics-management">Topics Management</h1>
+<p>Enumerate Available Topics</p>
+<h2 id="listusingget_3">listUsingGET_3</h2>
+<p><a id="opIdlistUsingGET_3"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET /awsqa-event-mgmt.nonprod.cnqr.tech/v4/topics \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">/awsqa-event-mgmt.nonprod.cnqr.tech/v4/topics</span> HTTP/1.1
+
+<span class="http"><span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Authorization</span>: string
+
+</span></code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/topics&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/topics&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/topics&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/topics&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/topics&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;/awsqa-event-mgmt.nonprod.cnqr.tech/v4/topics&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /v4/topics</code></p>
+<p><em>Fetch allowed topics</em></p>
+<p>Fetch all allowed topics. If you don't see a specific topic, you don't have necessary scopes in your JWT. Please contact topic owner to add correct scopes to your Application.</p>
+<h3 id="listusingget_3-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>true</td>
+<td>Web token</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>[
+  <span class="hljs-string">&quot;string&quot;</span>
+]
+</code></pre>
+<h3 id="listusingget_3-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+<td>Inline</td>
+</tr>
+</tbody>
+</table>
+<h3 id="listusingget_3-responseschema">Response Schema</h3>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h1 id="schemas">Schemas</h1>
+<h2 id="tocs_publicwebhooksubscription">PublicWebhookSubscription</h2>
+<p><a id="schemapublicwebhooksubscription"></a>
+<a id="schema_PublicWebhookSubscription"></a>
+<a id="tocSpublicwebhooksubscription"></a>
+<a id="tocspublicwebhooksubscription"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;applicationId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;companyIds&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;filter&quot;</span>: <span class="hljs-string">&quot;.*&quot;</span>,
+  <span class="hljs-attr">&quot;groups&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;scope&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;topic&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;webHookConfig&quot;</span>: {
+    <span class="hljs-attr">&quot;endpoint&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  }
+}
+
+</code></pre>
+<p>PublicWebhookSubscription</p>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>applicationId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>companyIds</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+<td>Only events corresponding to one of the provided company IDs will be delivered to the subscription. Required for public subscriptions. If a single value of '.*' is provided in the array, companies will not be filtered out.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The regex pattern which will be applied to the event type to filter events.Ignore if no filter is needed</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+<td>Only events corresponding to one of the provided group IDs will be delivered to the subscription. If left blank or omitted, groups will not be filtered out.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The name of the subscription, must be globally unique</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>topic</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The name of the topic from which this subscription is receiving event</td>
+</tr>
+<tr>
+<td>webHookConfig</td>
+<td><a href="#schemawebhookconfig">WebhookConfig</a></td>
+<td>true</td>
+<td>none</td>
+<td>Details of webhook subscription</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_publicwebhooksubscriptionapiadapter">PublicWebhookSubscriptionApiAdapter</h2>
+<p><a id="schemapublicwebhooksubscriptionapiadapter"></a>
+<a id="schema_PublicWebhookSubscriptionApiAdapter"></a>
+<a id="tocSpublicwebhooksubscriptionapiadapter"></a>
+<a id="tocspublicwebhooksubscriptionapiadapter"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;filter&quot;</span>: <span class="hljs-string">&quot;.*&quot;</span>,
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;topic&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;webHookConfig&quot;</span>: {
+    <span class="hljs-attr">&quot;endpoint&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  }
+}
+
+</code></pre>
+<p>PublicWebhookSubscriptionApiAdapter</p>
+<h3 id="properties-2">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filter</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The regex pattern which will be applied to the event type to filter events.Ignore if no filter is needed</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The name of the subscription, must be globally unique</td>
+</tr>
+<tr>
+<td>topic</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The name of the topic from which this subscription is receiving event</td>
+</tr>
+<tr>
+<td>webHookConfig</td>
+<td><a href="#schemawebhookconfig">WebhookConfig</a></td>
+<td>true</td>
+<td>none</td>
+<td>Details of webhook subscription</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_subscriptiondeletesuccess">SubscriptionDeleteSuccess</h2>
+<p><a id="schemasubscriptiondeletesuccess"></a>
+<a id="schema_SubscriptionDeleteSuccess"></a>
+<a id="tocSsubscriptiondeletesuccess"></a>
+<a id="tocssubscriptiondeletesuccess"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<p>SubscriptionDeleteSuccess</p>
+<h3 id="properties-3">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_subscriptionsavesuccess">SubscriptionSaveSuccess</h2>
+<p><a id="schemasubscriptionsavesuccess"></a>
+<a id="schema_SubscriptionSaveSuccess"></a>
+<a id="tocSsubscriptionsavesuccess"></a>
+<a id="tocssubscriptionsavesuccess"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<p>SubscriptionSaveSuccess</p>
+<h3 id="properties-4">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_topicapiadapter">TopicApiAdapter</h2>
+<p><a id="schematopicapiadapter"></a>
+<a id="schema_TopicApiAdapter"></a>
+<a id="tocStopicapiadapter"></a>
+<a id="tocstopicapiadapter"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;partitionCount&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;Public&quot;</span>
+}
+
+</code></pre>
+<p>TopicApiAdapter</p>
+<h3 id="properties-5">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>name</td>
+</tr>
+<tr>
+<td>partitionCount</td>
+<td>integer(int32)</td>
+<td>true</td>
+<td>none</td>
+<td>partitionCount</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>type</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>Public</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Internal</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_webhookconfig">WebhookConfig</h2>
+<p><a id="schemawebhookconfig"></a>
+<a id="schema_WebhookConfig"></a>
+<a id="tocSwebhookconfig"></a>
+<a id="tocswebhookconfig"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;endpoint&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<p>WebhookConfig</p>
+<h3 id="properties-6">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>endpoint</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>A URL locating the endpoint to which event should be pushed. For example, a Webhook endpoint might use &quot;<a href="https://example.com/push">https://example.com/push</a>&quot;</td>
+</tr>
+</tbody>
+</table>
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+      </div>
+      <div class="dark-box">
+        
+          <div class="lang-selector">
+            
+              
+                <a href="#" data-language-name="shell">Shell</a>
+              
+            
+              
+                <a href="#" data-language-name="http">HTTP</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript">JavaScript</a>
+              
+            
+              
+                <a href="#" data-language-name="ruby">Ruby</a>
+              
+            
+              
+                <a href="#" data-language-name="python">Python</a>
+              
+            
+              
+                <a href="#" data-language-name="php">PHP</a>
+              
+            
+              
+                <a href="#" data-language-name="java">Java</a>
+              
+            
+              
+                <a href="#" data-language-name="go">Go</a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,2225 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Quick Expenses v4.0.3</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+    <script src="pub/js/shins.js"></script>
+  
+<script type="text/javascript">
+$(function() {
+  loadToc($('#toc'), '.toc-link', '.toc-list-h2, .toc-list-h3, .toc-list-h4, .toc-list-h5, .toc-list-h6', 10);
+  setupLanguages($('body').data('languages'));
+  $('.content').imagesLoaded( function() {
+    recacheHeights();
+    refreshToc();
+  });
+});
+
+window.onpopstate = function() {
+  activateLanguage(getLanguageFromQueryString());
+};
+</script>
+
+    
+    <meta name="theme-color" content="#F3F7F9" />
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+  </head>
+
+  <body data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;php&quot;,&quot;java&quot;,&quot;go&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png" class="undefined" alt="Navigation">
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="http://localhost:4000">
+        <img src="source/images/logo.png" class="logo" alt="Logo">
+      </a>      
+        <div class="lang-selector">
+          
+            
+              <a href="#" data-language-name="shell">Shell</a>
+            
+          
+            
+              <a href="#" data-language-name="http">HTTP</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript">JavaScript</a>
+            
+          
+            
+              <a href="#" data-language-name="ruby">Ruby</a>
+            
+          
+            
+              <a href="#" data-language-name="python">Python</a>
+            
+          
+            
+              <a href="#" data-language-name="php">PHP</a>
+            
+          
+            
+              <a href="#" data-language-name="java">Java</a>
+            
+          
+            
+              <a href="#" data-language-name="go">Go</a>
+            
+          
+        </div>
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc" class="toc-list-h1">
+	  	<ul class="toc-list-h1">
+        
+          <li>
+            <a href="#quick-expenses" class="toc-h1 toc-link" data-title="Quick Expenses v4.0.3">Quick Expenses v4.0.3</a>
+            
+          </li>
+        
+          <li>
+            <a href="#quick-expenses-resources" class="toc-h1 toc-link" data-title="Resources">Resources</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#createquickexpenseusingpost_1" class="toc-h2 toc-link" data-title="">createQuickExpenseUsingPOST_1</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#createquickexpenseusingpost" class="toc-h2 toc-link" data-title="">createQuickExpenseUsingPOST</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#tocs_uri" class="toc-h2 toc-link" data-title="">URI</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_newquickexpenseresponse" class="toc-h2 toc-link" data-title="">NewQuickExpenseResponse</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_url" class="toc-h2 toc-link" data-title="">URL</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_multipartfile" class="toc-h2 toc-link" data-title="">MultipartFile</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_paymenttype" class="toc-h2 toc-link" data-title="">PaymentType</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_inputstream" class="toc-h2 toc-link" data-title="">InputStream</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_amount" class="toc-h2 toc-link" data-title="">Amount</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_resource" class="toc-h2 toc-link" data-title="">Resource</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_expensetype" class="toc-h2 toc-link" data-title="">ExpenseType</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_quickexpenserequest" class="toc-h2 toc-link" data-title="">QuickExpenseRequest</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_uriresponse" class="toc-h2 toc-link" data-title="">UriResponse</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_date" class="toc-h2 toc-link" data-title="">Date</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_urlstreamhandler" class="toc-h2 toc-link" data-title="">URLStreamHandler</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_errormessage" class="toc-h2 toc-link" data-title="">ErrorMessage</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_file" class="toc-h2 toc-link" data-title="">File</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_link" class="toc-h2 toc-link" data-title="">Link</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_location" class="toc-h2 toc-link" data-title="">Location</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_collection_object_" class="toc-h2 toc-link" data-title="">Collection_object_</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+		</ul>
+      </div>
+      
+        <ul class="toc-footer">
+          
+          <li><a href="/shins/api-explorer.html">API EXPLORER</a></li>
+          <li><a href="/">BACK TO DEVELOPER CENTER</a></li>
+        </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="quick-expenses">Quick Expenses v4.0.3</h1>
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+<p>Base URLs:</p>
+<ul>
+<li><a href="https://us.api.concursolutions.com/">https://us.api.concursolutions.com/</a></li>
+</ul>
+<h1 id="quick-expenses-resources">Resources</h1>
+<h2 id="createquickexpenseusingpost_1">createQuickExpenseUsingPOST_1</h2>
+<p><a id="opIdcreateQuickExpenseUsingPOST_1"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X POST https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses \
+  -H <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-correlationid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;accept-language: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">POST</span> <span class="hljs-string">https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: us.api.concursolutions.com
+<span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">concur-correlationid</span>: string
+<span class="hljs-attribute">accept-language</span>: string
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">const</span> inputBody = <span class="hljs-string">&#x27;{
+  &quot;comment&quot;: &quot;string&quot;,
+  &quot;entryDetails&quot;: &quot;string&quot;,
+  &quot;expenseTypeId&quot;: &quot;string&quot;,
+  &quot;location&quot;: {
+    &quot;city&quot;: &quot;string&quot;,
+    &quot;countryCode&quot;: &quot;string&quot;,
+    &quot;countrySubDivisionCode&quot;: &quot;string&quot;,
+    &quot;id&quot;: &quot;string&quot;,
+    &quot;name&quot;: &quot;string&quot;
+  },
+  &quot;paymentTypeId&quot;: &quot;CASHX&quot;,
+  &quot;transactionAmount&quot;: {
+    &quot;currencyCode&quot;: &quot;string&quot;,
+    &quot;value&quot;: 0
+  },
+  &quot;transactionDate&quot;: &quot;2019-08-24&quot;,
+  &quot;vendor&quot;: &quot;string&quot;
+}&#x27;</span>;
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;accept-language&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,
+  <span class="hljs-attr">body</span>: inputBody,
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;accept-language&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.post <span class="hljs-string">&#x27;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;accept-language&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.post(<span class="hljs-string">&#x27;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;accept-language&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;POST&#x27;</span>,<span class="hljs-string">&#x27;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;POST&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;concur-correlationid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;accept-language&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">&quot;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>POST /quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses</code></p>
+<p><em>This API is used to create a quick expense. This API does not support image creation.</em></p>
+<p>This API creates a basic expense with minimal fields. Can be added to expense reports from within SAP Concur.</p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;comment&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;entryDetails&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;expenseTypeId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;location&quot;</span>: {
+    <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;countrySubDivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;paymentTypeId&quot;</span>: <span class="hljs-string">&quot;CASHX&quot;</span>,
+  <span class="hljs-attr">&quot;transactionAmount&quot;</span>: {
+    <span class="hljs-attr">&quot;currencyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-number">0</span>
+  },
+  <span class="hljs-attr">&quot;transactionDate&quot;</span>: <span class="hljs-string">&quot;2019-08-24&quot;</span>,
+  <span class="hljs-attr">&quot;vendor&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<h3 id="createquickexpenseusingpost_1-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>concur-correlationid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>A SAP Concur specific custom header used for technical support.</td>
+</tr>
+<tr>
+<td>accept-language</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>The unique identifier of the user's locale that indicates the language in which the API response should be formulated.</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>The unique identifier of the SAP Concur user.</td>
+</tr>
+<tr>
+<td>contextType</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>The access level of the SAP Concur user, which determines the form fields they can view/modify. Supported value: TRAVELER.</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemaquickexpenserequest">QuickExpenseRequest</a></td>
+<td>false</td>
+<td>quickExpenseRequest</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contextType</td>
+<td>TRAVELER</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;quickExpenseIdUri&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<h3 id="createquickexpenseusingpost_1-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+<td><a href="#schemanewquickexpenseresponse">NewQuickExpenseResponse</a></td>
+</tr>
+<tr>
+<td>201</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
+<td>Sucessfully created new quick expense</td>
+<td><a href="#schemanewquickexpenseresponse">NewQuickExpenseResponse</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Bad Request</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
+<td>User doesn't have appropriate roles to create quick expense</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal Server Error</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="createquickexpenseusingpost">createQuickExpenseUsingPOST</h2>
+<p><a id="opIdcreateQuickExpenseUsingPOST"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X POST https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses/image \
+  -H <span class="hljs-string">&#x27;Content-Type: multipart/form-data&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-correlationid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;accept-language: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">POST</span> <span class="hljs-string">https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses/image</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: us.api.concursolutions.com
+<span class="hljs-attribute">Content-Type</span>: multipart/form-data
+<span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">concur-correlationid</span>: string
+<span class="hljs-attribute">accept-language</span>: string
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">const</span> inputBody = <span class="hljs-string">&#x27;{
+  &quot;quickExpenseRequest&quot;: &quot;string&quot;,
+  &quot;fileContent&quot;: &quot;string&quot;
+}&#x27;</span>;
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;multipart/form-data&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;accept-language&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses/image&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,
+  <span class="hljs-attr">body</span>: inputBody,
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span> =&gt; <span class="hljs-string">&#x27;multipart/form-data&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;accept-language&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.post <span class="hljs-string">&#x27;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses/image&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;multipart/form-data&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;accept-language&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.post(<span class="hljs-string">&#x27;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses/image&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;multipart/form-data&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;accept-language&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;POST&#x27;</span>,<span class="hljs-string">&#x27;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses/image&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses/image&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;POST&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;multipart/form-data&quot;</span>},
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;concur-correlationid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;accept-language&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">&quot;https://us.api.concursolutions.com/quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses/image&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>POST /quickexpense/v4/users/{userID}/context/{contextType}/quickexpenses/image</code></p>
+<p><em>This API is used to create a quick expense with image. An image is required. This API accepts multipart/form-data request.</em></p>
+<p>This API creates a new quick expense and attaches an image to it, which is provided with multipart/form-data request.</p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-yaml"><code><span class="hljs-attr">quickExpenseRequest:</span> <span class="hljs-string">string</span>
+<span class="hljs-attr">fileContent:</span> <span class="hljs-string">string</span>
+
+</code></pre>
+<h3 id="createquickexpenseusingpost-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>concur-correlationid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>A SAP Concur specific custom header used for technical support.</td>
+</tr>
+<tr>
+<td>accept-language</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>The unique identifier of the user's locale that indicates the language in which the API response should be formulated.</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>The unique identifier of the SAP Concur user.</td>
+</tr>
+<tr>
+<td>contextType</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>The access level of the SAP Concur user, which determines the form fields they can view/modify. Supported value: TRAVELER.</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» quickExpenseRequest</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td><b>QuickExpenseRequest</b> {<br /><b>comment</b> (string, optional): This is a comment attached to the quick expense. ,<br /><b>entryDetails</b> (string, optional): The quick expense entry details. ,<br /><b>expenseTypeId</b> (string, optional): This is the expense type id of the quick expense. ,<br /><b>location</b> (Location): The location where the quick expense occurred. ,<br /><b>paymentTypeId</b> (string, optional): This is the payment type id of the quick expense. , <br /><b>transactionAmount</b> (Amount): The amount of the quick expense. ,<br /><b>transactionDate</b> (string): This is the transaction date of the quick expense. Format: YYYY-MM-DD ,<br /><b>vendor</b> (string, optional): The name of the vendor. ,<br /><b>Location</b> {<br /><b>city</b> (string, optional): The location city. ,<br /><b>countryCode</b> (string, optional): The location country ISO 3166-1 code. ,<br /><b>countrySubDivisionCode</b> (string, optional): The location country sub division ISO 3166-2 code. ,<br /><b>id</b> (string, optional): The unique identifier of the location. ,<br /><b>name</b> (string, optional): The location name.<br />}<br /><b>Amount</b> {<br /><b>currencyCode</b> (string): The 3-letter ISO 4217 currency code for the amount. ,<br /><b>value</b> (number): The amount value.<br />}</td>
+</tr>
+<tr>
+<td>» fileContent</td>
+<td>body</td>
+<td>string(binary)</td>
+<td>true</td>
+<td>Image file. <br />Supported image file type ['PNG','GIF','PDF','TIFF','JPEG']. Max image size supported - 5MB</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-2">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contextType</td>
+<td>TRAVELER</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;quickExpenseIdUri&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<h3 id="createquickexpenseusingpost-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+<td><a href="#schemanewquickexpenseresponse">NewQuickExpenseResponse</a></td>
+</tr>
+<tr>
+<td>201</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
+<td>Sucessfully created new quick expense</td>
+<td><a href="#schemanewquickexpenseresponse">NewQuickExpenseResponse</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Bad Request</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
+<td>User doesn't have appropriate roles to create quick expense</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal Server Error</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h1 id="schemas">Schemas</h1>
+<h2 id="tocs_uri">URI</h2>
+<p><a id="schemauri"></a>
+<a id="schema_URI"></a>
+<a id="tocSuri"></a>
+<a id="tocsuri"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;absolute&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;authority&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;fragment&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;host&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;opaque&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;port&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;query&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;rawAuthority&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;rawFragment&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;rawPath&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;rawQuery&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;rawSchemeSpecificPart&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;rawUserInfo&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;scheme&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;schemeSpecificPart&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;userInfo&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>absolute</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>authority</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>fragment</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>host</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>opaque</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>port</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>rawAuthority</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>rawFragment</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>rawPath</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>rawQuery</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>rawSchemeSpecificPart</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>rawUserInfo</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>scheme</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>schemeSpecificPart</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>userInfo</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_newquickexpenseresponse">NewQuickExpenseResponse</h2>
+<p><a id="schemanewquickexpenseresponse"></a>
+<a id="schema_NewQuickExpenseResponse"></a>
+<a id="tocSnewquickexpenseresponse"></a>
+<a id="tocsnewquickexpenseresponse"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;quickExpenseIdUri&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-2">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quickExpenseIdUri</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The quick expense created resource url.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_url">URL</h2>
+<p><a id="schemaurl"></a>
+<a id="schema_URL"></a>
+<a id="tocSurl"></a>
+<a id="tocsurl"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;authority&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;content&quot;</span>: {},
+  <span class="hljs-attr">&quot;defaultPort&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;deserializedFields&quot;</span>: {},
+  <span class="hljs-attr">&quot;file&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;host&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;port&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;query&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ref&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;serializedHashCode&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;userInfo&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-3">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>authority</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>content</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>defaultPort</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>deserializedFields</td>
+<td><a href="#schemaurlstreamhandler">URLStreamHandler</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>file</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>host</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>port</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>ref</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>serializedHashCode</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>userInfo</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_multipartfile">MultipartFile</h2>
+<p><a id="schemamultipartfile"></a>
+<a id="schema_MultipartFile"></a>
+<a id="tocSmultipartfile"></a>
+<a id="tocsmultipartfile"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;bytes&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;contentType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;empty&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;inputStream&quot;</span>: {},
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;originalFilename&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;resource&quot;</span>: {
+    <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;file&quot;</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;inputStream&quot;</span>: {},
+    <span class="hljs-attr">&quot;open&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">&quot;readable&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">&quot;uri&quot;</span>: {
+      <span class="hljs-attr">&quot;absolute&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;authority&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;fragment&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;host&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;opaque&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;port&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;query&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rawAuthority&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rawFragment&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rawPath&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rawQuery&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rawSchemeSpecificPart&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rawUserInfo&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;scheme&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;schemeSpecificPart&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;userInfo&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    },
+    <span class="hljs-attr">&quot;url&quot;</span>: {
+      <span class="hljs-attr">&quot;authority&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;content&quot;</span>: {},
+      <span class="hljs-attr">&quot;defaultPort&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;deserializedFields&quot;</span>: {},
+      <span class="hljs-attr">&quot;file&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;host&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;port&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;query&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;ref&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;serializedHashCode&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;userInfo&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  },
+  <span class="hljs-attr">&quot;size&quot;</span>: <span class="hljs-number">0</span>
+}
+
+</code></pre>
+<h3 id="properties-4">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bytes</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>contentType</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>empty</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>inputStream</td>
+<td><a href="#schemainputstream">InputStream</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>originalFilename</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>resource</td>
+<td><a href="#schemaresource">Resource</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>size</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_paymenttype">PaymentType</h2>
+<p><a id="schemapaymenttype"></a>
+<a id="schema_PaymentType"></a>
+<a id="tocSpaymenttype"></a>
+<a id="tocspaymenttype"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-5">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The payment type code.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The unique identifier of the payment type.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The name of the payment type, localized to the user's language.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_inputstream">InputStream</h2>
+<p><a id="schemainputstream"></a>
+<a id="schema_InputStream"></a>
+<a id="tocSinputstream"></a>
+<a id="tocsinputstream"></a></p>
+<pre class="highlight tab tab-json"><code>{}
+
+</code></pre>
+<h3 id="properties-6">Properties</h3>
+<p><em>None</em></p>
+<h2 id="tocs_amount">Amount</h2>
+<p><a id="schemaamount"></a>
+<a id="schema_Amount"></a>
+<a id="tocSamount"></a>
+<a id="tocsamount"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;currencyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-number">0</span>
+}
+
+</code></pre>
+<h3 id="properties-7">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currencyCode</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The 3-letter ISO 4217 currency code for the amount.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number(double)</td>
+<td>true</td>
+<td>none</td>
+<td>The amount value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_resource">Resource</h2>
+<p><a id="schemaresource"></a>
+<a id="schema_Resource"></a>
+<a id="tocSresource"></a>
+<a id="tocsresource"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;file&quot;</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;inputStream&quot;</span>: {},
+  <span class="hljs-attr">&quot;open&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;readable&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;uri&quot;</span>: {
+    <span class="hljs-attr">&quot;absolute&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">&quot;authority&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;fragment&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;host&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;opaque&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;port&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;query&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;rawAuthority&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;rawFragment&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;rawPath&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;rawQuery&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;rawSchemeSpecificPart&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;rawUserInfo&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;scheme&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;schemeSpecificPart&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;userInfo&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;url&quot;</span>: {
+    <span class="hljs-attr">&quot;authority&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;content&quot;</span>: {},
+    <span class="hljs-attr">&quot;defaultPort&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;deserializedFields&quot;</span>: {},
+    <span class="hljs-attr">&quot;file&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;host&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;port&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;query&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;ref&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;serializedHashCode&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;userInfo&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  }
+}
+
+</code></pre>
+<h3 id="properties-8">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>file</td>
+<td>file</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>inputStream</td>
+<td><a href="#schemainputstream">InputStream</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>open</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>readable</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>uri</td>
+<td><a href="#schemauri">URI</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>url</td>
+<td><a href="#schemaurl">URL</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_expensetype">ExpenseType</h2>
+<p><a id="schemaexpensetype"></a>
+<a id="schema_ExpenseType"></a>
+<a id="tocSexpensetype"></a>
+<a id="tocsexpensetype"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-9">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The expense type code.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The unique identifier of the expense type.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The name of the expense type, localized to the user's language.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_quickexpenserequest">QuickExpenseRequest</h2>
+<p><a id="schemaquickexpenserequest"></a>
+<a id="schema_QuickExpenseRequest"></a>
+<a id="tocSquickexpenserequest"></a>
+<a id="tocsquickexpenserequest"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;comment&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;entryDetails&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;expenseTypeId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;location&quot;</span>: {
+    <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;countrySubDivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;paymentTypeId&quot;</span>: <span class="hljs-string">&quot;CASHX&quot;</span>,
+  <span class="hljs-attr">&quot;transactionAmount&quot;</span>: {
+    <span class="hljs-attr">&quot;currencyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-number">0</span>
+  },
+  <span class="hljs-attr">&quot;transactionDate&quot;</span>: <span class="hljs-string">&quot;2019-08-24&quot;</span>,
+  <span class="hljs-attr">&quot;vendor&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-10">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>comment</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>This is a comment attached to the quick expense.</td>
+</tr>
+<tr>
+<td>entryDetails</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The quick expense entry details.</td>
+</tr>
+<tr>
+<td>expenseTypeId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>This is the expense type id of the quick expense.</td>
+</tr>
+<tr>
+<td>location</td>
+<td><a href="#schemalocation">Location</a></td>
+<td>true</td>
+<td>none</td>
+<td>The location where the quick expense occurred.</td>
+</tr>
+<tr>
+<td>paymentTypeId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>This is the payment type id of the quick expense.</td>
+</tr>
+<tr>
+<td>transactionAmount</td>
+<td><a href="#schemaamount">Amount</a></td>
+<td>true</td>
+<td>none</td>
+<td>The amount of the quick expense.</td>
+</tr>
+<tr>
+<td>transactionDate</td>
+<td>string(date)</td>
+<td>true</td>
+<td>none</td>
+<td>This is the transaction date of the quick expense. Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The name of the vendor.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-3">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>paymentTypeId</td>
+<td>CASHX</td>
+</tr>
+<tr>
+<td>paymentTypeId</td>
+<td>CPAID</td>
+</tr>
+<tr>
+<td>paymentTypeId</td>
+<td>PENDC</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_uriresponse">UriResponse</h2>
+<p><a id="schemauriresponse"></a>
+<a id="schema_UriResponse"></a>
+<a id="tocSuriresponse"></a>
+<a id="tocsuriresponse"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;uri&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-11">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uri</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>URI of the created resource.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_date">Date</h2>
+<p><a id="schemadate"></a>
+<a id="schema_Date"></a>
+<a id="tocSdate"></a>
+<a id="tocsdate"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;date&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;day&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;hours&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;minutes&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;month&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;seconds&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;time&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;timezoneOffset&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;year&quot;</span>: <span class="hljs-number">0</span>
+}
+
+</code></pre>
+<h3 id="properties-12">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>day</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>hours</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>minutes</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>month</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>seconds</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>time</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>timezoneOffset</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>year</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_urlstreamhandler">URLStreamHandler</h2>
+<p><a id="schemaurlstreamhandler"></a>
+<a id="schema_URLStreamHandler"></a>
+<a id="tocSurlstreamhandler"></a>
+<a id="tocsurlstreamhandler"></a></p>
+<pre class="highlight tab tab-json"><code>{}
+
+</code></pre>
+<h3 id="properties-13">Properties</h3>
+<p><em>None</em></p>
+<h2 id="tocs_errormessage">ErrorMessage</h2>
+<p><a id="schemaerrormessage"></a>
+<a id="schema_ErrorMessage"></a>
+<a id="tocSerrormessage"></a>
+<a id="tocserrormessage"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;errorId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;errorMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;httpStatus&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;2016-10-04T00:53:25.931+0000&quot;</span>,
+  <span class="hljs-attr">&quot;validationErrors&quot;</span>: []
+}
+
+</code></pre>
+<h3 id="properties-14">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errorId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of the error.</td>
+</tr>
+<tr>
+<td>errorMessage</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Message associated with the error.</td>
+</tr>
+<tr>
+<td>httpStatus</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The HTTP status associated with the error.</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The path to the resource.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string(date-time)</td>
+<td>true</td>
+<td>none</td>
+<td>The timestamp for the error.</td>
+</tr>
+<tr>
+<td>validationErrors</td>
+<td>[<a href="#schemavalidationerror">ValidationError</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>An array of validation errors.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_file">File</h2>
+<p><a id="schemafile"></a>
+<a id="schema_File"></a>
+<a id="tocSfile"></a>
+<a id="tocsfile"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;absolute&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;absolutePath&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;canonicalPath&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;directory&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;executable&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;file&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;freeSpace&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;hidden&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;lastModified&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;parent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;readable&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;totalSpace&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;usableSpace&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;writable&quot;</span>: <span class="hljs-literal">true</span>
+}
+
+</code></pre>
+<h3 id="properties-15">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>absolute</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>absolutePath</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>canonicalPath</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>directory</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>executable</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>file</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>freeSpace</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>lastModified</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>parent</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>readable</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>totalSpace</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>usableSpace</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>writable</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_link">Link</h2>
+<p><a id="schemalink"></a>
+<a id="schema_Link"></a>
+<a id="tocSlink"></a>
+<a id="tocslink"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;deprecation&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;hreflang&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-16">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deprecation</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>href</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>hreflang</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>media</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>rel</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>templated</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_location">Location</h2>
+<p><a id="schemalocation"></a>
+<a id="schema_Location"></a>
+<a id="tocSlocation"></a>
+<a id="tocslocation"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;countrySubDivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<p>This represents the location.</p>
+<h3 id="properties-17">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The location city.</td>
+</tr>
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The location country ISO 3166-1 code.</td>
+</tr>
+<tr>
+<td>countrySubDivisionCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The location country sub division ISO 3166-2 code.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of the location.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The location name.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_collection_object_">Collection_object_</h2>
+<p><a id="schemacollection_object_"></a>
+<a id="schema_Collection_object_"></a>
+<a id="tocScollection_object_"></a>
+<a id="tocscollection_object_"></a></p>
+<pre class="highlight tab tab-json"><code>{}
+
+</code></pre>
+<h3 id="properties-18">Properties</h3>
+<p><em>None</em></p>
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+      </div>
+      <div class="dark-box">
+        
+          <div class="lang-selector">
+            
+              
+                <a href="#" data-language-name="shell">Shell</a>
+              
+            
+              
+                <a href="#" data-language-name="http">HTTP</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript">JavaScript</a>
+              
+            
+              
+                <a href="#" data-language-name="ruby">Ruby</a>
+              
+            
+              
+                <a href="#" data-language-name="python">Python</a>
+              
+            
+              
+                <a href="#" data-language-name="php">PHP</a>
+              
+            
+              
+                <a href="#" data-language-name="java">Java</a>
+              
+            
+              
+                <a href="#" data-language-name="go">Go</a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

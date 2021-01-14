@@ -1,0 +1,1063 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Digital Tax Invoices v3.0</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+    <script src="pub/js/shins.js"></script>
+      
+<script type="text/javascript">
+$(function() {
+  loadToc($('#toc'), '.toc-link', '.toc-list-h2, .toc-list-h3, .toc-list-h4, .toc-list-h5, .toc-list-h6', 10);
+  setupLanguages($('body').data('languages'));
+  $('.content').imagesLoaded( function() {
+    recacheHeights();
+    refreshToc();
+  });
+});
+
+window.onpopstate = function() {
+  activateLanguage(getLanguageFromQueryString());
+};
+</script>
+
+    
+    <meta name="theme-color" content="#F3F7F9" />
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+  </head>
+
+  <body data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;php&quot;,&quot;java&quot;,&quot;go&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png" class="undefined" alt="Navigation">
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="http://localhost:4000">
+        <img src="source/images/logo.png" class="logo" alt="Logo">
+      </a>
+        <div class="lang-selector">
+          
+            
+              <a href="#" data-language-name="shell">Shell</a>
+            
+          
+            
+              <a href="#" data-language-name="http">HTTP</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript">JavaScript</a>
+            
+          
+            
+              <a href="#" data-language-name="ruby">Ruby</a>
+            
+          
+            
+              <a href="#" data-language-name="python">Python</a>
+            
+          
+            
+              <a href="#" data-language-name="php">PHP</a>
+            
+          
+            
+              <a href="#" data-language-name="java">Java</a>
+            
+          
+            
+              <a href="#" data-language-name="go">Go</a>
+            
+          
+        </div>
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc" class="toc-list-h1">
+	  	<ul class="toc-list-h1">
+        
+          <li>
+            <a href="#digital-tax-invoices" class="toc-h1 toc-link" data-title="Digital Tax Invoices v3.0">Digital Tax Invoices v3.0</a>
+            
+          </li>
+        
+          <!--<li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            
+          </li>-->
+        
+          <li>
+            <a href="#digital-tax-invoices-resources" class="toc-h1 toc-link" data-title="Resources">Resources</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#get__expense_digitaltaxinvoices" class="toc-h2 toc-link" data-title="">get__expense_digitaltaxinvoices</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#get__expense_digitaltaxinvoices_-id-" class="toc-h2 toc-link" data-title="">get__expense_digitaltaxinvoices_{id}</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#put__expense_digitaltaxinvoices_-id-" class="toc-h2 toc-link" data-title="">put__expense_digitaltaxinvoices_{id}</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#tocs_digitaltaxinvoicecollection" class="toc-h2 toc-link" data-title="">DigitalTaxInvoiceCollection</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_digitaltaxinvoicegetall" class="toc-h2 toc-link" data-title="">DigitalTaxInvoiceGetAll</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_digitaltaxinvoicegetsingle" class="toc-h2 toc-link" data-title="">DigitalTaxInvoiceGetSingle</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_digitaltaxinvoiceput" class="toc-h2 toc-link" data-title="">DigitalTaxInvoicePut</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_void" class="toc-h2 toc-link" data-title="">Void</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+		</ul>
+      </div>
+      
+        <ul class="toc-footer">
+          
+          <li><a href="/shins/api-explorer.html">API EXPLORER</a></li>
+          <li><a href="/">BACK TO DEVELOPER CENTER</a></li> </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="digital-tax-invoices">Digital Tax Invoices v3.0</h1>
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+<p>The regulations of some countries require that clients provide an electronic receipt in digital XML format for each reimbursable expense. In addition, the client must: Store the XML file in order to claim the expense for tax purposes, be able to produce the original XML file in case of audit, and validate the XML file with the government. To help meet this requirement, Concur offers the Digital Tax Invoice feature. For Mexico, the official digital XML file is called Comprobante Fiscal Digital, or CFDi. This API provides methods to view and update digital tax invoices.</p>
+<p>Base URLs:</p>
+<ul>
+<li><a href="https://www.concursolutions.com/api/v3.0">https://www.concursolutions.com/api/v3.0</a></li>
+</ul>
+
+<!--<h1 id="authentication">Authentication</h1>
+<ul>
+<li>
+<p>oAuth2 authentication. To use this API, you need to get OAuth client credentials (client ID, secret, and geolocation) from SAP Concur, and be authorized to use the relevant scope. Refer to the <a href="/api-reference/authentication/getting-started.html">full authentication information</a> for more information.</p>
+<ul>
+<li>
+<p>Flow: clientCredentials</p>
+</li>
+<li>
+<p>Token URL = <a href="https://us.api.concursolutions.com/oauth2/v0">https://us.api.concursolutions.com/oauth2/v0</a></p>
+</li>
+</ul>
+</li>
+</ul>-->
+
+<h1 id="digital-tax-invoices-resources">Resources</h1>
+<h2 id="get__expense_digitaltaxinvoices">get__expense_digitaltaxinvoices</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: Bearer {access-token}&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: www.concursolutions.com
+<span class="hljs-attribute">Accept</span>: application/json
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;Bearer {access-token}&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /expense/digitaltaxinvoices</code></p>
+<p><em>Get digital tax invoices</em></p>
+<p>Gets all digital tax invoices that can be validated by the user based on the search criteria.</p>
+<h3 id="get__expense_digitaltaxinvoices-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>offset</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>The starting point of the next set of results, after the limit specified in the limit field has been reached.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>query</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>The number of records to return. Default value: 25</td>
+</tr>
+<tr>
+<td>modifiedafter</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>A modification date for the queue record; this parameter can be used to limit the results of the GET request to the queue items that have been added since the last time the validation company queried the queue. The user must have the Web Services Admin role to use this parameter.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Items&quot;</span>: {
+    <span class="hljs-attr">&quot;ConcurReceiptID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;URI&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;NextPage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<pre class="highlight tab tab-xml"><code><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">DigitalTaxInvoiceCollection</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Items</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ConcurReceiptID</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">ConcurReceiptID</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ID</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">ID</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">URI</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">URI</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Items</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">NextPage</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">NextPage</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">DigitalTaxInvoiceCollection</span>&gt;</span>
+</code></pre>
+<h3 id="get__expense_digitaltaxinvoices-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemadigitaltaxinvoicecollection">DigitalTaxInvoiceCollection</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+OAuth2
+</aside>
+<h2 id="get__expense_digitaltaxinvoices_-id-">get__expense_digitaltaxinvoices_{id}</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id} \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: Bearer {access-token}&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: www.concursolutions.com
+<span class="hljs-attribute">Accept</span>: application/json
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;Bearer {access-token}&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /expense/digitaltaxinvoices/{id}</code></p>
+<p><em>Get a single digital tax invoice</em></p>
+<p>Gets the specified digital tax invoice.</p>
+<h3 id="get__expense_digitaltaxinvoices_-id--parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>The ID of the digital tax invoice.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;AccountID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ConcurReceiptID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;DocumentID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ReceiptData&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<pre class="highlight tab tab-xml"><code><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">DigitalTaxInvoiceGetSingle</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">AccountID</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">AccountID</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ConcurReceiptID</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">ConcurReceiptID</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">DocumentID</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">DocumentID</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ReceiptData</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">ReceiptData</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">DigitalTaxInvoiceGetSingle</span>&gt;</span>
+</code></pre>
+<h3 id="get__expense_digitaltaxinvoices_-id--responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemadigitaltaxinvoicegetsingle">DigitalTaxInvoiceGetSingle</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+OAuth2
+</aside>
+<h2 id="put__expense_digitaltaxinvoices_-id-">put__expense_digitaltaxinvoices_{id}</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X PUT https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id} \
+  -H <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: Bearer {access-token}&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">PUT</span> <span class="hljs-string">https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: www.concursolutions.com
+<span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">Accept</span>: application/json
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">const</span> inputBody = <span class="hljs-string">&#x27;{
+  &quot;Comment&quot;: &quot;string&quot;,
+  &quot;Status&quot;: &quot;string&quot;
+}&#x27;</span>;
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;PUT&#x27;</span>,
+  <span class="hljs-attr">body</span>: inputBody,
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>
+}
+
+result = RestClient.put <span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>
+}
+
+r = requests.put(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;Bearer {access-token}&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;PUT&#x27;</span>,<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;PUT&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;Bearer {access-token}&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;PUT&quot;</span>, <span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/{id}&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>PUT /expense/digitaltaxinvoices/{id}</code></p>
+<p><em>Update a digital tax invoice</em></p>
+<p>Updates the specified digital tax invoice.</p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Comment&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<pre class="highlight tab tab-xml"><code><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">DigitalTaxInvoicePut</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Comment</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Comment</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Status</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Status</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">DigitalTaxInvoicePut</span>&gt;</span>
+</code></pre>
+<h3 id="put__expense_digitaltaxinvoices_-id--parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>The ID of the digital tax invoice to update.</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemadigitaltaxinvoiceput">DigitalTaxInvoicePut</a></td>
+<td>true</td>
+<td>A status update for the digital tax invoice.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{}
+</code></pre>
+<pre class="highlight tab tab-xml"><code><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Void</span>/&gt;</span>
+</code></pre>
+<h3 id="put__expense_digitaltaxinvoices_-id--responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemavoid">Void</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Bad Request</td>
+<td><a href="#schemavoid">Void</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+OAuth2
+</aside>
+<h1 id="schemas">Schemas</h1>
+<h2 id="tocs_digitaltaxinvoicecollection">DigitalTaxInvoiceCollection</h2>
+<p><a id="schemadigitaltaxinvoicecollection"></a>
+<a id="schema_DigitalTaxInvoiceCollection"></a>
+<a id="tocSdigitaltaxinvoicecollection"></a>
+<a id="tocsdigitaltaxinvoicecollection"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Items&quot;</span>: {
+    <span class="hljs-attr">&quot;ConcurReceiptID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;URI&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;NextPage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Items</td>
+<td><a href="#schemadigitaltaxinvoicegetall">DigitalTaxInvoiceGetAll</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>NextPage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The URI of the next page of results, if any.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_digitaltaxinvoicegetall">DigitalTaxInvoiceGetAll</h2>
+<p><a id="schemadigitaltaxinvoicegetall"></a>
+<a id="schema_DigitalTaxInvoiceGetAll"></a>
+<a id="tocSdigitaltaxinvoicegetall"></a>
+<a id="tocsdigitaltaxinvoicegetall"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;ConcurReceiptID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;URI&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-2">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ConcurReceiptID</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The ID of the digital tax invoice in plain text.</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of the resource.</td>
+</tr>
+<tr>
+<td>URI</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The URI to the resource.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_digitaltaxinvoicegetsingle">DigitalTaxInvoiceGetSingle</h2>
+<p><a id="schemadigitaltaxinvoicegetsingle"></a>
+<a id="schema_DigitalTaxInvoiceGetSingle"></a>
+<a id="tocSdigitaltaxinvoicegetsingle"></a>
+<a id="tocsdigitaltaxinvoicegetsingle"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;AccountID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ConcurReceiptID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;DocumentID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ReceiptData&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-3">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AccountID</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier assigned by the validation partner to the SAP Concur client company that owns the digital tax invoices.</td>
+</tr>
+<tr>
+<td>ConcurReceiptID</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The ID of the digital tax invoice in plain text.</td>
+</tr>
+<tr>
+<td>DocumentID</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The ID of the report in plain text.</td>
+</tr>
+<tr>
+<td>ReceiptData</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The digital tax invoice data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_digitaltaxinvoiceput">DigitalTaxInvoicePut</h2>
+<p><a id="schemadigitaltaxinvoiceput"></a>
+<a id="schema_DigitalTaxInvoicePut"></a>
+<a id="tocSdigitaltaxinvoiceput"></a>
+<a id="tocsdigitaltaxinvoiceput"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Comment&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-4">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comment</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>A comment that describes the digital tax invoice status. Maximum length: 2000 characters</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>A status that describes the digital tax invoice. Format: VALID - Valid; INVLD - Invalid; WARNG - Valid with warnings</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_void">Void</h2>
+<p><a id="schemavoid"></a>
+<a id="schema_Void"></a>
+<a id="tocSvoid"></a>
+<a id="tocsvoid"></a></p>
+<pre class="highlight tab tab-json"><code>{}
+
+</code></pre>
+<h3 id="properties-5">Properties</h3>
+<p><em>None</em></p>
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+      </div>
+      <div class="dark-box">
+        
+          <div class="lang-selector">
+            
+              
+                <a href="#" data-language-name="shell">Shell</a>
+              
+            
+              
+                <a href="#" data-language-name="http">HTTP</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript">JavaScript</a>
+              
+            
+              
+                <a href="#" data-language-name="ruby">Ruby</a>
+              
+            
+              
+                <a href="#" data-language-name="python">Python</a>
+              
+            
+              
+                <a href="#" data-language-name="php">PHP</a>
+              
+            
+              
+                <a href="#" data-language-name="java">Java</a>
+              
+            
+              
+                <a href="#" data-language-name="go">Go</a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

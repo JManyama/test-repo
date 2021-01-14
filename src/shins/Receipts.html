@@ -1,0 +1,1639 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Receipts v3.0</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+    <script src="pub/js/shins.js"></script>
+      
+<script type="text/javascript">
+$(function() {
+  loadToc($('#toc'), '.toc-link', '.toc-list-h2, .toc-list-h3, .toc-list-h4, .toc-list-h5, .toc-list-h6', 10);
+  setupLanguages($('body').data('languages'));
+  $('.content').imagesLoaded( function() {
+    recacheHeights();
+    refreshToc();
+  });
+});
+
+window.onpopstate = function() {
+  activateLanguage(getLanguageFromQueryString());
+};
+</script>
+
+    
+    <meta name="theme-color" content="#F3F7F9" />
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+  </head>
+
+  <body data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;php&quot;,&quot;java&quot;,&quot;go&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png" class="undefined" alt="Navigation">
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="http://localhost:4000">
+        <img src="source/images/logo.png" class="logo" alt="Logo">
+      </a>     
+        <div class="lang-selector">
+          
+            
+              <a href="#" data-language-name="shell">Shell</a>
+            
+          
+            
+              <a href="#" data-language-name="http">HTTP</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript">JavaScript</a>
+            
+          
+            
+              <a href="#" data-language-name="ruby">Ruby</a>
+            
+          
+            
+              <a href="#" data-language-name="python">Python</a>
+            
+          
+            
+              <a href="#" data-language-name="php">PHP</a>
+            
+          
+            
+              <a href="#" data-language-name="java">Java</a>
+            
+          
+            
+              <a href="#" data-language-name="go">Go</a>
+            
+          
+        </div>
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc" class="toc-list-h1">
+	  	<ul class="toc-list-h1">
+        
+          <li>
+            <a href="#receipts" class="toc-h1 toc-link" data-title="Receipts v3.0">Receipts v3.0</a>
+            
+          </li>
+        
+          <li>
+            <a href="#receipts-resources" class="toc-h1 toc-link" data-title="Resources">Resources</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#post__common_receipts" class="toc-h2 toc-link" data-title="">post__common_receipts</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#tocs_createresponse" class="toc-h2 toc-link" data-title="">CreateResponse</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_customfield" class="toc-h2 toc-link" data-title="">CustomField</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_decimal" class="toc-h2 toc-link" data-title="">Decimal</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_generaldetail" class="toc-h2 toc-link" data-title="">GeneralDetail</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_hoteldetail" class="toc-h2 toc-link" data-title="">HotelDetail</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_lineitem" class="toc-h2 toc-link" data-title="">LineItem</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_location" class="toc-h2 toc-link" data-title="">Location</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_matchingfact" class="toc-h2 toc-link" data-title="">MatchingFact</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_merchant" class="toc-h2 toc-link" data-title="">Merchant</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_paymentcard" class="toc-h2 toc-link" data-title="">PaymentCard</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_receiptpost" class="toc-h2 toc-link" data-title="">ReceiptPost</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_ridedetail" class="toc-h2 toc-link" data-title="">RideDetail</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_nullable_1" class="toc-h2 toc-link" data-title="">Nullable_1</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+		</ul>
+      </div>
+      
+        <ul class="toc-footer">
+          <li><a href="/shins/api-explorer.html">API EXPLORER</a></li>
+          <li><a href="/">BACK TO DEVELOPER CENTER</a></li>
+    
+        </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="receipts">Receipts v3.0</h1>
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+<p>Base URLs:</p>
+<ul>
+<li><a href="https://www.concursolutions.com/api/v3.0">https://www.concursolutions.com/api/v3.0</a></li>
+</ul>
+<h1 id="receipts-resources">Resources</h1>
+<h2 id="post__common_receipts">post__common_receipts</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X POST https://www.concursolutions.com/api/v3.0/common/receipts \
+  -H <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">POST</span> <span class="hljs-string">https://www.concursolutions.com/api/v3.0/common/receipts</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: www.concursolutions.com
+<span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">Accept</span>: application/json
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">const</span> inputBody = <span class="hljs-string">&#x27;{
+  &quot;Amount&quot;: 0,
+  &quot;CurrencyCode&quot;: &quot;string&quot;,
+  &quot;CustomFields&quot;: {
+    &quot;Name&quot;: &quot;string&quot;,
+    &quot;Value&quot;: &quot;string&quot;
+  },
+  &quot;FormofPaymentCode&quot;: &quot;string&quot;,
+  &quot;GeneralDetail&quot;: {
+    &quot;LineItems&quot;: {
+      &quot;Amount&quot;: 0,
+      &quot;Date&quot;: &quot;2019-08-24T14:15:22Z&quot;,
+      &quot;Description&quot;: &quot;string&quot;,
+      &quot;Description2&quot;: &quot;string&quot;,
+      &quot;Quantity&quot;: 0,
+      &quot;Rate&quot;: 0,
+      &quot;RateType&quot;: &quot;string&quot;,
+      &quot;Reference&quot;: &quot;string&quot;,
+      &quot;SequenceNumber&quot;: 0
+    }
+  },
+  &quot;HotelDetail&quot;: {
+    &quot;AverageDailyRoomRate&quot;: 0,
+    &quot;CheckinDateTime&quot;: &quot;2019-08-24T14:15:22Z&quot;,
+    &quot;CheckoutDateTime&quot;: &quot;2019-08-24T14:15:22Z&quot;,
+    &quot;ConfirmationNumber&quot;: &quot;string&quot;,
+    &quot;GNR&quot;: &quot;string&quot;,
+    &quot;LineItems&quot;: {
+      &quot;Amount&quot;: 0,
+      &quot;Date&quot;: &quot;2019-08-24T14:15:22Z&quot;,
+      &quot;Description&quot;: &quot;string&quot;,
+      &quot;Description2&quot;: &quot;string&quot;,
+      &quot;Quantity&quot;: 0,
+      &quot;Rate&quot;: 0,
+      &quot;RateType&quot;: &quot;string&quot;,
+      &quot;Reference&quot;: &quot;string&quot;,
+      &quot;SequenceNumber&quot;: 0
+    },
+    &quot;NumberInParty&quot;: 0,
+    &quot;RatePlanType&quot;: &quot;string&quot;,
+    &quot;RoomNumber&quot;: &quot;string&quot;,
+    &quot;RoomType&quot;: &quot;string&quot;
+  },
+  &quot;ImageBase64&quot;: &quot;string&quot;,
+  &quot;MatchingFact&quot;: {
+    &quot;Type&quot;: &quot;string&quot;,
+    &quot;Value&quot;: &quot;string&quot;
+  },
+  &quot;Merchant&quot;: {
+    &quot;Location&quot;: {
+      &quot;Address&quot;: &quot;string&quot;,
+      &quot;Address2&quot;: &quot;string&quot;,
+      &quot;City&quot;: &quot;string&quot;,
+      &quot;CountryCode&quot;: &quot;string&quot;,
+      &quot;CountrySubdivisionCode&quot;: &quot;string&quot;,
+      &quot;EmailAddress&quot;: &quot;string&quot;,
+      &quot;FaxNumber&quot;: &quot;string&quot;,
+      &quot;InternetAddress&quot;: &quot;string&quot;,
+      &quot;Name&quot;: &quot;string&quot;,
+      &quot;PostalCode&quot;: &quot;string&quot;,
+      &quot;TelephoneNumber&quot;: &quot;string&quot;
+    },
+    &quot;Name&quot;: &quot;string&quot;
+  },
+  &quot;PaymentCard&quot;: {
+    &quot;AuthorizationCode&quot;: &quot;string&quot;,
+    &quot;MaskedNumber&quot;: &quot;string&quot;,
+    &quot;Type&quot;: &quot;string&quot;
+  },
+  &quot;RideDetail&quot;: {
+    &quot;DriverName&quot;: &quot;string&quot;,
+    &quot;DropoffLatitude&quot;: 0,
+    &quot;DropoffLongitude&quot;: 0,
+    &quot;EndDateTime&quot;: &quot;2019-08-24T14:15:22Z&quot;,
+    &quot;LineItems&quot;: {
+      &quot;Amount&quot;: 0,
+      &quot;Date&quot;: &quot;2019-08-24T14:15:22Z&quot;,
+      &quot;Description&quot;: &quot;string&quot;,
+      &quot;Description2&quot;: &quot;string&quot;,
+      &quot;Quantity&quot;: 0,
+      &quot;Rate&quot;: 0,
+      &quot;RateType&quot;: &quot;string&quot;,
+      &quot;Reference&quot;: &quot;string&quot;,
+      &quot;SequenceNumber&quot;: 0
+    },
+    &quot;StartDateTime&quot;: &quot;2019-08-24T14:15:22Z&quot;,
+    &quot;VehicleNumber&quot;: &quot;string&quot;
+  },
+  &quot;TransactionDateTime&quot;: &quot;2019-08-24T14:15:22Z&quot;,
+  &quot;Type&quot;: &quot;string&quot;
+}&#x27;</span>;
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/receipts&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,
+  <span class="hljs-attr">body</span>: inputBody,
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>
+}
+
+result = RestClient.post <span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/receipts&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>
+}
+
+r = requests.post(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/receipts&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;POST&#x27;</span>,<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/receipts&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/common/receipts&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;POST&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/common/receipts&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>POST /common/receipts</code></p>
+<p><em>Create a new receipt entry</em></p>
+<p>Creates a new receipt entry. This operation enables a provider company to post receipts to Concur.</p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;CurrencyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;CustomFields&quot;</span>: {
+    <span class="hljs-attr">&quot;Name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;FormofPaymentCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;GeneralDetail&quot;</span>: {
+    <span class="hljs-attr">&quot;LineItems&quot;</span>: {
+      <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Date&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+      <span class="hljs-attr">&quot;Description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Description2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Quantity&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Rate&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;RateType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Reference&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;SequenceNumber&quot;</span>: <span class="hljs-number">0</span>
+    }
+  },
+  <span class="hljs-attr">&quot;HotelDetail&quot;</span>: {
+    <span class="hljs-attr">&quot;AverageDailyRoomRate&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;CheckinDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+    <span class="hljs-attr">&quot;CheckoutDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+    <span class="hljs-attr">&quot;ConfirmationNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;GNR&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;LineItems&quot;</span>: {
+      <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Date&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+      <span class="hljs-attr">&quot;Description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Description2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Quantity&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Rate&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;RateType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Reference&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;SequenceNumber&quot;</span>: <span class="hljs-number">0</span>
+    },
+    <span class="hljs-attr">&quot;NumberInParty&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;RatePlanType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;RoomNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;RoomType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;ImageBase64&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;MatchingFact&quot;</span>: {
+    <span class="hljs-attr">&quot;Type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;Merchant&quot;</span>: {
+    <span class="hljs-attr">&quot;Location&quot;</span>: {
+      <span class="hljs-attr">&quot;Address&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Address2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;City&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;CountryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;CountrySubdivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;EmailAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;FaxNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;InternetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;PostalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;TelephoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    },
+    <span class="hljs-attr">&quot;Name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;PaymentCard&quot;</span>: {
+    <span class="hljs-attr">&quot;AuthorizationCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;MaskedNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;RideDetail&quot;</span>: {
+    <span class="hljs-attr">&quot;DriverName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;DropoffLatitude&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;DropoffLongitude&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;EndDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+    <span class="hljs-attr">&quot;LineItems&quot;</span>: {
+      <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Date&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+      <span class="hljs-attr">&quot;Description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Description2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Quantity&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Rate&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;RateType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Reference&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;SequenceNumber&quot;</span>: <span class="hljs-number">0</span>
+    },
+    <span class="hljs-attr">&quot;StartDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+    <span class="hljs-attr">&quot;VehicleNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;TransactionDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+  <span class="hljs-attr">&quot;Type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<pre class="highlight tab tab-xml"><code><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ReceiptPost</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CurrencyCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">CurrencyCode</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CustomFields</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Name</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Value</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Value</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">CustomFields</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">FormofPaymentCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">FormofPaymentCode</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">GeneralDetail</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">LineItems</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Date</span>&gt;</span>2019-08-24T14:15:22Z<span class="hljs-tag">&lt;/<span class="hljs-name">Date</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Description</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Description</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Description2</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Description2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Quantity</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">Quantity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Rate</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">Rate</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">RateType</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">RateType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Reference</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Reference</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SequenceNumber</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">SequenceNumber</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">LineItems</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">GeneralDetail</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">HotelDetail</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AverageDailyRoomRate</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">AverageDailyRoomRate</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CheckinDateTime</span>&gt;</span>2019-08-24T14:15:22Z<span class="hljs-tag">&lt;/<span class="hljs-name">CheckinDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CheckoutDateTime</span>&gt;</span>2019-08-24T14:15:22Z<span class="hljs-tag">&lt;/<span class="hljs-name">CheckoutDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ConfirmationNumber</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">ConfirmationNumber</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">GNR</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">GNR</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">LineItems</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Date</span>&gt;</span>2019-08-24T14:15:22Z<span class="hljs-tag">&lt;/<span class="hljs-name">Date</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Description</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Description</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Description2</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Description2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Quantity</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">Quantity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Rate</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">Rate</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">RateType</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">RateType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Reference</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Reference</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SequenceNumber</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">SequenceNumber</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">LineItems</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">NumberInParty</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">NumberInParty</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">RatePlanType</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">RatePlanType</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">RoomNumber</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">RoomNumber</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">RoomType</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">RoomType</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">HotelDetail</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ImageBase64</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">ImageBase64</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">MatchingFact</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Type</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Type</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Value</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Value</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">MatchingFact</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Merchant</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Location</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Address</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Address</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Address2</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Address2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">City</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">City</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">CountryCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">CountryCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">CountrySubdivisionCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">CountrySubdivisionCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">EmailAddress</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">EmailAddress</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">FaxNumber</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">FaxNumber</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">InternetAddress</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">InternetAddress</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Name</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PostalCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">PostalCode</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">TelephoneNumber</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">TelephoneNumber</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Location</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Name</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Name</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Merchant</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">PaymentCard</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">AuthorizationCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">AuthorizationCode</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">MaskedNumber</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">MaskedNumber</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Type</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Type</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">PaymentCard</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">RideDetail</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">DriverName</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">DriverName</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">DropoffLatitude</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">DropoffLatitude</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">DropoffLongitude</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">DropoffLongitude</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">EndDateTime</span>&gt;</span>2019-08-24T14:15:22Z<span class="hljs-tag">&lt;/<span class="hljs-name">EndDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">LineItems</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Amount</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">Amount</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Date</span>&gt;</span>2019-08-24T14:15:22Z<span class="hljs-tag">&lt;/<span class="hljs-name">Date</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Description</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Description</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Description2</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Description2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Quantity</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">Quantity</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Rate</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">Rate</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">RateType</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">RateType</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Reference</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Reference</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">SequenceNumber</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">SequenceNumber</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">LineItems</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">StartDateTime</span>&gt;</span>2019-08-24T14:15:22Z<span class="hljs-tag">&lt;/<span class="hljs-name">StartDateTime</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">VehicleNumber</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">VehicleNumber</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">RideDetail</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">TransactionDateTime</span>&gt;</span>2019-08-24T14:15:22Z<span class="hljs-tag">&lt;/<span class="hljs-name">TransactionDateTime</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Type</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Type</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ReceiptPost</span>&gt;</span>
+</code></pre>
+<h3 id="post__common_receipts-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemareceiptpost">ReceiptPost</a></td>
+<td>true</td>
+<td>The Receipt object to create.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;URI&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<pre class="highlight tab tab-xml"><code><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">CreateResponse</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ID</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">ID</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">URI</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">URI</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">CreateResponse</span>&gt;</span>
+</code></pre>
+<h3 id="post__common_receipts-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemacreateresponse">CreateResponse</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h1 id="schemas">Schemas</h1>
+<h2 id="tocs_createresponse">CreateResponse</h2>
+<p><a id="schemacreateresponse"></a>
+<a id="schema_CreateResponse"></a>
+<a id="tocScreateresponse"></a>
+<a id="tocscreateresponse"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;URI&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>URI</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_customfield">CustomField</h2>
+<p><a id="schemacustomfield"></a>
+<a id="schema_CustomField"></a>
+<a id="tocScustomfield"></a>
+<a id="tocscustomfield"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-2">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The name of the custom field. Maximum length: 128 characters</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The value of the custom field. Maximum length: 256 characters</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_decimal">Decimal</h2>
+<p><a id="schemadecimal"></a>
+<a id="schema_Decimal"></a>
+<a id="tocSdecimal"></a>
+<a id="tocsdecimal"></a></p>
+<pre class="highlight tab tab-json"><code>{}
+
+</code></pre>
+<h3 id="properties-3">Properties</h3>
+<p><em>None</em></p>
+<h2 id="tocs_generaldetail">GeneralDetail</h2>
+<p><a id="schemageneraldetail"></a>
+<a id="schema_GeneralDetail"></a>
+<a id="tocSgeneraldetail"></a>
+<a id="tocsgeneraldetail"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;LineItems&quot;</span>: {
+    <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;Date&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+    <span class="hljs-attr">&quot;Description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Description2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Quantity&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;Rate&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;RateType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Reference&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;SequenceNumber&quot;</span>: <span class="hljs-number">0</span>
+  }
+}
+
+</code></pre>
+<h3 id="properties-4">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LineItems</td>
+<td><a href="#schemalineitem">LineItem</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_hoteldetail">HotelDetail</h2>
+<p><a id="schemahoteldetail"></a>
+<a id="schema_HotelDetail"></a>
+<a id="tocShoteldetail"></a>
+<a id="tocshoteldetail"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;AverageDailyRoomRate&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;CheckinDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+  <span class="hljs-attr">&quot;CheckoutDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+  <span class="hljs-attr">&quot;ConfirmationNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;GNR&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;LineItems&quot;</span>: {
+    <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;Date&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+    <span class="hljs-attr">&quot;Description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Description2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Quantity&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;Rate&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;RateType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Reference&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;SequenceNumber&quot;</span>: <span class="hljs-number">0</span>
+  },
+  <span class="hljs-attr">&quot;NumberInParty&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;RatePlanType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;RoomNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;RoomType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-5">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AverageDailyRoomRate</td>
+<td>number(double)</td>
+<td>false</td>
+<td>none</td>
+<td>The sum of the room rate for each night stayed, divided by the number of nights stayed. Range: -922,337,203,685,477 to 922,337,203,685,477</td>
+</tr>
+<tr>
+<td>CheckinDateTime</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+<td>The check-in date and time. Format: YYYY-MM-DDThh:mm</td>
+</tr>
+<tr>
+<td>CheckoutDateTime</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+<td>The check-out date and time. Format: YYYY-MM-DDThh:mm</td>
+</tr>
+<tr>
+<td>ConfirmationNumber</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The confirmation number for the booking. Maximum length: 32 characters</td>
+</tr>
+<tr>
+<td>GNR</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The Guest Name Record (GNR) for the stay. Maximum length: 20 characters</td>
+</tr>
+<tr>
+<td>LineItems</td>
+<td><a href="#schemalineitem">LineItem</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>NumberInParty</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>The number of people for this stay.</td>
+</tr>
+<tr>
+<td>RatePlanType</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The rate plan type that is used to calculate the room rate. Possible values are rate plan types defined using hospitality industry standards. Maximum length: 50 characters</td>
+</tr>
+<tr>
+<td>RoomNumber</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The room number for the stay. Maximum length: 15 characters</td>
+</tr>
+<tr>
+<td>RoomType</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The type of room. Possible values are room types defined using hospitality industry standards, such as Single, Double, Suite, and so on. Maximum length: 50 characters</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_lineitem">LineItem</h2>
+<p><a id="schemalineitem"></a>
+<a id="schema_LineItem"></a>
+<a id="tocSlineitem"></a>
+<a id="tocslineitem"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;Date&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+  <span class="hljs-attr">&quot;Description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Description2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Quantity&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;Rate&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;RateType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Reference&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;SequenceNumber&quot;</span>: <span class="hljs-number">0</span>
+}
+
+</code></pre>
+<h3 id="properties-6">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amount</td>
+<td>number(double)</td>
+<td>false</td>
+<td>none</td>
+<td>The total charged amount for the line item. Range: -922,337,203,685,477 to 922,337,203,685,477</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+<td>The date and time when the line item was charged. Format: YYYY-MM-DDThh:mm</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The item's description. Maximum length: 100 characters</td>
+</tr>
+<tr>
+<td>Description2</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Additional details about the item. In the receipt image, the secondary description appears on the line following the primary description. Maximum length: 32 characters</td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>The quantity of units. Format: Any positive number</td>
+</tr>
+<tr>
+<td>Rate</td>
+<td>number(double)</td>
+<td>false</td>
+<td>none</td>
+<td>The amount charged per unit. Range: -922,337,203,685,477 to 922,337,203,685,477</td>
+</tr>
+<tr>
+<td>RateType</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The unit of measure or rate type. Possible values: HOUR or PER HOUR, DAY or PER DAY, WEEK or PER WEEK, MONTH or PER MONTH. Maximum length: 10 characters</td>
+</tr>
+<tr>
+<td>Reference</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The item's SKU, identifier, or some other attribute the provider uses to reference the item. Maximum length: 32 characters</td>
+</tr>
+<tr>
+<td>SequenceNumber</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>The order in which the item appears in the sequence of line items.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_location">Location</h2>
+<p><a id="schemalocation"></a>
+<a id="schema_Location"></a>
+<a id="tocSlocation"></a>
+<a id="tocslocation"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Address&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Address2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;City&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;CountryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;CountrySubdivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;EmailAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;FaxNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;InternetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PostalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;TelephoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-7">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Address</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The provider's street address. Maximum length: 100 characters</td>
+</tr>
+<tr>
+<td>Address2</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The provider's secondary street address. Maximum length: 50 characters</td>
+</tr>
+<tr>
+<td>City</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The provider's city. Maximum length: 100 characters</td>
+</tr>
+<tr>
+<td>CountryCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The provider's country. Format: <a target="_blank" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">2-letter ISO 3166-1 country code</a></td>
+</tr>
+<tr>
+<td>CountrySubdivisionCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The provider's state, province, or other country subdivision. Format: <a target="_blank" href="http://en.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2:2007 country subdivision</a> code YYY, where YYY is the one-to-three–character subdivision code</td>
+</tr>
+<tr>
+<td>EmailAddress</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The provider's email address. Maximum length: 255 characters</td>
+</tr>
+<tr>
+<td>FaxNumber</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The provider's fax number. Maximum length: 32 characters</td>
+</tr>
+<tr>
+<td>InternetAddress</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The provider's Web address. Maximum length: 255 characters</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The name of the provider's location, such as an airport, car rental agency, property, store, or other named location. Maximum length: 100 characters</td>
+</tr>
+<tr>
+<td>PostalCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The provider's postal code. Maximum length: 20 characters</td>
+</tr>
+<tr>
+<td>TelephoneNumber</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The provider's telephone number. Maximum length: 100 characters</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_matchingfact">MatchingFact</h2>
+<p><a id="schemamatchingfact"></a>
+<a id="schema_MatchingFact"></a>
+<a id="tocSmatchingfact"></a>
+<a id="tocsmatchingfact"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-8">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The type of matching fact that is used to identify the Concur user who owns the receipt. Possible values: OAuth, Login</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The value of the matching fact. If the Type element is set to OAuth, this value must be the access token for the Concur user who owns the receipt. In this case, the access token must not be expired or revoked. If the Type element is set to Login, this value must be the login ID of the Concur user who owns the receipt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_merchant">Merchant</h2>
+<p><a id="schemamerchant"></a>
+<a id="schema_Merchant"></a>
+<a id="tocSmerchant"></a>
+<a id="tocsmerchant"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Location&quot;</span>: {
+    <span class="hljs-attr">&quot;Address&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Address2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;City&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;CountryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;CountrySubdivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;EmailAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;FaxNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;InternetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;PostalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;TelephoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;Name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-9">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location</td>
+<td><a href="#schemalocation">Location</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The name of the provider (merchant). Maximum length: 64 characters</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_paymentcard">PaymentCard</h2>
+<p><a id="schemapaymentcard"></a>
+<a id="schema_PaymentCard"></a>
+<a id="tocSpaymentcard"></a>
+<a id="tocspaymentcard"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;AuthorizationCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;MaskedNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-10">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AuthorizationCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The authorization code that the card interchange provided when it approved this purchase. Maximum length: 15 characters</td>
+</tr>
+<tr>
+<td>MaskedNumber</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The masked card number for the credit card. With the exception of the AX (American Express) card type, this is the last four digits of the card number. For American Express, the value can be one of these, in order of preference: a) The first six digits and the last four digits of the card number. b) The last five digits. c) The last four digits.</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The card interchange for the credit card. Possible values: AX (American Express), DC (Diner's Club), DS (Discover), CA (MasterCard), VI (Visa), CB (Carte Blanche), ER (Enroute), TP (Universal Air Travel), JC (JCB), EC (EuroCard), OTHER (other types)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_receiptpost">ReceiptPost</h2>
+<p><a id="schemareceiptpost"></a>
+<a id="schema_ReceiptPost"></a>
+<a id="tocSreceiptpost"></a>
+<a id="tocsreceiptpost"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;CurrencyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;CustomFields&quot;</span>: {
+    <span class="hljs-attr">&quot;Name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;FormofPaymentCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;GeneralDetail&quot;</span>: {
+    <span class="hljs-attr">&quot;LineItems&quot;</span>: {
+      <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Date&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+      <span class="hljs-attr">&quot;Description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Description2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Quantity&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Rate&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;RateType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Reference&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;SequenceNumber&quot;</span>: <span class="hljs-number">0</span>
+    }
+  },
+  <span class="hljs-attr">&quot;HotelDetail&quot;</span>: {
+    <span class="hljs-attr">&quot;AverageDailyRoomRate&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;CheckinDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+    <span class="hljs-attr">&quot;CheckoutDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+    <span class="hljs-attr">&quot;ConfirmationNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;GNR&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;LineItems&quot;</span>: {
+      <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Date&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+      <span class="hljs-attr">&quot;Description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Description2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Quantity&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Rate&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;RateType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Reference&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;SequenceNumber&quot;</span>: <span class="hljs-number">0</span>
+    },
+    <span class="hljs-attr">&quot;NumberInParty&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;RatePlanType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;RoomNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;RoomType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;ImageBase64&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;MatchingFact&quot;</span>: {
+    <span class="hljs-attr">&quot;Type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;Merchant&quot;</span>: {
+    <span class="hljs-attr">&quot;Location&quot;</span>: {
+      <span class="hljs-attr">&quot;Address&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Address2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;City&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;CountryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;CountrySubdivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;EmailAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;FaxNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;InternetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;PostalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;TelephoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    },
+    <span class="hljs-attr">&quot;Name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;PaymentCard&quot;</span>: {
+    <span class="hljs-attr">&quot;AuthorizationCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;MaskedNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;RideDetail&quot;</span>: {
+    <span class="hljs-attr">&quot;DriverName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;DropoffLatitude&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;DropoffLongitude&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;EndDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+    <span class="hljs-attr">&quot;LineItems&quot;</span>: {
+      <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Date&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+      <span class="hljs-attr">&quot;Description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Description2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Quantity&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;Rate&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;RateType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;Reference&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;SequenceNumber&quot;</span>: <span class="hljs-number">0</span>
+    },
+    <span class="hljs-attr">&quot;StartDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+    <span class="hljs-attr">&quot;VehicleNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;TransactionDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+  <span class="hljs-attr">&quot;Type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-11">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amount</td>
+<td>number(double)</td>
+<td>false</td>
+<td>none</td>
+<td>The net amount of the transaction. A positive number means a payment is due. A negative number means a refund is due. Zero means no payment or refund is due. Range: -922,337,203,685,477 to 922,337,203,685,477</td>
+</tr>
+<tr>
+<td>CurrencyCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The <a target="_blank" href="http://en.wikipedia.org/wiki/ISO_4217">3-letter ISO 4217 currency code</a> for the currency paid to the provider.</td>
+</tr>
+<tr>
+<td>CustomFields</td>
+<td><a href="#schemacustomfield">CustomField</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>FormofPaymentCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The code for the form of payment. Possible values: CASH (Cash), CCARD (Credit Card), CPAID (Company Paid)</td>
+</tr>
+<tr>
+<td>GeneralDetail</td>
+<td><a href="#schemageneraldetail">GeneralDetail</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>HotelDetail</td>
+<td><a href="#schemahoteldetail">HotelDetail</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>ImageBase64</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The binary receipt image in Base64 encoding. This API supports PNG, JPEG, JPG, and PDF file formats.</td>
+</tr>
+<tr>
+<td>MatchingFact</td>
+<td><a href="#schemamatchingfact">MatchingFact</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Merchant</td>
+<td><a href="#schemamerchant">Merchant</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>PaymentCard</td>
+<td><a href="#schemapaymentcard">PaymentCard</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>RideDetail</td>
+<td><a href="#schemaridedetail">RideDetail</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>TransactionDateTime</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+<td>The date and time when the transaction happened. Format: YYYY-MM-DDThh:mm</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The type of receipt. Possible values: General, Ride, Hotel</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_ridedetail">RideDetail</h2>
+<p><a id="schemaridedetail"></a>
+<a id="schema_RideDetail"></a>
+<a id="tocSridedetail"></a>
+<a id="tocsridedetail"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;DriverName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;DropoffLatitude&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;DropoffLongitude&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;EndDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+  <span class="hljs-attr">&quot;LineItems&quot;</span>: {
+    <span class="hljs-attr">&quot;Amount&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;Date&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+    <span class="hljs-attr">&quot;Description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Description2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Quantity&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;Rate&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;RateType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;Reference&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;SequenceNumber&quot;</span>: <span class="hljs-number">0</span>
+  },
+  <span class="hljs-attr">&quot;StartDateTime&quot;</span>: <span class="hljs-string">&quot;2019-08-24T14:15:22Z&quot;</span>,
+  <span class="hljs-attr">&quot;VehicleNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-12">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DriverName</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The name of the driver. Maximum length: 255 characters</td>
+</tr>
+<tr>
+<td>DropoffLatitude</td>
+<td>number(double)</td>
+<td>false</td>
+<td>none</td>
+<td>The latitude of the ride end location. Range: -90 to 90</td>
+</tr>
+<tr>
+<td>DropoffLongitude</td>
+<td>number(double)</td>
+<td>false</td>
+<td>none</td>
+<td>The longitude of the ride end location. Range: -180 to 180</td>
+</tr>
+<tr>
+<td>EndDateTime</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+<td>The ending date and time for the ride. Format: YYYY-MM-DDThh:mm</td>
+</tr>
+<tr>
+<td>LineItems</td>
+<td><a href="#schemalineitem">LineItem</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>StartDateTime</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+<td>The starting date and time for the ride. Format: YYYY-MM-DDThh:mm</td>
+</tr>
+<tr>
+<td>VehicleNumber</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier for the vehicle. Maximum length: 50 characters</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_nullable_1">Nullable_1</h2>
+<p><a id="schemanullable_1"></a>
+<a id="schema_Nullable_1"></a>
+<a id="tocSnullable_1"></a>
+<a id="tocsnullable_1"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;HasValue&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;Value&quot;</span>: {}
+}
+
+</code></pre>
+<h3 id="properties-13">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HasValue</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Value</td>
+<td><a href="#schemadecimal">Decimal</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+      </div>
+      <div class="dark-box">
+        
+          <div class="lang-selector">
+            
+              
+                <a href="#" data-language-name="shell">Shell</a>
+              
+            
+              
+                <a href="#" data-language-name="http">HTTP</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript">JavaScript</a>
+              
+            
+              
+                <a href="#" data-language-name="ruby">Ruby</a>
+              
+            
+              
+                <a href="#" data-language-name="python">Python</a>
+              
+            
+              
+                <a href="#" data-language-name="php">PHP</a>
+              
+            
+              
+                <a href="#" data-language-name="java">Java</a>
+              
+            
+              
+                <a href="#" data-language-name="go">Go</a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

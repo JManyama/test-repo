@@ -1,0 +1,32 @@
+- title: Integration Guides
+  url: /api-guides/
+- title: ERP Integration
+  url: /api-guides/ERP-integration/erp-integration.html
+- title: Attendees
+  url: ''
+  children:
+      - title: Expense - Associating External Attendees to Expense Entries
+        url: /api-guides/attendees/external-attendees-to-expense-entries.html
+- title: eReceipts Integration
+  url: /api-guides/e-receipts.html
+- title: Invoice
+  url: ''
+  children:
+      - title: Payment Provider Integration - paying customers' invoices
+        url: /api-guides/invoice/payment-provider-integration.html
+- title: Testing App Center Partner Applications
+  url: /api-guides/preproduction-testing.html
+- title: TMC
+  url: ''
+  children:
+     - title: Guide to the Request v4.0 API, TMC Edition
+       url: /api-guides/tmc/request-v4-guide.html
+- title: Travel
+  url: ''
+  children:
+      - title: Itinerary - GET Itinerary & Trip Details
+        url: /api-guides/travel/get-itinerary.html
+      - title: Itinerary - Add a New Itinerary Manually
+        url: /api-guides/travel/new-itinerary-manual.html
+- title: VAT Reclaim Integration
+  url: /api-guides/vat-reclaim/vat-reclaim-guide.html

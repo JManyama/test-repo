@@ -1,0 +1,3181 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Financial Integration API v4</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+    <script src="pub/js/shins.js"></script>
+      
+<script type="text/javascript">
+$(function() {
+  loadToc($('#toc'), '.toc-link', '.toc-list-h2, .toc-list-h3, .toc-list-h4, .toc-list-h5, .toc-list-h6', 10);
+  setupLanguages($('body').data('languages'));
+  $('.content').imagesLoaded( function() {
+    recacheHeights();
+    refreshToc();
+  });
+});
+
+window.onpopstate = function() {
+  activateLanguage(getLanguageFromQueryString());
+};
+</script>
+
+    
+    <meta name="theme-color" content="#F3F7F9" />
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+  </head>
+
+  <body data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;php&quot;,&quot;java&quot;,&quot;go&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png" class="undefined" alt="Navigation">
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="http://localhost:4000">
+        <img src="source/images/logo.png" class="logo" alt="Logo">
+     </a>
+        <div class="lang-selector">
+          
+            
+              <a href="#" data-language-name="shell">Shell</a>
+            
+          
+            
+              <a href="#" data-language-name="http">HTTP</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript">JavaScript</a>
+            
+          
+            
+              <a href="#" data-language-name="ruby">Ruby</a>
+            
+          
+            
+              <a href="#" data-language-name="python">Python</a>
+            
+          
+            
+              <a href="#" data-language-name="php">PHP</a>
+            
+          
+            
+              <a href="#" data-language-name="java">Java</a>
+            
+          
+            
+              <a href="#" data-language-name="go">Go</a>
+            
+          
+        </div>
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc" class="toc-list-h1">
+	  	<ul class="toc-list-h1">
+        
+          <li>
+            <a href="#financial-integration-api" class="toc-h1 toc-link" data-title="Financial Integration API v4">Financial Integration API v4</a>
+            
+          </li>
+        
+          <!--<li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            
+          </li>-->
+        
+          <li>
+            <a href="#financial-integration-api-financial-transactions" class="toc-h1 toc-link" data-title="Financial Transactions">Financial Transactions</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#gettransactiondocsusingget" class="toc-h2 toc-link" data-title="">getTransactionDocsUsingGET</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#acknowledgeusingpost" class="toc-h2 toc-link" data-title="">acknowledgeUsingPOST</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#posterppaymentconfirmationsusingpost" class="toc-h2 toc-link" data-title="">postErpPaymentConfirmationsUsingPOST</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#posterppostingconfirmationsusingpost" class="toc-h2 toc-link" data-title="">postErpPostingConfirmationsUsingPOST</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#tocs_pagemetadata" class="toc-h2 toc-link" data-title="">PageMetadata</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_acknowledgerequest" class="toc-h2 toc-link" data-title="">AcknowledgeRequest</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_collection-resource-fidocument" class="toc-h2 toc-link" data-title="">Collection.Resource.FIDocument</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_resource-fidocument" class="toc-h2 toc-link" data-title="">Resource.FIDocument</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_acknowledgeresponse" class="toc-h2 toc-link" data-title="">AcknowledgeResponse</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_acknowledgeresponseitem" class="toc-h2 toc-link" data-title="">AcknowledgeResponseItem</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_pagedresources-resource-fidocument" class="toc-h2 toc-link" data-title="">PagedResources.Resource.FIDocument</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_confirmationrequest" class="toc-h2 toc-link" data-title="">confirmationrequest</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_postingrequest" class="toc-h2 toc-link" data-title="">postingrequest</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_postingdocs" class="toc-h2 toc-link" data-title="">postingdocs</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_systemmsg" class="toc-h2 toc-link" data-title="">systemmsg</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_paymentrequest" class="toc-h2 toc-link" data-title="">paymentrequest</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_paymentconfirmationrequest" class="toc-h2 toc-link" data-title="">paymentconfirmationrequest</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_paymentdocs" class="toc-h2 toc-link" data-title="">paymentdocs</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_receiver" class="toc-h2 toc-link" data-title="">receiver</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_clearing-reference" class="toc-h2 toc-link" data-title="">clearing-reference</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_paymentconfirmationresponseitem" class="toc-h2 toc-link" data-title="">PaymentConfirmationResponseItem</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_postingconfirmationresponseitem" class="toc-h2 toc-link" data-title="">PostingConfirmationResponseItem</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_link" class="toc-h2 toc-link" data-title="">Link</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+		</ul>
+      </div>
+      
+        <ul class="toc-footer">
+          
+            <li><a href="/api-reference/financial-integration/v4.financial-documents-schema.html">Financial Documents Schema Documentation</a></li>
+          
+            <li><a href="/shins/api-explorer.html">API EXPLORER</a></li>
+            <li><a href="/">BACK TO DEVELOPER CENTER</a></li>
+      </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="financial-integration-api">Financial Integration API v4</h1>
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+<p>Financial Integration APIs help SAP Concur clients move extract data from SAP Concur into their systems of record.</p>
+<p>Base URLs:</p>
+<ul>
+<li><a href="//us.api.concursolutions.com/">//us.api.concursolutions.com/</a></li>
+</ul>
+<!--<h1 id="authentication">Authentication</h1>
+<ul>
+<li>
+<p>oAuth2 authentication. To use this API, you need to get OAuth client credentials (client ID, secret, and geolocation) from SAP Concur, and be authorized to use the relevant scope. Refer to the <a href="https://developer.concur.com/api-reference/authentication/getting-started.html">full authentication information</a> for more information.</p>
+<ul>
+<li>
+<p>Flow: clientCredentials</p>
+</li>
+<li>
+<p>Token URL = <a href="https://us.api.concursolutions.com/oauth2/v0">https://us.api.concursolutions.com/oauth2/v0</a></p>
+</li>
+</ul>
+</li>
+</ul>-->
+
+<h1 id="financial-integration-api-financial-transactions">Financial Transactions</h1>
+<p>Interacting with financial documents generated from SAP Concur.</p>
+<h2 id="gettransactiondocsusingget">getTransactionDocsUsingGET</h2>
+<p><a id="opIdgetTransactionDocsUsingGET"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET /us.api.concursolutions.com/financialintegration/<span class="hljs-keyword">fi</span>/v4/companies/transactiontypes/{docType}/transactions \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;documentFormatAs: text&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions</span> HTTP/1.1
+
+<span class="http"><span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">documentFormatAs</span>: text
+<span class="hljs-attribute">Authorization</span>: string
+
+</span></code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;documentFormatAs&#x27;</span>:<span class="hljs-string">&#x27;text&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;documentFormatAs&#x27;</span> =&gt; <span class="hljs-string">&#x27;text&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;documentFormatAs&#x27;</span>: <span class="hljs-string">&#x27;text&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;documentFormatAs&#x27;</span> =&gt; <span class="hljs-string">&#x27;text&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;documentFormatAs&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;text&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions</code></p>
+<p><em>Retrieves a list of financial transactions.</em></p>
+<p>If docId is not present, the results are paged, page size is 25 by default if limit is not specified. Only one type of transactions can be retrieved at a time - specified by the docType. <br />If paging is occurring, each response contains a URI to retrieve the next page of transactions (if more exist). <br />If systemId is specified, the returned list of queued documents is filtered by systemId, paging applies. <br />If docId is specified, a single document which matches docId is returned. Paging doesn't apply. <br />If docId and systemId are specified, a single document whose docId AND systemId match the values is returned. Paging doesn't apply. <br />If docId is specified and ignoreDocumentStatus is no, a document which has not been retrieved by an ERP system is returned only, i.e document status is READY. If ignoreDocumentStatus is yes, a document is returned regardless of status.<br /><br /><a href="/api-reference/financial-integration/v4.financial-documents-schema.html">Financial Documents Schema Documentation</a></p>
+<h3 id="gettransactiondocsusingget-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docType</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>docType</td>
+</tr>
+<tr>
+<td>documentFormatAs</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>documentFormatAs</td>
+</tr>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>page</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>query</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>limit</td>
+</tr>
+<tr>
+<td>docId</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>expense report id/payroll report id/invoice report id</td>
+</tr>
+<tr>
+<td>ignoreDocumentStatus</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>ignoreDocumentStatus</td>
+</tr>
+<tr>
+<td>systemId</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>systemId</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>true</td>
+<td>For details on how to get an authorization token, please refer <a href="https://developer.concur.com/api-reference/authentication/getting-started.html"> here </a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docType</td>
+<td>expense</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>invoice</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>cashadvance</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>payroll</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>obligation</td>
+</tr>
+<tr>
+<td>documentFormatAs</td>
+<td>text</td>
+</tr>
+<tr>
+<td>documentFormatAs</td>
+<td>json</td>
+</tr>
+<tr>
+<td>ignoreDocumentStatus</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>ignoreDocumentStatus</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;content&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;companyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;companyUuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;docStatus&quot;</span>: <span class="hljs-string">&quot;ACKNOWLEDGED&quot;</span>,
+      <span class="hljs-attr">&quot;docType&quot;</span>: <span class="hljs-string">&quot;expense&quot;</span>,
+      <span class="hljs-attr">&quot;document&quot;</span>: {},
+      <span class="hljs-attr">&quot;entityId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;erpSystemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;links&quot;</span>: [
+        <span class="hljs-literal">null</span>
+      ]
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;deprecation&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;hreflang&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;page&quot;</span>: {
+    <span class="hljs-attr">&quot;number&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;size&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;totalElements&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;totalPages&quot;</span>: <span class="hljs-number">0</span>
+  }
+}
+</code></pre>
+<h3 id="gettransactiondocsusingget-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+<td><a href="#schemapagedresources.resource.fidocument">PagedResources.Resource.FIDocument</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid request</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal error</td>
+<td>Inline</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gettransactiondocsusingget-responseschema">Response Schema</h3>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+OAuth2
+</aside>
+<h2 id="acknowledgeusingpost">acknowledgeUsingPOST</h2>
+<p><a id="opIdacknowledgeUsingPOST"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X POST /us.api.concursolutions.com/financialintegration/<span class="hljs-keyword">fi</span>/v4/companies/transactiontypes/{docType}/transactions/acknowledgements \
+  -H <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">POST</span> <span class="hljs-string">/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/acknowledgements</span> HTTP/1.1
+
+<span class="http"><span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Authorization</span>: string
+
+</span></code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">const</span> inputBody = <span class="hljs-string">&#x27;{
+  &quot;ids&quot;: [
+    &quot;string&quot;
+  ],
+  &quot;systemId&quot;: &quot;string&quot;
+}&#x27;</span>;
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/acknowledgements&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,
+  <span class="hljs-attr">body</span>: inputBody,
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.post <span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/acknowledgements&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.post(<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/acknowledgements&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;POST&#x27;</span>,<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/acknowledgements&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/acknowledgements&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;POST&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">&quot;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/acknowledgements&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>POST /financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/acknowledgements</code></p>
+<p><em>Acknowledges successful retrieval of financial transaction(s).</em></p>
+<p>This API allows a financial system to acknowledge/confirm that it has successfully retrieved one or more financial transactions and will begin to process those transactions. These transactions are then taken out of the ready queue.</p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;ids&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<h3 id="acknowledgeusingpost-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docType</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Document type</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>true</td>
+<td>Bearer JWTFromOAuthServiceHere</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemaacknowledgerequest">AcknowledgeRequest</a></td>
+<td>true</td>
+<td>Acknowledge Request</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-2">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docType</td>
+<td>expense</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>invoice</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>cashadvance</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>payroll</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>obligation</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>[
+  {
+    <span class="hljs-attr">&quot;acknowledgeResult&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+    <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;errorMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  }
+]
+</code></pre>
+<h3 id="acknowledgeusingpost-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>OK</td>
+<td><a href="#schemaacknowledgeresponse">AcknowledgeResponse</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid request</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal error</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+OAuth2
+</aside>
+<h2 id="posterppaymentconfirmationsusingpost">postErpPaymentConfirmationsUsingPOST</h2>
+<p><a id="opIdpostErpPaymentConfirmationsUsingPOST"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X POST /us.api.concursolutions.com/financialintegration/<span class="hljs-keyword">fi</span>/v4/companies/transactiontypes/{docType}/transactions/paymentconfirmations \
+  -H <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">POST</span> <span class="hljs-string">/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/paymentconfirmations</span> HTTP/1.1
+
+<span class="http"><span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Authorization</span>: string
+
+</span></code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">const</span> inputBody = <span class="hljs-string">&#x27;{
+  &quot;systemId&quot;: &quot;string&quot;,
+  &quot;processingConfirmation&quot;: [
+    {
+      &quot;docId&quot;: &quot;string&quot;,
+      &quot;clearingDetails&quot;: [
+        {
+          &quot;clearingDate&quot;: &quot;string&quot;,
+          &quot;clearingAmount&quot;: 0,
+          &quot;clearingCurrency&quot;: &quot;string&quot;,
+          &quot;receiver&quot;: [
+            {
+              &quot;receiverId&quot;: &quot;string&quot;,
+              &quot;receiverName&quot;: &quot;string&quot;,
+              &quot;receiverType&quot;: &quot;string&quot;
+            }
+          ],
+          &quot;clearingReference&quot;: [
+            {
+              &quot;companyCode&quot;: &quot;string&quot;,
+              &quot;financialDocumentId&quot;: &quot;string&quot;,
+              &quot;fiscalYear&quot;: &quot;string&quot;,
+              &quot;paymentRef&quot;: &quot;string&quot;,
+              &quot;paymentMethod&quot;: &quot;string&quot;
+            }
+          ]
+        }
+      ],
+      &quot;processingStatusCode&quot;: &quot;string&quot;
+    }
+  ]
+}&#x27;</span>;
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/paymentconfirmations&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,
+  <span class="hljs-attr">body</span>: inputBody,
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.post <span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/paymentconfirmations&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.post(<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/paymentconfirmations&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;POST&#x27;</span>,<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/paymentconfirmations&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/paymentconfirmations&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;POST&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">&quot;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/paymentconfirmations&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>POST /financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/paymentconfirmations</code></p>
+<p><em>Confirms results of financial transactions payment posting.</em></p>
+<p>This API allows financial posting results to be sent to SAP Concur.</p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;processingConfirmation&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;clearingDetails&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;clearingDate&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;clearingAmount&quot;</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">&quot;clearingCurrency&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;receiver&quot;</span>: [
+            {
+              <span class="hljs-attr">&quot;receiverId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;receiverName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;receiverType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            }
+          ],
+          <span class="hljs-attr">&quot;clearingReference&quot;</span>: [
+            {
+              <span class="hljs-attr">&quot;companyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;financialDocumentId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;fiscalYear&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;paymentRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;paymentMethod&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            }
+          ]
+        }
+      ],
+      <span class="hljs-attr">&quot;processingStatusCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ]
+}
+</code></pre>
+<h3 id="posterppaymentconfirmationsusingpost-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docType</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>docType</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>true</td>
+<td>Bearer JWTFromOAuthServiceHere</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemapaymentrequest">paymentrequest</a></td>
+<td>true</td>
+<td>Payment confirmation body</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-3">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docType</td>
+<td>expense</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>invoice</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>cashadvance</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>payroll</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>obligation</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>[
+  {
+    <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;detailMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;errorMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;paymentConfirmationResult&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+    <span class="hljs-attr">&quot;paymentRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  }
+]
+</code></pre>
+<h3 id="posterppaymentconfirmationsusingpost-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Ok</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid request</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal error</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h3 id="posterppaymentconfirmationsusingpost-responseschema">Response Schema</h3>
+<p>Status Code <strong>200</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>anonymous</em></td>
+<td>[<a href="#schemapaymentconfirmationresponseitem">PaymentConfirmationResponseItem</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» code</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>The fi return code</td>
+</tr>
+<tr>
+<td>» detailMessage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» docId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The document id</td>
+</tr>
+<tr>
+<td>» errorMessage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Any error message if occurred.</td>
+</tr>
+<tr>
+<td>» paymentConfirmationResult</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Payment confirmation result</td>
+</tr>
+<tr>
+<td>» paymentRef</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Any message corresponding to payment reference being processed.</td>
+</tr>
+<tr>
+<td>» systemId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The ERP Id that acknowledged the document.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-4">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>SYSTEM_ERROR_OCCURRED</td>
+</tr>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>NOT_POSTING_CONFIRMED</td>
+</tr>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>DOCUMENT_NOT_FOUND</td>
+</tr>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>FAILURE</td>
+</tr>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>NOOP</td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+OAuth2
+</aside>
+<h2 id="posterppostingconfirmationsusingpost">postErpPostingConfirmationsUsingPOST</h2>
+<p><a id="opIdpostErpPostingConfirmationsUsingPOST"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X POST /us.api.concursolutions.com/financialintegration/<span class="hljs-keyword">fi</span>/v4/companies/transactiontypes/{docType}/transactions/postingconfirmations \
+  -H <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">POST</span> <span class="hljs-string">/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/postingconfirmations</span> HTTP/1.1
+
+<span class="http"><span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Authorization</span>: string
+
+</span></code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">const</span> inputBody = <span class="hljs-string">&#x27;{
+  &quot;systemId&quot;: &quot;string&quot;,
+  &quot;postingConfirmations&quot;: [
+    {
+      &quot;docId&quot;: &quot;string&quot;,
+      &quot;postingDocs&quot;: [
+        {
+          &quot;companyId&quot;: &quot;string&quot;,
+          &quot;documentNumber&quot;: &quot;string&quot;,
+          &quot;fiscalYear&quot;: &quot;string&quot;,
+          &quot;paymentRelevantLineItems&quot;: [
+            null
+          ],
+          &quot;postingDate&quot;: &quot;string&quot;
+        }
+      ],
+      &quot;overallPostingStatusCode&quot;: &quot;string&quot;,
+      &quot;systemMessages&quot;: [
+        {
+          &quot;concurTransactionLineItemId&quot;: &quot;string&quot;,
+          &quot;messageId&quot;: &quot;string&quot;,
+          &quot;messageLanguage&quot;: &quot;string&quot;,
+          &quot;messageLongText&quot;: [
+            null
+          ],
+          &quot;messageShortText&quot;: &quot;string&quot;
+        }
+      ]
+    }
+  ]
+}&#x27;</span>;
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/postingconfirmations&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,
+  <span class="hljs-attr">body</span>: inputBody,
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.post <span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/postingconfirmations&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.post(<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/postingconfirmations&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;POST&#x27;</span>,<span class="hljs-string">&#x27;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/postingconfirmations&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/postingconfirmations&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;POST&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">&quot;/us.api.concursolutions.com/financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/postingconfirmations&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>POST /financialintegration/fi/v4/companies/transactiontypes/{docType}/transactions/postingconfirmations</code></p>
+<p><em>Confirms results of financial transactions posting.</em></p>
+<p>This API allows financial posting results to be sent to SAP Concur.</p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;postingConfirmations&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;postingDocs&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;companyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;documentNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;fiscalYear&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;paymentRelevantLineItems&quot;</span>: [
+            <span class="hljs-literal">null</span>
+          ],
+          <span class="hljs-attr">&quot;postingDate&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        }
+      ],
+      <span class="hljs-attr">&quot;overallPostingStatusCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;systemMessages&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;concurTransactionLineItemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;messageLanguage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;messageLongText&quot;</span>: [
+            <span class="hljs-literal">null</span>
+          ],
+          <span class="hljs-attr">&quot;messageShortText&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<h3 id="posterppostingconfirmationsusingpost-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docType</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>docType</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>true</td>
+<td>Bearer JWTFromOAuthServiceHere</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemaconfirmationrequest">confirmationrequest</a></td>
+<td>true</td>
+<td>Posting confirmation body</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-5">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docType</td>
+<td>expense</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>invoice</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>cashadvance</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>payroll</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>obligation</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>[
+  {
+    <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;detailMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;errorMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;postingConfirmationResult&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+    <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  }
+]
+</code></pre>
+<h3 id="posterppostingconfirmationsusingpost-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Ok</td>
+<td>Inline</td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Invalid request</td>
+<td>None</td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal error</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h3 id="posterppostingconfirmationsusingpost-responseschema">Response Schema</h3>
+<p>Status Code <strong>200</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>anonymous</em></td>
+<td>[<a href="#schemapostingconfirmationresponseitem">PostingConfirmationResponseItem</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» code</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>The fi return code</td>
+</tr>
+<tr>
+<td>» detailMessage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» docId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The document id</td>
+</tr>
+<tr>
+<td>» errorMessage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Any error message if occurred.</td>
+</tr>
+<tr>
+<td>» postingConfirmationResult</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Posting confirmation result</td>
+</tr>
+<tr>
+<td>» systemId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The ERP Id that acknowledged the document.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-6">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>postingConfirmationResult</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td>postingConfirmationResult</td>
+<td>SYSTEM_ERROR_OCCURRED</td>
+</tr>
+<tr>
+<td>postingConfirmationResult</td>
+<td>NOT_YET_ACKNOWLEDGED</td>
+</tr>
+<tr>
+<td>postingConfirmationResult</td>
+<td>DOCUMENT_NOT_FOUND</td>
+</tr>
+<tr>
+<td>postingConfirmationResult</td>
+<td>FAILURE</td>
+</tr>
+<tr>
+<td>postingConfirmationResult</td>
+<td>WAS_RECALLED</td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+OAuth2
+</aside>
+<h1 id="schemas">Schemas</h1>
+<h2 id="tocs_pagemetadata">PageMetadata</h2>
+<p><a id="schemapagemetadata"></a>
+<a id="schema_PageMetadata"></a>
+<a id="tocSpagemetadata"></a>
+<a id="tocspagemetadata"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;number&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;size&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;totalElements&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;totalPages&quot;</span>: <span class="hljs-number">0</span>
+}
+
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>Page location for which the result is returned, for example: first page starts with 0, second page starts with 1</td>
+</tr>
+<tr>
+<td>size</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>Total number of pages returned</td>
+</tr>
+<tr>
+<td>totalElements</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>Total count of records returned</td>
+</tr>
+<tr>
+<td>totalPages</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>Total number of pages returned</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_acknowledgerequest">AcknowledgeRequest</h2>
+<p><a id="schemaacknowledgerequest"></a>
+<a id="schema_AcknowledgeRequest"></a>
+<a id="tocSacknowledgerequest"></a>
+<a id="tocsacknowledgerequest"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;ids&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-2">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ids</td>
+<td>[string]</td>
+<td>true</td>
+<td>none</td>
+<td>The unique identifiers list for the financial documents</td>
+</tr>
+<tr>
+<td>systemId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The external System ID that acknowledged the documents.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_collection-resource-fidocument">Collection.Resource.FIDocument</h2>
+<p><a id="schemacollection.resource.fidocument"></a>
+<a id="schema_Collection.Resource.FIDocument"></a>
+<a id="tocScollection.resource.fidocument"></a>
+<a id="tocscollection.resource.fidocument"></a></p>
+<pre class="highlight tab tab-json"><code>[
+  {
+    <span class="hljs-attr">&quot;companyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;companyUuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;docStatus&quot;</span>: <span class="hljs-string">&quot;ACKNOWLEDGED&quot;</span>,
+    <span class="hljs-attr">&quot;docType&quot;</span>: <span class="hljs-string">&quot;expense&quot;</span>,
+    <span class="hljs-attr">&quot;document&quot;</span>: {},
+    <span class="hljs-attr">&quot;entityId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;erpSystemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;links&quot;</span>: [
+      <span class="hljs-literal">null</span>
+    ]
+  }
+]
+
+</code></pre>
+<p>The result collection</p>
+<h3 id="properties-3">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>anonymous</em></td>
+<td>[<a href="#schemaresource.fidocument">Resource.FIDocument</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>The result collection</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_resource-fidocument">Resource.FIDocument</h2>
+<p><a id="schemaresource.fidocument"></a>
+<a id="schema_Resource.FIDocument"></a>
+<a id="tocSresource.fidocument"></a>
+<a id="tocsresource.fidocument"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;companyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;companyUuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;docStatus&quot;</span>: <span class="hljs-string">&quot;ACKNOWLEDGED&quot;</span>,
+  <span class="hljs-attr">&quot;docType&quot;</span>: <span class="hljs-string">&quot;expense&quot;</span>,
+  <span class="hljs-attr">&quot;document&quot;</span>: {},
+  <span class="hljs-attr">&quot;entityId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;erpSystemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    <span class="hljs-literal">null</span>
+  ]
+}
+
+</code></pre>
+<h3 id="properties-4">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>companyId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Unique identifier for the company in SAP Concur</td>
+</tr>
+<tr>
+<td>companyUuid</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>UUID for the company in SAP Concur</td>
+</tr>
+<tr>
+<td>docStatus</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The financial document status. Supported values are: READY, ACKNOWLEDGED, POSTING_CONFIRMED_SUCCESS, POSTING_CONFIRMED_FAILURE</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Transaction type. Supported values are: expense, invoice, cashadvance, payroll, obligation</td>
+</tr>
+<tr>
+<td>document</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>The JSON financial document. Review the <a href="/api-reference/financial-integration/v4.financial-documents-schema.html">Financial Documents Schema Documentation</a></td>
+</tr>
+<tr>
+<td>entityId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Unique identifier for the entity in SAP Concur</td>
+</tr>
+<tr>
+<td>erpSystemId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier for the document</td>
+</tr>
+<tr>
+<td>links</td>
+<td>[any]</td>
+<td>false</td>
+<td>none</td>
+<td>Pagination links</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-7">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docStatus</td>
+<td>ACKNOWLEDGED</td>
+</tr>
+<tr>
+<td>docStatus</td>
+<td>PAID</td>
+</tr>
+<tr>
+<td>docStatus</td>
+<td>RECALLED</td>
+</tr>
+<tr>
+<td>docStatus</td>
+<td>READY</td>
+</tr>
+<tr>
+<td>docStatus</td>
+<td>POSTING_CONFIRMED_SUCCESS</td>
+</tr>
+<tr>
+<td>docStatus</td>
+<td>POSTING_CONFIRMED_FAILURE</td>
+</tr>
+<tr>
+<td>docStatus</td>
+<td>PAYMENT_CONFIRMED_SUCCESS</td>
+</tr>
+<tr>
+<td>docStatus</td>
+<td>PAYMENT_CONFIRMED_REVERSED</td>
+</tr>
+<tr>
+<td>docStatus</td>
+<td>PAYMENT_CONFIRMED_OBSOLETE</td>
+</tr>
+<tr>
+<td>docStatus</td>
+<td>PENDING_SYSTEM_REFRESH</td>
+</tr>
+<tr>
+<td>docStatus</td>
+<td>FLAG_DUPLICATE</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>expense</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>invoice</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>cashadvance</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>payroll</td>
+</tr>
+<tr>
+<td>docType</td>
+<td>obligation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_acknowledgeresponse">AcknowledgeResponse</h2>
+<p><a id="schemaacknowledgeresponse"></a>
+<a id="schema_AcknowledgeResponse"></a>
+<a id="tocSacknowledgeresponse"></a>
+<a id="tocsacknowledgeresponse"></a></p>
+<pre class="highlight tab tab-json"><code>[
+  {
+    <span class="hljs-attr">&quot;acknowledgeResult&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+    <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;errorMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  }
+]
+
+</code></pre>
+<p>The JSON response</p>
+<h3 id="properties-5">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>anonymous</em></td>
+<td>[<a href="#schemaacknowledgeresponseitem">AcknowledgeResponseItem</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>The JSON response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_acknowledgeresponseitem">AcknowledgeResponseItem</h2>
+<p><a id="schemaacknowledgeresponseitem"></a>
+<a id="schema_AcknowledgeResponseItem"></a>
+<a id="tocSacknowledgeresponseitem"></a>
+<a id="tocsacknowledgeresponseitem"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;acknowledgeResult&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;errorMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-6">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>acknowledgeResult</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Acknowledge processing result. Supported values are: SUCCESS or FAILURE</td>
+</tr>
+<tr>
+<td>code</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>The Financial Integration Service Code. This is a particular code based on the success and failure of individual records for Acknowledging documents.</td>
+</tr>
+<tr>
+<td>docId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The financial document unique identifier.</td>
+</tr>
+<tr>
+<td>errorMessage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The error message, if any</td>
+</tr>
+<tr>
+<td>systemId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The external system ID that acknowledged the documents</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-8">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>acknowledgeResult</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td>acknowledgeResult</td>
+<td>FAILURE</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_pagedresources-resource-fidocument">PagedResources.Resource.FIDocument</h2>
+<p><a id="schemapagedresources.resource.fidocument"></a>
+<a id="schema_PagedResources.Resource.FIDocument"></a>
+<a id="tocSpagedresources.resource.fidocument"></a>
+<a id="tocspagedresources.resource.fidocument"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;content&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;companyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;companyUuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;docStatus&quot;</span>: <span class="hljs-string">&quot;ACKNOWLEDGED&quot;</span>,
+      <span class="hljs-attr">&quot;docType&quot;</span>: <span class="hljs-string">&quot;expense&quot;</span>,
+      <span class="hljs-attr">&quot;document&quot;</span>: {},
+      <span class="hljs-attr">&quot;entityId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;erpSystemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;links&quot;</span>: [
+        <span class="hljs-literal">null</span>
+      ]
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;deprecation&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;hreflang&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;page&quot;</span>: {
+    <span class="hljs-attr">&quot;number&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;size&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;totalElements&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;totalPages&quot;</span>: <span class="hljs-number">0</span>
+  }
+}
+
+</code></pre>
+<h3 id="properties-7">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content</td>
+<td><a href="#schemacollection.resource.fidocument">Collection.Resource.FIDocument</a></td>
+<td>false</td>
+<td>none</td>
+<td>The result collection</td>
+</tr>
+<tr>
+<td>links</td>
+<td>[<a href="#schemalink">Link</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>Pagination links</td>
+</tr>
+<tr>
+<td>page</td>
+<td><a href="#schemapagemetadata">PageMetadata</a></td>
+<td>false</td>
+<td>none</td>
+<td>Pagination details</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_confirmationrequest">confirmationrequest</h2>
+<p><a id="schemaconfirmationrequest"></a>
+<a id="schema_confirmationrequest"></a>
+<a id="tocSconfirmationrequest"></a>
+<a id="tocsconfirmationrequest"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;postingConfirmations&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;postingDocs&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;companyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;documentNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;fiscalYear&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;paymentRelevantLineItems&quot;</span>: [
+            <span class="hljs-literal">null</span>
+          ],
+          <span class="hljs-attr">&quot;postingDate&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        }
+      ],
+      <span class="hljs-attr">&quot;overallPostingStatusCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;systemMessages&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;concurTransactionLineItemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;messageLanguage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;messageLongText&quot;</span>: [
+            <span class="hljs-literal">null</span>
+          ],
+          <span class="hljs-attr">&quot;messageShortText&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        }
+      ]
+    }
+  ]
+}
+
+</code></pre>
+<h3 id="properties-8">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>systemId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The external System ID that acknowledged the documents, it can be an empty String.</td>
+</tr>
+<tr>
+<td>postingConfirmations</td>
+<td>[<a href="#schemapostingrequest">postingrequest</a>]</td>
+<td>true</td>
+<td>none</td>
+<td>Posting confirmations JSON request.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_postingrequest">postingrequest</h2>
+<p><a id="schemapostingrequest"></a>
+<a id="schema_postingrequest"></a>
+<a id="tocSpostingrequest"></a>
+<a id="tocspostingrequest"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;postingDocs&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;companyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;documentNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;fiscalYear&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;paymentRelevantLineItems&quot;</span>: [
+        <span class="hljs-literal">null</span>
+      ],
+      <span class="hljs-attr">&quot;postingDate&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;overallPostingStatusCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;systemMessages&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;concurTransactionLineItemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;messageLanguage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;messageLongText&quot;</span>: [
+        <span class="hljs-literal">null</span>
+      ],
+      <span class="hljs-attr">&quot;messageShortText&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ]
+}
+
+</code></pre>
+<h3 id="properties-9">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The financial document Id to confirm.</td>
+</tr>
+<tr>
+<td>postingDocs</td>
+<td>[<a href="#schemapostingdocs">postingdocs</a>]</td>
+<td>true</td>
+<td>none</td>
+<td>Posting documents details, if any.</td>
+</tr>
+<tr>
+<td>overallPostingStatusCode</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Posting status. VALUES: error or success.</td>
+</tr>
+<tr>
+<td>systemMessages</td>
+<td>[<a href="#schemasystemmsg">systemmsg</a>]</td>
+<td>true</td>
+<td>none</td>
+<td>Messages to post into Concur, if any.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_postingdocs">postingdocs</h2>
+<p><a id="schemapostingdocs"></a>
+<a id="schema_postingdocs"></a>
+<a id="tocSpostingdocs"></a>
+<a id="tocspostingdocs"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;companyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;documentNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;fiscalYear&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;paymentRelevantLineItems&quot;</span>: [
+    <span class="hljs-literal">null</span>
+  ],
+  <span class="hljs-attr">&quot;postingDate&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-10">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>companyId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>External system organizational Unit ID.</td>
+</tr>
+<tr>
+<td>documentNumber</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>External system document identifier.</td>
+</tr>
+<tr>
+<td>fiscalYear</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>External system fiscal year.</td>
+</tr>
+<tr>
+<td>paymentRelevantLineItems</td>
+<td>[any]</td>
+<td>false</td>
+<td>none</td>
+<td>Payment Relevant line items. This array is usually empty.</td>
+</tr>
+<tr>
+<td>postingDate</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>External system posting date.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_systemmsg">systemmsg</h2>
+<p><a id="schemasystemmsg"></a>
+<a id="schema_systemmsg"></a>
+<a id="tocSsystemmsg"></a>
+<a id="tocssystemmsg"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;concurTransactionLineItemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;messageLanguage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;messageLongText&quot;</span>: [
+    <span class="hljs-literal">null</span>
+  ],
+  <span class="hljs-attr">&quot;messageShortText&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-11">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>concurTransactionLineItemId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>messageId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>External System message identifier</td>
+</tr>
+<tr>
+<td>messageLanguage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Message Language code, example EN, FR.</td>
+</tr>
+<tr>
+<td>messageLongText</td>
+<td>[any]</td>
+<td>false</td>
+<td>none</td>
+<td>Message text, will be posted on the audit trail in SAP Concur.</td>
+</tr>
+<tr>
+<td>messageShortText</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Message text, will be posted on the audit trail in SAP Concur.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_paymentrequest">paymentrequest</h2>
+<p><a id="schemapaymentrequest"></a>
+<a id="schema_paymentrequest"></a>
+<a id="tocSpaymentrequest"></a>
+<a id="tocspaymentrequest"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;processingConfirmation&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;clearingDetails&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;clearingDate&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;clearingAmount&quot;</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">&quot;clearingCurrency&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;receiver&quot;</span>: [
+            {
+              <span class="hljs-attr">&quot;receiverId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;receiverName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;receiverType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            }
+          ],
+          <span class="hljs-attr">&quot;clearingReference&quot;</span>: [
+            {
+              <span class="hljs-attr">&quot;companyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;financialDocumentId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;fiscalYear&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;paymentRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;paymentMethod&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            }
+          ]
+        }
+      ],
+      <span class="hljs-attr">&quot;processingStatusCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ]
+}
+
+</code></pre>
+<h3 id="properties-12">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>systemId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The external System ID that acknowledged the documents, it can be an empty String.</td>
+</tr>
+<tr>
+<td>processingConfirmation</td>
+<td>[<a href="#schemapaymentconfirmationrequest">paymentconfirmationrequest</a>]</td>
+<td>true</td>
+<td>none</td>
+<td>Payment confirmations JSON request.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_paymentconfirmationrequest">paymentconfirmationrequest</h2>
+<p><a id="schemapaymentconfirmationrequest"></a>
+<a id="schema_paymentconfirmationrequest"></a>
+<a id="tocSpaymentconfirmationrequest"></a>
+<a id="tocspaymentconfirmationrequest"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;clearingDetails&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;clearingDate&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;clearingAmount&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">&quot;clearingCurrency&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;receiver&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;receiverId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;receiverName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;receiverType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        }
+      ],
+      <span class="hljs-attr">&quot;clearingReference&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;companyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;financialDocumentId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;fiscalYear&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;paymentRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;paymentMethod&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        }
+      ]
+    }
+  ],
+  <span class="hljs-attr">&quot;processingStatusCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-13">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The financial document Id to confirm.</td>
+</tr>
+<tr>
+<td>clearingDetails</td>
+<td>[<a href="#schemapaymentdocs">paymentdocs</a>]</td>
+<td>true</td>
+<td>none</td>
+<td>Payment documents details, if any.</td>
+</tr>
+<tr>
+<td>processingStatusCode</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Payment status. VALUES: CP, PP, RE, OB (Completely Paid, Partially paid, Reversal, Obsolete)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_paymentdocs">paymentdocs</h2>
+<p><a id="schemapaymentdocs"></a>
+<a id="schema_paymentdocs"></a>
+<a id="tocSpaymentdocs"></a>
+<a id="tocspaymentdocs"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;clearingDate&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;clearingAmount&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;clearingCurrency&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;receiver&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;receiverId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;receiverName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;receiverType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;clearingReference&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;companyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;financialDocumentId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;fiscalYear&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;paymentRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;paymentMethod&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ]
+}
+
+</code></pre>
+<h3 id="properties-14">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clearingDate</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Date the payment got cleared.</td>
+</tr>
+<tr>
+<td>clearingAmount</td>
+<td>integer</td>
+<td>false</td>
+<td>none</td>
+<td>Amount cleared.</td>
+</tr>
+<tr>
+<td>clearingCurrency</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Currency value.</td>
+</tr>
+<tr>
+<td>receiver</td>
+<td>[<a href="#schemareceiver">receiver</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>Receiver details.</td>
+</tr>
+<tr>
+<td>clearingReference</td>
+<td>[<a href="#schemaclearing-reference">clearing-reference</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>Clearing reference details.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_receiver">receiver</h2>
+<p><a id="schemareceiver"></a>
+<a id="schema_receiver"></a>
+<a id="tocSreceiver"></a>
+<a id="tocsreceiver"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;receiverId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;receiverName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;receiverType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-15">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>receiverId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Receiver id.</td>
+</tr>
+<tr>
+<td>receiverName</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Name of receiver.</td>
+</tr>
+<tr>
+<td>receiverType</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Type of receiver.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_clearing-reference">clearing-reference</h2>
+<p><a id="schemaclearing-reference"></a>
+<a id="schema_clearing-reference"></a>
+<a id="tocSclearing-reference"></a>
+<a id="tocsclearing-reference"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;companyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;financialDocumentId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;fiscalYear&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;paymentRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;paymentMethod&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-16">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>companyCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Company code.</td>
+</tr>
+<tr>
+<td>financialDocumentId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Document id in ERP.</td>
+</tr>
+<tr>
+<td>fiscalYear</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Fiscal year.</td>
+</tr>
+<tr>
+<td>paymentRef</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Payment reference id.</td>
+</tr>
+<tr>
+<td>paymentMethod</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Payment method.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_paymentconfirmationresponseitem">PaymentConfirmationResponseItem</h2>
+<p><a id="schemapaymentconfirmationresponseitem"></a>
+<a id="schema_PaymentConfirmationResponseItem"></a>
+<a id="tocSpaymentconfirmationresponseitem"></a>
+<a id="tocspaymentconfirmationresponseitem"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;detailMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;errorMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;paymentConfirmationResult&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+  <span class="hljs-attr">&quot;paymentRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-17">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>The fi return code</td>
+</tr>
+<tr>
+<td>detailMessage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>docId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The document id</td>
+</tr>
+<tr>
+<td>errorMessage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Any error message if occurred.</td>
+</tr>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Payment confirmation result</td>
+</tr>
+<tr>
+<td>paymentRef</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Any message corresponding to payment reference being processed.</td>
+</tr>
+<tr>
+<td>systemId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The ERP Id that acknowledged the document.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-9">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>SYSTEM_ERROR_OCCURRED</td>
+</tr>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>NOT_POSTING_CONFIRMED</td>
+</tr>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>DOCUMENT_NOT_FOUND</td>
+</tr>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>FAILURE</td>
+</tr>
+<tr>
+<td>paymentConfirmationResult</td>
+<td>NOOP</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_postingconfirmationresponseitem">PostingConfirmationResponseItem</h2>
+<p><a id="schemapostingconfirmationresponseitem"></a>
+<a id="schema_PostingConfirmationResponseItem"></a>
+<a id="tocSpostingconfirmationresponseitem"></a>
+<a id="tocspostingconfirmationresponseitem"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;detailMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;docId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;errorMessage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;postingConfirmationResult&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+  <span class="hljs-attr">&quot;systemId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-18">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>The fi return code</td>
+</tr>
+<tr>
+<td>detailMessage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>docId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The document id</td>
+</tr>
+<tr>
+<td>errorMessage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Any error message if occurred.</td>
+</tr>
+<tr>
+<td>postingConfirmationResult</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Posting confirmation result</td>
+</tr>
+<tr>
+<td>systemId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The ERP Id that acknowledged the document.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-10">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>postingConfirmationResult</td>
+<td>SUCCESS</td>
+</tr>
+<tr>
+<td>postingConfirmationResult</td>
+<td>SYSTEM_ERROR_OCCURRED</td>
+</tr>
+<tr>
+<td>postingConfirmationResult</td>
+<td>NOT_YET_ACKNOWLEDGED</td>
+</tr>
+<tr>
+<td>postingConfirmationResult</td>
+<td>DOCUMENT_NOT_FOUND</td>
+</tr>
+<tr>
+<td>postingConfirmationResult</td>
+<td>FAILURE</td>
+</tr>
+<tr>
+<td>postingConfirmationResult</td>
+<td>WAS_RECALLED</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_link">Link</h2>
+<p><a id="schemalink"></a>
+<a id="schema_Link"></a>
+<a id="tocSlink"></a>
+<a id="tocslink"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;deprecation&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;hreflang&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-19">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deprecation</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Deprecated indication, if any</td>
+</tr>
+<tr>
+<td>href</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Complete URL for the paginated link</td>
+</tr>
+<tr>
+<td>hreflang</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Link language, if any</td>
+</tr>
+<tr>
+<td>media</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Media type, if any</td>
+</tr>
+<tr>
+<td>rel</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Relation of link, for example: first, self, next, last</td>
+</tr>
+<tr>
+<td>templated</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Link title, if any</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Link type, if any</td>
+</tr>
+</tbody>
+</table>
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+      </div>
+      <div class="dark-box">
+        
+          <div class="lang-selector">
+            
+              
+                <a href="#" data-language-name="shell">Shell</a>
+              
+            
+              
+                <a href="#" data-language-name="http">HTTP</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript">JavaScript</a>
+              
+            
+              
+                <a href="#" data-language-name="ruby">Ruby</a>
+              
+            
+              
+                <a href="#" data-language-name="python">Python</a>
+              
+            
+              
+                <a href="#" data-language-name="php">PHP</a>
+              
+            
+              
+                <a href="#" data-language-name="java">Java</a>
+              
+            
+              
+                <a href="#" data-language-name="go">Go</a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

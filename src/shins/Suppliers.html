@@ -1,0 +1,1170 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Suppliers v3.0</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+    <script src="pub/js/shins.js"></script>
+      
+<script type="text/javascript">
+$(function() {
+  loadToc($('#toc'), '.toc-link', '.toc-list-h2, .toc-list-h3, .toc-list-h4, .toc-list-h5, .toc-list-h6', 10);
+  setupLanguages($('body').data('languages'));
+  $('.content').imagesLoaded( function() {
+    recacheHeights();
+    refreshToc();
+  });
+});
+
+window.onpopstate = function() {
+  activateLanguage(getLanguageFromQueryString());
+};
+</script>
+
+    
+    <meta name="theme-color" content="#F3F7F9" />
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+  </head>
+
+  <body data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;php&quot;,&quot;java&quot;,&quot;go&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png" class="undefined" alt="Navigation">
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="http://localhost:4000">
+        <img src="source/images/logo.png" class="logo" alt="Logo">
+      </a>
+      
+        <div class="lang-selector">
+          
+            
+              <a href="#" data-language-name="shell">Shell</a>
+            
+          
+            
+              <a href="#" data-language-name="http">HTTP</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript">JavaScript</a>
+            
+          
+            
+              <a href="#" data-language-name="ruby">Ruby</a>
+            
+          
+            
+              <a href="#" data-language-name="python">Python</a>
+            
+          
+            
+              <a href="#" data-language-name="php">PHP</a>
+            
+          
+            
+              <a href="#" data-language-name="java">Java</a>
+            
+          
+            
+              <a href="#" data-language-name="go">Go</a>
+            
+          
+        </div>
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc" class="toc-list-h1">
+	  	<ul class="toc-list-h1">
+        
+          <li>
+            <a href="#suppliers" class="toc-h1 toc-link" data-title="Suppliers v3.0">Suppliers v3.0</a>
+            
+          </li>
+        
+          <li>
+            <a href="#suppliers-resources" class="toc-h1 toc-link" data-title="Resources">Resources</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#get__common_suppliers" class="toc-h2 toc-link" data-title="">get__common_suppliers</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#get__common_suppliers_-id-" class="toc-h2 toc-link" data-title="">get__common_suppliers_{id}</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#tocs_suppliercollection" class="toc-h2 toc-link" data-title="">SupplierCollection</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_supplierget" class="toc-h2 toc-link" data-title="">SupplierGet</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_suppliersingle" class="toc-h2 toc-link" data-title="">SupplierSingle</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+		</ul>
+      </div>
+      
+        <ul class="toc-footer">
+          
+          <li><a href="/shins/api-explorer.html">API EXPLORER</a></li>
+          <li><a href="/">BACK TO DEVELOPER CENTER</a></li>
+        </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="suppliers">Suppliers v3.0</h1>
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+<p>TripLink supplier information.</p>
+<p>Base URLs:</p>
+<ul>
+<li><a href="https://www.concursolutions.com/api/v3.0">https://www.concursolutions.com/api/v3.0</a></li>
+</ul>
+<h1 id="suppliers-resources">Resources</h1>
+<h2 id="get__common_suppliers">get__common_suppliers</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET https://www.concursolutions.com/api/v3.0/common/suppliers \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">https://www.concursolutions.com/api/v3.0/common/suppliers</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: www.concursolutions.com
+<span class="hljs-attribute">Accept</span>: application/json
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/suppliers&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/suppliers&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/suppliers&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/suppliers&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/common/suppliers&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/common/suppliers&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /common/suppliers</code></p>
+<p><em>Gets All Suppliers by Search Criteria</em></p>
+<p>Returns all Suppliers based on the search criteria.</p>
+<h3 id="get__common_suppliers-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>address</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Address</td>
+</tr>
+<tr>
+<td>address2</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Address</td>
+</tr>
+<tr>
+<td>city</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>City</td>
+</tr>
+<tr>
+<td>state</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>State</td>
+</tr>
+<tr>
+<td>zip</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Zip</td>
+</tr>
+<tr>
+<td>country</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Country Code</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Phone</td>
+</tr>
+<tr>
+<td>mcCode</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>MCC Code (Ex: Delta Airline - 3058)</td>
+</tr>
+<tr>
+<td>taxId</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Tax Id</td>
+</tr>
+<tr>
+<td>merchantType</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Merchant Type Code(Ex: Visa - VI, Amex - AX)</td>
+</tr>
+<tr>
+<td>merchantID</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Merchant Id</td>
+</tr>
+<tr>
+<td>iataCode</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>IATA Code</td>
+</tr>
+<tr>
+<td>relevance</td>
+<td>query</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>Relevance of the Search results</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Items&quot;</span>: {
+    <span class="hljs-attr">&quot;BusinessName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;City&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;CountryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;PostalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;State&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;StreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;StreetAddress2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;URI&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;NextPage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<pre class="highlight tab tab-xml"><code><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">SupplierCollection</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Items</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">BusinessName</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">BusinessName</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">City</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">City</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">CountryCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">CountryCode</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ID</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">ID</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">PostalCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">PostalCode</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">State</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">State</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">StreetAddress</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">StreetAddress</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">StreetAddress2</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">StreetAddress2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">URI</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">URI</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Items</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">NextPage</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">NextPage</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">SupplierCollection</span>&gt;</span>
+</code></pre>
+<h3 id="get__common_suppliers-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemasuppliercollection">SupplierCollection</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="get__common_suppliers_-id-">get__common_suppliers_{id}</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET https://www.concursolutions.com/api/v3.0/common/suppliers/{id} \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">https://www.concursolutions.com/api/v3.0/common/suppliers/{id}</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: www.concursolutions.com
+<span class="hljs-attribute">Accept</span>: application/json
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/suppliers/{id}&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/suppliers/{id}&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/suppliers/{id}&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v3.0/common/suppliers/{id}&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/common/suppliers/{id}&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;https://www.concursolutions.com/api/v3.0/common/suppliers/{id}&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /common/suppliers/{id}</code></p>
+<p><em>Get a single Supplier by ID</em></p>
+<p>Returns a single Supplier ID</p>
+<h3 id="get__common_suppliers_-id--parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Supplier Id</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;AmadeusId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;AustinTetra&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;BusinessName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ChainCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ChainName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;City&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;CountryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;CreditCardVendorId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;DunsNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Fax&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;GalileoId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;MccCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;NorthstarId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PegasusId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PostalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PrimaryNaics&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PrimarySic&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PropertyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;SabreId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;SecondaryNaics&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;SecondarySic&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;State&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;StreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;StreetAddress2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;TaxId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;TollFree&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;URI&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;WebUrl&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;WorldspanId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<pre class="highlight tab tab-xml"><code><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">SupplierSingle</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">AmadeusId</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">AmadeusId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">AustinTetra</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">AustinTetra</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">BusinessName</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">BusinessName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ChainCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">ChainCode</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ChainName</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">ChainName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">City</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">City</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CountryCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">CountryCode</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CreditCardVendorId</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">CreditCardVendorId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">DunsNumber</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">DunsNumber</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Email</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Email</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Fax</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Fax</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">GalileoId</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">GalileoId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ID</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">ID</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">MccCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">MccCode</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">NorthstarId</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">NorthstarId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">PegasusId</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">PegasusId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Phone</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">Phone</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">PostalCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">PostalCode</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">PrimaryNaics</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">PrimaryNaics</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">PrimarySic</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">PrimarySic</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">PropertyCode</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">PropertyCode</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">SabreId</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">SabreId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">SecondaryNaics</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">SecondaryNaics</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">SecondarySic</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">SecondarySic</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">State</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">State</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">StreetAddress</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">StreetAddress</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">StreetAddress2</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">StreetAddress2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">TaxId</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">TaxId</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">TollFree</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">TollFree</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">URI</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">URI</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">WebUrl</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">WebUrl</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">WorldspanId</span>&gt;</span>string<span class="hljs-tag">&lt;/<span class="hljs-name">WorldspanId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">SupplierSingle</span>&gt;</span>
+</code></pre>
+<h3 id="get__common_suppliers_-id--responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemasuppliersingle">SupplierSingle</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h1 id="schemas">Schemas</h1>
+<h2 id="tocs_suppliercollection">SupplierCollection</h2>
+<p><a id="schemasuppliercollection"></a>
+<a id="schema_SupplierCollection"></a>
+<a id="tocSsuppliercollection"></a>
+<a id="tocssuppliercollection"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;Items&quot;</span>: {
+    <span class="hljs-attr">&quot;BusinessName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;City&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;CountryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;PostalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;State&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;StreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;StreetAddress2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;URI&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;NextPage&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Items</td>
+<td><a href="#schemasupplierget">SupplierGet</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>NextPage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The URI of the next page of results, if any.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_supplierget">SupplierGet</h2>
+<p><a id="schemasupplierget"></a>
+<a id="schema_SupplierGet"></a>
+<a id="tocSsupplierget"></a>
+<a id="tocssupplierget"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;BusinessName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;City&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;CountryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PostalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;State&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;StreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;StreetAddress2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;URI&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-2">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BusinessName</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>City</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>City</td>
+</tr>
+<tr>
+<td>CountryCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Country Code</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of the resource.</td>
+</tr>
+<tr>
+<td>PostalCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Zip</td>
+</tr>
+<tr>
+<td>State</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>State</td>
+</tr>
+<tr>
+<td>StreetAddress</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Address</td>
+</tr>
+<tr>
+<td>StreetAddress2</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Address2</td>
+</tr>
+<tr>
+<td>URI</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The URI to the resource.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_suppliersingle">SupplierSingle</h2>
+<p><a id="schemasuppliersingle"></a>
+<a id="schema_SupplierSingle"></a>
+<a id="tocSsuppliersingle"></a>
+<a id="tocssuppliersingle"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;AmadeusId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;AustinTetra&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;BusinessName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ChainCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ChainName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;City&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;CountryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;CreditCardVendorId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;DunsNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Fax&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;GalileoId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;MccCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;NorthstarId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PegasusId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;Phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PostalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PrimaryNaics&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PrimarySic&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;PropertyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;SabreId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;SecondaryNaics&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;SecondarySic&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;State&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;StreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;StreetAddress2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;TaxId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;TollFree&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;URI&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;WebUrl&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;WorldspanId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<h3 id="properties-3">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AmadeusId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Amadeus Id</td>
+</tr>
+<tr>
+<td>AustinTetra</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Austin Tetra</td>
+</tr>
+<tr>
+<td>BusinessName</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>ChainCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Chain Code</td>
+</tr>
+<tr>
+<td>ChainName</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Chain Name</td>
+</tr>
+<tr>
+<td>City</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>City</td>
+</tr>
+<tr>
+<td>CountryCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Country Code</td>
+</tr>
+<tr>
+<td>CreditCardVendorId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Creditcard Vendor Id</td>
+</tr>
+<tr>
+<td>DunsNumber</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Duns Number</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Email</td>
+</tr>
+<tr>
+<td>Fax</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Fax</td>
+</tr>
+<tr>
+<td>GalileoId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Galileo Id</td>
+</tr>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of the resource.</td>
+</tr>
+<tr>
+<td>MccCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>MCC Code (Ex: Delta Airline - 3058)</td>
+</tr>
+<tr>
+<td>NorthstarId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Northstar Id</td>
+</tr>
+<tr>
+<td>PegasusId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Pegasus Id</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Phone</td>
+</tr>
+<tr>
+<td>PostalCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Zip</td>
+</tr>
+<tr>
+<td>PrimaryNaics</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Primary Naics Code</td>
+</tr>
+<tr>
+<td>PrimarySic</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Primary Sic Code</td>
+</tr>
+<tr>
+<td>PropertyCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>undefined:ConnectSwaggerDocs-SUP_PARAM_PROPERTY_CODE</td>
+</tr>
+<tr>
+<td>SabreId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Sabre Id</td>
+</tr>
+<tr>
+<td>SecondaryNaics</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Secondary Naics Code</td>
+</tr>
+<tr>
+<td>SecondarySic</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Secondary Sic Code</td>
+</tr>
+<tr>
+<td>State</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>State</td>
+</tr>
+<tr>
+<td>StreetAddress</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Address</td>
+</tr>
+<tr>
+<td>StreetAddress2</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Address2</td>
+</tr>
+<tr>
+<td>TaxId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Tax Id</td>
+</tr>
+<tr>
+<td>TollFree</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Toll Free</td>
+</tr>
+<tr>
+<td>URI</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The URI to the resource.</td>
+</tr>
+<tr>
+<td>WebUrl</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Web Address</td>
+</tr>
+<tr>
+<td>WorldspanId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Worldspan Id</td>
+</tr>
+</tbody>
+</table>
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+      </div>
+      <div class="dark-box">
+        
+          <div class="lang-selector">
+            
+              
+                <a href="#" data-language-name="shell">Shell</a>
+              
+            
+              
+                <a href="#" data-language-name="http">HTTP</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript">JavaScript</a>
+              
+            
+              
+                <a href="#" data-language-name="ruby">Ruby</a>
+              
+            
+              
+                <a href="#" data-language-name="python">Python</a>
+              
+            
+              
+                <a href="#" data-language-name="php">PHP</a>
+              
+            
+              
+                <a href="#" data-language-name="java">Java</a>
+              
+            
+              
+                <a href="#" data-language-name="go">Go</a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

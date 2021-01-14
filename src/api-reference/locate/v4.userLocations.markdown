@@ -1,0 +1,668 @@
+---
+title: User Locations v4
+layout: reference
+---
+
+{% include prerelease.html %}
+
+# User Locations
+
+* [Overview](#overview)
+* [Products and Editions](#products-editions)
+* [Scope Usage](#scope-usage)
+* [Dependencies](#dependencies)
+* [Access Token Usage](#access-token-usage)
+* [POST](#post)
+* [Schema](#schema)
+  * [Client](#client)
+  * [Users](#users)
+  * [Locations](#locations)
+  * [Source Partner](#source-partner)
+  * [Transaction](#transaction)
+* [Examples](#example)
+
+## <a name="overview"></a>Overview
+
+The goal of this API is to allow customers and third party vendors to add their traveler's location data to Concur Locate so it can be utilized locate and contact travelers to address their duty of care requirements.
+
+This API supports POST only.
+
+> **Limitations**: This API is available only in the North America and EMEA Data Centers.
+
+## <a name="products-editions"></a>Products and Editions
+
+* Concur Expense Professional Edition
+* Concur Expense Standard Edition
+* Concur Travel Professional Edition
+* Concur Travel Standard Edition
+
+## <a name="scope-usage"></a>Scope Usage
+
+Required Scopes:
+
+Name|Description|Endpoint
+---|---|---
+`locate.location.read`|Get user location information.|POST
+`locate.location.write`|Post user location information.|POST
+
+## <a name="dependencies"></a>Dependencies
+
+None.
+
+## <a name="access-token-usage"></a>Access Token Usage
+
+This API supports company level access tokens.
+
+## <a name="post"></a>POST Endpoint
+
+The service is a POST call adhering to the following steps:
+
+* Vendor onboarding has been completed prior to invoking the API. All the authentication and authorization credentials have been set up at this point.
+* Third party vendors invoke the User Location API using the client credentials (JWT)
+* Since the new service is registered with API gateway, the call is intercepted by the API Gateway and basic authentication and authorization for the given client credentials (JWT) is done
+* If the checks fail, then the appropriate error response is returned to the caller.
+* If the checks pass, then the request is forwarded to the load balancer which routes the request to the appropriate node for processing
+* The selected node processes the request which is in JSON format. Validations are performed the data conversion takes place. If any of the validations fail, then the appropriate error response is returned to the client (HTTP 400 Bad Request / HTTP 403 Unauthorized)
+* If the validations pass, then the request is processed, and the data is persisted to the backend (DB) in the following ways:
+   * Direct persistence
+   * Persistence via queues
+* If the persistence is successful, then an HTTP 200 OK is returned to the caller
+* If there are any issues with the persistence, then the appropriate codes are returned to the caller (HTTP 500 Application exception)
+* Note that the error messages are intentionally ambiguous to prevent exploitation
+
+### Request
+
+#### URI
+
+##### Template
+
+```
+POST https://us.api.concursolutions.com//locate/api/v4/user/locations
+```
+
+#### Headers
+
+* `concur-correlationid` is a SAP Concur specific custom header used for technical support in the form of a [RFC 4122 A Universally Unique IDentifier (UUID) URN Namespace](https://tools.ietf.org/html/rfc4122)
+* [RFC 7230 Host](https://tools.ietf.org/html/rfc7230#section-5.4)
+* [RFC 7231 Accept](https://tools.ietf.org/html/rfc7231#section-5.3.2)
+* [RFC 7231 Accept-Encoding](https://tools.ietf.org/html/rfc7231#section-5.3.4)
+* [RFC 7231 Accept-Language](https://tools.ietf.org/html/rfc7231#section-5.3.5)
+* [RFC 7235 Authorization](https://tools.ietf.org/html/rfc7235#section-4.2)
+* [RFC 7231 Referer](https://tools.ietf.org/html/rfc7231#section-5.5.2)
+* [RFC 7231 User-Agent](https://tools.ietf.org/html/rfc7231#section-5.5.3)
+
+#### Payload
+
+-
+
+### Response
+
+#### Status Codes
+
+* [200 OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)
+* [204 No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)
+* [400 Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)
+* [401 Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)
+* [500 Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)
+
+#### Headers
+
+* `concur-correlationid` is a SAP Concur specific custom header used for technical support in the form of a [RFC 4122 A Universally Unique IDentifier (UUID) URN Namespace](https://tools.ietf.org/html/rfc4122)
+* [RFC 7231 Content-Encoding](https://tools.ietf.org/html/rfc7231#section-3.1.2.2)
+* [RFC 7231 Content-Type](https://tools.ietf.org/html/rfc7231#section-3.1.1.5)
+* [RFC 7231 Date](https://tools.ietf.org/html/rfc7231#section-7.1.1.2)
+* [RFC 7230 Transfer-Encoding](https://tools.ietf.org/html/rfc7230#section-3.3.1)
+* [RFC 7231 Vary](https://tools.ietf.org/html/rfc7231#section-7.1.4)
+
+#### Payload
+
+-
+
+## Example
+
+### Mobile and Mobile Country Code Valid Combinations
+Example with country code for South Africa (country Code: ZA)
+
+Country Code|Mobile Number
+---|---
+Empty|7160986233
+JP|800122334
+81|800122334
+
+* When `mobileCountryCode` is non-blank it will validate the mobile number against that country’s market. It will accept the country letters (in this case JP) or the country code (in this case 81)
+* When `mobileCountryCode` is blank, it will default to the client country (client id defined in the client section of the JSON)
+* Mobile is validated against the `mobileCountryCode` or default country (as mentioned in point 1 above) if this field is blank. When a mobile number is provided there are no issues as long as it follows the appropriate format and is a valid mobile in the country where it is registered. For e.g If the `mobileCountryCode` provided in the JSON is 81 (JP - Japan) then the subsequent mobile number must be valid in JP.
+* If the `mobileCountryCode` is not provided in the JSON and the client country is US then the mobile number provided must be valid in US because of the default behaviour mentioned above.
+* `mobileCountryCode` can be of the following two variants
+    * A 2-letter ISO code (e.g US, JP, IT)
+    * A 4 digit International Calling Code.
+    Please ensure that there are no special characters and spaces in the `mobile` or `mobileCountryCode` fields. Also ensure that the above limits and datatypes are strictly followed to prevent unwanted behaviour of the system.
+
+A new field `partiallyProcessedTransactions` is introduced in the response to cater to the following invalid mobile scenarios.
+    * Mobile number is not valid for the country derived based on details provided for traveller
+    * A well formed mobile number could not be derived using the mobile provided
+
+### Request
+###### Cancel request without location and user fields (minimal request)
+```shell
+POST https://{baseURI}/locate/api/v4/user/locations
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {token}
+```
+
+```json
+{
+  "userLocations": [
+    {
+      "client": {
+        "id": "UL_CLI"
+      },
+      "sourcePartner": {
+        "id": "SP",
+        "name": "Source Partner",
+        "description": "Source Partner"
+      },
+      "transaction": {
+        "transactionId": "AAAAAA",
+        "createdDate": "2018-08-06T12:05",
+        "transactionType": "Cancel"
+      }
+    }
+  ]
+}
+```
+
+### Response
+
+```shell
+200 OK
+date: Mon, 15 May 2018 14:28:07 GMT
+content-length: 20
+content-type: application/json
+```
+
+```json
+{
+    "processedTransactions": {
+        "AAAAAA" : "Successfully Processed"
+    },
+    "unprocessedTransactions": {
+    },
+    "partiallyProcessedTransactions": {
+    }
+}
+```
+
+### Request
+###### Add request
+
+```shell
+POST https://{baseURI}/locate/api/v4/user/locations
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {token}
+```
+
+```json
+{
+  "userLocations": [
+    {
+      "client": {
+        "id": "UL_CLI",
+        "firstSubLevel": "",
+        "secondSubLevel": ""
+      },
+      "users": [
+        {
+          "visitorId": 22,
+          "firstName": "Test",
+          "lastName": "TEST3",
+          "email": "test.test3@abcd.com",
+          "employeeId": "abc333",
+          "mobileCountryCode": "27",
+          "mobile": "7160981138",
+          "optedIn": true,
+          "concurLoginId": "",
+          "affiliation": "Student"
+        },
+        {
+          "visitorId": 23,
+          "firstName": "Test",
+          "lastName": "TEST4",
+          "email": "test.test4@abcd.com",
+          "employeeId": "abc334",
+          "mobileCountryCode": "US",
+          "mobile": "2125551138",
+          "optedIn": true,
+          "concurLoginId": "",
+          "affiliation": "Student"
+        }
+      ],
+      "locations": [
+        {
+          "locationId": 0,
+          "locationAddress": "",
+          "locationName": "SomeLocation",
+          "locationDescription": "",
+          "locationLatitude": "",
+          "locationLongitude": "",
+          "locationIataCode": "LHR",
+          "startDate": "2018-09-01T12:07",
+          "endDate": "2018-09-02T12:07",
+          "timezoneId": "Europe/London",
+          "locationPhone": "",
+          "visitorId": [
+            22,23
+          ]
+        }
+      ],
+      "sourcePartner": {
+        "id": "SP",
+        "name": "Source Partner",
+        "description": "Source Partner"
+      },
+      "transaction": {
+        "transactionId": "ASDFGH",
+        "createdDate": "2018-08-06T12:05",
+        "transactionType": "Add"
+      }
+    }
+  ]
+}
+```
+
+### Response
+
+```shell
+200 OK
+date: Mon, 15 May 2018 14:28:07 GMT
+content-length: 20
+content-type: application/json
+```
+
+```json
+{
+    "processedTransactions": {
+        "ASDFGH" : "Successfully Processed"
+    },
+    "unprocessedTransactions": {
+    },
+    "partiallyProcessedTransactions": {
+    }
+}
+```
+
+### Request
+###### Add request - mobile phone variation
+
+```shell
+POST https://{baseURI}/locate/api/v4/user/locations
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {token}
+```
+
+```json
+{
+  "userLocations": [
+    {
+      "client": {
+        "id": "UL_CLI",
+        "firstSubLevel": "",
+        "secondSubLevel": ""
+      },
+      "users": [
+        {
+          "visitorId": 22,
+          "firstName": "Test",
+          "lastName": "TEST3",
+          "email": "test.test3@abcd.com",
+          "employeeId": "abc333",
+          "mobileCountryCode": "",
+          "mobile": "+(27)7160981138",
+          "optedIn": true,
+          "concurLoginId": "",
+          "affiliation": "Student"
+        },
+        {
+          "visitorId": 23,
+          "firstName": "Test",
+          "lastName": "TEST4",
+          "email": "test.test4@abcd.com",
+          "employeeId": "abc334",
+          "mobileCountryCode": "US",
+          "mobile": "2125551138",
+          "optedIn": true,
+          "concurLoginId": "",
+          "affiliation": "Student"
+        }
+      ],
+      "locations": [
+        {
+          "locationId": 0,
+          "locationAddress": "",
+          "locationName": "SomeLocation",
+          "locationDescription": "",
+          "locationLatitude": "",
+          "locationLongitude": "",
+          "locationIataCode": "LHR",
+          "startDate": "2018-09-01T12:07",
+          "endDate": "2018-09-02T12:07",
+          "timezoneId": "Europe/London",
+          "locationPhone": "",
+          "visitorId": [
+            22,23
+          ]
+        }
+      ],
+      "sourcePartner": {
+        "id": "SP",
+        "name": "Source Partner",
+        "description": "Source Partner"
+      },
+      "transaction": {
+        "transactionId": "ASDFGH",
+        "createdDate": "2018-08-06T12:05",
+        "transactionType": "Add"
+      }
+    }
+  ]
+}
+```
+
+### Response
+
+```shell
+200 OK
+date: Mon, 15 May 2018 14:28:07 GMT
+content-length: 20
+content-type: application/json
+```
+
+```json
+{
+    "processedTransactions": {
+        "ASDFGH" : "Successfully Processed"
+    },
+    "unprocessedTransactions": {
+    },
+    "partiallyProcessedTransactions": {
+    }
+}
+```
+
+### Request
+###### Add request - invalid mobile phone variation
+
+```shell
+POST https://{baseURI}/locate/api/v4/user/locations
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {token}
+```
+
+```json
+{
+  "userLocations": [
+    {
+      "client": {
+        "id": "UL_CLI",
+        "firstSubLevel": "",
+        "secondSubLevel": ""
+      },
+      "users": [
+        {
+          "visitorId": 22,
+          "firstName": "Test",
+          "lastName": "TEST3",
+          "email": "test.test3@abcd.com",
+          "employeeId": "abc333",
+          "mobileCountryCode": "",
+          "mobile": "+(27)7160981138",
+          "optedIn": true,
+          "concurLoginId": "",
+          "affiliation": "Student"
+        },
+        {
+          "visitorId": 23,
+          "firstName": "Test",
+          "lastName": "TEST4",
+          "email": "test.test4@abcd.com",
+          "employeeId": "abc334",
+          "mobileCountryCode": "US",
+          "mobile": "0005551138",
+          "optedIn": true,
+          "concurLoginId": "",
+          "affiliation": "Student"
+        }
+      ],
+      "locations": [
+        {
+          "locationId": 0,
+          "locationAddress": "",
+          "locationName": "SomeLocation",
+          "locationDescription": "",
+          "locationLatitude": "",
+          "locationLongitude": "",
+          "locationIataCode": "LHR",
+          "startDate": "2018-09-01T12:07",
+          "endDate": "2018-09-02T12:07",
+          "timezoneId": "Europe/London",
+          "locationPhone": "",
+          "visitorId": [
+            22,23
+          ]
+        }
+      ],
+      "sourcePartner": {
+        "id": "SP",
+        "name": "Source Partner",
+        "description": "Source Partner"
+      },
+      "transaction": {
+        "transactionId": "ASDFGH",
+        "createdDate": "2018-08-06T12:05",
+        "transactionType": "Add"
+      }
+    }
+  ]
+}
+```
+
+### Response
+
+```shell
+200 OK
+date: Mon, 15 May 2018 14:28:07 GMT
+content-length: 20
+content-type: application/json
+```
+
+```json
+{
+    "processedTransactions": {
+    },
+    "unprocessedTransactions": {
+    },
+    "partiallyProcessedTransactions": {
+        "ASDFGH": "Partially processed the transactions : [Incorrect mobile for [23] ]"
+    }
+}
+```
+
+### Request
+###### Add request - unprocessed transaction
+
+```shell
+POST https://{baseURI}/locate/api/v4/user/locations
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {token}
+```
+
+```json
+{
+  "userLocations": [
+    {
+      "client": {
+        "id": "UL_CLI",
+        "firstSubLevel": "",
+        "secondSubLevel": ""
+      },
+      "users": [
+        {
+          "visitorId": 22,
+          "firstName": "Test",
+          "lastName": "TEST3",
+          "email": "test.test3@abcd.com",
+          "employeeId": "abc333",
+          "mobileCountryCode": "",
+          "mobile": "+(27)7160981138",
+          "optedIn": true,
+          "concurLoginId": "",
+          "affiliation": "Student"
+        },
+        {
+          "visitorId": 23,
+          "firstName": "Test",
+          "lastName": "TEST4",
+          "email": "test.test4@abcd.com",
+          "employeeId": "abc334",
+          "mobileCountryCode": "US",
+          "mobile": "asdfrgh",
+          "optedIn": true,
+          "concurLoginId": "",
+          "affiliation": "Student"
+        }
+      ],
+      "locations": [
+        {
+          "locationId": 0,
+          "locationAddress": "",
+          "locationName": "SomeLocation",
+          "locationDescription": "",
+          "locationLatitude": "",
+          "locationLongitude": "",
+          "locationIataCode": "LHR",
+          "startDate": "2018-09-01T12:07",
+          "endDate": "2018-09-02T12:07",
+          "timezoneId": "Europe/London",
+          "locationPhone": "",
+          "visitorId": [
+            22,23
+          ]
+        }
+      ],
+      "sourcePartner": {
+        "id": "SP",
+        "name": "Source Partner",
+        "description": "Source Partner"
+      },
+      "transaction": {
+        "transactionId": "ASDFGH",
+        "createdDate": "2018-08-06T12:05",
+        "transactionType": "Add"
+      }
+    }
+  ]
+}
+```
+
+### Response
+
+```shell
+200 OK
+date: Mon, 15 May 2018 14:28:07 GMT
+content-length: 20
+content-type: application/json
+```
+
+```json
+{
+    "processedTransactions": {
+    },
+    "unprocessedTransactions": {
+        "ASDFGH": "Invalid mobile details found for transaction [ASDFGH]. Skipping transaction "
+    },
+    "partiallyProcessedTransactions": {
+    }
+}
+```
+
+## <a name="schema"></a>Schema
+
+Name|Type|Format|Description
+---|---|---|---
+`UserLocations`|`object`|[`UserLocations`](#user-locations)|**Required** Contains the `Client`, `Users`, `Locations`, `SourcePartner` and `Transaction`.
+`Client`|`object`|[`Client`](#client)|**Required** This indicates which entity within the organization the traveler belongs to.
+`Users`|`object`|[`Users`](#users)|**Required** This is the users' information. This will be used to either create a new traveler or to match with an existing traveler.
+`Locations`|`object`|[`Locations`](#locations)|**Required** This is the users' location information. Multiple locations can be passed for a single user.
+`SourcePartner`|`object`|[`SourcePartner`](#source-partner)|**Required** This is used to identify your application. This information will be provided to you in advance.
+`Transaction`|`object`|[`Transaction`](#transaction)|**Required** Whether this transaction adds or cancels itineraries/locations.
+
+### <a name="client"></a>Client
+
+This indicates which entity within the organization the traveler belongs to. This will vary by client. You will be provided with a list of the applicable agencies for each customer.
+
+Name|Type|Format|Description
+---|---|---|---
+`Id`|`string`|-|**Required** This maps to the top level corporation. Maximum length: 36
+`firstSubLevel`|`string`|-|This is the child corporation i.e one level below the top level corporation. Maximum length: 36
+`secondSubLevel`|`string`|-|This is the sub level of the child corporation (`firstsubleve`l). Maximum length: 36
+
+### <a name="users"></a>Users
+
+This information will be used to match or create a new user. Either login ID or email address must be provided. If an existing user is not found for the login ID or email, one will be created.
+
+Name|Type|Format|Description
+---|---|---|---
+`visitorId`|`long`|-|**Required** This is a unique identifier for the user generated by your application. Maximum length: 10
+`firstName`|`string`|-| **Required** The first name of the user. Maximum length: 100
+`lastName`|`string`|-|**Required** The last name of the user. Maximum length: 100
+`email`|`string`|-|**Either `email` or `concurLoginId` must be provided** Maximum length: 255
+`employeeId`|`string`|-|Optional field to indicate the employee ID of the user. Maximum length: 19
+`mobileCountryCode`|`string`|-|Either ISO Alpha-2 code or International Calling Codes (4 digits). Maximum length: 4
+`mobile`|`string`|-|The contact number of the user. Maximum length: 10
+`optedIn`|`boolean`|-|If `true`, indicates if the user has chosen to receive messages via SMS or text.
+`concurLoginId`|`string`|-|**Either `email` or `concurLoginId` must be provided**
+`affiliation`|`string`|-|Used to indicate the type of traveler (e.g. `employee`, `student`, `faculty`). Maximum length: 128  
+
+### <a name="locations"></a>Locations
+
+This section includes information about the traveler's future or current location. Either the location latitude and longitude or the IATA (airport) code must be present. If both are present, the latitude and longitude take precedence.
+
+Name|Type|Format|Description
+---|---|---|---
+`locationId`|`string`|-|Identifier of the travel location.
+`locationAddress`|`string`|-|Address of the travel location. Maximum length: 512
+`locationName`|`string`|-|Name of the travel location. Maximum length: 100
+`locationDescription`|`string`|-|A short description of the travel location. Maximum length: 100
+`locationPhone`|`string`|-|Contact details of the travel location. Maximum length: 50
+`locationLatitude`|`string`|-|**Either `locationIATACode` or `locationLatitude/locationLongitude` must be provided**
+`locationLongitude`|`string`|-|**Either `locationIATACode` or `locationLatitude/locationLongitude` must be provided**
+`locationIATACode`|`string`|-|**Either `locationIATACode` or `locationLatitude/locationLongitude` must be provided** The three character IATA airport code. Maximum length: 3
+`startDate`|`string`|`YYYY-MM-DDTHH:MM`|**Required** Traveler's arrival date. Maximum length: 16
+`endDate`|`string`|`YYYY-MM-DDTHH:MM`|**Required** Traveler's departure date. Maximum length: 16
+`timezoneId`|`string`|-|**Required** Maximum length: 60
+`visitorID`|`string`|-|This corresponds to the `visitorId` provided in the [`Users`](#users) schema. IDs present in this array must be present in the [`Users`](#users) schema. Maximum length: 10
+
+### <a name="source-partner"></a>Source Partner
+
+This information will be provided to you along with your client ID and secret.
+
+Name|Type|Format|Description
+---|---|---|---
+`Id`|`string`|-|**Required** This will provide to clients similar to the Client ID. Maximum length: 2
+`name`|`string`|-|The name of the source provider. Example: Source Provider1. Maximum length: 100
+`description`|`string`|-|A short description of the source provider. Maximum length: 100
+
+### <a name="transaction"></a>Transaction
+
+Itineraries can be added or cancelled. This section allows you to indicate whether this is an addition of a new itinerary or cancellation of an existing itinerary. A cancellation request is for canceling the itinerary completely in our system and if there are any updates to the existing itineraries then it needs to be resent using the same booking or transaction ID.
+
+Name|Type|Format|Description
+---|---|---|---
+`transactionId`|`string`|-|**Required** This is a unique identifier generated by your application for the request. Maximum length: 5
+`createdDate`|`string`|`YYYY-MM-DDTHH:MM`|**Required** Maximum length: 16
+`transactionType`|`string`|-|**Required** `Add` is indicative of creating a new itinerary or updating an existing itinerary. `Cancel` means removing the itinerary. `Cancel` works only on future dated itineraries. Supported values: `Add`, `Cancel`

@@ -1,0 +1,723 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>SAP Concur Internal Get Users Bulk API v3.1.0</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+    <script src="pub/js/shins.js"></script>
+      
+<script type="text/javascript">
+$(function() {
+  loadToc($('#toc'), '.toc-link', '.toc-list-h2, .toc-list-h3, .toc-list-h4, .toc-list-h5, .toc-list-h6', 10);
+  setupLanguages($('body').data('languages'));
+  $('.content').imagesLoaded( function() {
+    recacheHeights();
+    refreshToc();
+  });
+});
+
+window.onpopstate = function() {
+  activateLanguage(getLanguageFromQueryString());
+};
+</script>
+
+    
+    <meta name="theme-color" content="#F3F7F9" />
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+  </head>
+
+  <body data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;php&quot;,&quot;java&quot;,&quot;go&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png" class="undefined" alt="Navigation">
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="http://localhost:4000">
+        <img src="source/images/logo.png" class="logo" alt="Logo">
+      </a>
+    
+        <div class="lang-selector">
+          
+            
+              <a href="#" data-language-name="shell">Shell</a>
+            
+          
+            
+              <a href="#" data-language-name="http">HTTP</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript">JavaScript</a>
+            
+          
+            
+              <a href="#" data-language-name="ruby">Ruby</a>
+            
+          
+            
+              <a href="#" data-language-name="python">Python</a>
+            
+          
+            
+              <a href="#" data-language-name="php">PHP</a>
+            
+          
+            
+              <a href="#" data-language-name="java">Java</a>
+            
+          
+            
+              <a href="#" data-language-name="go">Go</a>
+            
+          
+        </div>
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc" class="toc-list-h1">
+	  	<ul class="toc-list-h1">
+        
+          <li>
+            <a href="#sap-concur-internal-get-users-bulk-api" class="toc-h1 toc-link" data-title="SAP Concur Internal Get Users Bulk API v3.1.0">SAP Concur Internal Get Users Bulk API v3.1.0</a>
+            
+          </li>
+        
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            
+          </li>
+        
+          <li>
+            <a href="#sap-concur-internal-get-users-bulk-api-resources" class="toc-h1 toc-link" data-title="Resources">Resources</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#get__users_" class="toc-h2 toc-link" data-title="">get__users_</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#tocs_user" class="toc-h2 toc-link" data-title="">User</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_response" class="toc-h2 toc-link" data-title="">Response</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+		</ul>
+      </div>
+      
+        <ul class="toc-footer">
+          
+          <li><a href="/shins/api-explorer.html">API EXPLORER</a></li>
+          <li><a href="/">BACK TO DEVELOPER CENTER</a></li>    </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="sap-concur-internal-get-users-bulk-api">SAP Concur Internal Get Users Bulk API v3.1.0</h1>
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+<p>Returns the list of users at the company specified in the access token that match the search criteria.</p>
+<p>Base URLs:</p>
+<ul>
+<li><a href="https://sandbox.api.sap.com/concur/api/v3.1">https://sandbox.api.sap.com/concur/api/v3.1</a></li>
+</ul>
+<h1 id="authentication">Authentication</h1>
+<ul>
+<li>
+<p>oAuth2 authentication. To use this API, you need to get OAuth client credentials (client ID, secret, and geolocation) from SAP Concur, and be authorized to use the relevant scope. Refer to the <a href="https://developer.concur.com/api-reference/authentication/getting-started.html">full authentication information</a> for more information.</p>
+<ul>
+<li>
+<p>Flow: clientCredentials</p>
+</li>
+<li>
+<p>Token URL = <a href="https://us.api.concursolutions.com/oauth2/v0">https://us.api.concursolutions.com/oauth2/v0</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="sap-concur-internal-get-users-bulk-api-resources">Resources</h1>
+<h2 id="get__users_">get__users_</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET https://sandbox.api.sap.com/concur/api/v3.1/users/ \
+  -H <span class="hljs-string">&#x27;Accept: */*&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: string&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">https://sandbox.api.sap.com/concur/api/v3.1/users/</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: sandbox.api.sap.com
+<span class="hljs-attribute">Accept</span>: */*
+<span class="hljs-attribute">Authorization</span>: string
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;*/*&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://sandbox.api.sap.com/concur/api/v3.1/users/&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;*/*&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;https://sandbox.api.sap.com/concur/api/v3.1/users/&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;*/*&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;https://sandbox.api.sap.com/concur/api/v3.1/users/&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;*/*&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;https://sandbox.api.sap.com/concur/api/v3.1/users/&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://sandbox.api.sap.com/concur/api/v3.1/users/&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;*/*&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;https://sandbox.api.sap.com/concur/api/v3.1/users/&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /users/</code></p>
+<h3 id="get__users_-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Company level access bearer token.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>The number of items to skip before returning result set.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>query</td>
+<td>integer</td>
+<td>false</td>
+<td>The numbers of items to return.</td>
+</tr>
+<tr>
+<td>isactive</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Whether the user is active</td>
+</tr>
+<tr>
+<td>loginid</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>login_id of the user.</td>
+</tr>
+<tr>
+<td>lastname</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Last name of the user.</td>
+</tr>
+<tr>
+<td>employeeid</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Employee Id of the user.</td>
+</tr>
+<tr>
+<td>primaryemail</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Primary email of the user.</td>
+</tr>
+<tr>
+<td>countrycode</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Country code of the user.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Id of the user.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<h3 id="get__users_-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td><a href="#schemaresponse">Response</a></td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Authorization Required</td>
+<td>None</td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Resource not found</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+OAuth2
+</aside>
+<h1 id="schemas">Schemas</h1>
+<h2 id="tocs_user">User</h2>
+<p><a id="schemauser"></a>
+<a id="schema_User"></a>
+<a id="tocSuser"></a>
+<a id="tocsuser"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;99BFFFC3-C0BE-44FF-A441-AE1FFFFFF75B8&quot;</span>,
+  <span class="hljs-attr">&quot;Active&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;CountryCode&quot;</span>: <span class="hljs-string">&quot;US&quot;</span>,
+  <span class="hljs-attr">&quot;CellPhoneNumber&quot;</span>: <span class="hljs-string">&quot;425-555-1111&quot;</span>,
+  <span class="hljs-attr">&quot;PrimaryEmail&quot;</span>: <span class="hljs-string">&quot;johndoe@gmail.com&quot;</span>,
+  <span class="hljs-attr">&quot;EmployeeID&quot;</span>: <span class="hljs-string">&quot;johndoe@gmail.com&quot;</span>,
+  <span class="hljs-attr">&quot;OrganizationUnit&quot;</span>: <span class="hljs-string">&quot;IT&quot;</span>,
+  <span class="hljs-attr">&quot;FirstName&quot;</span>: <span class="hljs-string">&quot;Jane&quot;</span>,
+  <span class="hljs-attr">&quot;MiddleName&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+  <span class="hljs-attr">&quot;LastName&quot;</span>: <span class="hljs-string">&quot;Doe&quot;</span>,
+  <span class="hljs-attr">&quot;LoginID&quot;</span>: <span class="hljs-string">&quot;janedoe@gmail.com&quot;</span>,
+  <span class="hljs-attr">&quot;Emails&quot;</span>: [
+    <span class="hljs-string">&quot;johndoe@gmail.com&quot;</span>
+  ]
+}
+
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of the resource.</td>
+</tr>
+<tr>
+<td>Active</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>Indicates whether the user is currently active or not.</td>
+</tr>
+<tr>
+<td>CountryCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The user's country code.</td>
+</tr>
+<tr>
+<td>CellPhoneNumber</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The cell phone number of the user.</td>
+</tr>
+<tr>
+<td>PrimaryEmail</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The primary email of the user.</td>
+</tr>
+<tr>
+<td>EmployeeID</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The employee ID of the user.</td>
+</tr>
+<tr>
+<td>OrganizationUnit</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The configured organization unit of the user.</td>
+</tr>
+<tr>
+<td>FirstName</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The first name of the user.</td>
+</tr>
+<tr>
+<td>MiddleName</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The middle name of the user.</td>
+</tr>
+<tr>
+<td>LastName</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The last name of the user.</td>
+</tr>
+<tr>
+<td>LoginID</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The login ID of the user.</td>
+</tr>
+<tr>
+<td>Emails</td>
+<td>[string]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_response">Response</h2>
+<p><a id="schemaresponse"></a>
+<a id="schema_Response"></a>
+<a id="tocSresponse"></a>
+<a id="tocsresponse"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;total&quot;</span>: <span class="hljs-number">10</span>,
+  <span class="hljs-attr">&quot;offset&quot;</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">&quot;limit&quot;</span>: <span class="hljs-number">10</span>,
+  <span class="hljs-attr">&quot;company&quot;</span>: {
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Company Name LLC&quot;</span>,
+    <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;601 108th ave NE&quot;</span>,
+    <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;Bellevue&quot;</span>,
+    <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;WA&quot;</span>,
+    <span class="hljs-attr">&quot;zip&quot;</span>: <span class="hljs-string">&quot;98004&quot;</span>,
+    <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;US&quot;</span>
+  },
+  <span class="hljs-attr">&quot;Items&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;ID&quot;</span>: <span class="hljs-string">&quot;99BFFFC3-C0BE-44FF-A441-AE1FFFFFF75B8&quot;</span>,
+      <span class="hljs-attr">&quot;Active&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;CountryCode&quot;</span>: <span class="hljs-string">&quot;US&quot;</span>,
+      <span class="hljs-attr">&quot;CellPhoneNumber&quot;</span>: <span class="hljs-string">&quot;425-555-1111&quot;</span>,
+      <span class="hljs-attr">&quot;PrimaryEmail&quot;</span>: <span class="hljs-string">&quot;johndoe@gmail.com&quot;</span>,
+      <span class="hljs-attr">&quot;EmployeeID&quot;</span>: <span class="hljs-string">&quot;johndoe@gmail.com&quot;</span>,
+      <span class="hljs-attr">&quot;OrganizationUnit&quot;</span>: <span class="hljs-string">&quot;IT&quot;</span>,
+      <span class="hljs-attr">&quot;FirstName&quot;</span>: <span class="hljs-string">&quot;Jane&quot;</span>,
+      <span class="hljs-attr">&quot;MiddleName&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;LastName&quot;</span>: <span class="hljs-string">&quot;Doe&quot;</span>,
+      <span class="hljs-attr">&quot;LoginID&quot;</span>: <span class="hljs-string">&quot;janedoe@gmail.com&quot;</span>,
+      <span class="hljs-attr">&quot;Emails&quot;</span>: [
+        <span class="hljs-string">&quot;johndoe@gmail.com&quot;</span>
+      ]
+    }
+  ]
+}
+
+</code></pre>
+<h3 id="properties-2">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>false</td>
+<td>none</td>
+<td>The total number of users within the company.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>integer</td>
+<td>false</td>
+<td>none</td>
+<td>The offset to begin returning the list of users.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>false</td>
+<td>none</td>
+<td>The number of user records to return in that call. Maximum: 1000</td>
+</tr>
+<tr>
+<td>company</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The company name.</td>
+</tr>
+<tr>
+<td>» address</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The company address</td>
+</tr>
+<tr>
+<td>» city</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The city of the company address.</td>
+</tr>
+<tr>
+<td>» state</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The state/province of the company address.</td>
+</tr>
+<tr>
+<td>» zip</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The zip code of the company address.</td>
+</tr>
+<tr>
+<td>» country</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The country code of the company address.</td>
+</tr>
+<tr>
+<td>Items</td>
+<td>[<a href="#schemauser">User</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+      </div>
+      <div class="dark-box">
+        
+          <div class="lang-selector">
+            
+              
+                <a href="#" data-language-name="shell">Shell</a>
+              
+            
+              
+                <a href="#" data-language-name="http">HTTP</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript">JavaScript</a>
+              
+            
+              
+                <a href="#" data-language-name="ruby">Ruby</a>
+              
+            
+              
+                <a href="#" data-language-name="python">Python</a>
+              
+            
+              
+                <a href="#" data-language-name="php">PHP</a>
+              
+            
+              
+                <a href="#" data-language-name="java">Java</a>
+              
+            
+              
+                <a href="#" data-language-name="go">Go</a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

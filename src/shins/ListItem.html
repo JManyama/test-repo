@@ -1,0 +1,2574 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>List Item v4.0</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+    <script src="pub/js/shins.js"></script>
+     
+<script type="text/javascript">
+$(function() {
+  loadToc($('#toc'), '.toc-link', '.toc-list-h2, .toc-list-h3, .toc-list-h4, .toc-list-h5, .toc-list-h6', 10);
+  setupLanguages($('body').data('languages'));
+  $('.content').imagesLoaded( function() {
+    recacheHeights();
+    refreshToc();
+  });
+});
+
+window.onpopstate = function() {
+  activateLanguage(getLanguageFromQueryString());
+};
+</script>
+
+    
+    <meta name="theme-color" content="#F3F7F9" />
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+  </head>
+
+  <body data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;php&quot;,&quot;java&quot;,&quot;go&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png" class="undefined" alt="Navigation">
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="http://localhost:4000">
+        <img src="source/images/logo.png" class="logo" alt="Logo">
+      </a>
+    
+        <div class="lang-selector">
+          
+            
+              <a href="#" data-language-name="shell">Shell</a>
+            
+          
+            
+              <a href="#" data-language-name="http">HTTP</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript">JavaScript</a>
+            
+          
+            
+              <a href="#" data-language-name="ruby">Ruby</a>
+            
+          
+            
+              <a href="#" data-language-name="python">Python</a>
+            
+          
+            
+              <a href="#" data-language-name="php">PHP</a>
+            
+          
+            
+              <a href="#" data-language-name="java">Java</a>
+            
+          
+            
+              <a href="#" data-language-name="go">Go</a>
+            
+          
+        </div>
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc" class="toc-list-h1">
+	  	<ul class="toc-list-h1">
+        
+          <li>
+            <a href="#list-item" class="toc-h1 toc-link" data-title="List Item v4.0">List Item v4.0</a>
+            
+          </li>
+        
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            
+          </li>
+        
+          <li>
+            <a href="#list-item-list-item-api" class="toc-h1 toc-link" data-title="List Item API">List Item API</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#createlistitemusingpost" class="toc-h2 toc-link" data-title="">createListItemUsingPOST</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#getlistitemusingget" class="toc-h2 toc-link" data-title="">getListItemUsingGET</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#updatelistitemusingput" class="toc-h2 toc-link" data-title="">updateListItemUsingPUT</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#getchildrenusingget" class="toc-h2 toc-link" data-title="">getChildrenUsingGET</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#getfirstlevellistitemsusingget" class="toc-h2 toc-link" data-title="">getFirstLevelListItemsUsingGET</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#tocs_errormessage" class="toc-h2 toc-link" data-title="">ErrorMessage</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_link" class="toc-h2 toc-link" data-title="">Link</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_listitem" class="toc-h2 toc-link" data-title="">ListItem</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_listitemcreate" class="toc-h2 toc-link" data-title="">ListItemCreate</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_listitemmemberlist" class="toc-h2 toc-link" data-title="">ListItemMemberList</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_listitemupdate" class="toc-h2 toc-link" data-title="">ListItemUpdate</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_message" class="toc-h2 toc-link" data-title="">Message</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_pagemetadata" class="toc-h2 toc-link" data-title="">PageMetadata</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_pagedresourceslistitem" class="toc-h2 toc-link" data-title="">PagedResourcesListItem</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocs_validationerror" class="toc-h2 toc-link" data-title="">ValidationError</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+		</ul>
+      </div>
+      
+        <ul class="toc-footer">
+          <li><a href="/shins/api-explorer.html">API EXPLORER</a></li>
+          <li><a href="/">BACK TO DEVELOPER CENTER</a></li>
+        </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="list-item">List Item v4.0</h1>
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+<p>Provides an automated solution to clients who would like to manage list items. This API provides methods to view, add or update list items owned by the specified lists.</p>
+<p>Base URLs:</p>
+<ul>
+<li><a href="https://www.concursolutions.com/api/v4.0">https://www.concursolutions.com/api/v4.0</a></li>
+</ul>
+<h1 id="authentication">Authentication</h1>
+<ul>
+<li>API Key (JWT_Token)
+<ul>
+<li>Parameter Name: <strong>Authorization</strong>, in: header.</li>
+</ul>
+</li>
+</ul>
+<h1 id="list-item-list-item-api">List Item API</h1>
+<p>List Item Controller</p>
+<h2 id="createlistitemusingpost">createListItemUsingPOST</h2>
+<p><a id="opIdcreateListItemUsingPOST"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X POST https://www.concursolutions.com/api/v4.0/list/v4/items \
+  -H <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept-Language: en&#x27;</span> \
+  -H <span class="hljs-string">&#x27;company-uuid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-correlationid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-uid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: API_KEY&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">POST</span> <span class="hljs-string">https://www.concursolutions.com/api/v4.0/list/v4/items</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: www.concursolutions.com
+<span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Accept-Language</span>: en
+<span class="hljs-attribute">company-uuid</span>: string
+<span class="hljs-attribute">concur-correlationid</span>: string
+<span class="hljs-attribute">concur-uid</span>: string
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">const</span> inputBody = <span class="hljs-string">&#x27;{
+  &quot;listId&quot;: &quot;9fc6ad7d-902a-4834-b161-a4911b883d44&quot;,
+  &quot;parentId&quot;: &quot;70850378-7d3c-4f45-91b7-942d4dfbbd43&quot;,
+  &quot;shortCode&quot;: &quot;string&quot;,
+  &quot;value&quot;: &quot;string&quot;
+}&#x27;</span>;
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span>:<span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;API_KEY&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,
+  <span class="hljs-attr">body</span>: inputBody,
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span> =&gt; <span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;API_KEY&#x27;</span>
+}
+
+result = RestClient.post <span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span>: <span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;API_KEY&#x27;</span>
+}
+
+r = requests.post(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept-Language&#x27;</span> =&gt; <span class="hljs-string">&#x27;en&#x27;</span>,
+    <span class="hljs-string">&#x27;company-uuid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-uid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;API_KEY&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;POST&#x27;</span>,<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://www.concursolutions.com/api/v4.0/list/v4/items&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;POST&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept-Language&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;en&quot;</span>},
+        <span class="hljs-string">&quot;company-uuid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;concur-correlationid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;concur-uid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;API_KEY&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;POST&quot;</span>, <span class="hljs-string">&quot;https://www.concursolutions.com/api/v4.0/list/v4/items&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>POST /list/v4/items</code></p>
+<p><em>Create a list item with provided request body</em></p>
+<p>Returns the newly created list item</p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;9fc6ad7d-902a-4834-b161-a4911b883d44&quot;</span>,
+  <span class="hljs-attr">&quot;parentId&quot;</span>: <span class="hljs-string">&quot;70850378-7d3c-4f45-91b7-942d4dfbbd43&quot;</span>,
+  <span class="hljs-attr">&quot;shortCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<h3 id="createlistitemusingpost-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept-Language</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Language code</td>
+</tr>
+<tr>
+<td>company-uuid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Company UUID of the user (Used for x509 authorization)</td>
+</tr>
+<tr>
+<td>concur-correlationid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>The unique identifier of the consumer making the API calls. Minimum length: 6 characters</td>
+</tr>
+<tr>
+<td>concur-uid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Concur Employee UUID of the caller (Used for x509 authorization)</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemalistitemcreate">ListItemCreate</a></td>
+<td>true</td>
+<td>List Item object that is created for the company</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>201 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>,
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;shortCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;parentId&quot;</span>: <span class="hljs-string">&quot;70850378-7d3c-4f45-91b7-942d4dfbbd43&quot;</span>,
+  <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;9fc6ad7d-902a-4834-b161-a4911b883d44&quot;</span>,
+  <span class="hljs-attr">&quot;level&quot;</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">&quot;hasChildren&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;lists&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;isDeleted&quot;</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<h3 id="createlistitemusingpost-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
+<td>Successfully created the list item</td>
+<td><a href="#schemalistitem">ListItem</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Bad request</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Access Denied</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
+<td>Forbidden</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>List not found</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
+<td>The specified media type is not supported</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal server error</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+JWT_Token
+</aside>
+<h2 id="getlistitemusingget">getListItemUsingGET</h2>
+<p><a id="opIdgetListItemUsingGET"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId} \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept-Language: en&#x27;</span> \
+  -H <span class="hljs-string">&#x27;company-uuid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-correlationid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-uid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: API_KEY&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: www.concursolutions.com
+<span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Accept-Language</span>: en
+<span class="hljs-attribute">company-uuid</span>: string
+<span class="hljs-attribute">concur-correlationid</span>: string
+<span class="hljs-attribute">concur-uid</span>: string
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span>:<span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;API_KEY&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span> =&gt; <span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;API_KEY&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span>: <span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;API_KEY&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept-Language&#x27;</span> =&gt; <span class="hljs-string">&#x27;en&#x27;</span>,
+    <span class="hljs-string">&#x27;company-uuid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-uid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;API_KEY&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept-Language&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;en&quot;</span>},
+        <span class="hljs-string">&quot;company-uuid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;concur-correlationid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;concur-uid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;API_KEY&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /list/v4/items/{itemId}</code></p>
+<p><em>Gets list item by id</em></p>
+<p>Returns list item</p>
+<h3 id="getlistitemusingget-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept-Language</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Language code</td>
+</tr>
+<tr>
+<td>company-uuid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Company UUID of the user (Used for x509 authorization)</td>
+</tr>
+<tr>
+<td>concur-correlationid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>The unique identifier of the consumer making the API calls. Minimum length: 6 characters</td>
+</tr>
+<tr>
+<td>concur-uid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Concur Employee UUID of the caller (Used for x509 authorization)</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>path</td>
+<td>string(uuid)</td>
+<td>true</td>
+<td>The unique identifier of the list item</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>,
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;shortCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;parentId&quot;</span>: <span class="hljs-string">&quot;70850378-7d3c-4f45-91b7-942d4dfbbd43&quot;</span>,
+  <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;9fc6ad7d-902a-4834-b161-a4911b883d44&quot;</span>,
+  <span class="hljs-attr">&quot;level&quot;</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">&quot;hasChildren&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;lists&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;isDeleted&quot;</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<h3 id="getlistitemusingget-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Successfully get list item</td>
+<td><a href="#schemalistitem">ListItem</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Entity does not exist</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Access Denied</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>listItem not found</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal server error</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+JWT_Token
+</aside>
+<h2 id="updatelistitemusingput">updateListItemUsingPUT</h2>
+<p><a id="opIdupdateListItemUsingPUT"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X PUT https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId} \
+  -H <span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept-Language: en&#x27;</span> \
+  -H <span class="hljs-string">&#x27;company-uuid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-correlationid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-uid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: API_KEY&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">PUT</span> <span class="hljs-string">https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: www.concursolutions.com
+<span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Accept-Language</span>: en
+<span class="hljs-attribute">company-uuid</span>: string
+<span class="hljs-attribute">concur-correlationid</span>: string
+<span class="hljs-attribute">concur-uid</span>: string
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">const</span> inputBody = <span class="hljs-string">&#x27;{
+  &quot;shortCode&quot;: &quot;string&quot;,
+  &quot;value&quot;: &quot;string&quot;
+}&#x27;</span>;
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span>:<span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;API_KEY&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;PUT&#x27;</span>,
+  <span class="hljs-attr">body</span>: inputBody,
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span> =&gt; <span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;API_KEY&#x27;</span>
+}
+
+result = RestClient.put <span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span>: <span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;API_KEY&#x27;</span>
+}
+
+r = requests.put(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept-Language&#x27;</span> =&gt; <span class="hljs-string">&#x27;en&#x27;</span>,
+    <span class="hljs-string">&#x27;company-uuid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-uid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;API_KEY&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;PUT&#x27;</span>,<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;PUT&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Content-Type&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept-Language&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;en&quot;</span>},
+        <span class="hljs-string">&quot;company-uuid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;concur-correlationid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;concur-uid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;API_KEY&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;PUT&quot;</span>, <span class="hljs-string">&quot;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>PUT /list/v4/items/{itemId}</code></p>
+<p><em>Update a list item with provided request body</em></p>
+<p>Returns the updated list item</p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;shortCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+<h3 id="updatelistitemusingput-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept-Language</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Language code</td>
+</tr>
+<tr>
+<td>company-uuid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Company UUID of the user (Used for x509 authorization)</td>
+</tr>
+<tr>
+<td>concur-correlationid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>The unique identifier of the consumer making the API calls. Minimum length: 6 characters</td>
+</tr>
+<tr>
+<td>concur-uid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Concur Employee UUID of the caller (Used for x509 authorization)</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>path</td>
+<td>string(uuid)</td>
+<td>true</td>
+<td>The unique identifier of the list item</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemalistitemupdate">ListItemUpdate</a></td>
+<td>true</td>
+<td>List item</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>,
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;shortCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;parentId&quot;</span>: <span class="hljs-string">&quot;70850378-7d3c-4f45-91b7-942d4dfbbd43&quot;</span>,
+  <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;9fc6ad7d-902a-4834-b161-a4911b883d44&quot;</span>,
+  <span class="hljs-attr">&quot;level&quot;</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">&quot;hasChildren&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;lists&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;isDeleted&quot;</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<h3 id="updatelistitemusingput-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Successfully updated list item</td>
+<td><a href="#schemalistitem">ListItem</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Entity does not exist</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Access Denied</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
+<td>Forbidden</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>listItem not found</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.13">Unsupported Media Type</a></td>
+<td>The specified media type is not supported</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal server error</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+JWT_Token
+</aside>
+<h2 id="getchildrenusingget">getChildrenUsingGET</h2>
+<p><a id="opIdgetChildrenUsingGET"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}/children \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept-Language: en&#x27;</span> \
+  -H <span class="hljs-string">&#x27;company-uuid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-correlationid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-uid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: API_KEY&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}/children</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: www.concursolutions.com
+<span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Accept-Language</span>: en
+<span class="hljs-attribute">company-uuid</span>: string
+<span class="hljs-attribute">concur-correlationid</span>: string
+<span class="hljs-attribute">concur-uid</span>: string
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span>:<span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;API_KEY&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}/children&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span> =&gt; <span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;API_KEY&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}/children&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span>: <span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;API_KEY&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}/children&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept-Language&#x27;</span> =&gt; <span class="hljs-string">&#x27;en&#x27;</span>,
+    <span class="hljs-string">&#x27;company-uuid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-uid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;API_KEY&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}/children&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}/children&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept-Language&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;en&quot;</span>},
+        <span class="hljs-string">&quot;company-uuid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;concur-correlationid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;concur-uid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;API_KEY&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;https://www.concursolutions.com/api/v4.0/list/v4/items/{itemId}/children&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /list/v4/items/{itemId}/children</code></p>
+<p><em>Get direct children of list item</em></p>
+<p>Returns list item children</p>
+<h3 id="getchildrenusingget-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept-Language</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Language code</td>
+</tr>
+<tr>
+<td>company-uuid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Company UUID of the user (Used for x509 authorization)</td>
+</tr>
+<tr>
+<td>concur-correlationid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>The unique identifier of the consumer making the API calls. Minimum length: 6 characters</td>
+</tr>
+<tr>
+<td>concur-uid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Concur Employee UUID of the caller (Used for x509 authorization)</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Filter capabilities for EndDate</td>
+</tr>
+<tr>
+<td>hasChildren</td>
+<td>query</td>
+<td>boolean</td>
+<td>false</td>
+<td>Show items with children</td>
+</tr>
+<tr>
+<td>isDeleted</td>
+<td>query</td>
+<td>boolean</td>
+<td>false</td>
+<td>Show deleted items</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>path</td>
+<td>string(uuid)</td>
+<td>true</td>
+<td>The unique identifier of the list item</td>
+</tr>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>Page number starting from 1</td>
+</tr>
+<tr>
+<td>shortCode</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Filter capabilities for ShortCode</td>
+</tr>
+<tr>
+<td>shortCodeOrValue</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Filter capabilities for Value OR ShortCode</td>
+</tr>
+<tr>
+<td>sortBy</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Field to sort by, {value, shortcode}</td>
+</tr>
+<tr>
+<td>sortDirection</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Sort direction, {asc, desc}</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Filter capabilities for StartDate</td>
+</tr>
+<tr>
+<td>value</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Filter capabilities for Value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sortBy</td>
+<td>value</td>
+</tr>
+<tr>
+<td>sortBy</td>
+<td>shortcode</td>
+</tr>
+<tr>
+<td>sortDirection</td>
+<td>asc</td>
+</tr>
+<tr>
+<td>sortDirection</td>
+<td>desc</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;content&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;shortCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;parentId&quot;</span>: <span class="hljs-string">&quot;70850378-7d3c-4f45-91b7-942d4dfbbd43&quot;</span>,
+      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;9fc6ad7d-902a-4834-b161-a4911b883d44&quot;</span>,
+      <span class="hljs-attr">&quot;level&quot;</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">&quot;hasChildren&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;lists&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>
+        }
+      ],
+      <span class="hljs-attr">&quot;isDeleted&quot;</span>: <span class="hljs-literal">true</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;deprecation&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;hreflang&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;page&quot;</span>: {
+    <span class="hljs-attr">&quot;number&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;size&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;totalElements&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;totalPages&quot;</span>: <span class="hljs-number">0</span>
+  }
+}
+</code></pre>
+<h3 id="getchildrenusingget-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Successfully got children of list item</td>
+<td><a href="#schemapagedresourceslistitem">PagedResourcesListItem</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Entity does not exist</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Access Denied</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>listItem not found</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal server error</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+JWT_Token
+</aside>
+<h2 id="getfirstlevellistitemsusingget">getFirstLevelListItemsUsingGET</h2>
+<p><a id="opIdgetFirstLevelListItemsUsingGET"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET https://www.concursolutions.com/api/v4.0/list/v4/lists/{listId}/children \
+  -H <span class="hljs-string">&#x27;Accept: application/json&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Accept-Language: en&#x27;</span> \
+  -H <span class="hljs-string">&#x27;company-uuid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-correlationid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;concur-uid: string&#x27;</span> \
+  -H <span class="hljs-string">&#x27;Authorization: API_KEY&#x27;</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">https://www.concursolutions.com/api/v4.0/list/v4/lists/{listId}/children</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: www.concursolutions.com
+<span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Accept-Language</span>: en
+<span class="hljs-attribute">company-uuid</span>: string
+<span class="hljs-attribute">concur-correlationid</span>: string
+<span class="hljs-attribute">concur-uid</span>: string
+
+</code></pre>
+<pre class="highlight tab tab-javascript"><code>
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>:<span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span>:<span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span>:<span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>:<span class="hljs-string">&#x27;API_KEY&#x27;</span>
+};
+
+fetch(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/lists/{listId}/children&#x27;</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;rest-client&#x27;</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;json&#x27;</span>
+
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span> =&gt; <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span> =&gt; <span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;API_KEY&#x27;</span>
+}
+
+result = RestClient.get <span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/lists/{listId}/children&#x27;</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">&#x27;Accept&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>,
+  <span class="hljs-string">&#x27;Accept-Language&#x27;</span>: <span class="hljs-string">&#x27;en&#x27;</span>,
+  <span class="hljs-string">&#x27;company-uuid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-correlationid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;concur-uid&#x27;</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+  <span class="hljs-string">&#x27;Authorization&#x27;</span>: <span class="hljs-string">&#x27;API_KEY&#x27;</span>
+}
+
+r = requests.get(<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/lists/{listId}/children&#x27;</span>, headers = headers)
+
+print(r.json())
+
+</code></pre>
+<pre class="highlight tab tab-php"><code> <span class="hljs-string">&#x27;application/json&#x27;</span>,
+    <span class="hljs-string">&#x27;Accept-Language&#x27;</span> =&gt; <span class="hljs-string">&#x27;en&#x27;</span>,
+    <span class="hljs-string">&#x27;company-uuid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-correlationid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;concur-uid&#x27;</span> =&gt; <span class="hljs-string">&#x27;string&#x27;</span>,
+    <span class="hljs-string">&#x27;Authorization&#x27;</span> =&gt; <span class="hljs-string">&#x27;API_KEY&#x27;</span>,
+);
+
+$client = <span class="hljs-keyword">new</span> \GuzzleHttp\Client();
+
+<span class="hljs-comment">// Define array of request body.</span>
+$request_body = <span class="hljs-keyword">array</span>();
+
+<span class="hljs-keyword">try</span> {
+    $response = $client-&gt;request(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;https://www.concursolutions.com/api/v4.0/list/v4/lists/{listId}/children&#x27;</span>, <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">&#x27;headers&#x27;</span> =&gt; $headers,
+        <span class="hljs-string">&#x27;json&#x27;</span> =&gt; $request_body,
+       )
+    );
+    print_r($response-&gt;getBody()-&gt;getContents());
+ }
+ <span class="hljs-keyword">catch</span> (\GuzzleHttp\<span class="hljs-built_in">Exception</span>\BadResponseException $e) {
+    <span class="hljs-comment">// handle exception or api errors.</span>
+    print_r($e-&gt;getMessage());
+ }
+
+ <span class="hljs-comment">// ...</span>
+
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;https://www.concursolutions.com/api/v4.0/list/v4/lists/{listId}/children&quot;</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+</code></pre>
+<pre class="highlight tab tab-go"><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+       <span class="hljs-string">&quot;bytes&quot;</span>
+       <span class="hljs-string">&quot;net/http&quot;</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+
+    headers := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">string</span>{
+        <span class="hljs-string">&quot;Accept&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;application/json&quot;</span>},
+        <span class="hljs-string">&quot;Accept-Language&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;en&quot;</span>},
+        <span class="hljs-string">&quot;company-uuid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;concur-correlationid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;concur-uid&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;Authorization&quot;</span>: []<span class="hljs-keyword">string</span>{<span class="hljs-string">&quot;API_KEY&quot;</span>},
+    }
+
+    data := bytes.NewBuffer([]<span class="hljs-keyword">byte</span>{jsonReq})
+    req, err := http.NewRequest(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;https://www.concursolutions.com/api/v4.0/list/v4/lists/{listId}/children&quot;</span>, data)
+    req.Header = headers
+
+    client := &amp;http.Client{}
+    resp, err := client.Do(req)
+    <span class="hljs-comment">// ...</span>
+}
+
+</code></pre>
+<p><code>GET /list/v4/lists/{listId}/children</code></p>
+<p><em>Get the first level list items for a given List ID</em></p>
+<p>Returns the first level children list items for a list</p>
+<h3 id="getfirstlevellistitemsusingget-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept-Language</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Language code</td>
+</tr>
+<tr>
+<td>company-uuid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Company UUID of the user (Used for x509 authorization)</td>
+</tr>
+<tr>
+<td>concur-correlationid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>The unique identifier of the consumer making the API calls. Minimum length: 6 characters</td>
+</tr>
+<tr>
+<td>concur-uid</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>Concur Employee UUID of the caller (Used for x509 authorization)</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Filter capabilities for EndDate</td>
+</tr>
+<tr>
+<td>hasChildren</td>
+<td>query</td>
+<td>boolean</td>
+<td>false</td>
+<td>Show items with children</td>
+</tr>
+<tr>
+<td>isDeleted</td>
+<td>query</td>
+<td>boolean</td>
+<td>false</td>
+<td>Show deleted items</td>
+</tr>
+<tr>
+<td>listId</td>
+<td>path</td>
+<td>string(uuid)</td>
+<td>true</td>
+<td>The unique identifier of the list</td>
+</tr>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>Page number starting from 1</td>
+</tr>
+<tr>
+<td>shortCode</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Filter capabilities for ShortCode</td>
+</tr>
+<tr>
+<td>shortCodeOrValue</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Filter capabilities for Value OR ShortCode</td>
+</tr>
+<tr>
+<td>sortBy</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Field to sort by, {value, shortcode}</td>
+</tr>
+<tr>
+<td>sortDirection</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Sort direction, {asc, desc}</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Filter capabilities for StartDate</td>
+</tr>
+<tr>
+<td>value</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Filter capabilities for Value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-2">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sortBy</td>
+<td>value</td>
+</tr>
+<tr>
+<td>sortBy</td>
+<td>shortcode</td>
+</tr>
+<tr>
+<td>sortDirection</td>
+<td>asc</td>
+</tr>
+<tr>
+<td>sortDirection</td>
+<td>desc</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;content&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;shortCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;parentId&quot;</span>: <span class="hljs-string">&quot;70850378-7d3c-4f45-91b7-942d4dfbbd43&quot;</span>,
+      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;9fc6ad7d-902a-4834-b161-a4911b883d44&quot;</span>,
+      <span class="hljs-attr">&quot;level&quot;</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">&quot;hasChildren&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;lists&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>
+        }
+      ],
+      <span class="hljs-attr">&quot;isDeleted&quot;</span>: <span class="hljs-literal">true</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;deprecation&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;hreflang&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;page&quot;</span>: {
+    <span class="hljs-attr">&quot;number&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;size&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;totalElements&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;totalPages&quot;</span>: <span class="hljs-number">0</span>
+  }
+}
+</code></pre>
+<h3 id="getfirstlevellistitemsusingget-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Successfully got first level list items of list</td>
+<td><a href="#schemapagedresourceslistitem">PagedResourcesListItem</a></td>
+</tr>
+<tr>
+<td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
+<td>Entity does not exist</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Access Denied</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>List not found</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.6.1">Internal Server Error</a></td>
+<td>Internal server error</td>
+<td><a href="#schemaerrormessage">ErrorMessage</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+JWT_Token
+</aside>
+<h1 id="schemas">Schemas</h1>
+<h2 id="tocs_errormessage">ErrorMessage</h2>
+<p><a id="schemaerrormessage"></a>
+<a id="schema_ErrorMessage"></a>
+<a id="tocSerrormessage"></a>
+<a id="tocserrormessage"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;error&quot;</span>: {
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;httpStatus&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;2016-10-04T00:53:25.931+0000&quot;</span>,
+  <span class="hljs-attr">&quot;validationErrors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;source&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ]
+}
+
+</code></pre>
+<p>ErrorMessage</p>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td><a href="#schemamessage">Message</a></td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>httpStatus</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The http response code and phrase for the response</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>The URI of the attempted request</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string(date-time)</td>
+<td>true</td>
+<td>none</td>
+<td>The time when the error was captured</td>
+</tr>
+<tr>
+<td>validationErrors</td>
+<td>[<a href="#schemavalidationerror">ValidationError</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>The validation error messages</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_link">Link</h2>
+<p><a id="schemalink"></a>
+<a id="schema_Link"></a>
+<a id="tocSlink"></a>
+<a id="tocslink"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;deprecation&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;hreflang&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<p>Link</p>
+<h3 id="properties-2">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deprecation</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>href</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>hreflang</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>media</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>rel</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>templated</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_listitem">ListItem</h2>
+<p><a id="schemalistitem"></a>
+<a id="schema_ListItem"></a>
+<a id="tocSlistitem"></a>
+<a id="tocslistitem"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>,
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;shortCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;parentId&quot;</span>: <span class="hljs-string">&quot;70850378-7d3c-4f45-91b7-942d4dfbbd43&quot;</span>,
+  <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;9fc6ad7d-902a-4834-b161-a4911b883d44&quot;</span>,
+  <span class="hljs-attr">&quot;level&quot;</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">&quot;hasChildren&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;lists&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;isDeleted&quot;</span>: <span class="hljs-literal">true</span>
+}
+
+</code></pre>
+<p>ListItem</p>
+<h3 id="properties-3">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string(uuid)</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of the list item</td>
+</tr>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>List item long code</td>
+</tr>
+<tr>
+<td>shortCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>List item short code</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>List item value</td>
+</tr>
+<tr>
+<td>parentId</td>
+<td>string(uuid)</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of the parent list item</td>
+</tr>
+<tr>
+<td>listId</td>
+<td>string(uuid)</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of the list that contains the list item</td>
+</tr>
+<tr>
+<td>level</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>Level of the list item within the list</td>
+</tr>
+<tr>
+<td>hasChildren</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>Whether the list item has children</td>
+</tr>
+<tr>
+<td>lists</td>
+<td>[<a href="#schemalistitemmemberlist">ListItemMemberList</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifiers of the lists that contains the list item</td>
+</tr>
+<tr>
+<td>isDeleted</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>Whether the list item has been deleted</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_listitemcreate">ListItemCreate</h2>
+<p><a id="schemalistitemcreate"></a>
+<a id="schema_ListItemCreate"></a>
+<a id="tocSlistitemcreate"></a>
+<a id="tocslistitemcreate"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;9fc6ad7d-902a-4834-b161-a4911b883d44&quot;</span>,
+  <span class="hljs-attr">&quot;parentId&quot;</span>: <span class="hljs-string">&quot;70850378-7d3c-4f45-91b7-942d4dfbbd43&quot;</span>,
+  <span class="hljs-attr">&quot;shortCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<p>ListItemCreate</p>
+<h3 id="properties-4">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>listId</td>
+<td>string(uuid)</td>
+<td>true</td>
+<td>none</td>
+<td>The unique identifier of the list that contains the list item</td>
+</tr>
+<tr>
+<td>parentId</td>
+<td>string(uuid)</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of parent list item</td>
+</tr>
+<tr>
+<td>shortCode</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>List item short code</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>List item value</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_listitemmemberlist">ListItemMemberList</h2>
+<p><a id="schemalistitemmemberlist"></a>
+<a id="schema_ListItemMemberList"></a>
+<a id="tocSlistitemmemberlist"></a>
+<a id="tocslistitemmemberlist"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>
+}
+
+</code></pre>
+<p>ListItemMemberList</p>
+<h3 id="properties-5">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string(uuid)</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of the list that contains the list item</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_listitemupdate">ListItemUpdate</h2>
+<p><a id="schemalistitemupdate"></a>
+<a id="schema_ListItemUpdate"></a>
+<a id="tocSlistitemupdate"></a>
+<a id="tocslistitemupdate"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;shortCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<p>ListItemUpdate</p>
+<h3 id="properties-6">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shortCode</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>List item short code</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>List item value</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_message">Message</h2>
+<p><a id="schemamessage"></a>
+<a id="schema_Message"></a>
+<a id="tocSmessage"></a>
+<a id="tocsmessage"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<p>Message</p>
+<h3 id="properties-7">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The unique identifier of the error associated with the response or is it error response itself</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_pagemetadata">PageMetadata</h2>
+<p><a id="schemapagemetadata"></a>
+<a id="schema_PageMetadata"></a>
+<a id="tocSpagemetadata"></a>
+<a id="tocspagemetadata"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;number&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;size&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;totalElements&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">&quot;totalPages&quot;</span>: <span class="hljs-number">0</span>
+}
+
+</code></pre>
+<p>PageMetadata</p>
+<h3 id="properties-8">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>size</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>totalElements</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>totalPages</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_pagedresourceslistitem">PagedResourcesListItem</h2>
+<p><a id="schemapagedresourceslistitem"></a>
+<a id="schema_PagedResourcesListItem"></a>
+<a id="tocSpagedresourceslistitem"></a>
+<a id="tocspagedresourceslistitem"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;content&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;shortCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;parentId&quot;</span>: <span class="hljs-string">&quot;70850378-7d3c-4f45-91b7-942d4dfbbd43&quot;</span>,
+      <span class="hljs-attr">&quot;listId&quot;</span>: <span class="hljs-string">&quot;9fc6ad7d-902a-4834-b161-a4911b883d44&quot;</span>,
+      <span class="hljs-attr">&quot;level&quot;</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">&quot;hasChildren&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;lists&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;497f6eca-6276-4993-bfeb-53cbbbba6f08&quot;</span>
+        }
+      ],
+      <span class="hljs-attr">&quot;isDeleted&quot;</span>: <span class="hljs-literal">true</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;deprecation&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;hreflang&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;page&quot;</span>: {
+    <span class="hljs-attr">&quot;number&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;size&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;totalElements&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;totalPages&quot;</span>: <span class="hljs-number">0</span>
+  }
+}
+
+</code></pre>
+<p>PagedResourcesListItem</p>
+<h3 id="properties-9">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content</td>
+<td>[<a href="#schemalistitem">ListItem</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>links</td>
+<td>[<a href="#schemalink">Link</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>page</td>
+<td><a href="#schemapagemetadata">PageMetadata</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocs_validationerror">ValidationError</h2>
+<p><a id="schemavalidationerror"></a>
+<a id="schema_ValidationError"></a>
+<a id="tocSvalidationerror"></a>
+<a id="tocsvalidationerror"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;source&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+
+</code></pre>
+<p>ValidationError</p>
+<h3 id="properties-10">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The detailed message of the validation error</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>The type of validation which failed</td>
+</tr>
+</tbody>
+</table>
+<!-- Generator: widdershins v4.0.1 -->
+<!-- Renderer: Shins v2.6.0 -->
+      </div>
+      <div class="dark-box">
+        
+          <div class="lang-selector">
+            
+              
+                <a href="#" data-language-name="shell">Shell</a>
+              
+            
+              
+                <a href="#" data-language-name="http">HTTP</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript">JavaScript</a>
+              
+            
+              
+                <a href="#" data-language-name="ruby">Ruby</a>
+              
+            
+              
+                <a href="#" data-language-name="python">Python</a>
+              
+            
+              
+                <a href="#" data-language-name="php">PHP</a>
+              
+            
+              
+                <a href="#" data-language-name="java">Java</a>
+              
+            
+              
+                <a href="#" data-language-name="go">Go</a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

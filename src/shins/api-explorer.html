@@ -1,0 +1,699 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>SAP Concur Developer Center</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+      <script src="pub/js/shins.js"></script>
+
+    
+    <meta name="theme-color" content="#F3F7F9" />
+<!-- Renderer: Shins v2.6.0 -->
+<!-- Generator: Widdershins v4.0.1 -->
+
+  </head>
+
+  <body data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;php&quot;,&quot;java&quot;,&quot;go&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png" class="undefined" alt="Navigation">
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="http://localhost:4000">
+        <img src="source/images/logo.png" class="logo" alt="Logo">
+      </a>
+      
+        <div class="lang-selector">
+          
+            
+              <a href="#" data-language-name="shell">Shell</a>
+            
+          
+            
+              <a href="#" data-language-name="http">HTTP</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript">JavaScript</a>
+            
+          
+            
+              <a href="#" data-language-name="ruby">Ruby</a>
+            
+          
+            
+              <a href="#" data-language-name="python">Python</a>
+            
+          
+            
+              <a href="#" data-language-name="php">PHP</a>
+            
+          
+            
+              <a href="#" data-language-name="java">Java</a>
+            
+          
+            
+              <a href="#" data-language-name="go">Go</a>
+            
+          
+        </div>
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc" class="toc-list-h1">
+	  	<ul class="toc-list-h1">
+        
+          <li>
+            <a href="#api-explorer" class="toc-h1 toc-link" data-title="API EXPLORER">API EXPLORER</a>
+            
+          </li>
+        
+          <!--<li>
+            <a href="#v1-0" class="toc-h1 toc-link" data-title="v1.0">v1.0</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#image" class="toc-h2 toc-link" data-title="">Image</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>-->
+        
+          <!--<li>
+            <a href="#v1-1" class="toc-h1 toc-link" data-title="v1.1">v1.1</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#expense-report-form-fields" class="toc-h2 toc-link" data-title="">Expense Report Form Fields</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#expense-report-forms" class="toc-h2 toc-link" data-title="">Expense Report Forms</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>-->
+        
+          <li>
+            <a href="#v3-0" class="toc-h1 toc-link" data-title="v3.0">v3.0</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#allocations" class="toc-h2 toc-link" data-title="">Allocations</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#attendees" class="toc-h2 toc-link" data-title="">Attendees</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#attendee-types" class="toc-h2 toc-link" data-title="">Attendee Types</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#connection-requests" class="toc-h2 toc-link" data-title="">Connection Requests</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#digital-tax-invoices" class="toc-h2 toc-link" data-title="">Digital Tax Invoices</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#entries" class="toc-h2 toc-link" data-title="">Entries</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#entry-attendee-associations" class="toc-h2 toc-link" data-title="">Entry Attendee Associations</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#expense-group-configurations" class="toc-h2 toc-link" data-title="">Expense Group Configurations</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#itemizations" class="toc-h2 toc-link" data-title="">Itemizations</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#latest-bookings" class="toc-h2 toc-link" data-title="">Latest Bookings</a>
+                    
+                  </li>
+                
+                  <!--<li>
+                    <a href="#list-items" class="toc-h2 toc-link" data-title="">List Items</a>
+                    
+                  </li>-->
+                
+                  <li>
+                    <a href="#lists" class="toc-h2 toc-link" data-title="">Lists</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#localized-data" class="toc-h2 toc-link" data-title="">Localized Data</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#locations" class="toc-h2 toc-link" data-title="">Locations</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#opportunities" class="toc-h2 toc-link" data-title="">Opportunities</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#payment-request" class="toc-h2 toc-link" data-title="">Payment Request</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#payment-request-digest" class="toc-h2 toc-link" data-title="">Payment Request Digest</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#purchase-order-receipts" class="toc-h2 toc-link" data-title="">Purchase Order Receipts</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#purchase-orders" class="toc-h2 toc-link" data-title="">Purchase Orders</a>
+                    
+                  </li>
+                
+                  <!--<li>
+                    <a href="#real-time-location-ingestion-service" class="toc-h2 toc-link" data-title="">Real Time Location Ingestion Service</a>
+                    
+                  </li>-->
+                
+                  <li>
+                    <a href="#receipt-images" class="toc-h2 toc-link" data-title="">Receipt Images</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#receipts" class="toc-h2 toc-link" data-title="">Receipts</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#reports" class="toc-h2 toc-link" data-title="">Reports</a>
+                    
+                  </li>
+                
+                  <!--<li>
+                    <a href="#requests" class="toc-h2 toc-link" data-title="">Requests</a>
+                    
+                  </li>-->
+                
+                  <li>
+                    <a href="#sales-tax-validation-request" class="toc-h2 toc-link" data-title="">Sales Tax Validation Request</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#suppliers" class="toc-h2 toc-link" data-title="">Suppliers</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#users" class="toc-h2 toc-link" data-title="">Users</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#vendor-bank" class="toc-h2 toc-link" data-title="">Vendor Bank</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#vendor-group" class="toc-h2 toc-link" data-title="">Vendor Group</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#vendors" class="toc-h2 toc-link" data-title="">Vendors</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#v3-1" class="toc-h1 toc-link" data-title="v3.1">v3.1</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <!--<li>
+                    <a href="#bulk-user" class="toc-h2 toc-link" data-title="">Bulk User</a>
+                    
+                  </li>-->
+                
+                  <li>
+                    <a href="#connection-requests-2" class="toc-h2 toc-link" data-title="">Connection Requests</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#request-group-configurations" class="toc-h2 toc-link" data-title="">Request Group Configurations</a>
+                    
+                  </li>
+                
+                  <!--<li>
+                    <a href="#requests-2" class="toc-h2 toc-link" data-title="">Requests</a>
+                    
+                  </li>-->
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#v3-2" class="toc-h1 toc-link" data-title="v3.2">v3.2</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#connection-requests-3" class="toc-h2 toc-link" data-title="">Connection Requests</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#v4-0" class="toc-h1 toc-link" data-title="v4.0">v4.0</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#budget" class="toc-h2 toc-link" data-title="">Budget</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#concur-request" class="toc-h2 toc-link" data-title="">Concur Request</a>
+                    
+                  </li>
+                
+                  <!--<li>
+                    <a href="#detokenizer" class="toc-h2 toc-link" data-title="">Detokenizer</a>
+                    
+                  </li>-->
+                
+                  <!--<li>
+                    <a href="#event-subscription-service" class="toc-h2 toc-link" data-title="">Event Subscription Service</a>
+                    
+                  </li>-->
+                
+                  <li>
+                    <a href="#financial-integration-service" class="toc-h2 toc-link" data-title="">Financial Integration Service</a>
+                    
+                  </li>
+                
+                  <!--<li>
+                    <a href="#identity" class="toc-h2 toc-link" data-title="">Identity</a>
+                    
+                  </li>-->
+                
+                  <li>
+                    <a href="#invoice-pay" class="toc-h2 toc-link" data-title="">Invoice Pay</a>
+                    
+                  </li>
+                
+                  <!--<li>
+                    <a href="#list" class="toc-h2 toc-link" data-title="">List</a>
+                    
+                  </li>-->
+                
+                  <!--<li>
+                    <a href="#list-item" class="toc-h2 toc-link" data-title="">List Item</a>
+                    
+                  </li>-->
+                
+                  <li>
+                    <a href="#partner-notifications" class="toc-h2 toc-link" data-title="">Partner Notifications</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#purchase-request" class="toc-h2 toc-link" data-title="">Purchase Request</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#quick-expenses" class="toc-h2 toc-link" data-title="">Quick Expenses</a>
+                    
+                  </li>
+                
+                  <!--<li>
+                    <a href="#reports-2" class="toc-h2 toc-link" data-title="">Reports</a>
+                    
+                  </li>-->
+                
+                  <!--<li>
+                    <a href="#travel-allowance-days" class="toc-h2 toc-link" data-title="">Travel Allowance Days</a>
+                    
+                  </li>-->
+                
+                  <!--<li>
+                    <a href="#user-provisioning" class="toc-h2 toc-link" data-title="">User Provisioning</a>
+                    
+                  </li>-->
+                
+              </ul>
+            
+          </li>
+        
+		</ul>
+      </div>
+      
+        <ul class="toc-footer">
+          
+            <li><a href="http://localhost:4000">BACK TO DEVELOPER CENTER</a></li>
+        </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="api-explorer">API EXPLORER</h1>
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+<p>For information on Base URIs (also known as Instance URLs), including which URI to use, see BASE URIs.</p>
+<p>Base URIs:</p>
+<ul>
+<li><a href="/platform/base-uris.html">Base URIs </a></li>
+</ul>
+<!--<h1 id="v1-0">v1.0</h1>
+<h2 id="image">Image</h2>
+<ul>
+<li><a href="./image.html">Image  </a></li>
+</ul>-->
+
+<!--<h1 id="v1-1">v1.1</h1>
+<h2 id="expense-report-form-fields">Expense Report Form Fields</h2>
+<ul>
+<li><a href="./ExpenseReportFormFields.html">Expense Report Form Fields </a></li>
+</ul>-->
+
+<!--<h2 id="expense-report-forms">Expense Report Forms</h2>
+<ul>
+<li><a href="./ExpenseReportForms.html">Expense Report Forms </a></li>
+</ul>-->
+
+<h1 id="v3-0">v3.0</h1>
+<h2 id="allocations">Allocations</h2>
+<ul>
+<li><a href="./allocations.html">Allocations </a></li>
+</ul>
+<h2 id="attendees">Attendees</h2>
+<ul>
+<li><a href="./Attendees.html">Attendees</a></li>
+</ul>
+<h2 id="attendee-types">Attendee Types</h2>
+<ul>
+<li><a href="./AttendeeTypes.html">Attendee Types</a></li>
+</ul>
+<h2 id="connection-requests">Connection Requests</h2>
+<ul>
+<li><a href="./ConnectionRequests.html">Connection Requests </a></li>
+</ul>
+<h2 id="digital-tax-invoices">Digital Tax Invoices</h2>
+<ul>
+<li><a href="./DigitalTaxInvoices.html">Digital Tax Invoices </a></li>
+</ul>
+<h2 id="entries">Entries</h2>
+<ul>
+<li><a href="./Entries.html">Entries</a></li>
+</ul>
+<h2 id="entry-attendee-associations">Entry Attendee Associations</h2>
+<ul>
+<li><a href="./EntryAttendeeAssociations.html">Entry Attendee Associations</a></li>
+</ul>
+<h2 id="expense-group-configurations">Expense Group Configurations</h2>
+<ul>
+<li><a href="./ExpenseGroupConfigurations.html">Expense Group Configurations </a></li>
+</ul>
+<h2 id="itemizations">Itemizations</h2>
+<ul>
+<li><a href="./Itemizations.html">Itemizations </a></li>
+</ul>
+<h2 id="latest-bookings">Latest Bookings</h2>
+<ul>
+<li><a href="./LatestBookings.html">Latest Bookings </a></li>
+</ul>
+<!--<h2 id="list-items">List Items</h2>
+<ul>
+<li><a href="./ListItems.html">List Items </a></li>
+</ul>-->
+<h2 id="lists">Lists</h2>
+<ul>
+<li><a href="./Lists.html">Lists </a></li>
+</ul>
+<h2 id="localized-data">Localized Data</h2>
+<ul>
+<li><a href="./LocalizedData.html">Localized Data </a></li>
+</ul>
+<h2 id="locations">Locations</h2>
+<ul>
+<li><a href="./Locations.html">Locations </a></li>
+</ul>
+<h2 id="opportunities">Opportunities</h2>
+<ul>
+<li><a href="./Opportunities.html">Opportunities </a></li>
+</ul>
+<h2 id="payment-request">Payment Request</h2>
+<ul>
+<li><a href="./PaymentRequest.html">Payment Request </a></li>
+</ul>
+<h2 id="payment-request-digest">Payment Request Digest</h2>
+<ul>
+<li><a href="./PaymentRequestDigest.html">Payment Request Digest</a></li>
+</ul>
+<h2 id="purchase-order-receipts">Purchase Order Receipts</h2>
+<ul>
+<li><a href="./PurchaseOrderReceipts.html">Purchase Order Receipts</a></li>
+</ul>
+<h2 id="purchase-orders">Purchase Orders</h2>
+<ul>
+<li><a href="./PurchaseOrders.html">Purchase Orders</a></li>
+</ul>
+<!--<h2 id="real-time-location-ingestion-service">Real Time Location Ingestion Service</h2>
+<ul>
+<li><a href="./RealtimeingestLocation.html">Real Time Location Ingestion Service</a></li>
+</ul>-->
+<h2 id="receipt-images">Receipt Images</h2>
+<ul>
+<li><a href="./ReceiptImages.html">Receipt Images</a></li>
+</ul>
+<h2 id="receipts">Receipts</h2>
+<ul>
+<li><a href="./Receipts.html">Receipts</a></li>
+</ul>
+<h2 id="reports">Reports</h2>
+<ul>
+<li><a href="./Reports3.0.html">Reports 3.0</a></li>
+</ul>
+<!--<h2 id="requests">Requests</h2>
+<ul>
+<li><a href="./Requests.html">Requests</a></li>
+</ul>-->
+<h2 id="sales-tax-validation-request">Sales Tax Validation Request</h2>
+<ul>
+<li><a href="./SalesTaxValidationRequest.html">Sales Tax Validation Request</a></li>
+</ul>
+<h2 id="suppliers">Suppliers</h2>
+<ul>
+<li><a href="./Suppliers.html">Suppliers</a></li>
+</ul>
+<h2 id="users">Users</h2>
+<ul>
+<li><a href="./Users.html">Users</a></li>
+</ul>
+<h2 id="vendor-bank">Vendor Bank</h2>
+<ul>
+<li><a href="./VendorBank.html">Vendor Bank</a></li>
+</ul>
+<h2 id="vendor-group">Vendor Group</h2>
+<ul>
+<li><a href="./VendorGroup.html">Vendor Group</a></li>
+</ul>
+<h2 id="vendors">Vendors</h2>
+<ul>
+<li><a href="./Vendors.html">Vendors</a></li>
+</ul>
+<h1 id="v3-1">v3.1</h1>
+<!--<h2 id="bulk-user">Bulk User</h2>
+<ul>
+<li><a href="./BulkUser.html">Bulk User</a></li>
+</ul>-->
+<h2 id="connection-requests-2">Connection Requests</h2>
+<ul>
+<li><a href="./ConnectionRequests3.1.html">Connection Requests 3.1</a></li>
+</ul>
+<h2 id="request-group-configurations">Request Group Configurations</h2>
+<ul>
+<li><a href="./RequestGroupConfigurations.html">Request Group Configurations</a></li>
+</ul>
+<!--<h2 id="requests-2">Requests</h2>
+<ul>
+<li><a href="./Requests.html">Requests</a></li>
+</ul>-->
+<h1 id="v3-2">v3.2</h1>
+<h2 id="connection-requests-3">Connection Requests</h2>
+<ul>
+<li><a href="./ConnectionRequests3.2.html">Connection Requests 3.2</a></li>
+</ul>
+<h1 id="v4-0">v4.0</h1>
+<h2 id="budget">Budget</h2>
+<ul>
+<li><a href="./Budget.html">Budget</a></li>
+</ul>
+<h2 id="concur-request">Concur Request</h2>
+<ul>
+<li><a href="./ConcurRequest.html">Concur Request</a></li>
+</ul>
+<!--<h2 id="detokenizer">Detokenizer</h2>
+<ul>
+<li><a href="./Detokenizer.html">Detokenizer</a></li>
+</ul>-->
+<!--<h2 id="event-subscription-service">Event Subscription Service</h2>
+<ul>
+<li><a href="./EventSubscriptionService.html">Event Subscription Service</a></li>
+</ul>-->
+<h2 id="financial-integration-service">Financial Integration Service</h2>
+<ul>
+<li><a href="./FinancialIntegrationService.html">Financial Integration Service</a></li>
+</ul>
+<!--<h2 id="identity">Identity</h2>
+<ul>
+<li><a href="./Identity.html">Identity</a></li>
+</ul>-->
+<h2 id="invoice-pay">Invoice Pay</h2>
+<ul>
+<li><a href="./InvoicePay.html">Invoice Pay</a></li>
+</ul>
+<!--<h2 id="list">List</h2>
+<ul>
+<li><a href="./List.html">List</a></li>
+</ul>-->
+<!--<h2 id="list-item">List Item</h2>
+<ul>
+<li><a href="./ListItem.html">List Item</a></li>
+</ul>-->
+<h2 id="partner-notifications">Partner Notifications</h2>
+<ul>
+<li><a href="./PartnerNotifications.html">Partner Notifications</a></li>
+</ul>
+<h2 id="purchase-request">Purchase Request</h2>
+<ul>
+<li><a href="./PurchaseRequest.html">Purchase Request</a></li>
+</ul>
+<h2 id="quick-expenses">Quick Expenses</h2>
+<ul>
+<li><a href="./QuickExpenses.html">Quick Expenses</a></li>
+</ul>
+<!--<h2 id="reports-2">Reports</h2>
+<ul>
+<li><a href="./Reports.html">Reports</a></li>
+</ul>-->
+<!--<h2 id="travel-allowance-days">Travel Allowance Days</h2>
+<ul>
+<li><a href="./TravelAllowanceDays.html">Travel Allowance Days</a></li>
+</ul>-->
+<!--<h2 id="user-provisioning">User Provisioning</h2>
+<ul>
+<li><a href="./UserProvisioning.html">User Provisioning</a></li>
+</ul>-->
+
+<!-- Renderer: Shins v2.6.0 -->
+<!-- Generator: Widdershins v4.0.1 -->
+<!--<h1 > API EXPLORER </h1>-->
+<!--:dog: :cat: :rabbit: Images-->
+<!--<h1 id="swagger-petstore-pet"></h1><!--sample CSS; not being used-->
+<!--http://localhost:4567/allocations.html-->
+      </div>
+      <div class="dark-box">
+        
+          <div class="lang-selector">
+            
+              
+                <a href="#" data-language-name="shell">Shell</a>
+              
+            
+              
+                <a href="#" data-language-name="http">HTTP</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript">JavaScript</a>
+              
+            
+              
+                <a href="#" data-language-name="ruby">Ruby</a>
+              
+            
+              
+                <a href="#" data-language-name="python">Python</a>
+              
+            
+              
+                <a href="#" data-language-name="php">PHP</a>
+              
+            
+              
+                <a href="#" data-language-name="java">Java</a>
+              
+            
+              
+                <a href="#" data-language-name="go">Go</a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
