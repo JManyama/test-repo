@@ -9,6 +9,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
+            - rubygems-v1-MkeiZUhxOxHFhICkGTe_BgY3b7m7I0JZ8MSOC+MecEg=
             - rubygems-v1-{{ checksum "Gemfile.lock" }}
             - rubygems-v1-fallback
 
