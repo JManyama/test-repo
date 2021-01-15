@@ -23,7 +23,7 @@
 <!-- End Google Tag Manager -->
 
 
-  <title>[meta-tag] SAP Concur Developer Center | 404</title>
+  <title>[meta-tag] SAP Concur Developer Center | Integration Guides</title>
 
 
 <!-- Meta -->
@@ -43,7 +43,7 @@
 <link rel="shortcut icon" href="/test-repo/assets/img/concur_favicon.ico" type="image/png">
 
 <!-- Canonical link-->
-<link rel="canonical" href="https://developer.concur.com/404.html" data-proofer-ignore>
+<link rel="canonical" href="https://developer.concur.com/api-guides/" data-proofer-ignore>
 
 <!-- CSS Global Compulsory -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
@@ -236,16 +236,240 @@
 
 
     <div>
-      <div class="wrapper">
-  <div class="height-200"></div>
-    <div class="text-center">
-      <h1>404</h1>
-      <h4>Sorry, that page doesn't exist.</h4>
-      <a href="/test-repo/index.html">Back to home</a>
+      
+
+
+  <nav class="breadcrumbs hidden-print">
+    <div class="container">
+      <h1 class="pull-left">Integration Guides</h1>
+
+      <ol class="pull-right breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+        
+        
+
+        <li class="active" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/test-repo/">
+            <span property="name">Home</span>
+          </a>
+          <meta property="position" content="1" />
+        </li>
+
+        
+        
+
+          
+          
+            
+
+          
+          
+
+          
+          
+
+          
+          
+
+        
+
+      </ol>
     </div>
-  </div>
-  <div class="height-400"></div>
-</div>
+  </nav>
+
+
+
+<div class="container content">
+  <div class="row">
+      <div class="col-md-3">
+        
+
+
+
+
+
+
+
+<ul class="list-group sidebar-nav-v1 hidden-print" id="sidebar-nav">
+
+
+
+
+
+  
+    <li class="list-group-item active">
+      <a href="/api-guides/">Integration Guides</a>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/api-guides/ERP-integration/erp-integration.html">ERP Integration</a>
+    </li>
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+    <li class="list-group-item list-toggle ">
+      <a data-toggle="collapse" data-parent="#sidebar-nav" href="#collapse-attendees">
+        Attendees
+      </a>
+      <ul id="collapse-attendees" class="collapse ">
+        
+          <li >
+            <a style="font-family:inherit; font-weight: 0;" href="/api-guides/attendees/external-attendees-to-expense-entries.html">Expense - Associating External Attendees to Expense Entries</a>
+          </li>
+        
+      </ul>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/api-guides/e-receipts.html">eReceipts Integration</a>
+    </li>
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+    <li class="list-group-item list-toggle ">
+      <a data-toggle="collapse" data-parent="#sidebar-nav" href="#collapse-invoice">
+        Invoice
+      </a>
+      <ul id="collapse-invoice" class="collapse ">
+        
+          <li >
+            <a style="font-family:inherit; font-weight: 0;" href="/api-guides/invoice/payment-provider-integration.html">Payment Provider Integration - paying customers' invoices</a>
+          </li>
+        
+      </ul>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/api-guides/preproduction-testing.html">Testing App Center Partner Applications</a>
+    </li>
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+    <li class="list-group-item list-toggle ">
+      <a data-toggle="collapse" data-parent="#sidebar-nav" href="#collapse-tmc">
+        TMC
+      </a>
+      <ul id="collapse-tmc" class="collapse ">
+        
+          <li >
+            <a style="font-family:inherit; font-weight: 0;" href="/api-guides/tmc/request-v4-guide.html">Guide to the Request v4.0 API, TMC Edition</a>
+          </li>
+        
+      </ul>
+    </li>
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+    <li class="list-group-item list-toggle ">
+      <a data-toggle="collapse" data-parent="#sidebar-nav" href="#collapse-travel">
+        Travel
+      </a>
+      <ul id="collapse-travel" class="collapse ">
+        
+          <li >
+            <a style="font-family:inherit; font-weight: 0;" href="/api-guides/travel/get-itinerary.html">Itinerary - GET Itinerary & Trip Details</a>
+          </li>
+        
+          <li >
+            <a style="font-family:inherit; font-weight: 0;" href="/api-guides/travel/new-itinerary-manual.html">Itinerary - Add a New Itinerary Manually</a>
+          </li>
+        
+      </ul>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/api-guides/vat-reclaim/vat-reclaim-guide.html">VAT Reclaim Integration</a>
+    </li>
+
+  
+
+
+
+</ul>
+
+      </div><!--/col-md-3-->
+
+      <div class="col-md-9 markdown-body">
+
+        
+
+        <p>You can use the SAP Concur Platform to build a variety of applications, ranging from single-function apps to end-to-end solutions. With so many options it can be difficult to get started.</p>
+
+<p>These guides are intended to help you gain a better understanding of our APIs in specific use cases and workflows. They are not the only way to approach building a solution, instead think of them as a road map. Most of them assume that you have basic knowledge about the platform and have the necessary agreements in place that allow you to make API calls into the system.</p>
+
+<h2 id="first-steps">First Steps</h2>
+
+<p><strong>SAP Concur Clients</strong>: You can create solutions that interface with your SAP Concur data once you have purchased the Web Services product. Contact SAP Concur Support to get started.</p>
+
+<p><strong>New Partners</strong>: Your company must enter into a commercial agreement with SAP Concur before using the APIs. If you have not yet entered into an agreement with SAP Concur, review the information on the <a href="https://developer.concur.com/solutions/app-center.html">Build App Center Solutions</a> page.</p>
+
+<p><strong>Existing Partners</strong>: Depending on the solution you want to build, the SAP Concur Platform team may need to configure your existing sandbox for your new needs. You can make that request by contacting your Alliance Manager.</p>
+
+<p><strong>All Developers</strong>: Before using the Integration Guides, you must understand the <a href="/api-reference/authentication/apidoc.html">authentication process</a>.</p>
+
+      </div><!--/col-md-9-->
+    </div><!--/row-->
+</div><!--/container-->
 
     </div>
 
@@ -280,7 +504,7 @@
 
       <div class="row footer-github">
         <div class="col-md-12 text-center">
-          <a href="https://github.com/concur/developer.concur.com/blob/preview/src/404.html"><i class="fab fa-github fa-2x"></i> Edit this page on GitHub</a>
+          <a href="https://github.com/concur/developer.concur.com/blob/preview/src/api-guides/index.markdown"><i class="fab fa-github fa-2x"></i> Edit this page on GitHub</a>
           <span>|</span>
           <a href="https://github.com/concur/developer.concur.com/commit/0">Produced from 0</a>
         </div>

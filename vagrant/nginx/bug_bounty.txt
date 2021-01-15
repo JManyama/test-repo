@@ -1,3 +1,0 @@
-Hello security researchers. The private key in this directory is for running the
-SAP Concur Developer Center locally. This poses no security risk and will not be
-accepted for bounty.

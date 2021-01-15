@@ -23,7 +23,7 @@
 <!-- End Google Tag Manager -->
 
 
-  <title>[meta-tag] SAP Concur Developer Center | 404</title>
+  <title>[meta-tag] SAP Concur Developer Center | SAP Concur Developer Platform Release Notes - March 2017</title>
 
 
 <!-- Meta -->
@@ -43,7 +43,7 @@
 <link rel="shortcut icon" href="/test-repo/assets/img/concur_favicon.ico" type="image/png">
 
 <!-- Canonical link-->
-<link rel="canonical" href="https://developer.concur.com/404.html" data-proofer-ignore>
+<link rel="canonical" href="https://developer.concur.com/tools-support/release-notes/dev-platform-2017-03-01.html" data-proofer-ignore>
 
 <!-- CSS Global Compulsory -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
@@ -236,16 +236,151 @@
 
 
     <div>
-      <div class="wrapper">
-  <div class="height-200"></div>
-    <div class="text-center">
-      <h1>404</h1>
-      <h4>Sorry, that page doesn't exist.</h4>
-      <a href="/test-repo/index.html">Back to home</a>
+      
+
+
+  <nav class="breadcrumbs hidden-print">
+    <div class="container">
+      <h1 class="pull-left">SAP Concur Developer Platform Release Notes - March 2017</h1>
+
+      <ol class="pull-right breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+        
+        
+
+        <li class="active" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/test-repo/">
+            <span property="name">Home</span>
+          </a>
+          <meta property="position" content="1" />
+        </li>
+
+        
+        
+
+          
+          
+            
+
+          
+          
+
+          
+          
+
+          
+          
+            <li class="active" property="itemListElement" typeof="ListItem">
+              <a property="item" typeof="WebPage" href="/test-repo/tools-support/release-notes/">
+                <span property="name">Release Notes</span>
+              </a>
+              <meta property="position" content="2" />
+            </li>
+          
+
+        
+
+          
+          
+
+          
+          
+
+          
+          
+
+        
+
+      </ol>
     </div>
-  </div>
-  <div class="height-400"></div>
-</div>
+  </nav>
+
+
+
+<div class="container content">
+  <div class="row">
+      <div class="col-md-3">
+        
+
+
+
+
+
+
+
+<ul class="list-group sidebar-nav-v1 hidden-print" id="sidebar-nav">
+
+
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/tools-support/support.html">Support Options</a>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/tools-support/deprecation-policy.html">API Lifecycle & Deprecation Policy</a>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/tools-support/release-notes/index.html">Release Notes</a>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/tools-support/videos/index.html">Videos</a>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/tools-support/samples/index.html">Samples</a>
+    </li>
+
+  
+
+
+
+</ul>
+
+      </div><!--/col-md-3-->
+
+      <div class="col-md-9 markdown-body">
+
+        
+
+        <ul>
+  <li><a href="/api-explorer/v3-0/DigitalTaxInvoices.html">Digital Tax Invoice APIs</a></li>
+  <li><a href="/api-reference/expense/digital-tax-invoices/digital-tax-invoice.html#put">Digital Tax Invoice PUT</a></li>
+</ul>
+
+<p>Concur has updated the Digital Tax Invoice API to stop requiring the company admin to enter an AccountID when enabling an app that uses this API. Validation partners that use the API will still see the AccountID field in the API response, however the value will be NOACCTID for new clients. Clients that enabled a Digital Tax Invoice app prior to this change will retain their AccountID value.</p>
+
+<p>This update allows the Digital Tax Invoice applications to be enabled in the EMEA datacenter. The Account ID value is not used in the downstream process by the validation partners and therefore, was deemed unnecessary to store within Concur.</p>
+
+<p>Concur will update the API in the March 18 2017 release, and developers currently using it will not need to make any changes.</p>
+
+      </div><!--/col-md-9-->
+    </div><!--/row-->
+</div><!--/container-->
 
     </div>
 
@@ -280,7 +415,7 @@
 
       <div class="row footer-github">
         <div class="col-md-12 text-center">
-          <a href="https://github.com/concur/developer.concur.com/blob/preview/src/404.html"><i class="fab fa-github fa-2x"></i> Edit this page on GitHub</a>
+          <a href="https://github.com/concur/developer.concur.com/blob/preview/src/tools-support/release-notes/dev-platform-2017-03-01.markdown"><i class="fab fa-github fa-2x"></i> Edit this page on GitHub</a>
           <span>|</span>
           <a href="https://github.com/concur/developer.concur.com/commit/0">Produced from 0</a>
         </div>

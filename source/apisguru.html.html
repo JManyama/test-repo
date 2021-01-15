@@ -1,0 +1,920 @@
+<!---Linked to a different Shins page not used in test site-->
+<h1 id="openapi-extensions-documentation">OpenAPI Extensions Documentation</h1>
+
+<blockquote>
+  <p>Scroll down for schema examples. Select a format for examples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+
+<p>This documentation was automatically generated from a v0.1.0 <a href="https://github.com/RepreZen/SEMOASA">Semoasa</a> document.</p>
+
+<p><abbr title="Specification Extension Metadata for OAS Annotations">Semoasa</abbr> is a machine-readable format for extensions to Swagger/OpenAPI 2.0 and 3.0 specifications.</p>
+
+<h1 id="guruapis">guru.apis</h1>
+
+<p>Provider: <a href="https://apis.guru/">APIs.guru</a></p>
+
+<h2 id="x-apiclientregistration">x-apiClientRegistration</h2>
+<blockquote>
+  <p>x-apiClientRegistration example</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://developer.bbc.co.uk/user/register"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+  <p>```yaml
+url: ‘https://developer.bbc.co.uk/user/register’</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+
+
+
+*A link to a sign-up page for the API.*
+
+A property of the info object, x-apiClientRegistration includes a URL-formatted property url containing the URL to the resource where developers can register to authenticate with the API.
+
+
+
+
+&lt;a href="https://github.com/APIs-guru/openapi-directory/wiki/specification-extensions"&gt;APIs.guru OpenAPI Directory Wiki&lt;/a&gt;
+
+
+
+
+|Property|Type|Required|Description
+|---|---|---|---|
+|url|string(uri-ref)|true|No description|
+
+
+
+**In the OpenAPI specification v2.0, this extension can be used as follows:**
+
+
+
+&lt;aside class="warning"&gt;
+The extension may only be used in the following objects:
+&lt;/aside&gt;
+
+|Object|Description|
+|---|---|
+|&lt;a href="https://github.com/OAI/openapi-specification/tree/master/versions/2.0.md#infoObject"&gt;InfoObject&lt;/a&gt;|The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.|
+
+
+
+
+
+
+
+
+
+
+
+**In the OpenAPI specification v3.x, this extension can be used as follows:**
+
+
+
+&lt;aside class="warning"&gt;
+The extension may only be used in the following objects:
+&lt;/aside&gt;
+
+|Object|Description|
+|---|---|
+|&lt;a href="https://github.com/OAI/openapi-specification/tree/master/versions/3.0.0.md#infoObject"&gt;InfoObject&lt;/a&gt;|The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.|
+
+
+
+
+
+
+
+
+
+
+
+
+## x-apisguru-categories
+&gt; x-apisguru-categories example
+```json
+[
+  "string"
+]
+</code></pre></div></div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="s">string</span>
+
+</code></pre></div></div>
+
+<p>A property of the info object, <code class="language-plaintext highlighter-rouge">x-apisguru-categories</code> is an array of valid values from the list of APIs.guru categories.</p>
+
+<p><a href="https://github.com/APIs-guru/openapi-directory/wiki/specification-extensions">APIs.guru OpenAPI Directory Wiki</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>anonymous</td>
+      <td>[string]</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v2.0, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/2.0.md#infoObject">InfoObject</a></td>
+      <td>The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v3.x, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/3.0.0.md#infoObject">InfoObject</a></td>
+      <td>The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="x-description-language">x-description-language</h2>
+<blockquote>
+  <p>x-description-language example</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"string"</span><span class="w">
+</span></code></pre></div>  </div>
+  <p>```yaml
+string</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+
+
+
+
+
+An ISO-639 two-character language code to identify the natural language used in descriptions, summaries and titles. This can be used as an input to translating these items.
+
+
+
+
+
+
+
+|Property|Type|Required|Description
+|---|---|---|---|
+|simple|string|false|No description|
+
+
+
+**In the OpenAPI specification v2.0, this extension can be used as follows:**
+
+
+
+&lt;aside class="warning"&gt;
+The extension may only be used in the following objects:
+&lt;/aside&gt;
+
+|Object|Description|
+|---|---|
+|&lt;a href="https://github.com/OAI/openapi-specification/tree/master/versions/2.0.md#infoObject"&gt;InfoObject&lt;/a&gt;|The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.|
+
+
+
+
+
+
+
+
+
+
+
+**In the OpenAPI specification v3.x, this extension can be used as follows:**
+
+
+
+&lt;aside class="warning"&gt;
+The extension may only be used in the following objects:
+&lt;/aside&gt;
+
+|Object|Description|
+|---|---|
+|&lt;a href="https://github.com/OAI/openapi-specification/tree/master/versions/3.0.0.md#infoObject"&gt;InfoObject&lt;/a&gt;|The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.|
+
+
+
+
+
+
+
+
+
+
+
+
+## x-hasEquivalentPaths
+&gt; x-hasEquivalentPaths example
+```json
+true
+</code></pre></div></div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">true</span>
+
+</code></pre></div></div>
+
+<p>A property of the <code class="language-plaintext highlighter-rouge">root</code> object, <code class="language-plaintext highlighter-rouge">x-hasEquivalentPaths</code> indicates the source specification has multiple paths which map to the same OpenAPI path (possibly disambiguated with HTML fragment identifiers or differently named path parameters).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>simple</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v2.0, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/2.0.md#swaggerObject">SwaggerObject</a></td>
+      <td>Description not found</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v3.x, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/3.0.0.md#openAPIObject">OpenAPIObject</a></td>
+      <td>Description not found</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="x-logo">x-logo</h2>
+<blockquote>
+  <p>x-logo example</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"backgroundColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>  </div>
+  <p>```yaml
+url: string
+backgroundColor: string</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+
+
+
+*A logo for the API.*
+
+A property of the `info` object, the `x-logo` structure holds an absolute URL to the API logo and an optional background colour in HTML hex notation.
+
+
+
+
+
+&lt;a href="https://github.com/APIs-guru/openapi-directory/wiki/specification-extensions"&gt;APIs.guru OpenAPI Directory Wiki&lt;/a&gt;
+
+
+
+
+|Property|Type|Required|Description
+|---|---|---|---|
+|url|string(uri-ref)|true|No description|
+|backgroundColor|string|false|No description|
+
+
+
+**In the OpenAPI specification v2.0, this extension can be used as follows:**
+
+
+
+&lt;aside class="warning"&gt;
+The extension may only be used in the following objects:
+&lt;/aside&gt;
+
+|Object|Description|
+|---|---|
+|&lt;a href="https://github.com/OAI/openapi-specification/tree/master/versions/2.0.md#infoObject"&gt;InfoObject&lt;/a&gt;|The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.|
+
+
+
+
+
+
+
+
+
+
+
+**In the OpenAPI specification v3.x, this extension can be used as follows:**
+
+
+
+&lt;aside class="warning"&gt;
+The extension may only be used in the following objects:
+&lt;/aside&gt;
+
+|Object|Description|
+|---|---|
+|&lt;a href="https://github.com/OAI/openapi-specification/tree/master/versions/3.0.0.md#infoObject"&gt;InfoObject&lt;/a&gt;|The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.|
+
+
+
+
+
+
+
+
+
+
+
+
+## x-origin
+&gt; x-origin example
+```json
+[
+  {
+    "url": "http://programmes.api.bbc.com/nitro/api",
+    "contentType": "application/json",
+    "converter": {
+      "url": "https://github.com/mermade/bbcparse",
+      "version": "1.2.0"
+    }
+  },
+  {
+    "format": "swagger",
+    "url": "https://raw.githubusercontent.com/Mermade/bbcparse/master/iblApi/swagger.json",
+    "version": "2.0"
+  }
+]
+</code></pre></div></div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://programmes.api.bbc.com/nitro/api'</span>
+  <span class="na">contentType</span><span class="pi">:</span> <span class="s">application/json</span>
+  <span class="na">converter</span><span class="pi">:</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://github.com/mermade/bbcparse'</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s">1.2.0</span>
+<span class="pi">-</span> <span class="na">format</span><span class="pi">:</span> <span class="s">swagger</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+    <span class="s">https://raw.githubusercontent.com/Mermade/bbcparse/master/iblApi/swagger.json</span>
+  <span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2.0'</span>
+
+</code></pre></div></div>
+
+<p>A property of the <code class="language-plaintext highlighter-rouge">info</code> object, the <code class="language-plaintext highlighter-rouge">x-origin</code> structure is used to document the source and format of an API in the collection. It is used to round-trip the process of keeping the APIs updated.</p>
+
+<p>Please note, if you include an x-origin extension within your API definition APIs.guru will then append to this array if it exists, allowing an audit trail of the source(s) of an API definition.
+Valid values for format</p>
+
+<ul>
+  <li>swagger</li>
+  <li>api_blueprint</li>
+  <li>raml</li>
+  <li>google</li>
+</ul>
+
+<p>In your own <code class="language-plaintext highlighter-rouge">x-origin</code> entries you may alternatively use a contentType property instead of a format property. The version property is then optional.</p>
+
+<p>You may also specify the converter and version used.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>anonymous</td>
+      <td>[object]</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+    <tr>
+      <td>» url</td>
+      <td>string(uri-ref)</td>
+      <td>true</td>
+      <td>No description</td>
+    </tr>
+    <tr>
+      <td>» format</td>
+      <td>string</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+    <tr>
+      <td>» version</td>
+      <td>string</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+    <tr>
+      <td>» contentType</td>
+      <td>string</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+    <tr>
+      <td>» converter</td>
+      <td>object</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+    <tr>
+      <td>»» url</td>
+      <td>string(uri-ref)</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+    <tr>
+      <td>»» version</td>
+      <td>string</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v2.0, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/2.0.md#infoObject">InfoObject</a></td>
+      <td>The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v3.x, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/3.0.0.md#infoObject">InfoObject</a></td>
+      <td>The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="x-preferred">x-preferred</h2>
+<blockquote>
+  <p>x-preferred example</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"string"</span><span class="w">
+</span></code></pre></div>  </div>
+  <p>```yaml
+string</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+
+
+
+
+
+A property of the `info` object, `x-preferred` is a Boolean property which distinguishes between multiple versions of the same API. Where the `x-providerName` and `x-serviceName` are the same, only one definition should be marked `x-preferred: true`. This helps users of the APIs.guru collection organise and display the APIs.
+
+
+
+
+
+
+
+|Property|Type|Required|Description
+|---|---|---|---|
+|simple|string|false|No description|
+
+
+
+**In the OpenAPI specification v2.0, this extension can be used as follows:**
+
+
+
+&lt;aside class="warning"&gt;
+The extension may only be used in the following objects:
+&lt;/aside&gt;
+
+|Object|Description|
+|---|---|
+|&lt;a href="https://github.com/OAI/openapi-specification/tree/master/versions/2.0.md#infoObject"&gt;InfoObject&lt;/a&gt;|The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.|
+
+
+
+
+
+
+
+
+
+
+
+**In the OpenAPI specification v3.x, this extension can be used as follows:**
+
+
+
+&lt;aside class="warning"&gt;
+The extension may only be used in the following objects:
+&lt;/aside&gt;
+
+|Object|Description|
+|---|---|
+|&lt;a href="https://github.com/OAI/openapi-specification/tree/master/versions/3.0.0.md#infoObject"&gt;InfoObject&lt;/a&gt;|The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.|
+
+
+
+
+
+
+
+
+
+
+
+
+## x-providerName
+&gt; x-providerName example
+```json
+"string"
+</code></pre></div></div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">string</span>
+
+</code></pre></div></div>
+
+<p>A property of the <code class="language-plaintext highlighter-rouge">info</code> object, <code class="language-plaintext highlighter-rouge">x-providerName</code> is used to identify the domain of the API host. It is added automatically by APIs.guru</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>simple</td>
+      <td>string</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v2.0, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/2.0.md#infoObject">InfoObject</a></td>
+      <td>The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v3.x, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/3.0.0.md#infoObject">InfoObject</a></td>
+      <td>The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="x-servicename">x-serviceName</h2>
+<blockquote>
+  <p>x-serviceName example</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"string"</span><span class="w">
+</span></code></pre></div>  </div>
+  <p>```yaml
+string</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+
+
+
+
+
+A property of the `info` object, `x-serviceName` is used to distinguish APIs which are served from the same domain. It may be the subdomain if the API uses one. It is added automatically by APIs.guru
+
+
+
+
+
+
+
+|Property|Type|Required|Description
+|---|---|---|---|
+|simple|string|false|No description|
+
+
+
+**In the OpenAPI specification v2.0, this extension can be used as follows:**
+
+
+
+&lt;aside class="warning"&gt;
+The extension may only be used in the following objects:
+&lt;/aside&gt;
+
+|Object|Description|
+|---|---|
+|&lt;a href="https://github.com/OAI/openapi-specification/tree/master/versions/2.0.md#infoObject"&gt;InfoObject&lt;/a&gt;|The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.|
+
+
+
+
+
+
+
+
+
+
+
+**In the OpenAPI specification v3.x, this extension can be used as follows:**
+
+
+
+&lt;aside class="warning"&gt;
+The extension may only be used in the following objects:
+&lt;/aside&gt;
+
+|Object|Description|
+|---|---|
+|&lt;a href="https://github.com/OAI/openapi-specification/tree/master/versions/3.0.0.md#infoObject"&gt;InfoObject&lt;/a&gt;|The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.|
+
+
+
+
+
+
+
+
+
+
+
+
+## x-tags
+&gt; x-tags example
+```json
+[
+  "string"
+]
+</code></pre></div></div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="s">string</span>
+
+</code></pre></div></div>
+
+<p>Also a property of the <code class="language-plaintext highlighter-rouge">info</code> object, <code class="language-plaintext highlighter-rouge">x-tags</code> is an array of free-form keywords/tags applicable to the API.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>anonymous</td>
+      <td>[string]</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v2.0, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/2.0.md#infoObject">InfoObject</a></td>
+      <td>The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v3.x, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/3.0.0.md#infoObject">InfoObject</a></td>
+      <td>The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="x-unofficialspec">x-unofficialSpec</h2>
+<blockquote>
+  <p>x-unofficialSpec example</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">true</span><span class="w">
+</span></code></pre></div>  </div>
+  <p>```yaml
+true</p>
+</blockquote>
+
+<p>```</p>
+
+<p>A property of the <code class="language-plaintext highlighter-rouge">info</code> object, <code class="language-plaintext highlighter-rouge">x-unofficialSpec</code> indicates the definition is produced by a third-party, either manually, by scraping existing documentation or converting a proprietary/undocumented format.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>simple</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>No description</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v2.0, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/2.0.md#infoObject">InfoObject</a></td>
+      <td>The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>In the OpenAPI specification v3.x, this extension can be used as follows:</strong></p>
+
+<aside class="warning">
+The extension may only be used in the following objects:
+</aside>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/OAI/openapi-specification/tree/master/versions/3.0.0.md#infoObject">InfoObject</a></td>
+      <td>The object provides metadata about the API. The metadata can be used by the clients if needed, and can be presented in editing or documentation generation tools for convenience.</td>
+    </tr>
+  </tbody>
+</table>
+

@@ -23,7 +23,7 @@
 <!-- End Google Tag Manager -->
 
 
-  <title>[meta-tag] SAP Concur Developer Center | 404</title>
+  <title>[meta-tag] SAP Concur Developer Center | SAP Concur Developer Platform Release Notes - March 2016 - 2</title>
 
 
 <!-- Meta -->
@@ -43,7 +43,7 @@
 <link rel="shortcut icon" href="/test-repo/assets/img/concur_favicon.ico" type="image/png">
 
 <!-- Canonical link-->
-<link rel="canonical" href="https://developer.concur.com/404.html" data-proofer-ignore>
+<link rel="canonical" href="https://developer.concur.com/tools-support/release-notes/dev-platform-2016-03-02.html" data-proofer-ignore>
 
 <!-- CSS Global Compulsory -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
@@ -236,16 +236,163 @@
 
 
     <div>
-      <div class="wrapper">
-  <div class="height-200"></div>
-    <div class="text-center">
-      <h1>404</h1>
-      <h4>Sorry, that page doesn't exist.</h4>
-      <a href="/test-repo/index.html">Back to home</a>
+      
+
+
+  <nav class="breadcrumbs hidden-print">
+    <div class="container">
+      <h1 class="pull-left">SAP Concur Developer Platform Release Notes - March 2016 - 2</h1>
+
+      <ol class="pull-right breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+        
+        
+
+        <li class="active" property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href="/test-repo/">
+            <span property="name">Home</span>
+          </a>
+          <meta property="position" content="1" />
+        </li>
+
+        
+        
+
+          
+          
+            
+
+          
+          
+
+          
+          
+
+          
+          
+            <li class="active" property="itemListElement" typeof="ListItem">
+              <a property="item" typeof="WebPage" href="/test-repo/tools-support/release-notes/">
+                <span property="name">Release Notes</span>
+              </a>
+              <meta property="position" content="2" />
+            </li>
+          
+
+        
+
+          
+          
+
+          
+          
+
+          
+          
+
+        
+
+      </ol>
     </div>
-  </div>
-  <div class="height-400"></div>
-</div>
+  </nav>
+
+
+
+<div class="container content">
+  <div class="row">
+      <div class="col-md-3">
+        
+
+
+
+
+
+
+
+<ul class="list-group sidebar-nav-v1 hidden-print" id="sidebar-nav">
+
+
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/tools-support/support.html">Support Options</a>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/tools-support/deprecation-policy.html">API Lifecycle & Deprecation Policy</a>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/tools-support/release-notes/index.html">Release Notes</a>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/tools-support/videos/index.html">Videos</a>
+    </li>
+
+  
+
+
+
+  
+    <li class="list-group-item ">
+      <a href="/tools-support/samples/index.html">Samples</a>
+    </li>
+
+  
+
+
+
+</ul>
+
+      </div><!--/col-md-3-->
+
+      <div class="col-md-9 markdown-body">
+
+        
+
+        <ul>
+  <li><a href="/api-reference/expense/quick-expense/v3.quick-expense.html">Quick Expenses v3</a></li>
+  <li><a href="/api-reference/expense/quick-expense/v1.quick-expense-resource-post.html">Quick Expense POST v1</a></li>
+</ul>
+
+<p>Concur has updated the Quick Expense API to correct the behavior of the PaymentTypeCode element. Prior to this release, the payment type code of a new quick expense would default to Cash, regardless of the value sent. In the March 2016 release, the Quick Expense API now applies the value sent in the PaymentTypeCode element, if the company’s configuration supports it.</p>
+
+<p>The payment types have the following configuration requirements:</p>
+
+<ul>
+  <li>
+    <p><strong>CASHX:</strong> If user’s group configuration has Cash as an active payment type, then the payment type will be set to Cash. If the group does not have Cash as an active payment type, and if the user’s group configuration has Personal as active payment type, then the payment type will be set to Personal. If none of these payment types are active then the payment will default to the group’s default payment type. If there is no default payment type for the group, then the payment type will be set to Cash.</p>
+  </li>
+  <li>
+    <p><strong>CPAID:</strong> If user’s group configuration has Company Paid as an active payment type and that payment type is set to default, then the payment type will be set to Company Paid. If the Company Paid payment type is not active then the payment will default to the group’s default payment type. If there is no default payment type for the group, then the payment type will be set to Cash.</p>
+  </li>
+  <li>
+    <p><strong>PENDC:</strong> If user’s group configuration has Pending Card Transaction as an active payment type and that payment type is set to default, then the payment type will be set to Pending Card Transaction- but this will only happen if the user has at least one credit card assigned to them. If the Pending Card Transaction payment type is not active or the user does not have a credit card then the payment will default to the group’s default payment type. If there is no default payment type for the group, then the payment type will be set to Cash.</p>
+  </li>
+</ul>
+
+<p><strong>NOTE:</strong> The payment element is called ‘PaymentType’ in v1 Quick Expense API and it is called ‘PaymentTypeCode’ in v3.**</p>
+
+      </div><!--/col-md-9-->
+    </div><!--/row-->
+</div><!--/container-->
 
     </div>
 
@@ -280,7 +427,7 @@
 
       <div class="row footer-github">
         <div class="col-md-12 text-center">
-          <a href="https://github.com/concur/developer.concur.com/blob/preview/src/404.html"><i class="fab fa-github fa-2x"></i> Edit this page on GitHub</a>
+          <a href="https://github.com/concur/developer.concur.com/blob/preview/src/tools-support/release-notes/dev-platform-2016-03-02.markdown"><i class="fab fa-github fa-2x"></i> Edit this page on GitHub</a>
           <span>|</span>
           <a href="https://github.com/concur/developer.concur.com/commit/0">Produced from 0</a>
         </div>
