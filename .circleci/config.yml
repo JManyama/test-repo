@@ -42,6 +42,8 @@ jobs:
       - run:
           name: Adjust Tags and Content
           command: pipenv run python ./src/Slate-API-Explorer-Reference/slate/source/includes/z_update_swagger_tags.py
+          command: pipenv run python ./src/Slate-API-Explorer-Reference/slate/source/includes/z_update_swagger_tags.py
+           
       - run:
               name: Build Fresh Slate Static Files
               no_output_timeout: 30m
