@@ -18,11 +18,11 @@ jobs:
       - run: sudo pip3 install pipenv 
       - run: pipenv install
       - run: pipenv install Unipath
-      - run:
-          name: Widdershins Install and Execution.
-          command: |
-                sudo npm install -g widdershins
-                cd ./src/api-explorer/ && find . -name \*.json -type f -exec widdershins \{\} -o \{\}.md \;
+      #- run:
+       #   name: Widdershins Install and Execution.
+        #  command: |
+         #       sudo npm install -g widdershins
+          #      cd ./src/api-explorer/ && find . -name \*.json -type f -exec widdershins \{\} -o \{\}.md \;
       - run:
           name: Add Underscore V3.0.zddzdzddzx3w
           command: pipenv run python ./src/api-explorer/v3-0/z_underscore_v3_0.py
@@ -35,12 +35,12 @@ jobs:
       - run:
           name: Add Underscore V4.0
           command: pipenv run python ./src/api-explorer/v4-0/z_underscore_v4_0.py
-      - run:
-          name: Move From Dev Center To Slate
-          command: pipenv run python ./z_dc_to_slate.py
-      - run:
-          name: Adjust Tags and Content
-          command: pipenv run python ./src/Slate-API-Explorer-Reference/slate/source/includes/z_update_swagger_tags.py
+      #- run:
+       #   name: Move From Dev Center To Slate
+        #  command: pipenv run python ./z_dc_to_slate.py
+    #  - run:
+     #     name: Adjust Tags and Content
+      #    command: pipenv run python ./src/Slate-API-Explorer-Reference/slate/source/includes/z_update_swagger_tags.py
       - run:
               name: Build Fresh Slate Static Files
               no_output_timeout: 30m
