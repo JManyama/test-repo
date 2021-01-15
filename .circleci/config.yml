@@ -18,13 +18,13 @@ jobs:
       - run: sudo pip3 install pipenv 
       - run: pipenv install
       - run: pipenv install Unipath
-      #- run:
-          #name: Widdershins Install and Execution.
-          #command: |
-               # sudo npm install -g widdershins
-               # cd ./src/api-explorer/ && find . -name \*.json -type f -exec widdershins \{\} -o \{\}.md \;
       - run:
-          name: Add Underscore V3.0.
+          name: Widdershins Install and Execution.
+          command: |
+                sudo npm install -g widdershins
+                cd ./src/api-explorer/ && find . -name \*.json -type f -exec widdershins \{\} -o \{\}.md \;
+      - run:
+          name: Add Underscore V3.0.zddzdzddzx3w
           command: pipenv run python ./src/api-explorer/v3-0/z_underscore_v3_0.py
       - run:
           name: Add Underscore V3.1
@@ -45,7 +45,7 @@ jobs:
               name: Build Fresh Slate Static Files
               no_output_timeout: 30m
               command: cd ./src/Slate-API-Explorer-Reference/slate && bundle install && bundle exec middleman build
-      - run:
+      - a1run:
           name: Move Static Files Back To Dev Center
           command: pipenv run python ./z_slate-to-dc-file-transfer.py
       - run:
