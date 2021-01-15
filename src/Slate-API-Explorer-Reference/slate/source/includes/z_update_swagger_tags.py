@@ -207,8 +207,8 @@ def retainV3_1Dropdown():
         data = last_file.read(100)
         if len(data) > 0 :
             last_file.write("\n")
-        # Append text at the end of file
-        last_file.write("# Version 3.1")
+            # Append text at the end of file
+            last_file.write("# Version 3.1")
         print("Retained V3.1 Folder Drop-down")
                 
                 
@@ -220,8 +220,8 @@ def retainV3_2Dropdown():
         data = last_file.read(100)
         if len(data) > 0 :
             last_file.write("\n")
-        # Append text at the end of file
-        last_file.write("# Version 3.2")
+            # Append text at the end of file
+            last_file.write("# Version 3.2")
         print("Retained V3.2 Folder Drop-down")
     
 
@@ -233,8 +233,8 @@ def retainV4_0Dropdown():
         data = last_file.read(100)
         if len(data) > 0 :
             last_file.write("\n")
-        # Append text at the end of file
-        last_file.write("# Version 4.0")
+            # Append text at the end of file
+            last_file.write("# Version 4.0")
         print("Retained V4.0 Folder Drop-down")
         
         
@@ -247,13 +247,10 @@ def waitAMoment():
         
 def main():
     updateTagsAndRemoveAuth()
-    #waitAMoment()
     retainV3_1Dropdown()
-    #waitAMoment()
     retainV3_2Dropdown()
-    #waitAMoment()
     retainV4_0Dropdown()
-    waitAMoment()
+
     
     
     
