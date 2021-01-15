@@ -1,10 +1,10 @@
-I"�<p>Handling data with care and delivering a positive experience for our customers is paramount at SAP Concur. To ensure an appropriate level of data security and good customer experience, all apps that integrate and appear in the App Center go through our App Review process.</p>
+I"�<p>Handling data with care and delivering a positive experience for our customers is paramount at SAP Concur. To ensure an appropriate level of data security and good customer experience, all apps that integrate and appear in the App Center go through our App Review process.</p>
 
 <p><strong>NOTE:</strong> This only applies to developers who are building an integration across multiple clients (that is, an app that would appear in the App Center or TMC integrations). SAP Concur clients who are using these APIs for interaction with their own data do not need to go through certification.</p>
 
 <h4 id="get-started-on-your-api-review"><strong>Get Started on Your API Review</strong></h4>
 
-<p>Start with an overview of the whole process: <a href="/dev-center-test/api-reference/">API documentation</a>. During the Business Development phase, you will be provided access to a Professional Edition Sandbox. Sandboxes are required for partners or customers looking to use SAP Concur APIs to read and write data from SAP Concur. It is important that you contact your assigned technical resource at SAP Concur to gain access to a sandbox that best fits your scenario. If you are unsure of your technical contact, consider these 3 scenarios:</p>
+<p>Start with an overview of the whole process: <a href="/test-repo/api-reference/">API documentation</a>. During the Business Development phase, you will be provided access to a Professional Edition Sandbox. Sandboxes are required for partners or customers looking to use SAP Concur APIs to read and write data from SAP Concur. It is important that you contact your assigned technical resource at SAP Concur to gain access to a sandbox that best fits your scenario. If you are unsure of your technical contact, consider these 3 scenarios:</p>
 
 <ul>
   <li>Develop an application for the SAP Concur App Center. This requires a signed Partner Agreement, review the information on the <a href="https://developer.concur.com/solutions/app-center.html">Build App Center Solutions</a> page.</li>
