@@ -78,7 +78,7 @@ connection_requests_32_hashed = '## Connection Requests v3.2'
 
 # Slate 'includes' folder
 
-to_slate_repo_includes =  Path(r"./src/Slate-API-Explorer-Reference/slate/source/includes/")
+to_slate_repo_includes =  Path(r"./src/Slate-API-Explorer-Reference/slate/source/includes").listdir()
 
 # The below commented path is used for testing on the local machine. You may edit the path after the r" to the
 # location of Slate's 'includes' folder on your machine
@@ -196,6 +196,7 @@ def updateTagsAndRemoveAuth():
                 elif toc_h2 in line:
                     line = line.replace(h2, h3)
                 print (line)
+                
                 
 # To retain the drop-down folders, the last file before each new folder must contain that folder's name at the end of it with an # tag.
 def retainV3_1Dropdown():
