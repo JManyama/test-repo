@@ -42,6 +42,9 @@ jobs:
           name: Adjust Tags and Content
           command: pipenv run python ./src/Slate-API-Explorer-Reference/slate/source/includes/z_update_swagger_tags.py
       - run:
+          name: Retain Folders
+          command: pipenv run python ./src/Slate-API-Explorer-Reference/slate/source/includes/z_add-folders.py
+      - run:
               name: Build Fresh Slate Static Files
               no_output_timeout: 30m
               command: cd ./src/Slate-API-Explorer-Reference/slate && bundle install && bundle exec middleman build

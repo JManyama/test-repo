@@ -505,3 +505,4 @@ OAuth2
 |SegmentFormID|string|false|none|The unique identifier of the Segment Form resource. See the "Forms" resource for more information.|
 |SegmentTypeCode|string|false|none|The code for the type of itinerary segment.|
 
+# Version 3.2
