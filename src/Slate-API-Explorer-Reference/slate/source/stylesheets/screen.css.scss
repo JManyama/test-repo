@@ -1084,7 +1084,10 @@ background-color: #F2DEDE;
 
 }
 
-
+//table heading
+// tr th {
+//   color: rgba($main-bg, 0.7)
+// }
 
 /*'String portion of Response and HTTP title*/
 code {
@@ -1273,3 +1276,24 @@ background-color: #0F6AB4;
 
 }
 /*if html includes 'get', change color*/
+
+
+
+tr th::after
+{
+    content: "Scope";
+    color:rgba($main-bg, 0.7);
+    position: absolute;
+    left: 38px
+}
+
+tr th::after
+{
+    content: "Scope Description";
+    color:rgba($main-bg, 0.7);
+    position: absolute;
+    left: 38px
+}
+
+
+
