@@ -22,7 +22,7 @@ jobs:
           name: Widdershins Install and Execution.
           command: |
                 sudo npm install -g widdershins
-                cd ./src/api-explorer/ && find . -name \*.json -type f -exec widdershins \{\} -o \{\}.md --user_templates "test-repo/templates/openapi3-copy" \;
+                cd ./src/api-explorer/ && find . -name \*.json -type f -exec widdershins \{\} -o \{\}.md --user_templates "/test-repo/templates/openapi3-copy" \;
       - run:
           name: Add Underscore V3.0
           command: pipenv run python ./src/api-explorer/v3-0/z_underscore_v3_0.py
