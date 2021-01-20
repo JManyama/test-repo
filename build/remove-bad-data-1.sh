@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 for thefile in *.json.md ; do
    grep -v "<th>Scope</th>" $thefile > $thefile.$$.tmp
