@@ -42,8 +42,8 @@ jobs:
           name: Adjust Tags and Content
           command: pipenv run python ./src/Slate-API-Explorer-Reference/slate/source/includes/z_update_swagger_tags.py
       
-      - run: ./build/remove-bad-data-1.sh
-      - run: ./build/remove-bad-data-2.sh
+      - run: - sh ./build/remove-bad-data-1.sh
+      - run: - sh ./build/remove-bad-data-2.sh
       
       - run:
           name: Add Version Folders 3.0, 3.1, 3.2 and 4.0
