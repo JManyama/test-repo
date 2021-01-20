@@ -74,6 +74,10 @@ connection_requests_31_hashed = '## Connection Requests v3.1'
 connection_requests_32 = '<h1 id="connection-requests">Connection Requests v3.2</h1>'
 connection_requests_32_hashed = '## Connection Requests v3.2'
 
+#These are showing up on the file as its being compiled in CircleCI, not on the files at the local machine
+scope = "<th>Scope</th>"
+scope_desc = "<th>Scope Description</th>"
+
 
 
 # Slate 'includes' folder
@@ -93,7 +97,11 @@ def updateTagsAndRemoveAuth():
         if ".json" in swagger:            
             for line in fileinput.input(swagger, inplace=True):
                 line = line.rstrip()
-                if h1 in line and resources in line:
+                if scope in line:
+                    line = line.replace(scope, "")
+                elif scope_desc in line:
+                    line = line.replace(scope_desc, "")
+                elif h1 in line and resources in line:
                         line = line.replace(h1, h3)                                               # This will update the Resource tag from H2 to H3 - needs to be first for logic to work
                 elif h1 in line and resource in line:
                     line = line.replace(h1, h3)
