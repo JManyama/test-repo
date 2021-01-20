@@ -1,5 +1,5 @@
 
-cd ./src/Slate-API-Explorer-Reference/slate/source/includes/
+cd ./slate-ui/build/
 
 for thefile in *.json.md ; do
    grep -v "Scope Definition" $thefile > $thefile.$$.tmp
