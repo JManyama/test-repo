@@ -97,14 +97,14 @@ def updateTagsAndRemoveAuth():
         if ".json" in swagger:            
             for line in fileinput.input(swagger, inplace=True):
                 line = line.rstrip()
-                if scope in line:
-                    line = line.replace(scope, "")
-                elif scope_desc in line:
-                    line = line.replace(scope_desc, "")
-                elif h1 in line and resources in line:
+                if h1 in line and resources in line:
                         line = line.replace(h1, h3)                                               # This will update the Resource tag from H2 to H3 - needs to be first for logic to work
                 elif h1 in line and resource in line:
                     line = line.replace(h1, h3)
+                elif scope in line:
+                    line = line.replace(scope, "")
+                elif scope_desc in line:
+                    line = line.replace(scope_desc, "")
                 elif connection_requests_31 in line:
                     line = line.replace(connection_requests_31, connection_requests_31_hashed)
                 elif connection_requests_32 in line:
