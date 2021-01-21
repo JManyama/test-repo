@@ -440,17 +440,17 @@ Status Code **200**
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |*anonymous*|[[BudgetCategory](#schemabudgetcategory)]|false|none|none|
-|» description|string|false|none|none|
-|» expenseTypes|[[ExpenseType](#schemaexpensetype)]|true|none|The list of expense types that this budget category matches.|
-|»» expenseTypeCode|string|false|none|The alphanumeric code that describes an expense type. Ex: TRAVEL, AC_CATER Any string may be used, but only expense type codes returned by GET /budgetCategory/expenseType will behave properly in the Concur UI.|
-|»» featureTypeCode|string|false|none|The type of feature that this expense type applies to, Purchase Request, Payment Request (Invoice), Expense or Travel Authorization|
-|»» id|string|false|none|The unique idenifier for the expense type|
-|»» name|string|true|none|none|
-|»» syncGuid|string|false|none|The unique idenifier for the expense type|
-|» id|string|false|none|The unique identifier for the budget category.|
-|» name|string|true|none|The name of this budget category.|
-|» statusType|string|false|none|The status of this budget category--only open and removed are meaningful for budget category.|
-|» syncGuid|string|false|none|The unique identifier for the budget category.|
+|description|string|false|none|none|
+|expenseTypes|[[ExpenseType](#schemaexpensetype)]|true|none|The list of expense types that this budget category matches.|
+|expenseTypeCode|string|false|none|The alphanumeric code that describes an expense type. Ex: TRAVEL, AC_CATER Any string may be used, but only expense type codes returned by GET /budgetCategory/expenseType will behave properly in the Concur UI.|
+|featureTypeCode|string|false|none|The type of feature that this expense type applies to, Purchase Request, Payment Request (Invoice), Expense or Travel Authorization|
+|id|string|false|none|The unique idenifier for the expense type|
+|name|string|true|none|none|
+|syncGuid|string|false|none|The unique idenifier for the expense type|
+|id|string|false|none|The unique identifier for the budget category.|
+|name|string|true|none|The name of this budget category.|
+|statusType|string|false|none|The status of this budget category--only open and removed are meaningful for budget category.|
+|syncGuid|string|false|none|The unique identifier for the budget category.|
 
 #### Enumerated Values
 
@@ -890,11 +890,11 @@ Status Code **200**
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |*anonymous*|[[ExpenseType](#schemaexpensetype)]|false|none|none|
-|» expenseTypeCode|string|false|none|The alphanumeric code that describes an expense type. Ex: TRAVEL, AC_CATER Any string may be used, but only expense type codes returned by GET /budgetCategory/expenseType will behave properly in the Concur UI.|
-|» featureTypeCode|string|false|none|The type of feature that this expense type applies to, Purchase Request, Payment Request (Invoice), Expense or Travel Authorization|
-|» id|string|false|none|The unique idenifier for the expense type|
-|» name|string|true|none|none|
-|» syncGuid|string|false|none|The unique idenifier for the expense type|
+|expenseTypeCode|string|false|none|The alphanumeric code that describes an expense type. Ex: TRAVEL, AC_CATER Any string may be used, but only expense type codes returned by GET /budgetCategory/expenseType will behave properly in the Concur UI.|
+|featureTypeCode|string|false|none|The type of feature that this expense type applies to, Purchase Request, Payment Request (Invoice), Expense or Travel Authorization|
+|id|string|false|none|The unique idenifier for the expense type|
+|name|string|true|none|none|
+|syncGuid|string|false|none|The unique idenifier for the expense type|
 
 #### Enumerated Values
 
@@ -3390,14 +3390,14 @@ Status Code **200**
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |*anonymous*|[[CostObjectField](#schemacostobjectfield)]|false|none|none|
-|» budgetSequenceNumber|integer(int32)|false|none|none|
-|» budgetTrackingFieldName|string|false|none|none|
-|» connectedListSequenceNumber|integer|false|none|none|
-|» feildType|string|false|none|none|
-|» fieldDefinitionId|string|false|none|none|
-|» fieldId|string|false|none|none|
-|» fieldSyncGuid|string|false|none|none|
-|» listSyncGuid|string|false|none|none|
+|budgetSequenceNumber|integer(int32)|false|none|none|
+|budgetTrackingFieldName|string|false|none|none|
+|connectedListSequenceNumber|integer|false|none|none|
+|feildType|string|false|none|none|
+|fieldDefinitionId|string|false|none|none|
+|fieldId|string|false|none|none|
+|fieldSyncGuid|string|false|none|none|
+|listSyncGuid|string|false|none|none|
 
 <aside class="success">
 This operation does not require authentication
@@ -3679,31 +3679,31 @@ Status Code **200**
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |*anonymous*|[[FiscalYear](#schemafiscalyear)]|false|none|none|
-|» currentYear|boolean|true|none|Is this the current fiscal year based on the current time?|
-|» customFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
-|»» currentPeriod|boolean|true|none|Is this the current period based on the current date/time?|
-|»» endDate|string(date)|true|none|The end date of the fiscal period. Must be within the parent fiscal year.|
-|»» fiscalPeriodStatus|string|false|none|The status of the fiscal period. Open, closed, and removed are valid.|
-|»» fiscalYearSyncGuid|string|false|none|none|
-|»» id|string|false|none|The unique identifier for the fiscal period.|
-|»» name|string|true|none|Name of the fiscal period. Must be unique for the entity.|
-|»» periodType|string|true|none|The type of fiscal period|
-|»» spendDate|string(date)|true|none|The spend date of the fiscal period. Must be within the parent fiscal year.|
-|»» startDate|string(date)|true|none|The start date of the fiscal period. Must be within the parent fiscal year.|
-|»» syncGuid|string|false|none|The unique identifier for the fiscal period.|
-|» displayName|string|false|none|Display name for fiscal year. For date range budget item we use this field to display|
-|» endDate|string(date)|true|none|The end date for this fiscal year. The distance between start date and end date may not be more than two years.|
-|» fiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
-|» id|string|false|none|The unique identifier of the fiscal year.|
-|» lastModified|string(date-time)|false|none|The last time the fiscal year was updated. Date in UTC. **READ ONLY**|
-|» monthlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
-|» name|string|true|none|The name of this fiscal year. Must be unique for this entity.|
-|» openAndClosedFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
-|» quarterlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
-|» startDate|string(date)|true|none|The start date for this fiscal year|
-|» status|string|false|none|The status of this fiscal year. Open, closed, and removed are valid.|
-|» syncGuid|string|false|none|The unique identifier of the fiscal year.|
-|» yearlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|currentYear|boolean|true|none|Is this the current fiscal year based on the current time?|
+|customFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|currentPeriod|boolean|true|none|Is this the current period based on the current date/time?|
+|endDate|string(date)|true|none|The end date of the fiscal period. Must be within the parent fiscal year.|
+|fiscalPeriodStatus|string|false|none|The status of the fiscal period. Open, closed, and removed are valid.|
+|fiscalYearSyncGuid|string|false|none|none|
+|id|string|false|none|The unique identifier for the fiscal period.|
+|name|string|true|none|Name of the fiscal period. Must be unique for the entity.|
+|periodType|string|true|none|The type of fiscal period|
+|spendDate|string(date)|true|none|The spend date of the fiscal period. Must be within the parent fiscal year.|
+|startDate|string(date)|true|none|The start date of the fiscal period. Must be within the parent fiscal year.|
+|syncGuid|string|false|none|The unique identifier for the fiscal period.|
+|displayName|string|false|none|Display name for fiscal year. For date range budget item we use this field to display|
+|endDate|string(date)|true|none|The end date for this fiscal year. The distance between start date and end date may not be more than two years.|
+|fiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|id|string|false|none|The unique identifier of the fiscal year.|
+|lastModified|string(date-time)|false|none|The last time the fiscal year was updated. Date in UTC. **READ ONLY**|
+|monthlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|name|string|true|none|The name of this fiscal year. Must be unique for this entity.|
+|openAndClosedFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|quarterlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|startDate|string(date)|true|none|The start date for this fiscal year|
+|status|string|false|none|The status of this fiscal year. Open, closed, and removed are valid.|
+|syncGuid|string|false|none|The unique identifier of the fiscal year.|
+|yearlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
 
 #### Enumerated Values
 
@@ -4207,31 +4207,31 @@ Status Code **200**
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |*anonymous*|[[FiscalYear](#schemafiscalyear)]|false|none|none|
-|» currentYear|boolean|true|none|Is this the current fiscal year based on the current time?|
-|» customFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
-|»» currentPeriod|boolean|true|none|Is this the current period based on the current date/time?|
-|»» endDate|string(date)|true|none|The end date of the fiscal period. Must be within the parent fiscal year.|
-|»» fiscalPeriodStatus|string|false|none|The status of the fiscal period. Open, closed, and removed are valid.|
-|»» fiscalYearSyncGuid|string|false|none|none|
-|»» id|string|false|none|The unique identifier for the fiscal period.|
-|»» name|string|true|none|Name of the fiscal period. Must be unique for the entity.|
-|»» periodType|string|true|none|The type of fiscal period|
-|»» spendDate|string(date)|true|none|The spend date of the fiscal period. Must be within the parent fiscal year.|
-|»» startDate|string(date)|true|none|The start date of the fiscal period. Must be within the parent fiscal year.|
-|»» syncGuid|string|false|none|The unique identifier for the fiscal period.|
-|» displayName|string|false|none|Display name for fiscal year. For date range budget item we use this field to display|
-|» endDate|string(date)|true|none|The end date for this fiscal year. The distance between start date and end date may not be more than two years.|
-|» fiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
-|» id|string|false|none|The unique identifier of the fiscal year.|
-|» lastModified|string(date-time)|false|none|The last time the fiscal year was updated. Date in UTC. **READ ONLY**|
-|» monthlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
-|» name|string|true|none|The name of this fiscal year. Must be unique for this entity.|
-|» openAndClosedFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
-|» quarterlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
-|» startDate|string(date)|true|none|The start date for this fiscal year|
-|» status|string|false|none|The status of this fiscal year. Open, closed, and removed are valid.|
-|» syncGuid|string|false|none|The unique identifier of the fiscal year.|
-|» yearlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|currentYear|boolean|true|none|Is this the current fiscal year based on the current time?|
+|customFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|currentPeriod|boolean|true|none|Is this the current period based on the current date/time?|
+|endDate|string(date)|true|none|The end date of the fiscal period. Must be within the parent fiscal year.|
+|fiscalPeriodStatus|string|false|none|The status of the fiscal period. Open, closed, and removed are valid.|
+|fiscalYearSyncGuid|string|false|none|none|
+|id|string|false|none|The unique identifier for the fiscal period.|
+|name|string|true|none|Name of the fiscal period. Must be unique for the entity.|
+|periodType|string|true|none|The type of fiscal period|
+|spendDate|string(date)|true|none|The spend date of the fiscal period. Must be within the parent fiscal year.|
+|startDate|string(date)|true|none|The start date of the fiscal period. Must be within the parent fiscal year.|
+|syncGuid|string|false|none|The unique identifier for the fiscal period.|
+|displayName|string|false|none|Display name for fiscal year. For date range budget item we use this field to display|
+|endDate|string(date)|true|none|The end date for this fiscal year. The distance between start date and end date may not be more than two years.|
+|fiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|id|string|false|none|The unique identifier of the fiscal year.|
+|lastModified|string(date-time)|false|none|The last time the fiscal year was updated. Date in UTC. **READ ONLY**|
+|monthlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|name|string|true|none|The name of this fiscal year. Must be unique for this entity.|
+|openAndClosedFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|quarterlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
+|startDate|string(date)|true|none|The start date for this fiscal year|
+|status|string|false|none|The status of this fiscal year. Open, closed, and removed are valid.|
+|syncGuid|string|false|none|The unique identifier of the fiscal year.|
+|yearlyFiscalPeriods|[[FiscalPeriod](#schemafiscalperiod)]|false|none|none|
 
 #### Enumerated Values
 
