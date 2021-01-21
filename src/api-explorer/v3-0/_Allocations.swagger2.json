@@ -27,11 +27,6 @@
 			"flow": "application"
 		}
 	},
-  "security": [
-		{
-			"OAuth2": []
-		}
-	],
   "tags": [
     {
       "name": "Resources",
