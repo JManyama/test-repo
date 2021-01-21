@@ -18,12 +18,14 @@ jobs:
       - run: sudo pip3 install pipenv 
       - run: pipenv install
       - run: pipenv install Unipath
-      - run:
-          name: Widdershins Install and Execution.
-          command: |
-                sudo npm install -g widdershins
+      #- run:
+       #   name: Widdershins Install and Execution.
+          #command: |
+           #     sudo npm install -g widdershins
               #  cd ./src/api-explorer/ && find . -name \*.json -type f -exec widdershins \{\} -o \{\}.md --omitHeader \;
-                bash ./src/build/widdershins-3-0.sh
+      
+      - run: sudo npm install -g widdershins
+      - run: bash ./build/widdershins-3-0.sh
       - run:
           name: Add Underscore V3.0
           command: pipenv run python ./src/api-explorer/v3-0/z_underscore_v3_0.py
