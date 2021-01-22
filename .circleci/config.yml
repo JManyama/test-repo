@@ -14,7 +14,7 @@ jobs:
             - rubygems-v1-fallback
       - run: 
           name: "Setup custom environment variables"
-          command: echo 'export Widdershins_Template="/src/api-explorer/templates/openapi3-copy"' >> $BASH_ENV
+          command: echo 'export Widdershins_Template="src/api-explorer/templates/openapi3-copy"' >> $BASH_ENV
 
       - run: sudo apt-get install python3
       - run: sudo apt-get update 
