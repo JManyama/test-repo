@@ -3,8 +3,8 @@ import fileinput
 
 
 #These are showing up on the file as its being compiled in CircleCI, not on the files at the local machine
-scope = "Scope"
-scope_desc = "Scope Description"
+scope = "<th>Scope</th>"
+scope_desc = "<th>Scope Description</th>"
 
 
 
