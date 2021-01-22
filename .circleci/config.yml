@@ -1,9 +1,9 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/test-repo
     docker:
       - image: cimg/ruby:2.7.1-node
-    working_directory: ~/test-repo
     environment:
       BUNDLE_PATH: ~/repo/vendor/bundle 
     steps:
