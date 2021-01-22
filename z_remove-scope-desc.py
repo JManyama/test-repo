@@ -10,7 +10,7 @@ scope_desc = "Scope Description"
 
 # Slate 'includes' folder
 
-dc_index_in_gh_pages =  Path(r"./slate-ui/build/").listdir()
+dc_index_in_gh_pages =  Path(r"./src/slate-ui/build/").listdir()
 
 # The below commented path is used for testing on the local machine. You may edit the path after the r" to the
 # location of Slate's 'includes' folder on your machine
