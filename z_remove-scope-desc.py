@@ -10,7 +10,7 @@ scope_desc = "Scope Description"
 
 # Slate 'includes' folder
 
-dc_index_in_gh_pages =  Path(r"./src/slate-ui/build/").listdir()
+dc_index_in_gh_pages =  Path(r"./src/slate-ui/build/index.html")
 
 # The below commented path is used for testing on the local machine. You may edit the path after the r" to the
 # location of Slate's 'includes' folder on your machine
@@ -21,16 +21,14 @@ dc_index_in_gh_pages =  Path(r"./src/slate-ui/build/").listdir()
 # Update H1 Title Tag, H1 Resource Tag, and remove Authentication section from file - These updates are needed so file renders with correct font sizes in Slate UI
 
 def removeScopeTags():
-    for file in dc_index_in_gh_pages:
-        if ".json" in file:            
-            for line in fileinput.input(file, inplace=True):
-                line = line.rstrip()
-                if scope in line:
-                        line = line.replace(scope, "")                                               # This will update the Resource tag from H2 to H3 - needs to be first for logic to work
-                elif scope_desc in line:
-                    line = line.replace(scope_desc, "")
+    for line in fileinput.input(dc_index_in_gh_pages, inplace=True):
+        line = line.rstrip()
+        if scope in line:
+            line = line.replace(scope, "")                                               
+        elif scope_desc in line:
+            line = line.replace(scope_desc, "")
                 
-                print (line)
+        print (line)
                 
                 
 
