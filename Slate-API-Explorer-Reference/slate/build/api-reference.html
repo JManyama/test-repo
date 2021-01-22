@@ -279,7 +279,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-9d6a242e.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-099c1c9f.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-5c176cca.js"></script>
 
@@ -307,10 +307,18 @@
             <a href="#api-reference" class="toc-h1 toc-link" data-title="API REFERENCE">API REFERENCE</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#authentication-docs" class="toc-h1 toc-link" data-title="Authentication Docs">Authentication Docs</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#getting-started" class="toc-h2 toc-link" data-title="Getting Started">Getting Started</a>
+                    
+                  </li>
+                  <li>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                    
+                  </li>
+                  <li>
+                    <a href="#pre-2017-authorization-deprecated" class="toc-h2 toc-link" data-title="Pre-2017 Authorization (Deprecated)">Pre-2017 Authorization (Deprecated)</a>
                     
                   </li>
                   <li>
@@ -758,10 +766,10 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='api-reference'>API REFERENCE</h1><h1 id='authentication'>Authentication</h1><h2 id='getting-started'>Getting Started</h2>
+        <h1 id='api-reference'>API REFERENCE</h1><h1 id='authentication-docs'>Authentication Docs</h1><h2 id='getting-started'>Getting Started</h2>
 <p>SAP Concur&#39;s new Oauth2 framework is a very simple way to implement a Unified Token Authentication mechanism within your application. Here is a four step guide to helping you get up to speed and making calls to SAP Concur&#39;s API.  </p>
 
-<p><strong>Note:</strong> The Pre-2017 Authorization (Deprecated) documentation can be found <a href="/api-reference/authentication/authorization-pre-2017.html">here</a></p>
+<p><strong>Note:</strong> The Pre-2017 Authorization (Deprecated) documentation can be found <a href="api-reference.html#pre-2017-authorization-deprecated">here</a></p>
 
 <ul>
 <li><a href="#obtain-clientid-and-clientsecret">Obtain Your Application clientID and clientSecret</a></li>
@@ -776,7 +784,7 @@
 <h3 id='obtaining-an-access-token'>Obtaining an Access Token</h3>
 <!--## <a name="obtain-accessToken"></a>2. Obtaining an Access Token-->
 
-<p>In order for an application to call a SAP Concur API, you need to obtain an <code>accessToken</code> on behalf of either a User, Company or Application. There are multiple ways of obtaining an <code>accessToken</code> through the various grants (<a href="/apidoc.html#password-grant">Password</a>, <a href="/apidoc.html#authorization-grant">Authorization</a>, <a href="/apidoc.html#client-credentials-grant">Client Credentials</a>, <a href="/apidoc.html#one-time-password-grant">One-time Password</a>) .</p>
+<p>In order for an application to call a SAP Concur API, you need to obtain an <code>accessToken</code> on behalf of either a User, Company or Application. There are multiple ways of obtaining an <code>accessToken</code> through the various grants (<a href="api-reference.html#password-grant">Password</a>, <a href="api-reference.html#authorization-grant">Authorization</a>, <a href="api-reference.html#client-credentials-grant">Client Credentials</a>, <a href="api-reference.html#one-time-password-grant">One-time Password</a>) .</p>
 
 <p>This section provides a quick start guide for generating an access token. If you are developing an application to be certified for the App Center or as a TripLink supplier, please refer to the <a href="/manage-apps/app-certification.html">certification documentation</a> for the grant types your application must support.</p>
 
@@ -794,7 +802,7 @@
 <span class="nv">client_secret</span><span class="o">=</span>&lt;clientSecret&gt; eg. 35c3bd92-fcb8-405e-a886-47ff3fba5664
 curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s1">'concur-correlationid: nameofapp'</span> <span class="s2">"</span><span class="nv">$oauth2_base</span><span class="s2">/v0/token"</span> <span class="nt">--data</span> <span class="s2">"username=</span><span class="nv">$username</span><span class="s2">&amp;password=</span><span class="nv">$password</span><span class="s2">&amp;grant_type=password&amp;client_secret=</span><span class="nv">$client_secret</span><span class="s2">&amp;client_id=</span><span class="nv">$client_id</span><span class="s2">"</span>
 </code></pre></div>
-<p>Full docs: <a href="https://developer.concur.com/api-reference/authentication/apidoc.html#password_grant">https://developer.concur.com/api-reference/authentication/apidoc.html#password_grant</a></p>
+<p>Full docs: <a href="https://developer.concur.com/api-reference.html#password-grant">https://developer.concur.com/api-reference.html#password-grant</a></p>
 
 <p>Store the token and geolocation.</p>
 <h3 id='calling-an-api-with-access-token'>Calling an API with Access Token</h3>
@@ -953,6 +961,1694 @@ https://us.api.concursolutions.com/profile/v1/me
 <p>Now that you&#39;ve made your first call, read up more about SAP Concur&#39;s wide ranging APIs and how they can enhance your application or solve your business needs.</p>
 
 <p>ref: <a href="https://developer.concur.com/api-reference/index.html">https://developer.concur.com/api-reference/index.html</a></p>
+<h2 id='authentication'>Authentication</h2><h3 id='special-note-please-read-first'>Special Note: (Please Read First)</h3>
+<p>If you are an existing partner with an existing app, please read both the <a href="/api-reference/authentication/migrationguide.html">Migration to Oauth2 Tokens</a> and <a href="/api-reference/authentication/getting-started.html">Getting Started</a> documentation first. If you have any questions, please contact your Partner Enablement team representative before proceeding.</p>
+
+<ul>
+<li><a href="#">Overview</a></li>
+<li><a href="#access_token">Tokens</a>
+
+<ul>
+<li><a href="#obtain_token">Obtaining a token</a></li>
+<li><a href="#refresh_token">Refreshing a token</a></li>
+<li><a href="#revoke_token">Revoking a token</a></li>
+<li><a href="#manage_token">Token Management</a></li>
+<li><a href="#base_uri">Base URIs &amp; Geolocation</a></li>
+<li><a href="#id_token">ID Token</a></li>
+</ul></li>
+<li>Types of grants
+
+<ul>
+<li><a href="#auth_grant">Authorization grant</a></li>
+<li><a href="#password_grant">Password grant</a></li>
+<li><a href="#client_credentials">Client Credentials grant</a></li>
+<li><a href="#otp_grant">One Time Password grant</a></li>
+</ul></li>
+<li><a href="#response_codes">Response Codes</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+
+<p><strong>Note:</strong> The Pre-2017 Authorization (Deprecated) documentation be found <a href="api-reference.html#pre-2017-authorization-deprecated">here</a></p>
+<h3 id='access-tokens'><a name="access_token"></a>Access Tokens</h3>
+<p>The Oauth2 service generates access tokens for authenticated users, applications or companies. The token returned in the Oauth2 response can be used to access protected resources on SAP Concur services.</p>
+
+<p>The Oauth2 response can, depending on grant type contain these values:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>expires_in</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The lifetime in seconds of the access token</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The scope of the access token as granted to the client application</td>
+</tr>
+<tr>
+<td><code>token_type</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The type of token returned. Value will be <code>Bearer</code></td>
+</tr>
+<tr>
+<td><code>access_token</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>Token used to access protected resources of SAP Concur services.</td>
+</tr>
+<tr>
+<td><code>refresh_token</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>Refresh token required to request a new access token for a given user.</td>
+</tr>
+<tr>
+<td><code>geolocation</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The base URL for where the user profile lives. See <a href="#base_uri">base URI</a> for usage.</td>
+</tr>
+<tr>
+<td><code>id_token</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The OCID Token in the JSON Web Token (JWT) format that describes the user or company</td>
+</tr>
+</tbody></table>
+
+<p><strong>Token Response</strong></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">date-requested</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">3397</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">Close</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3600"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app-scopes"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"access_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refresh_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocid_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"geolocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://us.api.concursolutions.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='obtaining-a-token'><a name="obtain_token"></a>Obtaining a token</h3>
+<p>You can obtain a token for three different types of principals in the SAP Concur universe.</p>
+
+<ul>
+<li>User</li>
+<li>Application</li>
+<li>Company</li>
+</ul>
+
+<p><strong>Token Lifetime</strong></p>
+
+<p>An <code>accessToken</code> has a one hour lifetime.</p>
+
+<p>In order to obtain a token, the client application needs to call the Oauth2 endpoint using various <code>grants</code> depending on the authentication scenarios required. The full list of supported scenarios is provided below:</p>
+
+<ul>
+<li><a href="#auth_grant">Authorization grant</a></li>
+<li><a href="#password_grant">Password grant</a></li>
+<li><a href="#client_credentials">Client Credentials grant</a></li>
+<li><a href="#otp_grant">One Time Password grant</a></li>
+</ul>
+<h3 id='refreshing-a-token'><a name="refresh_token"></a>Refreshing a token</h3>
+<p>The refresh grant is used to refresh an access_token that has expired. This grant can be used anytime a refresh_token is returned in the response of another grant request. No user interaction is required.</p>
+
+<p><strong>Token Lifetime</strong></p>
+
+<p>A refresh token has a <strong>six month</strong> lifetime. If the refresh token expires, the client application must reinitiate the authorization process. When a refresh token is used to request a new access token, both a new access token as well as a new refresh token are returned in the response. This token can change even if most of the time, this value is the same. Client applications should treat all returned refresh tokens as new tokens and overwrite the stored tokens with the new token from the response.</p>
+
+<p>It is recommended that the client application use the refresh grant to request a new access token as the initial step of accessing protected resources of SAP Concur services.</p>
+
+<p><strong>Refreshing the token</strong></p>
+
+<p>To request a new access token using a valid refresh token, use the Oauth2 /token endpoint. Use the <code>application/x-www-form-urlencoded</code> content type.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>POST /oauth2/v0/token
+</code></pre></div>
+<p><strong>Post Body</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>client_id</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td><strong>Required</strong> The client applications client_id supplied by App Management</td>
+</tr>
+<tr>
+<td><code>client_secret</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td><strong>Required</strong> The client applications client_secret supplied by App Management</td>
+</tr>
+<tr>
+<td><code>refresh_token</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td><strong>Required</strong> An existing valid refresh token to be used to request a new access token</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><strong>Optional</strong> The client applications list of scopes</td>
+</tr>
+<tr>
+<td><code>grant_type</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><strong>Required</strong> The grant type instructs the Oauth2 service how to process the request. For refresh token, the value must be <code>refresh_token</code></td>
+</tr>
+</tbody></table>
+
+<p><strong>Request</strong></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/oauth2/v0/token</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">us.api.concursolutions.com</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">close</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">437</span>
+
+POST BODY
+client_id=your-client_id
+&amp;client_secret=your-client_secret
+&amp;grant_type=refresh_token
+&amp;refresh_token=valid-refresh_token
+&amp;scope=app-scope
+</code></pre></div>
+<p><strong>Response</strong></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">date-requested</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">3397</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">Close</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3600"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app-scopes"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"access_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refresh_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocid_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"geolocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://us.api.concursolutions.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='revoking-a-token'><a name="revoke_token"></a>Revoking a token</h3>
+<p>All refresh_tokens associated to a user for an application can be revoked by calling the <code>https://us.api.concursolutions.com/app-mgmt/v0/connections</code> endpoint with a <code>DELETE</code> action. You have to provide the User&#39;s <code>accessToken</code> in the Authorization Header as <code>Authorization: Bearer &lt;access_token&gt;</code>.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>DELETE https://us.api.concursolutions.com/app-mgmt/v0/connections
+</code></pre></div>
+<p><strong>Request</strong></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>DELETE https://us.api.concursolutions.com/app-mgmt/v0/connections
+Authorization: Bearer <span class="o">{</span>token<span class="o">}</span>
+</code></pre></div>
+<p><strong>Response</strong></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
+</code></pre></div><h3 id='managing-tokens'><a name="manage_token"></a>Managing tokens</h3>
+<p>Refresh Tokens are UUID4 identifiers that allow your application to obtain a fresh <code>accessToken</code> on behalf of a user to access SAP Concur APIs.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>e013335d-b4ce-4c43-a7e4-b67abc1adcb0
+</code></pre></div>
+<p>It is highly recommended that you store Refresh Tokens together with your user&#39;s authorization metadata in your application every time you obtain a new <code>refreshToken</code> as they might change depending on different scenarios.</p>
+
+<p>FOR APP CENTER AND SUPPLIER PARTNERS supporting all geolocations, storing the authorization metadata, including the geolocation are REQUIRED.</p>
+<h3 id='base-uris'><a name="base_uri"></a>Base URIs</h3>
+<p>When making API calls, the appropriate base URI should be used. There are three different scenarios:
+1. Obtaining a token for a user.
+2. Refreshing a token.
+3. Calling other APIs.</p>
+
+<p>The base URI for obtaining a token will leverage your application&#39;s geolocation.  The base URI for refreshing tokens and all other API calls will leverage the token&#39;s geolocation.</p>
+<h3 id='base-uris-for-obtaining-a-token'><a name="base_uri_obtain_token"></a>Base URIs for Obtaining a Token</h3>
+<p>When your application is created, you will be provided with a client ID, secret and geolocation. When obtaining a token, your application should use the base URI for the geolocation in which your application exists.</p>
+
+<p>There are two endpoints for each geolocation - one is the default (used for server-side calls) and the other should be used for client-side calls.</p>
+
+<p>The full list of available token geolocations is available on the <a href="/platform/base-uris.html">Base URIs</a> page.</p>
+
+<blockquote>
+<p><strong>When obtaining the token, the token&#39;s geolocation will be included in the response. The token&#39;s geolocation should be stored along with the token. The Developer&#39;s app will then be able to make subsequent calls using the token and the correct end points based on the token&#39;s GEO location.</strong></p>
+</blockquote>
+<h3 id='base-uris-for-all-other-calls'>Base URIs for All Other Calls</h3>
+<p>When refreshing a token or when calling any other APIs, the token&#39;s geolocation should be used as the base URI.</p>
+
+<p><strong>Note:</strong> Client-side calls should use the www- variant of the base URI.</p>
+
+<p>For example:
+When obtaining a token, if the response was the below:</p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">date-requested</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">3397</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">Close</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3600"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app-scopes"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"access_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refresh_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocid_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"geolocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://us.api.concursolutions.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>When then calling the receipts API to post a receipt, your request should be made to https://us.api.concursolutions.com (if server side) or https://www-us.api.concursolutions.com (for clients).</p>
+<h3 id='id-token'><a name="id_token"></a>ID Token</h3>
+<p>Authentication service will return an <a href="http://openid.net">OPENID</a> compatible <a href="http://openid.net/specs/openid-connect-core-1_0.html#IDToken">ID token</a> with every token request. This <code>id_token</code> is primarily used to describe information about a user or a company. You can obtain the userId from this token.</p>
+
+<p><strong>Sample id_token:</strong></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"aud"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e010e25d-b4ce-4ce3-a7e4-b670cb1adcb0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"concur.profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://us.api.concursolutions.com/profile/v1/principals/76459ad3-f77b-4d98-a21a-55333c9179f0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"concur.version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"concur.type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76459ad3-f77b-4d98-a21a-55333c9179f0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"iss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://us.api.concursolutions.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1485485529</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"nbf"</span><span class="p">:</span><span class="w"> </span><span class="mi">1485481929</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"at_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"351515a6482f4ee1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"iat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1485481929</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='verifying-an-id_token'>Verifying an id_token</h3>
+<p>The Authentication service exposes <a href="https://tools.ietf.org/html/rfc7517">JWKs</a> that can be used to validate the id_token in the form of a JWT. Validating a JWT is described in detail in <a href="https://tools.ietf.org/html/rfc7519#section-7.2">RFC 7519 - sec 7.2</a></p>
+
+<p>This is the link to the SAP Concur JSON Web Key for Oauth2. <a href="https://www-us.api.concursolutions.com/oauth2/v0/jwks">https://www-us.api.concursolutions.com/oauth2/v0/jwks</a></p>
+<h3 id='authorization-grant'><a name="auth_grant"></a>Authorization grant</h3>
+<p>The authorization grant is the regular 3-legged oauth2 grant and is defined in detail in <a href="https://tools.ietf.org/html/rfc6749#section-4.1">RFC6749 sec-4.1</a>. This grant requires the user to explicitly authenticate themselves and authorise the application initiating the grant.</p>
+
+<p>The users <em>must be</em> able to authenticate themselves via an SAP Concur username &amp; password. Users will be challenged to login by an Oauth2 HTML page.</p>
+
+<p><strong>Who should use it</strong>
+* 3rd party &quot;partner&quot; websites - or -
+* non-SAP Concur Applications - &amp; -
+* Applications that need explicit user authentication &amp; authorization - &amp; -
+* Applications that can securely store a code, access_token &amp; refresh_token</p>
+
+<p><strong>Grant details</strong></p>
+
+<blockquote>
+<p>Note that the grant type must be accessed using the <code>www-</code> version of the API Gateway in order to avoid certificate issues with some browsers. (ex: https://www-us.api.concursolutions.com instead of https://us.api.concursolutions.com)</p>
+</blockquote>
+
+<p><code>GET /oauth2/v0/authorize</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>client_id</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td>Applications client_id supplied by App Management</td>
+</tr>
+<tr>
+<td><code>redirect_uri</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The redirect URI for your application to continue with the Oauth2 flow</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>List of scopes that application is asking for</td>
+</tr>
+<tr>
+<td><code>response_type</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><code>code</code></td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p>With this grant, the user has two authentication options:
+1. Username and password
+2. One-time link using a verified email address</p>
+
+<p>With both options, once the user is successfully authenticated and the user authorizes your application, the user will be redirected to the redirect_URI specified in the initial /authorize call with a temporary token appended.</p>
+
+<p><code>&lt;redirect_uri&gt;?geolocation=&lt;token_geolocation&gt;&amp;code=&lt;token&gt;</code></p>
+
+<p><em>If the user is not successfully authenticated or does not authorize the scopes for your application, an error code and description will be appended to the redirect URI. Please refer to the <a href="#response_codes">Response Codes</a> section for more information.</em></p>
+
+<p>Your application must then exchange the temporary token for a long-lived token using the below.</p>
+
+<p><code>POST /oauth2/v0/token</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>client_id</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td>Applications client_id supplied by App Management</td>
+</tr>
+<tr>
+<td><code>client_secret</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td>Applications client_secret supplied by App Management</td>
+</tr>
+<tr>
+<td><code>redirect_uri</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The redirect_uri that is registered for the application</td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td>The authorization code provided by Auth</td>
+</tr>
+<tr>
+<td><code>grant_type</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><code>authorization_code</code></td>
+</tr>
+</tbody></table>
+<h3 id='password-grant'><a name="password_grant"></a>Password grant</h3>
+<p>The Password grant can be used when there is a trust relationship between the user and the application. There are two credential types allowed with Password Grant:</p>
+
+<ol>
+<li>&quot;Password&quot;: with this credential type, the application either already has the user&#39;s credentials or can obtain the user&#39;s credentials by directly interacting with the user.</li>
+<li>&quot;AuthToken&quot;: This credential type is used for connections from the App Center. For App Center partners and TripLink suppliers, please refer to the <a href="/manage-apps/app-certification.html">certification documentation</a> for more information.</li>
+</ol>
+
+<p><strong>Post Body</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>client_id</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td>Applications client_id supplied by App Management</td>
+</tr>
+<tr>
+<td><code>client_secret</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td>Applications client_secret supplied by App Management</td>
+</tr>
+<tr>
+<td><code>grant_type</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>Specify which grant type you expect the oauth2 service to process. for password grant, the value is <code>password</code></td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>specify the username or userId</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>specify the user&#39;s password</td>
+</tr>
+<tr>
+<td><code>credtype</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The credtype signifies to oauth2 which credential set is being submitted in the request. There are two supported values: <code>authtoken</code> and <code>password</code>. For connections from the App Center, use <code>authtoken</code>. if omitted, oauth2 will assume the type is <code>password</code>.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request</strong></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/oauth2/v0/token</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">us.api.concursolutions.com</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">close</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">175</span>
+
+POST BODY
+client_id=your-client_id
+&amp;client_secret=your-client_secret
+&amp;grant_type=password
+&amp;username=username
+&amp;password=password
+</code></pre></div>
+<p><strong>Response</strong></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">date-requested</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">3397</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">Close</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3600"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app-scopes"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"access_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refresh_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocid_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"geolocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://us.api.concursolutions.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>example bad login</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_grant"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incorrect Credentials. Please Retry"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='client-credentials-grant'><a name="client_credentials"></a>Client Credentials grant</h3>
+<p>Use the <code>application/x-www-form-urlencoded</code> content type.</p>
+
+<p><code>POST /oauth2/v0/token</code></p>
+
+<p><strong>Post Body</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>client_id</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td><strong>Required</strong> Applications client_id supplied by App Management</td>
+</tr>
+<tr>
+<td><code>client_secret</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td><strong>Required</strong> Applications client_secret supplied by App Management</td>
+</tr>
+<tr>
+<td><code>grant_type</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><strong>Required</strong> Specify which grant type you expect the oauth2 service to process. For client_credentials grant, the value is <code>client_credentials</code></td>
+</tr>
+</tbody></table>
+
+<p><strong>Request</strong></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/oauth2/v0/token</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">us.api.concursolutions.com</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">close</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">127</span>
+
+POST BODY
+client_id=your-client_id
+&amp;client_secret=your-client_secret
+&amp;grant_type=client_credentials
+</code></pre></div>
+<p><strong>Response</strong></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">date-requested</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">1626</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">Close</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3600"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app-scopes"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"access_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"geolocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://us.api.concursolutions.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='one-time-password-grant'><a name="otp_grant"></a>One Time Password grant</h3>
+<p>The One-time Password grant type leverages email, phone (text messaging), instant messaging and similar systems to provide per user access tokens to client applications. This grant type requires the following steps:</p>
+
+<ol>
+<li>The calling application calls the OAuth2 service specifying the otp grant type along with required parameters.</li>
+<li>The OAuth2 service generates a one time token which it sends through the messaging mechanism chosen by the application.</li>
+<li>The user retrieves the token and presents it to the application. The means of having this presented to the application is the responsibility of the application.</li>
+<li>The application presents this one-time token to the OAuth2 service via the token endpoint.</li>
+</ol>
+
+<p><strong>Request a one-time token to be sent to the user</strong></p>
+
+<p>Use the <code>application/x-www-form-urlencoded</code> content type.</p>
+
+<p><code>POST /oauth2/v0/otp</code></p>
+
+<p><strong>Post Body</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>client_id</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td><strong>Required</strong> The client_id as defined in the SAP Concur application management system.</td>
+</tr>
+<tr>
+<td><code>client_secret</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td><strong>Required</strong> The client_secret as set by the client owner in the SAP Concur application management system.</td>
+</tr>
+<tr>
+<td><code>channel_handle</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><strong>Required</strong> The location (email address, phone number) where the one time token should be sent. Currently, only <code>email address</code> is valid.</td>
+</tr>
+<tr>
+<td><code>channel_type</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><strong>Required</strong> The type of messaging system to use. Currently only <code>email</code> is valid</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><em>Optional</em> The name of the user that appears in the email.</td>
+</tr>
+<tr>
+<td><code>company</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><em>Optional</em> The company or application name that appears in the email.</td>
+</tr>
+<tr>
+<td><code>link</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><em>Optional</em> The callback URL that appears in the email for users to click to complete the auth flow.</td>
+</tr>
+</tbody></table>
+
+<p>The calling application code can also append n-number of unique client defined parameters in the URI for the purpose of connecting the one time token to the application when received by the user. The names of these parameters cannot conflict with the API defined parameters.</p>
+
+<p>The following are reserved words and cannot be used as client application defined parameters:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>/otp: "client_id" "client_secret" "channel_type" "channel_handle"
+</code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>/token: "client_id" "client_secret" "channel_type" "channel_handle" "scope" "grant_type" "otp"
+</code></pre></div>
+<p>If the calling application chooses to send custom parameters, all of these exact same parameters <em>must be</em> included in subsequent API calls to acquire the access token. In other words, the URI signature, modulo the one time token parameter itself and token service specific parameters, <em>must match</em> the originating URI signature.</p>
+
+<p><strong>Request</strong></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/oauth2/v0/otp</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">us.api.concursolutions.com</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">close</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">437</span>
+
+POST BODY
+client_id=your-client_id
+&amp;client_secret=your-client_secret
+&amp;channel_handle=email adress
+&amp;channel_type=valid-email
+&amp;link=https://example.com/callback
+</code></pre></div>
+<p><strong>Response</strong></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">22</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">date-requested</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"otp sent"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Request an access token</strong></p>
+
+<p>The One Time Password grant requires that all of the parameters, including client application defined parameters to be sent in the request body when requesting an access token. Use the <code>application/x-www-form-urlencoded</code> content type.</p>
+
+<p><code>POST oauth2/v0/token</code></p>
+
+<p><strong>Post Body</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>client_id</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td><strong>Required</strong> The client_id as defined in the SAP Concur application management system.</td>
+</tr>
+<tr>
+<td><code>client_secret</code></td>
+<td><code>string</code></td>
+<td><code>UUID</code></td>
+<td><strong>Required</strong> The client_secret as set by the client owner in the SAP Concur application management system.</td>
+</tr>
+<tr>
+<td><code>channel_handle</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><strong>Required</strong> The location (email address, phone number) where the one time token should be sent.</td>
+</tr>
+<tr>
+<td><code>channel_type</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><strong>Required</strong> The type of messaging system to use. Currently only <code>email</code> is valid</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The scope(s) requested by the client for the token.</td>
+</tr>
+<tr>
+<td><code>grant_type</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><strong>Required</strong> The grant type being used, specifically for this approach: <code>otp</code>.</td>
+</tr>
+<tr>
+<td><code>otp</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td><strong>Required</strong> The one-time token provided as a result of the <strong>Send a one time token to the user</strong> method.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Request</strong></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/oauth2/v0/token</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">us.api.concursolutions.com</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">close</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">437</span>
+
+POST BODY
+client_id=your-client_id
+&amp;client_secret=your-client_secret
+&amp;channel_handle=email adress
+&amp;channel_type=valid-email
+&amp;scope=app_scope
+&amp;grant_type=otp
+&amp;otp=one-time-token
+</code></pre></div>
+<p><strong>Response</strong></p>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">date-requested</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">1490</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">keep-alive</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3600"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app-scopes"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"access_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refresh_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocid_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"geolocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://us.api.concursolutions.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-codes'><a name="response_codes"></a>Response Codes</h3><h4 id='http-status-returned-by-oauth2'>HTTP Status returned by oauth2</h4>
+<table><thead>
+<tr>
+<th>HTTP Status</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>OK - Successful call, response is in body.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request <code>(error, error_description, code)</code></td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized <code>(error, error_description, code)</code></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden <code>(error, error_description, code)</code></td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found <code>(error, error_description, code)</code></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Server Error, error message is in body.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Server Timed Out, error message is in body.</td>
+</tr>
+</tbody></table>
+
+<p>4xx class errors have a JSON response with the following fields</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;number&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;error&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;error_description&gt;</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"geolocation"</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;geolocation</span><span class="w"> </span><span class="err">url</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">user</span><span class="w"> </span><span class="err">lives&gt;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h4 id='authorize'>/authorize</h4>
+<p>If the authorization or authentication are unsuccessful, your application will receive an error code and description at the redirect_uri provided.</p>
+<div class="highlight"><pre class="highlight plaintext"><code> error_code=&lt;&gt;
+ &amp;error_description=&lt;&gt;
+</code></pre></div>
+<p>In all cases, the friendly error description should be displayed to the user.</p>
+<h4 id='token'>/token</h4>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>5</td>
+<td><code>invalid_grant</code></td>
+<td>Incorrect credentials. Please Retry</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>invalid_grant</code></td>
+<td>Account is disabled. Please contact support</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>invalid_grant</code></td>
+<td>Account is disabled. Please contact support</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>invalid_grant</code></td>
+<td>Logon Denied. Please contact support</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>invalid_grant</code></td>
+<td>Logon Denied. Please contact support</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>invalid_grant</code></td>
+<td>Account Locked. Please contact support</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>invalid_request</code></td>
+<td>user lives elsewhere</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>invalid_grant</code></td>
+<td>Incorrect credentials. Please Retry</td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>invalid_grant</code></td>
+<td>Logon Denied. Please contact support (typically due to IP restriction)</td>
+</tr>
+<tr>
+<td>51</td>
+<td><code>invalid_request</code></td>
+<td>username was not supplied</td>
+</tr>
+<tr>
+<td>52</td>
+<td><code>invalid_request</code></td>
+<td>password was not supplied</td>
+</tr>
+<tr>
+<td>53</td>
+<td><code>invalid_client</code></td>
+<td>company is not enabled for this client</td>
+</tr>
+<tr>
+<td>54</td>
+<td><code>invalid_scope</code></td>
+<td>requested scope exceeds granted scope</td>
+</tr>
+<tr>
+<td>55</td>
+<td><code>invalid_request</code></td>
+<td>we don&#39;t know this email</td>
+</tr>
+<tr>
+<td>56</td>
+<td><code>invalid_request</code></td>
+<td><code>otp</code> was not supplied</td>
+</tr>
+<tr>
+<td>57</td>
+<td><code>invalid_request</code></td>
+<td><code>channel_type</code> missing</td>
+</tr>
+<tr>
+<td>58</td>
+<td><code>invalid_request</code></td>
+<td><code>channel_handle</code> missing</td>
+</tr>
+<tr>
+<td>59</td>
+<td><code>access_denied</code></td>
+<td>client disabled</td>
+</tr>
+<tr>
+<td>60</td>
+<td><code>invalid_grant</code></td>
+<td>these are not the grants you are looking for</td>
+</tr>
+<tr>
+<td>61</td>
+<td><code>invalid_client</code></td>
+<td>client not found</td>
+</tr>
+<tr>
+<td>62</td>
+<td><code>invalid_request</code></td>
+<td><code>client_id</code> was not supplied</td>
+</tr>
+<tr>
+<td>63</td>
+<td><code>invalid_request</code></td>
+<td><code>client_secret</code> was not supplied</td>
+</tr>
+<tr>
+<td>64</td>
+<td><code>invalid_client</code></td>
+<td>Incorrect credentials. Please Retry</td>
+</tr>
+<tr>
+<td>65</td>
+<td><code>invalid_request</code></td>
+<td><code>grant_type</code> was not supplied</td>
+</tr>
+<tr>
+<td>80</td>
+<td><code>invalid_request</code></td>
+<td>invalid channel type</td>
+</tr>
+<tr>
+<td>81</td>
+<td><code>invalid_request</code></td>
+<td>bad channel handle</td>
+</tr>
+<tr>
+<td>83</td>
+<td><code>invalid_request</code></td>
+<td>otp not found</td>
+</tr>
+<tr>
+<td>84</td>
+<td><code>invalid_request</code></td>
+<td>fact verification failed</td>
+</tr>
+<tr>
+<td>85</td>
+<td><code>invalid_request</code></td>
+<td>otp verification failed</td>
+</tr>
+<tr>
+<td>100</td>
+<td><code>invalid_request</code></td>
+<td>backend does not know about this username</td>
+</tr>
+<tr>
+<td>101</td>
+<td><code>invalid_request</code></td>
+<td>code was not supplied</td>
+</tr>
+<tr>
+<td>102</td>
+<td><code>invalid_request</code></td>
+<td><code>redirect_uri</code> was not supplied</td>
+</tr>
+<tr>
+<td>103</td>
+<td><code>invalid_request</code></td>
+<td>code is bad or expired</td>
+</tr>
+<tr>
+<td>104</td>
+<td><code>invalid_grant</code></td>
+<td><code>redirect_uri</code> does not match the previous grant</td>
+</tr>
+<tr>
+<td>105</td>
+<td><code>invalid_grant</code></td>
+<td>this grant was not issued to you!</td>
+</tr>
+<tr>
+<td>106</td>
+<td><code>invalid_request</code></td>
+<td><code>refresh_token</code> was not supplied</td>
+</tr>
+<tr>
+<td>107</td>
+<td><code>invalid_request</code></td>
+<td>refresh disallowed for app</td>
+</tr>
+<tr>
+<td>108</td>
+<td><code>invalid_grant</code></td>
+<td>bad or expired refresh token</td>
+</tr>
+<tr>
+<td>109</td>
+<td><code>invalid_request</code></td>
+<td><code>loginid</code> was not supplied</td>
+</tr>
+<tr>
+<td>115</td>
+<td><code>invalid_request</code></td>
+<td>unauthenticated client will not be issued token!</td>
+</tr>
+<tr>
+<td>117</td>
+<td><code>invalid_request</code></td>
+<td>nonce is mandatory for this <code>response_type</code></td>
+</tr>
+<tr>
+<td>118</td>
+<td><code>invalid_request</code></td>
+<td>display is invalid</td>
+</tr>
+<tr>
+<td>119</td>
+<td><code>invalid_request</code></td>
+<td>prompt is invalid</td>
+</tr>
+<tr>
+<td>119</td>
+<td><code>invalid_request</code></td>
+<td>prompt must be set to consent for <code>offline_access</code></td>
+</tr>
+<tr>
+<td>120</td>
+<td><code>invalid_request</code></td>
+<td><code>credtype</code> is invalid</td>
+</tr>
+<tr>
+<td>121</td>
+<td><code>invalid_request</code></td>
+<td><code>login_type</code> is invalid</td>
+</tr>
+<tr>
+<td>122</td>
+<td><code>invalid_request</code></td>
+<td>proxies supplied are invalid</td>
+</tr>
+<tr>
+<td>123</td>
+<td><code>invalid_request</code></td>
+<td>principal is disabled</td>
+</tr>
+</tbody></table>
+<h4 id='otp'>/otp</h4>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>16</td>
+<td><code>invalid_request</code></td>
+<td>user lives elsewhere</td>
+</tr>
+<tr>
+<td>57</td>
+<td><code>invalid_request</code></td>
+<td><code>channel_type</code> was not supplied</td>
+</tr>
+<tr>
+<td>58</td>
+<td><code>invalid_request</code></td>
+<td><code>channel_handle</code> was not supplied</td>
+</tr>
+<tr>
+<td>60</td>
+<td><code>invalid_grant</code></td>
+<td>these are not the grants you are looking for</td>
+</tr>
+<tr>
+<td>61</td>
+<td><code>invalid_client</code></td>
+<td><code>client_id</code> is not known to us</td>
+</tr>
+<tr>
+<td>62</td>
+<td><code>invalid_request</code></td>
+<td><code>client_id</code> was not supplied</td>
+</tr>
+<tr>
+<td>63</td>
+<td><code>invalid_request</code></td>
+<td><code>client_secret</code> was not supplied</td>
+</tr>
+<tr>
+<td>80</td>
+<td><code>invalid_request</code></td>
+<td>invalid channel type</td>
+</tr>
+<tr>
+<td>81</td>
+<td><code>invalid_request</code></td>
+<td>bad channel handle</td>
+</tr>
+<tr>
+<td>82</td>
+<td><code>invalid_request</code></td>
+<td>the number of open otp requests has been exceeded</td>
+</tr>
+</tbody></table>
+<h3 id='troubleshooting'><a name="troubleshooting"></a>Troubleshooting</h3>
+<p>In order to assist with troubleshooting, SAP Concur responds with a unique correlationId in the response header. The key to look for is <code>correlationid</code>. This unique code can be used during troubleshooting as it identifies the API call in the log files. You should record this information in your own API call logs as well so that you can pass this information on to the SAP Concur support team.</p>
+
+<p>Example of the <code>correlationid</code> in the response:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>&lt; HTTP/1.1 200 OK
+&lt; Server: cnqr-papeete
+&lt; Date: Mon, 04 Dec 2017 22:07:05 GMT
+&lt; Content-Type: application/json
+&lt; Content-Length: 2897
+&lt; Connection: keep-alive
+&lt; Concur-Correlationid: 2803b8f8-a42b-43c2-a739-b8768e4759b8
+</code></pre></div><h3 id='enterprise-business-applications'><a name="enterprise-business-applications"></a>Enterprise Business Applications</h3>
+<p>Only the <a href="#password_grant">Password Grant Type</a> is available for obtaining company-level tokens.</p>
+
+<ol>
+<li>To begin the authentication flow, a Customer&#39;s SAP Concur Administrator clicks on the Connect button within the App Center listing and authorizes the partner&#39;s app.  This app listing is located within customer&#39;s SAP Concur system&#39;s App Center tab.</li>
+<li>The SAP Concur authorization service will redirect the Admin to the Partner’s Landing Page.  Partners should follow the <a href="https://developer.concur.com/manage-apps/go-market-docs/app-center-ux-guidelines-enterprise.html">App Center UX Guidelines</a> to create a web page that listens for an HTTP GET request from SAP Concur.</li>
+<li>The redirect URI will contain an id, requestToken and userId parameters.  Example: <code>https://{partner_redirect_URI}?id=8568a4cd-8ffc-49d6-9417-be2d69aa075f&amp;requestToken=5l85ae5a-426f-4d6f-8af4-08648c4b696b&amp;userId=9bdded51-00b8-4f84-8bef-6d3afe727007</code></li>
+<li>When the Partner application receives the redirect call, the Partner should strip the <code>id</code> and <code>requestToken</code> values from the URI and use those on a Post request to the SAP Concur Authorization service to obtain the official Oauth2 Access Token and Refresh Token for the customer using the <a href="https://developer.concur.com/api-reference/authentication/apidoc.html#password_grant">password grant</a>. As explained in detail in this <a href="https://prezi.com/p/lw0qqy51zcmd/">presentation</a>, the Partner must have <a href="https://developer.concur.com/api-reference/authentication/apidoc.html#base_uri">Data Center Geo Awareness</a> related to the token. We currently have 3 Data Centers and the API end points change based on these Data Centers so it is imperative the proper token management is followed.  Otherwise, your app will not make the correct call per Access token.</li>
+<li>An access token is valid for only one hour.  The access token should be cached in memory and discarded after use.</li>
+<li>After the Admin has successfully completed the login/enrollment process, the Partner should store the following elements with the customer’s profile metadata.
+
+<ul>
+<li><code>refresh_token</code>: (36 characters including dashes) Valid for six months from the day and time issued.</li>
+<li><code>refresh_expires_in</code>: This is Epoch time format, convert to UTC.</li>
+<li><code>geolocation</code>: To be used when making API calls on behalf of the customer.</li>
+<li><code>id</code>: Aka <code>sub</code>, is the customer’s unique identifier (UUID).  It can be retrieved from the following sources:</li>
+<li>From the re-direct URI as the id element.</li>
+<li>By decoding the <code>id_token</code> returned with Access token, as the <code>sub</code> element. (See https://jwt.io)</li>
+</ul></li>
+<li>It is highly recommended that Partners log the following elements:
+
+<ul>
+<li><code>userId</code>: the user who clicked on the Connect button (returned in the re-direct URI)</li>
+<li><code>correlationid</code>: SAP Concur responds with a unique code which identifies the API call in the log files.  (returned in the response header).  More details can be found here.</li>
+</ul></li>
+</ol>
+<h2 id='pre-2017-authorization-deprecated'>Pre-2017 Authorization (Deprecated)</h2><h3 id='authentication'>Authentication</h3>
+<p>This API has been deprecated.</p>
+
+<p>Deprecation Date: 02/04/2017</p>
+
+<p>If you are a new partner or an existing one creating a new app, please refer to the <a href="/api-reference/authentication/getting-started.html">new authentication version documentation</a>.</p>
+
+<p>Please contact your Partner Enablement representative before starting any new development to ensure a smooth and successful certification process.</p>
+
+<ul>
+<li><a href="#access-tokens">Access tokens</a>
+
+<ul>
+<li><a href="#verbs-and-uris">Verb and URIs</a></li>
+<li><a href="#keys-and-secrets">Keys and Secrets</a></li>
+<li><a href="#getting-access-token">Getting an access token</a></li>
+<li><a href="#refreshing-access-token">Refreshing an access token</a></li>
+<li><a href="#revoke-single-access-token">Revoking a single access token for a given user</a></li>
+<li><a href="#revoke-all-access-tokens">Revoking all access tokens for a user</a></li>
+</ul></li>
+<li><a href="#choosing-authorization-flow">Choosing an authorization flow</a>
+
+<ul>
+<li><a href="#native">Native flow</a></li>
+<li><a href="#web">Web flow</a></li>
+<li><a href="#app-center">AppCenter flow</a></li>
+<li><a href="#auto-connect">Auto-Connect flow</a></li>
+</ul></li>
+</ul>
+<h3 id='access-tokens'><a name="access-tokens"></a>Access tokens</h3>
+<p>An access token is a long-lived token used to make API calls.</p>
+<h3 id='verb-and-uris'><a name="verbs-and-uris"></a>Verb and URIs</h3>
+<p>All authentication and authorization tasks use the <code>GET</code> verb and URI as noted here depending on type of application:</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Verb + URI</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Native</td>
+<td><code>GET https://{InstanceURL}/net2/oauth2/accesstoken.ashx</code></td>
+</tr>
+<tr>
+<td>Web or Auto-Connect</td>
+<td><code>GET https://{InstanceURL}/net2/oauth2/GetAccessToken.ashx</code></td>
+</tr>
+</tbody></table>
+<h3 id='keys-and-secrets'><a name="keys-and-secrets"></a>Keys and Secrets</h3>
+<p>The <strong>Application Authorization</strong> section in the <strong>New Partner Application</strong> page includes <code>Key</code> and <code>Secret</code> fields that are used to generate a request token which is later exchanged for an access token.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>URI Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a name="key"></a><code>Key</code></td>
+<td><code>client_id</code></td>
+<td>Unique identifier for the application.</td>
+</tr>
+<tr>
+<td><a name="secret"></a><code>Secret</code></td>
+<td><code>client_secret</code></td>
+<td>Unique value for the application.</td>
+</tr>
+</tbody></table>
+<h3 id='getting-an-access-token'><a name="getting-access-token"></a>Getting an access token</h3><h4 id='parameters'>Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>code</code></td>
+<td><code>string</code></td>
+<td><code>{request_token}</code></td>
+<td><strong>Required</strong> The request token.</td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td><code>string</code></td>
+<td><a href="#key"><code>{key}</code></a></td>
+<td><strong>Required</strong> The application key.</td>
+</tr>
+<tr>
+<td><code>client_secret</code></td>
+<td><code>string</code></td>
+<td><a href="#secret"><code>{secret}</code></a></td>
+<td><strong>Required</strong> The application secret.</td>
+</tr>
+</tbody></table>
+<h4 id='input'>Input</h4>
+<p>None</p>
+<h4 id='response'><a name="access-token-response"></a>Response</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Instance_URL</td>
+<td><code>string</code></td>
+<td>-</td>
+<td>Identifies the Concur datacenter where the user&#39;s data resides. For example, if the Instance_Url is <code>https://www.ea1.concursolutions.com</code>, then all API calls for this user should use this URL as a prefix in subsequent API calls</td>
+</tr>
+<tr>
+<td>Token</td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The access token value passed in the Authorization header when making API calls. It is a long-lived token which is currently set to expire after one year from creation. You should securely store the token and use it for all subsequent API requests until the token expires. Before it does, you should send a request to refresh the token prior to the expiration date.</td>
+</tr>
+<tr>
+<td>Expiration_Date</td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The Universal Coordinated Time (UTC) date and time when the access token expires.</td>
+</tr>
+<tr>
+<td><a name="refresh-token"></a>Refresh_Token</td>
+<td><code>string</code></td>
+<td>-</td>
+<td>Token with a new expiration date of a year from the refresh date. You should securely store the refresh token for a user and use it for all subsequent API requests.</td>
+</tr>
+</tbody></table>
+<h3 id='refreshing-an-access-token'><a name="refreshing-access-token"></a>Refreshing an access token</h3>
+<p>NOTE: The token being refreshed must be used to make the refresh call.</p>
+
+<table><thead>
+<tr>
+<th>Verb + URI</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>GET https://{InstanceURL}/net2/oauth2/getaccesstoken.ashx?refresh_token={your refresh token}&amp;client_id={your_client_id}&amp;client_secret={your_client_secret}</code></td>
+</tr>
+</tbody></table>
+<h4 id='parameters-2'>Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>refresh_token</code></td>
+<td><code>string</code></td>
+<td><a href="#refresh-token"><code>Refresh_Token</code></a></td>
+<td><strong>Required</strong> The refresh token.</td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td><code>string</code></td>
+<td><a href="#key"><code>{key}</code></a></td>
+<td><strong>Required</strong> The application key.</td>
+</tr>
+<tr>
+<td><code>client_secret</code></td>
+<td><code>string</code></td>
+<td><a href="#secret"><code>{secret}</code></a></td>
+<td><strong>Required</strong> The application secret.</td>
+</tr>
+</tbody></table>
+<h4 id='input-2'>Input</h4>
+<p>None</p>
+<h4 id='response-2'>Response</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Instance_URL</td>
+<td><code>string</code></td>
+<td>-</td>
+<td>Identifies the Concur datacenter where the user&#39;s data resides. For example, if the Instance_Url is <code>https://www.ea1.concursolutions.com</code>, then all API calls for this user should use this URL as a prefix in subsequent API calls</td>
+</tr>
+<tr>
+<td>Token</td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The access token value passed in the Authorization header when making API calls. It is a long-lived token which is currently set to expire after one year from creation. You should securely store the token and use it for all subsequent API requests until the token expires. Before it does, you should send a request to refresh the token prior to the expiration date.</td>
+</tr>
+<tr>
+<td>Expiration_Date</td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The Universal Coordinated Time (UTC) date and time when the access token expires.</td>
+</tr>
+</tbody></table>
+<h3 id='revoking-a-single-access-token-for-a-given-user'><a name="revoke-single-access-token"></a>Revoking a single access token for a given user</h3>
+<p>POST https://{InstanceURL}/net2/oauth2/revoketoken.ashx</p>
+
+<p><a name="revoke-roles"></a><strong>Note</strong>: To revoke tokens, the caller must have one of the following roles:</p>
+
+<ul>
+<li><code>Web Services Administrator</code> for Concur Professional/Premium</li>
+<li><code>Can Administrator</code> for Concur Standard.</li>
+</ul>
+<h4 id='headers'>Headers</h4>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8" target="_blank">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8.</a></td>
+<td><code>OAuth {access_token}</code> of user with proper role.</td>
+</tr>
+</tbody></table>
+<h4 id='parameters-3'>Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>token</code></td>
+<td><code>string</code></td>
+<td><code>{access_token}</code></td>
+<td><strong>Required</strong> The token to be revoked.</td>
+</tr>
+</tbody></table>
+<h4 id='response-3'>Response</h4>
+<p>None</p>
+<h4 id='example'>Example</h4>
+<p>POST https://www.concursolutions.com/net2/oauth2/revoketoken.ashx?token=fdjhk2382kwkajsklwe8i3932kslswl
+    Authorization: OAuth fdjhk2382kwkajsklwe8i3932kslswl</p>
+<h3 id='revoking-all-access-tokens-for-a-user'><a name="revoke-all-access-tokens"></a>Revoking all access tokens for a user</h3>
+<p>POST https://www.concursolutions.com/net2/oauth2/revoketoken.ashx</p>
+<h4 id='headers-2'>Headers</h4>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8" target="_blank">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8.</a></td>
+<td><code>OAuth {access_token}</code> of user with proper role.</td>
+</tr>
+</tbody></table>
+<h4 id='parameters-4'>Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>consumerKey</code></td>
+<td><code>string</code></td>
+<td><a href="#key"><code>{key}</code></a></td>
+<td><strong>Required</strong> The key of the application.</td>
+</tr>
+<tr>
+<td><code>user</code></td>
+<td><code>string</code></td>
+<td><code>{user_LoginID}</code></td>
+<td><strong>Required</strong> The LoginID of the user.</td>
+</tr>
+</tbody></table>
+<h4 id='response-4'>Response</h4>
+<p>w
+None</p>
+<h4 id='example-2'>Example</h4>
+<p>POST https://www.concursolutions.com/net2/oauth2/revoketoken.ashx?consumerKey=eZByXv2X41cJlC21pSVvRi&amp;user=Maria
+    Authorization: OAuth fdjhk2382kwkajsklwe8i3932kslswl</p>
+<h3 id='choosing-an-authorization-flow'><a name="choosing-authorization-flow"></a>Choosing an authorization flow</h3>
+<p>Use this table to decide which OAuth 2.0 authorization flow to use for the application:</p>
+
+<table><thead>
+<tr>
+<th>If you need to...</th>
+<th>Use this flow</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Get an access token for prototyping, designing and testing an application.</td>
+<td><a href="#native">Native</a></td>
+</tr>
+<tr>
+<td>Get an access token for a user with the Web Services Administrator role and don&#39;t require the user to assent (usually for back-office integration apps).</td>
+<td><a href="#native">Native</a></td>
+</tr>
+<tr>
+<td>Inform the end-user how the app will access their data.</td>
+<td><a href="#web">Web</a> or <a href="#app-center">App Center</a></td>
+</tr>
+<tr>
+<td>Have an end-user-facing app and wish to initiate the account linking from the app, outside of the Concur App Center. <strong>NOTE:</strong> These apps must also support App Center Flow so your app is available in the Mobile App Center. Most end-user apps will be used predominantly on a mobile device.</td>
+<td><a href="#web">Web</a></td>
+</tr>
+<tr>
+<td>Distribute the app in the Mobile App Center</td>
+<td><a href="#app-center">App Center</a></td>
+</tr>
+<tr>
+<td>Distribute the app in the App Center and are <strong>not</strong> a TripLink supplier.</td>
+<td><a href="#app-center">App Center</a></td>
+</tr>
+<tr>
+<td>Distribute the app in the App Center and <strong>are</strong> a TripLink supplier.</td>
+<td><a href="#auto-connect">Auto-Connect</a></td>
+</tr>
+</tbody></table>
+<h3 id='native'><a name="native"></a>Native</h3>
+<p>The request must contain the following HTTP headers:</p>
+<h4 id='headers-3'>Headers</h4>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8" target="_blank">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8.</a></td>
+<td>The Base-64 encoded Concur credentials (LoginID:Password) of the user requesting access in the HTTP Basic Authentication format. If no password is used, the user name must still end with a colon.</td>
+</tr>
+<tr>
+<td><code>X-ConsumerKey</code></td>
+<td><a href="#key"><code>{key}</code></a></td>
+<td>Unique identifier for the application.</td>
+</tr>
+</tbody></table>
+<h4 id='example-3'>Example</h4>
+<p>GET {uri}
+    Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+    X-ConsumerKey: hj7683jslks93lalkjss93</p>
+<h4 id='response-5'>Response</h4>
+<p><a href="#access-token-response">Access token response</a></p>
+<h3 id='web'><a name="web"></a>Web</h3>
+<p>There are two types of access levels that can be enabled with web flow:</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Company Level</td>
+<td>A company can enable an application to use their data in Concur.</td>
+</tr>
+<tr>
+<td>User Level</td>
+<td>A user can enable apps to use their individual data.</td>
+</tr>
+</tbody></table>
+
+<p>This is determined by the type of Concur user account used in the process.</p>
+
+<p>The web flow is as follows:</p>
+
+<ol>
+<li><a href="#application-redirection">Application redirection to the Concur website for authentication and authorization.</a></li>
+<li><a href="#parse-inbound-http-request">Parse of a inbound HTTP request from the Concur system to an application specified endpoint.</a></li>
+<li><a href="#getting-access-token">Getting an access token</a></li>
+</ol>
+<h4 id='application-redirection-to-the-concur-website-for-authentication-and-authorization'><a name="application-redirection"></a>Application Redirection to the Concur website for authentication and authorization.</h4>
+<p><code>https://www.concursolutions.com/net2/oauth2/Login.aspx?{parameters}</code></p>
+<h4 id='parameters-5'>Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>client_id</code></td>
+<td><code>string</code></td>
+<td><a href="#key"><code>{key}</code></a></td>
+<td><strong>Required</strong> The application key.</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td><code>string</code></td>
+<td><a href="#scope"><code>{scope}</code></a></td>
+<td>The comma separated list of APIs for which authorization will be granted.</td>
+</tr>
+<tr>
+<td><code>redirect_uri</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The URI of the partner application where Concur will redirect the user after authentication and access approval.</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>Optional partner application-defined state variable. This variable is specified by the partner application and will be returned intact by the Concur&#39;s OAuth provider when the user is redirected to the redirect URL. Values are generally passed in this parameter when the state of the value cannot be maintained by the partner application, for instance when making calls between multiple, disparate web pages. Example: The state variable can contain the ID of the user in the partner application, so that the token returned in the callback can be associated to the specified user and subsequently saved in the database of the partner application.</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th><a name="scope"></a>Scope</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>ATTEND</code></td>
+<td>Attendee List Web Service</td>
+</tr>
+<tr>
+<td><code>CONFIG</code></td>
+<td>Expense Configuration Web Service</td>
+</tr>
+<tr>
+<td><code>ERECPT</code></td>
+<td>E-Receipts Web Service</td>
+</tr>
+<tr>
+<td><code>EXPRPT</code></td>
+<td>Expense Report Web Service, Quick Expense Web Service</td>
+</tr>
+<tr>
+<td><code>EXTRCT</code></td>
+<td>Extract Web Service</td>
+</tr>
+<tr>
+<td><code>IMAGE</code></td>
+<td>Imaging Web Service</td>
+</tr>
+<tr>
+<td><code>INSGHT</code></td>
+<td>Insights Web Service</td>
+</tr>
+<tr>
+<td><code>INVPO</code></td>
+<td>Invoice Purchase Order Web Service</td>
+</tr>
+<tr>
+<td><code>ITINER</code></td>
+<td>Itinerary Web Service</td>
+</tr>
+<tr>
+<td><code>LIST</code></td>
+<td>List Item Web Service</td>
+</tr>
+<tr>
+<td><code>MTNG</code></td>
+<td>Meeting Web Service</td>
+</tr>
+<tr>
+<td><code>PAYBAT</code></td>
+<td>Payment Batch Web Service</td>
+</tr>
+<tr>
+<td><code>TRVPRF</code></td>
+<td>Travel Profile Web Service</td>
+</tr>
+<tr>
+<td><code>TRVREQ</code></td>
+<td>Travel Request Web Service</td>
+</tr>
+<tr>
+<td><code>TWS</code></td>
+<td>Trip Approval Web Service</td>
+</tr>
+<tr>
+<td><code>USER</code></td>
+<td>User Web Service</td>
+</tr>
+</tbody></table>
+<h4 id='parse-of-a-inbound-http-request-from-the-concur-system-to-an-application-specified-endpoint'><a name="parse-inbound-http-request"></a>Parse of a inbound HTTP request from the Concur system to an application specified endpoint.</h4>
+<p><code>http://{redirect_uri}?{parameters}</code></p>
+
+<ul>
+<li>If access is denied the <code>error</code> and <code>error_description</code> parameters are used.</li>
+<li>If access is granted the <code>code</code> parameter is used.</li>
+</ul>
+<h5 id='parameters-6'>Parameters</h5>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>The name of the error.</td>
+</tr>
+<tr>
+<td><code>error_description</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td>Description of the error.</td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td><code>string</code></td>
+<td><code>{request_token}</code></td>
+<td>The request token.</td>
+</tr>
+</tbody></table>
+<h3 id='appcenter'><a name="app-center"></a>AppCenter</h3>
+<p>The AppCenter flow is as follows:</p>
+
+<ol>
+<li>Listening for an HTTP GET request from the Concur system.
+
+<ul>
+<li>The listener must be hosted at the URI specified in the App Center listing.</li>
+<li>The request will be in this form: <code>GET {listener_URI}?code={request_token}</code></li>
+</ul></li>
+<li>Parsing the request token value from the <code>code</code> query parameter.</li>
+<li><a href="#getting-access-token">Getting an access token</a></li>
+</ol>
+<h3 id='auto-connect'><a name="auto-connect"></a>Auto-Connect</h3>
+<p>The Auto-Connect flow is an authorization to support Connection Requests API calls from TripLink applications. During the Auto-Connect flow, the request token associated with a TripLink application is exchanged for an access token for the user who granted the TripLink application access to the user&#39;s Concur data.</p>
+
+<ol>
+<li><p>Periodically getting a list of connection requests.</p>
+
+<p><code>GET /common/connectionrequests</code></p></li>
+<li><p>For each user in the connection requests response: <a href="#getting-access-token">Getting an access token</a></p></li>
+<li><p>For each connection request, call any other Concur APIs you need to match the Concur user with the user in your system. When the user is successfully matched, or when matching fails, update the connection request.</p>
+
+<p><code>PUT /common/connectionrequests/{id}</code></p></li>
+<li><p>If you encounter an error that makes it impossible to complete the connection process, revoke the access token so the user knows that the connection attempt failed and they can try again at a later time.</p></li>
+</ol>
 <h2 id='company-level-authentication'>Company Level Authentication</h2>
 <ul>
 <li><a href="#">Overview</a></li>
