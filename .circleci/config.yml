@@ -56,8 +56,6 @@ jobs:
               name: Build Fresh Slate Static Files
               no_output_timeout: 30m
               command: cd ./src/Slate-API-Explorer-Reference/slate && bundle install && bundle exec middleman build
-     
-      #- run: bash ./build/remove-bad-data-2.sh
       - run:
           name: Move Static Files Back To Dev Center
           command: pipenv run python ./z_slate-to-dc-file-transfer.py

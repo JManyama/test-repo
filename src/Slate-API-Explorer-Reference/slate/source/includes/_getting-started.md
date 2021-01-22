@@ -3,7 +3,7 @@
 ## Getting Started
 SAP Concur's new Oauth2 framework is a very simple way to implement a Unified Token Authentication mechanism within your application. Here is a four step guide to helping you get up to speed and making calls to SAP Concur's API.  
 
-**Note:** The Pre-2017 Authorization (Deprecated) documentation can be found [here](/api-reference/authentication/authorization-pre-2017.html)
+**Note:** The Pre-2017 Authorization (Deprecated) documentation can be found [here](/api-reference.html#pre-2017-authorization-deprecated)
 
 * [Obtain Your Application clientID and clientSecret](#obtain-clientid-and-clientsecret)
 * [Obtaining an Access Token](#obtaining-an-access-token)
@@ -16,7 +16,7 @@ Before you can obtain an `accessToken`, you need to register an application with
 
 ### Obtaining an Access Token
 <!--## <a name="obtain-accessToken"></a>2. Obtaining an Access Token-->
-In order for an application to call a SAP Concur API, you need to obtain an `accessToken` on behalf of either a User, Company or Application. There are multiple ways of obtaining an `accessToken` through the various grants ([Password](/apidoc.html#password-grant), [Authorization](/apidoc.html#authorization-grant), [Client Credentials](/apidoc.html#client-credentials-grant), [One-time Password](/apidoc.html#one-time-password-grant)) .
+In order for an application to call a SAP Concur API, you need to obtain an `accessToken` on behalf of either a User, Company or Application. There are multiple ways of obtaining an `accessToken` through the various grants ([Password](/api-reference.html#password-grant), [Authorization](/api-reference.html#authorization-grant), [Client Credentials](/api-reference.html#client-credentials-grant), [One-time Password](/api-reference.html#one-time-password-grant)) .
 
 
 This section provides a quick start guide for generating an access token. If you are developing an application to be certified for the App Center or as a TripLink supplier, please refer to the [certification documentation](/manage-apps/app-certification.html) for the grant types your application must support.
@@ -38,7 +38,7 @@ client_secret=<clientSecret> eg. 35c3bd92-fcb8-405e-a886-47ff3fba5664
 curl -X POST -H 'concur-correlationid: nameofapp' "$oauth2_base/v0/token" --data "username=$username&password=$password&grant_type=password&client_secret=$client_secret&client_id=$client_id"
 ```
 
-Full docs: <https://developer.concur.com/api-reference/authentication/apidoc.html#password_grant>
+Full docs: <https://developer.concur.com/api-reference.html#password-grant>
 
 Store the token and geolocation.
 

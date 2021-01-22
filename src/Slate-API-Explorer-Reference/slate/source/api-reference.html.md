@@ -4,6 +4,7 @@ title: API Reference
 includes:
   - getting-started
   - apidoc
+  - authorization-pre-2017
   - company-auth
   - migrationguide
   - oauth2-migration-best-practices
@@ -120,6 +121,6 @@ code_clipboard: true
 ---
 
 # API REFERENCE
-# Authentication
+# Authentication Docs
 
 
