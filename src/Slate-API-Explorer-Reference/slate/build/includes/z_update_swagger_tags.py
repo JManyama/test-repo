@@ -74,11 +74,15 @@ connection_requests_31_hashed = '## Connection Requests v3.1'
 connection_requests_32 = '<h1 id="connection-requests">Connection Requests v3.2</h1>'
 connection_requests_32_hashed = '## Connection Requests v3.2'
 
+#These are showing up on the file as its being compiled in CircleCI, not on the files at the local machine
+scope = "<th>Scope</th>"
+scope_desc = "<th>Scope Description</th>"
+
 
 
 # Slate 'includes' folder
 
-to_slate_repo_includes =  Path(r"./src/Slate-API-Explorer-Reference/slate/source/includes/")
+to_slate_repo_includes =  Path(r"./src/Slate-API-Explorer-Reference/slate/source/includes").listdir()
 
 # The below commented path is used for testing on the local machine. You may edit the path after the r" to the
 # location of Slate's 'includes' folder on your machine
@@ -195,7 +199,12 @@ def updateTagsAndRemoveAuth():
                     line = line.replace(h2, h3)
                 elif toc_h2 in line:
                     line = line.replace(h2, h3)
+                elif scope in line:
+                    line = line.replace(scope, "")
+                elif scope_desc in line:
+                    line = line.replace(scope_desc, "")
                 print (line)
+                
                 
 # To retain the drop-down folders, the last file before each new folder must contain that folder's name at the end of it with an # tag.
 def retainV3_1Dropdown():
@@ -206,8 +215,8 @@ def retainV3_1Dropdown():
         data = last_file.read(100)
         if len(data) > 0 :
             last_file.write("\n")
-        # Append text at the end of file
-        last_file.write("# Version 3.1")
+            # Append text at the end of file
+            last_file.write("# Version 3.1")
         print("Retained V3.1 Folder Drop-down")
                 
                 
@@ -219,8 +228,8 @@ def retainV3_2Dropdown():
         data = last_file.read(100)
         if len(data) > 0 :
             last_file.write("\n")
-        # Append text at the end of file
-        last_file.write("# Version 3.2")
+            # Append text at the end of file
+            last_file.write("# Version 3.2")
         print("Retained V3.2 Folder Drop-down")
     
 
@@ -232,8 +241,8 @@ def retainV4_0Dropdown():
         data = last_file.read(100)
         if len(data) > 0 :
             last_file.write("\n")
-        # Append text at the end of file
-        last_file.write("# Version 4.0")
+            # Append text at the end of file
+            last_file.write("# Version 4.0")
         print("Retained V4.0 Folder Drop-down")
         
         
@@ -246,13 +255,10 @@ def waitAMoment():
         
 def main():
     updateTagsAndRemoveAuth()
-    waitAMoment()
-    retainV3_1Dropdown()
-    waitAMoment()
-    retainV3_2Dropdown()
-    waitAMoment()
-    retainV4_0Dropdown()
-    waitAMoment()
+    #retainV3_1Dropdown()
+    #retainV3_2Dropdown()
+    #retainV4_0Dropdown()
+
     
     
     

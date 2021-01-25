@@ -1,3 +1,4 @@
+
 ## Launch an External URL Request
 
 SAP Concur will send a request with the information in an encoded query string when the user clicks the button.
