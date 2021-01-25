@@ -490,8 +490,108 @@ html, body {
   #sap-concur-clients-and-third-party-developers{
     margin-bottom: -20px;
   }
-
   
+  #user-permission{
+    margin-bottom: -20px;
+  }
+
+  #accessing-application-connector-registration{
+    margin-bottom: -20px;
+  }
+
+  #registering-an-application-connector{
+    margin-bottom: -20px;
+  }
+
+  #modifying-an-application-connector-registration{
+    margin-bottom: -20px;
+  }
+  
+  #deactivating-an-application-connector-registration{
+    margin-bottom: -20px;
+  }
+
+  #supported-accept-types{
+    margin-bottom: 20px;
+  }
+
+  #search{
+    margin-bottom: -20px;
+  }
+
+  #emergency-technical-contact{
+    margin-bottom: -20px;
+  }
+
+  #testing-environment{
+    margin-bottom: -20px;
+  }
+
+  #urls{
+    margin-bottom: -20px;
+  }
+  
+  #handling-of-html{
+    margin-bottom: -20px;
+  }
+
+  #message-structure{
+    margin-bottom: -20px;
+  }
+
+  #product-restrictions{
+    margin-bottom: -20px;
+  }
+
+  #actors{
+    margin-bottom: -20px;
+  }
+
+  #use-case{
+    margin-bottom: -20px;
+  }
+
+  #reservation-and-read-requests{
+    margin-bottom: -20px;
+  }
+
+  #search-criteria{
+    margin-bottom: -20px;
+  }
+
+  #general-system-overview{
+    margin-bottom: -20px;
+  }
+
+  #http-headers-2{
+    margin-bottom: -20px;
+  }
+
+  #soap-header{
+    margin-bottom: -20px;
+  }
+
+  #ota-message-headers{
+    margin-bottom: -20px;
+  }
+
+  #error-types{
+    margin-bottom: -20px;
+  }
+
+  #reservation-message{
+    margin-bottom: -20px;
+  }
+
+  #relationship-between-roomid-and-rateplanid{
+    margin-bottom: -20px;
+  }
+
+  #descriptive-info{
+    margin-bottom: -20px;
+  }
+
+
   h3[id*="response"]{
     margin-bottom: -20px;
   }
@@ -557,6 +657,8 @@ html, body {
   #version{
     margin-bottom: -20px;
   }
+
+  #ota_hoteldescriptiveinfors
 
   h3[id*="step"]{
     margin-bottom: -20px;
@@ -1047,6 +1149,7 @@ background-color:#C5862B;;
 
 }
 
+//API REFERENCE UPDATES
 h3[id*="properties"]{
   margin-bottom: -20px;
 }
@@ -1108,6 +1211,50 @@ h3[id*="special-note-please-read-first"]{
 }
 
 #one-time-password-grant{
+  margin-bottom: -20px;
+}
+
+#naming-conventions{
+  margin-bottom: -20px;
+}
+
+#refreshing-a-token{
+  margin-bottom: -20px;
+}
+
+#revoking-a-token{
+  margin-bottom: -20px;
+}
+
+#managing-tokens{
+  margin-bottom: -20px;
+}
+
+#base-uris-for-all-other-calls{
+  margin-bottom: -20px;
+}
+
+#id-token{
+  margin-bottom: -20px;
+}
+
+#verifying-an-id-token{
+  margin-bottom: -20px;
+}
+
+#troubleshooting{
+  margin-bottom: -20px;
+}
+
+#enterprise-business-applications{
+  margin-bottom: -20px;
+}
+
+#native{
+  margin-bottom: -20px;
+}
+
+#get-a-budget-category{
   margin-bottom: -20px;
 }
 
