@@ -15,7 +15,7 @@ The SAP Concur List Item API provides an automated solution to clients who would
 
 3.0
 
-1.0 documentation is available [here](/api-reference/common/list-item/v1.list-item.html)
+1.0 documentation is available [here](#list-item-v3)
 
 #### <a name="get"></a>Retrieve All List Items Based on the Search Criteria
 

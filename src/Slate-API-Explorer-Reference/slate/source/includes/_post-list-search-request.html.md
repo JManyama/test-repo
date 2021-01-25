@@ -158,4 +158,4 @@ Content-Type: application/xml
 </fetch-list-response>
 ```
 
-[1]: /api-reference/authentication/apidoc.html
+[1]: #authentication

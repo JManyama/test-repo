@@ -70,4 +70,4 @@ The application connector responds with an HTTP 200 code when it successfully re
 
 
 
-[2]: /api-reference/callouts/event-notification.html
+[2]: #authentication

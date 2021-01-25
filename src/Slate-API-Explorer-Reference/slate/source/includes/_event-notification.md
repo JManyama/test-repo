@@ -6,7 +6,7 @@ The Event Notification callout allows clients to choose to be notified through w
 
 This callout differs from the standard SAP Concur web services in the following ways:
 
-* It uses an **outbound** **callout** where Expense calls a public facing URL provided by the application connector, which is a web server hosted by the third-party developer or client. Refer to [Callouts and Application Connectors for more information](/api-reference/callouts/callouts-application-connectors.html).
+* It uses an **outbound** **callout** where Expense calls a public facing URL provided by the application connector, which is a web server hosted by the third-party developer or client. Refer to [Callouts and Application Connectors for more information](#callouts-and-application-connectors).
 * The application connector can also use the web services to retrieve or send SAP Concur data.
 * The developer or client can configure and maintain the public web service interface (the application connector), or the connector can be maintained by SAP Concur. This guide specifies the request and response format required by SAP Concur.
 * The developer or client can choose to create their own application connector using a different language, such as PHP, if preferred.
@@ -41,9 +41,9 @@ An example use of this callout is:
 2. The notification is placed in a queue and processed in a first come, first served order.
 3. When the notification gets to the front of the queue, it is sent to the endpoint specified by the developer.
 4. The application connector returns the HTTP 200 status code, and the notification is removed from the queue.
-5. The developer uses the Report information to make the [Get Expense Report Details][2] request.
+5. The developer uses the Report information to make the [Get Expense Report Details](#reports-v3) request.
 6. The developer uses the additional information to validate some expense report information.
-7. The developer then uses the [Post Expense Report Exceptions][3] function to approve the report.
+7. The developer then uses the [Post Expense Report Exceptions](#post-an-expense-report-workflow-action) function to approve the report.
 
 This is one use case for the Event Notification callout, however it can be used for a wide variety of requirements.
 
@@ -85,11 +85,11 @@ Refer to the **Callouts and Application Connectors** page for more information.
 
 #### <a name="functions"></a>Functions
 
-[Delete Notification][9]  
+[Delete Notification](#delete-notification-requests)  
 
-[Get Notifications by Status][10]  
+[Get Notifications by Status](#get-notifications-by-status)  
 
-[Post Event Notification Request ][11]  
+[Post Event Notification Request ](#get-notifications-by-status)  
 
 #### <a name="installation-process"></a>Installation Process
 The installation process includes installing the application connector, and registering it with SAP Concur.
@@ -122,7 +122,7 @@ The installation process includes installing the application connector, and regi
 
 #### <a name="response-errors"></a>Responses and Errors
 
-Refer to the [HTTP Status Codes](/api-reference/http-status-codes.html) page for details of the common responses and errors.
+Refer to the [HTTP Status Codes](#http-status-codes) page for details of the common responses and errors.
 
 [2]:  /api-reference/expense/expense-report/v3.reports.html
 [3]:  /api-reference/expense/expense-report/post-report-exceptions.html

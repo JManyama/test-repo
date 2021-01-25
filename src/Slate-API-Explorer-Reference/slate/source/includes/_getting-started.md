@@ -38,7 +38,7 @@ client_secret=<clientSecret> eg. 35c3bd92-fcb8-405e-a886-47ff3fba5664
 curl -X POST -H 'concur-correlationid: nameofapp' "$oauth2_base/v0/token" --data "username=$username&password=$password&grant_type=password&client_secret=$client_secret&client_id=$client_id"
 ```
 
-Full docs: <https://developer.concur.com/api-reference.html#password-grant>
+Full docs: <https://developer.concur.com/slate-ui/build/api-reference.html#password-grant>
 
 Store the token and geolocation.
 
@@ -192,7 +192,7 @@ and the response will look like:
 }
 ```
 
-Full docs: <https://developer.concur.com/api-reference/user/>
+Full docs: <https://developer.concur.com/slate-ui/build/api-reference/user/>
 
 ### Access Token Expiry and Obtaining a Fresh One
 <!--### <a name="access-token-expiry"></a>4. Access Token Expiry and Obtaining a Fresh One-->
@@ -204,8 +204,8 @@ Utilizing the `geolocation` for the token, here's an example of a cURL call to o
 curl -X POST 'https://us.api.concursolutions.com/oauth2/v0/token' --data "client_id=$client_id&client_secret=$client_secret&grant_type=refresh_token&refresh_token=<old refresh token>"
 ```
 
-Full docs: <https://developer.concur.com/api-reference/authentication/apidoc.html#refresh_token>
+Full docs: <https://developer.concur.com/slate-ui/build/api-reference/authentication/apidoc.html#refresh_token>
 
 Now that you've made your first call, read up more about SAP Concur's wide ranging APIs and how they can enhance your application or solve your business needs.
 
-ref: <https://developer.concur.com/api-reference/index.html>
+ref: <https://developer.concur.com/slate-ui/build/api-reference/index.html>

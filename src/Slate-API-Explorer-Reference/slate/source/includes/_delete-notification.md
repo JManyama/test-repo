@@ -21,7 +21,7 @@ Delete an event notification.
 Example:  
 `https://www.concursolutions.com/api/platform/notifications/v1.0/notification/{notificationID}`
 
-**URI Source**: The URI is returned in the **NotificationUrl** element of the Response for the [Get Notifications by Status][1] function.
+**URI Source**: The URI is returned in the **NotificationUrl** element of the Response for the [Get Notifications by Status](#get-notifications-by-status) function.
 
 ### Headers
 
@@ -67,4 +67,4 @@ The response returns an HTTP Status Code as follows:
 `HTTPS 200 Success`
 
 
-[1]: /api-reference/callouts/get-notifications-status.html
+[1]: #get-notifications-by-status

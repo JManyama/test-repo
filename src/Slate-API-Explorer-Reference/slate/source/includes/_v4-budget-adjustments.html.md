@@ -5,12 +5,12 @@
 
 ### Menu
 
-* [Getting Started](./getting-started.html)
-* [Fiscal Year](/api-reference/budget/v4.fiscal-year.html)
-* [Budget Category](/api-reference/budget/v4.budget-category.html)
-* [Budget Item](/api-reference/budget/v4.budget-header.html)
-* [Budget Tracking Field](/api-reference/budget/v4.budget-trackingfield.html)
-* [Budget Adjustments](/api-reference/budget/v4.budget-adjustments.html)
+* [Getting Started](#budget-v4-getting-started)
+* [Fiscal Year](#budget-v4-fiscal-year-2020)
+* [Budget Category](#budget-v4-budget-category)
+* [Budget Item](#budget-v4-budget-item)
+* [Budget Tracking Field](#budget-v4-budget-tracking)
+* [Budget Adjustments](#budget-v4-budget-adjustments)
 * [Budget API Explorer](/#budget-service-api-documentation)
 
 This resource is used to add budget adjustments. Each budget item detail may have one or more budget adjustments and adjustments can be made to manually add or subtract the budget, spent or pending balances.
@@ -32,7 +32,7 @@ Create one or more budget adjustments.
 
 ### Scopes
 
-`budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+`budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 

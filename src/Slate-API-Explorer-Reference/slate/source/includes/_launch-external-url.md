@@ -50,7 +50,7 @@ Existing clients can work with SAP Concur Integration Services to create customÂ
 
 ####
 
-Information on how to download, install, and configure the application connector is included in [Callouts and Application Connectors](/api-reference/callouts/callouts-application-connectors.html).
+Information on how to download, install, and configure the application connector is included in [Callouts and Application Connectors](#callouts-and-application-connectors).
 
 ####
 
@@ -101,8 +101,8 @@ An Expense text form field must be configured as the Launch URL control type and
 
 ####
 
-Refer to the [HTTP Codes](/api-reference/http-status-codes.html) page for details of the common responses and errors.
+Refer to the [HTTP Codes](#http-status-codes) page for details of the common responses and errors.
 Â 
 
 
-[4]: /api-reference/callouts/launch-external-url-request.html
+[4]: #launch-an-external-url-request

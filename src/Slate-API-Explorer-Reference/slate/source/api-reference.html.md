@@ -21,7 +21,7 @@ includes:
   - fetch-attendee
   - fetch-list
   - get-notifications-status
-  - launch-external-url-v4-request
+  - launch-external-url-request
   - launch-external-url
   - post-event-notification
   - post-fetch-attendee
@@ -32,6 +32,7 @@ includes:
   - v3-lists
   - v3-list-item
   - v3-locations
+  - v1dot1.locations
   - suppliers-resource
   - ground-transportation
   - cancel-reservation

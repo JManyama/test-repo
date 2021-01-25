@@ -5,7 +5,7 @@ The Concur Fetch Attendee version 2.0 callout allows clients to import attendee 
 
 This callout differs from the standard SAP Concur web services in the following ways:
 
-* It uses an **outbound message** where SAP Concur calls a public facing API endpoint provided by the application connector. Refer to **Callouts >** [Core Concepts](/api-reference/callouts/callouts-application-connectors.html) for more information.
+* It uses an **outbound message** where SAP Concur calls a public facing API endpoint provided by the application connector. Refer to **Callouts >** [Core Concepts](#callouts-and-application-connectors) for more information.
 * The client or third-party developers can configure and maintain the public web service interface (the application connector), or the connector can be maintained by SAP Concur. This documentation specifies the request and response format required by SAP Concur.
 * Clients can either choose to create their own application connector using PHP, Java, .NET etc or can use one of SAP Concur Partner's Attendee Fetch applications.
 * The client SAP Concur Administrator must select the attendee types that will use this functionality during application connector registration. Once the attendee types are selected, they will be automatically configured to not allow users to create new attendees manually.
@@ -42,7 +42,7 @@ This callout differs from the standard SAP Concur web services in the following 
 
 #### <a name="concur-connect-callout-details"></a>Callout Details
 
-Information on how to download, install, and configure the application connector is included in **Callouts >** [Core Concepts](/api-reference/callouts/callouts-application-connectors.html).
+Information on how to download, install, and configure the application connector is included in **Callouts >** [Core Concepts](#callouts-and-application-connectors).
 
 #### <a name="fetch-attendee-process-overview"></a>Fetch Attendee Process Overview
 
@@ -76,7 +76,7 @@ Refer to the **Installation Process** for more information.
 
 #### <a name="functions"></a>Functions
 
-[Version 3.0: Post Attendee Search Request](/api-reference/callouts/post-fetch-attendee.html)
+[Version 3.0: Post Attendee Search Request](#post-an-event-notification-request)
 
 #### <a name="installation-process"></a>Installation Process
 
@@ -123,4 +123,4 @@ The SAP Concur administrator can select which attendee types use the connector w
 
 #### <a name="responses-errors"></a>Responses and Errors
 
-Refer to the [HTTP Status Codes](/api-reference/http-status-codes.html) for details of the common responses and errors.
+Refer to the [HTTP Status Codes](#http-status-codes) for details of the common responses and errors.

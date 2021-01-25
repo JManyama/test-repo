@@ -3,12 +3,12 @@
 
 
 
-* [Getting Started](./getting-started.html)
-* [Fiscal Year](/api-reference/budget/v4.fiscal-year.html)
-* [Budget Category](/api-reference/budget/v4.budget-category.html)
-* [Budget Item](/api-reference/budget/v4.budget-header.html)
-* [Budget Tracking Field](/api-reference/budget/v4.budget-trackingfield.html)
-* [Budget Adjustments](/api-reference/budget/v4.budget-adjustments.html)
+* [Getting Started](#budget-v4-getting-started)
+* [Fiscal Year](#budget-v4-fiscal-year-2020)
+* [Budget Category](#budget-v4-budget-category)
+* [Budget Item](#budget-v4-budget-item)
+* [Budget Tracking Field](#budget-v4-budget-tracking)
+* [Budget Adjustments](#budget-v4-budget-adjustments)
 * [Budget API Explorer](/#budget-service-api-documentation)
 
 This resource is used to retrieve information about Budget's tracking fields for an entity. Every entity may have a specific set of budget tracking fields and every budget may enable any or all of the budget tracking fields. If there are tracking fields associated, the budgets get matched to the product only when the tracking field conditions are met.
@@ -25,8 +25,8 @@ Retrieve budget tracking fields information that is setup in budget configuratio
 
 This API call requires one of the following scopes:
 
-* `budgetitem.read` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+* `budgetitem.read` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 

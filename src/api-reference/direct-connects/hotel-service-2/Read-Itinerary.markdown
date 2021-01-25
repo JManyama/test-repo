@@ -1,9 +1,6 @@
----
-title: Direct Connect - Hotel v2 - Read Itinerary
-layout: reference
----
 
-# Read Itinerary
+
+## Read Itinerary
 
 Returns detailed information about a hotel reservation. Used in a process of booking a hotel to write information to Itinerary. Not invoked by user, but by automatic Concur process. Hotel Supplier should reply with HotelRes RS message in the same format, as for HotelResRQ.
 
@@ -13,7 +10,7 @@ Returns detailed information about a hotel reservation. Used in a process of boo
 
 ---
 
-## Request
+### Request
 
 ```xml
 <Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
@@ -53,6 +50,6 @@ Returns detailed information about a hotel reservation. Used in a process of boo
 
 ---
 
-## Response
+### Response
 
 The response to the Read Itinerary message is the same the response to the Reservation Request, which can be found under Reservation.

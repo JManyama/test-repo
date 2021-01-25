@@ -8,7 +8,7 @@ This API has been deprecated.
 
 Deprecation Date: 02/04/2017
 
-If you are a new partner or an existing one creating a new app, please refer to the [new authentication version documentation](/api-reference/authentication/getting-started.html).
+If you are a new partner or an existing one creating a new app, please refer to the [new authentication version documentation](/slate-ui/build/api-reference.html/authentication/getting-started.html).
 
 Please contact your Partner Enablement representative before starting any new development to ensure a smooth and successful certification process.
 

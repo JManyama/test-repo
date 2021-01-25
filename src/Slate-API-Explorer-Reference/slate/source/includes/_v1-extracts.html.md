@@ -604,7 +604,7 @@ Name|Type|Format|Description
 
 #### <a name="erp-integration"></a>Enterprise Resource Planning Integration
 
-For the purposes of ERP integration this API is available to Professional Edition. For Standard Edition use [Payment Batches v1 API ERP Integration](/api-reference/expense/payment-batch/v1.payment-batches.html#erp-integration).
+For the purposes of ERP integration this API is available to Professional Edition. For Standard Edition use [Payment Batches v1 API ERP Integration](#payment-batches).
 
 1. [Get an array of extract definitions](#get-definitions)
   * Locate the desired definitions for your client. You may need to obtain additional details as there may be multiple files to obtain depending on client requirements.

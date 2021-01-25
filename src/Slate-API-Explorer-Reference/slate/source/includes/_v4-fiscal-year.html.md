@@ -4,12 +4,12 @@
 
 ### Menu
 
-* [Getting Started](./getting-started.html)
-* [Fiscal Year](/api-reference/budget/v4.fiscal-year.html)
-* [Budget Category](/api-reference/budget/v4.budget-category.html)
-* [Budget Item](/api-reference/budget/v4.budget-header.html)
-* [Budget Tracking Field](/api-reference/budget/v4.budget-trackingfield.html)
-* [Budget Adjustments](/api-reference/budget/v4.budget-adjustments.html)
+* [Getting Started](#budget-v4-getting-started)
+* [Fiscal Year](#budget-v4-fiscal-year-2020)
+* [Budget Category](#budget-v4-budget-category)
+* [Budget Item](#budget-v4-budget-item)
+* [Budget Tracking Field](#budget-v4-budget-tracking)
+* [Budget Adjustments](#budget-v4-budget-adjustments)
 * [Budget API Explorer](/#budget-service-api-documentation)
 
 The Fiscal Calendar is used both for Reporting and Budget. A fiscal year can start and end at any date as long as the end date is after the start date and does not span more than two years. Fiscal years cannot overlap. Fiscal periods cannot overlap and are limited to 24 per fiscal year.
@@ -35,10 +35,10 @@ Retrieve a list of all fiscal years
 
 This API call requires one of the following scopes:
 
-* `budgetitem.read` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `fiscalyear.read` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `fiscalyear.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+* `budgetitem.read` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `fiscalyear.read` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `fiscalyear.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 <!--Template Code moved up under URI for even display on page -->
@@ -187,10 +187,10 @@ Retrieve a single fiscal year by ID.
 
 This API call requires one of the following scopes:
 
-* `budgetitem.read` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `fiscalyear.read` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `fiscalyear.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+* `budgetitem.read` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `fiscalyear.read` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `fiscalyear.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 
@@ -336,8 +336,8 @@ Create or update a list of one or more fiscal years.
 
 This API call requires one of the following scopes:
 
-* `budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `fiscalyear.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+* `budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `fiscalyear.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 
@@ -557,8 +557,8 @@ Delete a fiscal year.  Fiscal years that are in use may not be deleted.
 
 This API call requires one of the following scopes:
 
-* `budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `fiscalyear.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+* `budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `fiscalyear.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 

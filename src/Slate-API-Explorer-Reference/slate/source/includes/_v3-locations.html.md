@@ -8,7 +8,7 @@ Gets details of locations that are used by Concur and that are valid at the user
 * [Retrieve details of a specified location](#getID)
 * [Schema](#schema)
 
-Location v1.1 has been deprecated and can be found [here](./v1dot1.locations.html).
+Location v1.1 has been deprecated and can be found [here](#v1dot1.locations).
 
 ### <a name="get"></a>Retrieve details of locations that are used by Concur and that are valid at the user's company
 

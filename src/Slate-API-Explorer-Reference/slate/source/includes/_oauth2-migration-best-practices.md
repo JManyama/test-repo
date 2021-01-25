@@ -42,7 +42,7 @@
         https://us.api.concursolutions.com/profile/v1/me
       ```
 
-    - More documentation here: <https://developer.concur.com/api-reference/authentication/getting-started.html>
+    - More documentation here: <https://developer.concur.com/slate-ui/build/api-reference.html#getting-started.html>
 
   - Refreshing expired `accessTokens`
     - Since `accessTokens` have a one hour expiry, clients would need to get a new `accessToken` before any API call is made.
@@ -54,7 +54,7 @@
         - Update `expiry date` for `refreshToken`
         - Retry the API call.
 
-    - More details about refreshing tokens here: <https://developer.concur.com/api-reference/authentication/apidoc.html#refresh_token>
+    - More details about refreshing tokens here: <https://developer.concur.com/slate-ui/build/api-reference.html#refresh_token>
 
   - Handling errors
     - There are a few error codes that client applications should be aware of.
@@ -72,7 +72,7 @@
     |  16  | User lives elsewhere | There will be a geolocation field in the response to this error message. Use this as the base URL and retry the call.|
     |  54  | Invalid Scope | requested scope exceeds what is permitted. |
 
-    - for a full list, review this doc: <https://developer.concur.com/api-reference/authentication/apidoc.html#response_codes>
+    - for a full list, review this doc: <https://developer.concur.com/slate-ui/build/api-reference.html#response_codes>
 
 #### <a name="old-v-new-diagram"></a>4. Old auth v.s. new auth diagram
 ![old v.s. new](./images/oldNewAuthComparion.png)

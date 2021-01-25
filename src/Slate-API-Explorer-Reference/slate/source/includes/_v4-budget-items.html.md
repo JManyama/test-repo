@@ -4,12 +4,12 @@
 
 ### Menu
 
-* [Getting Started](./getting-started.html)
-* [Fiscal Year](/api-reference/budget/v4.fiscal-year.html)
-* [Budget Category](/api-reference/budget/v4.budget-category.html)
-* [Budget Item](/api-reference/budget/v4.budget-header.html)
-* [Budget Tracking Field](/api-reference/budget/v4.budget-trackingfield.html)
-* [Budget Adjustments](/api-reference/budget/v4.budget-adjustments.html)
+* [Getting Started](#budget-v4-getting-started)
+* [Fiscal Year](#budget-v4-fiscal-year-2020)
+* [Budget Category](#budget-v4-budget-category)
+* [Budget Item](#budget-v4-budget-item)
+* [Budget Tracking Field](#budget-v4-budget-tracking)
+* [Budget Adjustments](#budget-v4-budget-adjustments)
 * [Budget API Explorer](/#budget-service-api-documentation)
 
 ### Budget Item
@@ -46,8 +46,8 @@ Retrieve all budget items in groups of up to 50 items.  Due to response size and
 
 This API call requires one of the following scopes:
 
-* `budgetitem.read` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+* `budgetitem.read` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 
@@ -237,8 +237,8 @@ Retrieve the details of a single budget item.
 
 This API call requires one of the following scopes:
 
-* `budgetitem.read` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+* `budgetitem.read` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 
@@ -602,7 +602,7 @@ Save a new budget or update an existing budget.
 
 ### Scopes
 
-`budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+`budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 
@@ -900,7 +900,7 @@ Delete a budget item.
 
 ### Scopes
 
-`budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+`budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 
@@ -1076,7 +1076,7 @@ Name|Type|Format|Description
 Name|Type|Format|Description
 ---|---|---|---
 `featureTypeCode`|`string`|-|**Required** The product that this expense type applies to: Purchase Request, Invoice (Payment Request), Expense, or Request. Supported values: `PURCHASE_REQUEST`, `PAYMENT_REQUEST`, `EXPENSE`, `REQUEST`
-`expenseTypeCode`|`string`|-|**Required** The alphanumeric code that describes an expense type. (Example: `MEALS`, `AC_CATER`) Valid expense type codes are returned by the GET /budgetCategory/expenseType method described in the [Budget Category service](/api-reference/budget/budget-category.html).
+`expenseTypeCode`|`string`|-|**Required** The alphanumeric code that describes an expense type. (Example: `MEALS`, `AC_CATER`) Valid expense type codes are returned by the GET /budgetCategory/expenseType method described in the [Budget Category service](#budget-v4-budget-category).
 `name`|`string`|-|**READ ONLY** The name for this expense type if it maps to an expense type set up in your SAP Concur product(s).
 `id`|`string`|-|The budget service's key for this object.
 

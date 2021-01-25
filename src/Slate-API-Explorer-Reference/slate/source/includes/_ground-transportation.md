@@ -95,9 +95,9 @@ TUR ZM AK1  SEA 15DEC-/FALCON DES-TEL 8666932526/RATE-50.00 HOURLY-2 HR MIN/CON
 
 
 
-[4]: /api-reference/direct-connects/ground-transportation/cancel-reservation.html
-[5]: /api-reference/direct-connects/ground-transportation/post-reservation-detail-search.html
-[6]: /api-reference/direct-connects/ground-transportation/post-reservation-sell.html
-[7]: /api-reference/direct-connects/ground-transportation/post-transportation-search.html
-[8]: /api-reference/direct-connects/ground-transportation/update-reservation-supplier.html
-[9]: /api-reference/direct-connects/ground-transportation/update-reservation-travel.html
+[4]: #cancel-a-reservation
+[5]: #post-a-reservation-detail-search
+[6]: #post-a-reservation-sell-request
+[7]: #post-a-transportation-search
+[8]: #update-reservation-with-supplier
+[9]: #update-reservation-with-travel

@@ -4,12 +4,12 @@
 
 ### Menu
 
-* [Getting Started](./getting-started.html)
-* [Fiscal Year](/api-reference/budget/v4.fiscal-year.html)
-* [Budget Category](/api-reference/budget/v4.budget-category.html)
-* [Budget Item](/api-reference/budget/v4.budget-header.html)
-* [Budget Tracking Field](/api-reference/budget/v4.budget-trackingfield.html)
-* [Budget Adjustments](/api-reference/budget/v4.budget-adjustments.html)
+* [Getting Started](#budget-v4-getting-started)
+* [Fiscal Year](#budget-v4-fiscal-year-2020)
+* [Budget Category](#budget-v4-budget-category)
+* [Budget Item](#budget-v4-budget-item)
+* [Budget Tracking Field](#budget-v4-budget-tracking)
+* [Budget Adjustments](#budget-v4-budget-adjustments)
 * [Budget API Explorer](/#budget-service-api-documentation)
 
 This resource is used to retrieve and update budget categories which are collections of expense types used for budget matching.  Each budget item header may have one Budget Category.  If it does, only line items with expense types contained in that Budget Category will be accumulated to the budget.
@@ -34,8 +34,8 @@ Retrieve a list of all budget categories.
 
 This API call requires one of the following scopes:
 
-* `budgetitem.read` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+* `budgetitem.read` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 
@@ -159,8 +159,8 @@ Retreive the details of a single budget category.
 
 This API call requires one of the following scopes:
 
-* `budgetitem.read` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+* `budgetitem.read` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 
@@ -266,7 +266,7 @@ Save a new budget category or update an existing budget category.
 
 ### Scopes
 
-`budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+`budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 
@@ -489,8 +489,8 @@ Retrieve a list of all possible expense types that may be used in a budget categ
 
 This API call requires one of the following scopes:
 
-* `budgetitem.read` - Refer to [Scope Usage](./getting-started.html) for full details.
-* `budgetitem.write` - Refer to [Scope Usage](./getting-started.html) for full details.
+* `budgetitem.read` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
+* `budgetitem.write` - Refer to [Scope Usage](#budget-v4-getting-started) for full details.
 
 ### Request
 

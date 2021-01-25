@@ -127,14 +127,14 @@ The application connector has now completed the process of validating a Request,
 
 [1]: https://developer.concur.com/sites/default/files/TR_Diagram_small2.png
 [2]: https://developer.concur.com/api-documentation/sample-code
-[3]: /api-reference/callouts/event-notification.html
+[3]: #event-notification.html
 [4]: https://developer.concur.com/node/25#authtoconnect
 [5]: https://developer.concur.com/sites/default/files/ManageAppConnector_small.png
 [6]: https://developer.concur.com/sites/default/files/ConfigureService.png
 [7]: https://developer.concur.com/sites/default/files/RegPartApp_crop.png
 [8]: https://developer.concur.com/sites/default/files/NewPartnerApp_0.png
 [9]: https://developer.concur.com/oauth-20
-[10]: /api-reference/authentication/apidoc.html
+[10]: #authentication
 [12]: https://developer.concur.com/node/518#requestdetails
 [13]: https://developer.concur.com/node/519#requestworkflow
 
