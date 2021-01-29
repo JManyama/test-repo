@@ -653,6 +653,18 @@ html, body {
     margin-bottom:-20px;
   }
 
+  #get-list-of-reports{
+    margin-bottom: -20px;
+  }
+
+  #get-list-of-expense-reports{
+    margin-bottom: -20px;
+  }
+
+  #report-details-schema{
+    margin-bottom: -20px;
+  }
+
 
   #version{
     margin-bottom: -20px;
@@ -670,6 +682,11 @@ html, body {
 
   h3[id*="procedure"]{
     margin-bottom: -20px;
+  }
+
+  div[id*="attn-depr"]{
+    background-color: #e68d8c;
+    width: 600px;
   }
 
   h3[id*="example"]{
@@ -715,6 +732,55 @@ html, body {
   #access-token-usage{
     margin-bottom: -20px;
   }
+
+  #post-new-attendee-list{
+    margin-bottom: -20px;
+  }
+
+  #get-attendees{
+    margin-bottom: -20px;
+  }
+
+  #prior-versions{
+    margin-bottom: -20px;
+  }
+  
+  #post-an-attendee-inactivation-list{
+    margin-bottom: -20px;
+  }
+
+  #create-a-new-expense-itemization{
+    margin-bottom: -20px;
+  }
+
+  #post-expense-entry-itemization{
+    margin-bottom: -20px;
+  }
+
+  #accept-header{
+    margin-bottom: -20px;
+  }
+
+  #schema-definition{
+    margin-bottom: -20px;
+  }
+
+  #get-user{
+    margin-bottom: -20px;
+  }
+
+  #user-details{
+    margin-bottom: -20px;
+  }
+
+  #overview-of-version-4-0{
+    margin-bottom: -20px;
+  }
+
+  #get-started-receipts-v4-overview-of-version-4-0{
+    margin-bottom: -20px;
+  }
+
 
  
   // the div is the tocify hidden div for placeholding stuff

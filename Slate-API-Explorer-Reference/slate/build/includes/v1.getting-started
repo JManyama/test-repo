@@ -1,0 +1,97 @@
+<h2 id='profile-v1-getting-started'>Profile v1 - Getting Started</h2>
+<div id="attn-depr">
+<p><b>This API has been deprecated.</b></p>
+
+<p>Partners and customers using a deprecated API should contact SAP Concur and discuss moving to the latest versions.</p>
+</div>
+
+<p>Learn more in the <a href="/tools-support/deprecation-policy.html">API Lifecycle &amp; Deprecation Policy.</a></p>
+
+<p><a href="#profile-v1-getting-started"><strong>Getting Started</strong></a>  -  <a href="./v1.company.html">Company API</a>  -  <a href="#profile-v1-user">User API</a></p>
+
+<p>The Concur&#39;s Profile API consists of a set of APIs to manage users, companies and apps within Concur. Profile API is the API for profile information for all Concur&#39;s profile data, including Enterprise applications such as Expense, Invoice, Request, and Travel, as well as Retail applications such as Hipmunk and TripIt.</p>
+
+<ul>
+<li><a href="#security">Security</a></li>
+<li><a href="#endpoint">Profile Endpoints</a></li>
+<li><a href="#caveats">Caveats</a></li>
+</ul>
+<h3 id='security'><a name="security"></a>Security</h3>
+<p>Profile API can be accessed using following authentication methods:</p>
+
+<ul>
+<li>Access Token based authentication</li>
+</ul>
+<h3 id='access-token-authentication'>Access Token Authentication</h3>
+<p>An access token based authenticated call is made in the context of a principal (user/company/app).  When an access token is used, it must be supplied in the &#39;Authorization&#39; HTTP header by the caller.</p>
+
+<p>The access token must have scopes that are relevant for the API call. For example, in order to call the Company API correctly, the token must include the <code>company.read</code> scope or the API call will fail. Similiarly, an API call to retrieve user information will succeed only if the token has <code>user.read</code> scope. You will receive &quot;access denied&quot; error if the scope does not match the API call you are trying to make.</p>
+
+<p>To obtain or refresh an access token, please refer to <a href="/api-reference/authentication/getting-started.html">OAuth2 - Getting Started</a>.</p>
+<h3 id='profile-endpoints'><a name="endpoint"></a>Profile Endpoints</h3>
+<p>The base URL for the Profile API is:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>https://host/profile/v1/
+</code></pre></div>
+<p>The following production hosts are available:</p>
+
+<table><thead>
+<tr>
+<th>Data Center</th>
+<th>Environments</th>
+<th>Host</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>US</td>
+<td>Production</td>
+<td><code>https://us.api.concursolutions.com</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>US</td>
+<td>Production - access token</td>
+<td><code>https://www-us.api.concursolutions.com</code></td>
+<td>This is for clients that cannot handle the server request for x.509 cert.</td>
+</tr>
+<tr>
+<td>US</td>
+<td>Implementation</td>
+<td><code>https://us-impl.api.concursolutions.com</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>EMEA</td>
+<td>Production</td>
+<td><code>https://emea.api.concursolutions.com</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>EMEA</td>
+<td>Production - access token</td>
+<td><code>https://www-emea.api.concursolutions.com</code></td>
+<td>This is for clients that cannot handle the server request for x.509 cert.</td>
+</tr>
+<tr>
+<td>EMEA</td>
+<td>Implementation</td>
+<td><code>https://emea-impl.api.concursolutions.com</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>CHINA</td>
+<td>Production</td>
+<td><code>https://cn.api.concurcdc.cn</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>CHINA</td>
+<td>Production - access token</td>
+<td><code>https://www-cn.api.concurcdc.cn</code></td>
+<td>This is for clients that cannot handle the server request for x.509 cert.</td>
+</tr>
+</tbody></table>
+
+<p>Profile APIs are aware of the US and EMEA data centers. If an API call is made against a specific data center and the target resource is not stored in that data center, you will receive a &quot;301-redirect&quot; that points to the right location for the resource.</p>
+<h3 id='caveats'><a name="caveats"></a>Caveats</h3>
+<p>Changes in Profile do not follow the typical notification or deprecation processes. If you want to be included in the Profile related notifications, please email <a href="mailto:profile@concur.com">profile@concur.com</a>.</p>
