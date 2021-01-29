@@ -15,16 +15,16 @@ Below are some benefits for using the Financial Integration service:
 
 ### Contents
 
-* [Financial Integration Service Use Cases](/api-reference/financial-integration/v4.financial-integration-service-use-cases.html)
-* [Products and Editions](#products-editions)
-* [Scope Usage](#scope-usage)
-* [Access Token Usage](#access-token-usage)
+* [Financial Integration Service Use Cases](#use-cases-financial-integration)
+* [Products and Editions](#financial-integration-products-and-editions)
+* [Scope Usage](#financial-integration-scope-usage)
+* [Access Token Usage](#financial-integration-access-token-usage)
 * [Get Financial Transactions](#get-transactions)
 * [Post Financial Transactions Acknowledgements](#post-acknowledgements)
 * [Post Financial Transactions Confirmations](#post-confirmations)
 * [Post Financial Payment Confirmations](#payment-confirmations)
 * [Service Codes](#service-codes)
-* [Schema](#schema)
+* [Schema](#financial-integration-schema)
   * [Financial Documents](#schema-PagedResources.Resource.FIDocument)
   * [FIDocument](#schema-Resource.FIDocument)
   * [Page Metadata](#schema-PageMetadata)
@@ -47,29 +47,29 @@ Below are some benefits for using the Financial Integration service:
   * [PaymentConfirmationResponseItem](#schema-PaymentConfirmationResponseItem)
 
 * Financial Documents
-  * [Financial Document Schemas](/api-reference/financial-integration/v4.financial-documents-schema.html)
-    * [Expense](/api-reference/financial-integration/v4.financial-documents-schema.html#scexpense)
-    * [Invoice](/api-reference/financial-integration/v4.financial-documents-schema.html#scinvoice)
-    * [Cash Advance](/api-reference/financial-integration/v4.financial-documents-schema.html#sccashadv)
-  * [Example FI Documents](#example)
+  * [Financial Document Schemas](#schemas)
+    * [Expense](#scexpense)
+    * [Invoice](#scinvoice)
+    * [Cash Advance](#sccashadv)
+  * [Example FI Documents](#example-financial-documents)
     * [Expense](#example-expense)
     * [Invoice](#example-invoice)
-    * [Cash Advance](#example-cashadvance)
+    * [Cash Advance](#example-cash-advance)
 
-#### <a name="products-editions"></a>Products and Editions
+#### <a name="products-editions"></a>Financial Integration - Products and Editions
 
 * Concur Expense Professional Edition
 * Concur Expense Standard Edition
 * Concur Invoice Professional Edition
 * Concur Invoice Standard Edition
 
-#### <a name="scope-usage"></a>Scope Usage
+#### <a name="scope-usage"></a>Financial Integration - Scope Usage
 
 Name|Description|Endpoint
 ---|---|---
 FISVC|Read financial transactions and write financial transaction acknowledgements and confirmations.|GET, POST
 
-#### <a name="access-token-usage"></a>Access Token Usage
+#### <a name="access-token-usage"></a>Financial Integration - Access Token Usage
 
 This API only supports company-level access tokens.
 
@@ -251,7 +251,7 @@ Name|Type|Format|Description
 
 #### Payload
 
-[AcknowledgeRequest](#schema-acknowledgerequest)
+[AcknowledgeRequest](#schema-AcknowledgeRequest)
 
 ### Response
 
@@ -684,7 +684,7 @@ Code|Description|Category
 198|Invalid request - this same request will not work if tried again.|Posting
 199|Unknown error, please try again later.|Any
 
-### <a name="schema"></a>Schema
+### <a name="schema"></a>Financial Integration - Schema
 
 #### <a name="schema-PagedResources.Resource.FIDocument"></a>Financial Documents
 
@@ -1224,7 +1224,7 @@ Name|Type|Format|Description
 }
 ```
 
-#### <a name="example-invoice"></a>Invoice
+#### <a name="example-invoice"></a>Example - Invoice
 
 ```json
 {
@@ -1504,7 +1504,7 @@ Name|Type|Format|Description
 
 ```
 
-#### <a name="example-cashadvance"></a>Cash Advance
+#### <a name="example-cashadvance"></a>Example - Cash Advance
 
 ```json
 {

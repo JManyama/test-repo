@@ -3,7 +3,7 @@
 
 ### Menu
 
-* [Getting Started](./v4.get-started.html)
+* [Getting Started](#getting-started-request-v4)
 * [Request](./v4.endpoints.request-resources.html)
 * [Workflow](./v4.endpoints.workflow-resources.html)
 * [Expected Expense](./v4.endpoints.expected-expense-resources.html)
@@ -20,15 +20,15 @@ Version 4.0 of Request API works only with the new [Authentication API](/api-ref
 
 ### Getting Started
 
-* [Overview](#overview)
-* [Prior Versions](#prior-versions)
-* [Process Flow](#process-flow)
-* [Products and Editions](#products-editions)
-* [Scope Usage](#scope-usage)
-* [Dependencies](#dependencies)
-* [Access Token Usage](#access-token-usage)
+* [Overview](#getting-started-overview)
+* [Prior Versions](#getting-started-prior-versions)
+* [Process Flow](#getting-started-process-flow)
+* [Products and Editions](#getting-started-products-and-editions)
+* [Scope Usage](#getting-started-scope-usage)
+* [Dependencies](#getting-started-dependencies)
+* [Access Token Usage](#getting-started-access-token-usage)
 
-#### <a name="overview"></a>Overview
+#### <a name="overview"></a>Getting Started - Overview
 
 The Request v4 API exposes five different resources:
 
@@ -42,33 +42,33 @@ Travel Agency|You can get the description of a Travel Agency office.
 
 These resources are used to manage documents used for pre-spend authorizations within Concur Request.
 
-#### <a name="prior-versions"></a>Prior Versions
+#### <a name="prior-versions"></a>Getting Started - Prior Versions
 
 * Request v1 documentation is available [here](./v1.request.html).
 * Request v3 documentation is available [here](./v3.request.html).
 
-#### <a name="process-flow"></a>Process Flow
+#### <a name="process-flow"></a>Getting Started - Process Flow
 ![Process Flow for Request V4](./v4.request-process-flow.png)
 
-#### <a name="products-editions"></a>Products and Editions
+#### <a name="products-editions"></a>Getting Started - Products and Editions
 
 * Concur Request Professional Edition
 * Concur Request Standard Edition
 
-#### <a name="scope-usage"></a>Scope Usage
+#### <a name="scope-usage"></a>Getting Started - Scope Usage
 
 Name|Description|Endpoint
 ---|---|---
 `travelrequest.write`|Read and write Requests|GET, POST, PUT, DELETE
 
-#### <a name="dependencies"></a>Dependencies
+#### <a name="dependencies"></a>Getting Started - Dependencies
 
 SAP Concur clients must purchase Concur Request in order to use this API. This API may require for some use cases to consume the following additional SAP Concur APIs:
 
 * [User profile](/api-reference/profile/v1.user.html), to retrieve the `userId` - required in most of the endpoints when accessed via a Company Token.
 * [List], to retrieve the `listItemId` - required in the management of custom fields related to list items. Currently in externalisation process, please liaise with List API owner team for further update.
 
-#### <a name="access-token-usage"></a>Access Token Usage
+#### <a name="access-token-usage"></a>Getting Started - Access Token Usage
 
 This API supports both company level and user level access tokens.
 

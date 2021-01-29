@@ -4,7 +4,7 @@
 
 * [Definitions of Resources](#definitions-of-resources)
   * [Supported Image Formats](#supported-image-formats)
-* [General](#general)
+* [General](#endpoints-general)
   * [GET Service Index](#endpoint-service-index)
   * [GET Receipt Status by Receipt ID](#endpoint-get-receipt-status)
 * [E-Receipts](#e-receipts)
@@ -32,7 +32,7 @@
 * Images with any dimension exceeding 2,200 pixels will be reduced, with the longest dimension reduced to 2,200 pixels and the remaining dimensions scaled down using a fixed aspect ratio.
 * Image must be one of the supported file types: image/png, image/jpg, image/jpeg, image/tiff, image/tif, image/gif, and application/pdf. Images provided in image/tiff and image/tif will be converted to a PDF document with the image embedded within.
 
-### General
+### Endpoints - General
 
 |Endpoint|Response Format|Request Summary|
 |---|---|---|

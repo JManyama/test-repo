@@ -8,16 +8,16 @@ NOTE: The Concur Expense product is highly configurable, and each client may hav
 
 
 
-* [Retrieve a configuration of an expense group](#get)
-* [Retrieve an expense group configuration by ID](#getID)
-* [Schema](#schema)
+* [Retrieve a configuration of an expense group](#retrieve-a-configuration-of-an-expense-group)
+* [Retrieve an expense group configuration by ID](#retrieve-an-expense-group-configuration-by-id)
+* [Schema](#expense-group-configurations-schema)
 * [Make a test call using 3.0 Swagger](https://www.concursolutions.com/api/docs/index.html#!/ExpenseGroupConfigurations)
 
 
 #### Version
 3.0
 
-1.1 documentation is available [here](./v1dot1.expense-group-configurations.html)
+1.1 documentation is available [here](#v1dot1.expense-group-configurations)
 
 #### <a name="get"></a>Retrieve a configuration of an expense group
 
@@ -101,7 +101,7 @@ Name | Type | Format | Description
 
 
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Expense Group Configurations - Schema
 
 
 #### <a name="ExpenseGroupConfigurations"></a>Expense Group Configurations
@@ -159,14 +159,14 @@ Name | Type | Format | Description
 
 Name | Type | Format | Description
 -----|------|--------|------------
-`ExpenseTypes`	|	`array`	|	[ExpenseType](#expensetype)	|	The parent element for the list of expense types in the policy.
+`ExpenseTypes`	|	`array`	|	[ExpenseType](#expense-group-configurations-expense-type)	|	The parent element for the list of expense types in the policy.
 `ID`	|	`string`	|	-	|	The unique identifier of the resource.
 `IsDefault`	|	`Boolean`	|	-	|	Indicates whether this policy is the default. Format: true or false
 `IsInheritable`	|	`Boolean`	|	-	|	Indicates whether the descendent nodes in the Expense Feature Hierarchy are covered by this policy. Format: true or false
 `Name`	|	`string`	|	-	|	The name of the policy.
 
 
-#### <a name="expensetype"></a>Expense Type
+#### <a name="expensetype"></a>Expense Group Configurations - Expense Type
 
 Name | Type | Format | Description
 -----|------|--------|------------

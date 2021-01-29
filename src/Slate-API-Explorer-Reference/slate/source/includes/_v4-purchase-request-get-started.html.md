@@ -12,17 +12,17 @@ Many Concur Invoice clients have external systems that have part or service list
 
 This API is not available in the China Data center. This API is only available for direct integrations with an existing SAP Concur client. If you are a Partner looking to build an App Center App using this API, please reach out to your SAP Concur Representative. This API can only be used to create new purchase requests and get the details of the created purchase request. This API cannot update, edit, or delete purchase requests. All edits or processing of the purchase request after it is sent to SAP Concur and created must be done in SAP Concur.
 
-- [Regional Availability](#regional-availability)
-- [Products and Editions](#products-and-editions)
-- [Scope Usage](#scope-usage)
-- [Dependencies](#dependencies)
-- [Access Token  Usage](#access-token-usage)
+- [Regional Availability](#purchase-request-v4-get-started-regional-availability)
+- [Products and Editions](#purchase-request-v4-get-started-products-and-editions)
+- [Scope Usage](#purchase-request-v4-get-started-scope-usage)
+- [Dependencies](#purchase-request-v4-get-started-dependencies)
+- [Access Token  Usage](#purchase-request-v4-get-started-access-token-usage)
     - [Retrieve a Company Access Token](#retrieve-a-company-access-token)
     - [Retrieve a User Access Token](#retrieve-a-user-access-token)
-- [Purchase Request API Endpoints](./v4.purchase-request-endpoints.html)
+- [Purchase Request API Endpoints](#purchase-request-v4-endpoints)
 
 
-### Regional Availability
+### Purchase Request v4 - Get Started - Regional Availability
 
 ```
 https://us.api.concursolutions.com/purchaserequest/v4/
@@ -32,19 +32,19 @@ https://us.api.concursolutions.com/purchaserequest/v4/
 https://emea.api.concursolutions.com/purchaserequest/v4/
 ```
 
-### Products and Editions
+### Purchase Request v4 - Get Started - Products and Editions
 
 * Concur Invoice Professional Edition
 * Concur Invoice Standard Edition
 
-### Scope Usage
+### Purchase Request v4 - Get Started - Scope Usage
 
 Name|Description|Endpoint
 ---|---|---
 purchaserequest.write|Allows you to create new purchase requests|POST
 purchaserequest.read|Allows you to retrieve  purchase requests|GET
 
-### Dependencies
+### Purchase Request v4 - Get Started - Dependencies
 
 SAP Concur clients must purchase Concur Invoice, Concur Purchasing, and Concur Web Services in order to use this API. Concur Invoice with Concur Purchasing must be configured before using this API.   
 
@@ -52,7 +52,7 @@ To create purchase requests, you need to supply a Vendor Code and Vendor Address
 
 If your purchase request form in SAP Concur has required custom fields that are tied to lists, you will need to supply the Item Code for the list items, or configure them to copy down from another source such as Employee. You can access  **List Management** in SAP Concur to see your list items and list item codes. If you need to get this data from SAP Concur using web services, you can use the [List Item v3](/api-reference/common/list-item/v3.list-item.html) API to retrieve the `Level1Code` value for the list items. 
 
-### Access Token Usage
+### Purchase Request v4 - Get Started - Access Token Usage
 
 This API will work with both Company or User access tokens, however a Company access token is required if the integration will create purchase requests for multiple requestors. Using a User access token to create purchase requests results in the purchase request being assigned to the user that generated the User access token, not the user set in the payload. A User access token can be used for testing purposes. 
 

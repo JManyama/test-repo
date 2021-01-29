@@ -2,22 +2,22 @@
 ## Entries
 
 
-* [Retrieve All Expense Entries](#get)
-* [Create a New Expense Entry](#post)
-* [Update an Expense Entry](#put)
-* [Delete an Expense Entry](#delete)
-* [Schema](#schema)
+* [Retrieve All Expense Entries](#retrieve-all-expense-entries)
+* [Create a New Expense Entry](#create-a-new-expense-entry)
+* [Update an Expense Entry](#update-an-expense-entry)
+* [Delete an Expense Entry](#delete-an-expense-entry)
+* [Schema](#entries-schema)
   * [Entry](#entry)
-  * [Custom Field](#custom-field)
+  * [Custom Field](#entries-custom-field)
   * [Journey](#journey)
 
 The SAP Concur Expense Entries API is used to manage expense reports and their entries in SAP Concur. It allows for the synchronizing and reconciliation of expense related information with your internal systems and reporting modules.
 
-1.1 documentation is available [here.](/api-reference/expense/expense-report/v1dot1.expense-entry.html)  
+1.1 documentation is available [here.](#expense-entry)  
 
 #### <a name="get"></a>Retrieve All Expense Entries
 
-[Version 2.0](/api-reference/expense/expense-report/expense-report-get.html), covers a wider range of partner scenarios and is recommended as the first step. However, depending on  the entries you need to retrieve, using a combination of version 2.0 and version 3.0 should be considered. To see examples, review the [VAT Reclaim](/api-guides/vat-reclaim/vat-reclaim-guide.html) integration guide.
+[Version 2.0](#expense-report-get), covers a wider range of partner scenarios and is recommended as the first step. However, depending on  the entries you need to retrieve, using a combination of version 2.0 and version 3.0 should be considered. To see examples, review the [VAT Reclaim](/api-guides/vat-reclaim/vat-reclaim-guide.html) integration guide.
 
 #### <a name="post"></a>Create a New Expense Entry
 

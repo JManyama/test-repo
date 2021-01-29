@@ -143,7 +143,7 @@ Name|Type|Format|Description
 `cashAdvanceId`|`String`|-|GUUID. Unique system ID assigned to the cash advance. Maximum length 32 characters.
 `cashAdvanceTransactionType`|`Number`|-|Type of transaction: 1 = Issue or return to administrator, 2 = Application, including cash advance return expense within a report, or 3 = System cash advance, from balance carry forward.
 
-### <a name="scinvoice"></a>Invoice
+### <a name="scinvoice"></a>Schemas - Invoice
 
 ### <a name="scinvreq"></a>Invoice - requestHeader
 

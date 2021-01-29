@@ -7,7 +7,7 @@ Below we have sample receipt data and the corresponding receipt images for the f
 * [Air (Multiple Tickets)](#air-multiple-tickets)
 * [Car Rental](#car-rental)
 * [Ground Transport](#ground-transport)
-* [Hotel](#hotel)
+* [Hotel](#sample-receipts-hotel)
 * [Rail (Multiple Tickets)](#rail-multiple-tickets)
 
 ### Air (Multiple Tickets)
@@ -693,7 +693,7 @@ Below we have sample receipt data and the corresponding receipt images for the f
 
 ![Car Rental Receipt Image](/images/car-rental.png)
 
-### Hotel
+### Sample Receipts - Hotel
 
 #### Receipt Data
 

@@ -6,18 +6,18 @@ The integration status of the supplied object. Currently supports expense report
 
 This resource allows developers to ensure that the necessary transactions to account for expenses and arrange payment for the expenses in a specified report were created in the financial system prior to committing the expense report in Concur Expense. If they were, the developer uses this function to indicate the report was successfully integrated and move the report forward in the workflow to the Paid step. In Concur Expense, when a report arrives at the Paid workflow step the report is committed, meaning its data can't be changed and it can't be sent back in the workflow.
 
-* [Request](#request)
-* [Response](#response)
-  * [Schema](#res-schema)
-* [Examples](#examples)
+* [Request](#integration-status-request)
+* [Response](#integration-status-response)
+  * [Schema](#integration-status-schema)
+* [Examples](#integration-status-examples)
 
 #### URI
 `https://www.concursolutions.com/api/expense/expensereport/v2.0/integrationstatus/`
 
 #### Operations
-[POST](#post)
+[POST](#post.)
 
-#### <a name="request"></a>Request
+#### <a name="request"></a>Integration Status - Request
 
 #### Request Parameters
 
@@ -36,14 +36,14 @@ Authorization header with OAuth token for valid SAP Concur user. Required. The O
 * application/json
 * application/xml
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Integration Status - Response
 
 #### Content Types
 
 * application/xml
 * application/json
 
-#### <a name="res-schema"></a>Schema
+#### <a name="res-schema"></a>Integration Status - Schema
 
 The response will include an **ActionStatus** parent element (XML), or an object (JSON) with the following child elements (XML) or name/value pairs (JSON).
 
@@ -54,7 +54,7 @@ The response will include an **ActionStatus** parent element (XML), or an object
 | Status | Whether the request was successful. Possible values: SUCCESS, FAILURE. |
 | Message | Provides further details for errors. |
 
-####  <a name="examples"></a>Examples
+####  <a name="examples"></a>Integration Status - Examples
 
 #### XML Example Request
 

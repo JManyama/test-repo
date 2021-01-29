@@ -2,16 +2,16 @@
 ## Expense Entry Attendee v3
 
 
-* [Retrieve All Entry-Attendee Associations Owned by the User](#get)
-* [Retrieve an Entry-Attendee Association by ID](#getID)
-* [Create a New Entry-Attendee Association](#post)
-* [Update a Specified Entry-Attendee Association](#put)
-* [Delete a Specified Entry-Attendee Association](#delete)
-* [Schema](#schema)
+* [Retrieve All Entry-Attendee Associations Owned by the User](#retrieve-all-entry-attendee-associations-owned-by-the-user)
+* [Retrieve an Entry-Attendee Association by ID](#retrieve-an-entry-attendee-association-by-id)
+* [Create a New Entry-Attendee Association](#create-a-new-entry-attendee-association)
+* [Update a Specified Entry-Attendee Association](#update-a-specified-entry-attendee-association)
+* [Delete a Specified Entry-Attendee Association](#delete-a-specified-entry-attendee-association)
+* [Schema](#expense-entry-attendee-schema)
 
 ### Prior Versions
 
-2.0 documentation is available [here.](/api-reference/expense/expense-report/v2.expense-entry-attendee.html)
+2.0 documentation is available [here.](#attendees-v2)
 
 #### <a name="get"></a>Retrieve All Entry-Attendee Associations Owned by the User
 
@@ -170,7 +170,7 @@ Name | Type | Format | Description
 
 
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Expense Entry Attendee - Schema
 
 ### <a name="EntryAttendeeAssociations"></a>Entry Attendee Associations
 

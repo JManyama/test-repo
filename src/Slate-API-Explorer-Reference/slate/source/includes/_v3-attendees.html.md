@@ -2,19 +2,19 @@
 ## Attendees v3
 
 
-* [Retrieve all attendees owned by the specified user](#get)
-* [Retrieve a single attendee by ID](#getID)
-* [Create a new attendee](#post)
-* [Update existing attendees](#put)
-* [Schema](#schema)
+* [Retrieve all attendees owned by the specified user](#retrieve-all-attendees-owned-by-the-specified-user)
+* [Retrieve a single attendee by ID](#retrieve-a-single-attendee-by-id)
+* [Create a new attendee](#create-a-new-attendee)
+* [Update existing attendees](#update-existing-attendees)
+* [Schema](#attendees-v3-schema)
   * [Attendees](#schema-attendees)
   *
 
 ### Related
 
-* [Attendees v2](./v2.attendees.html)
-* [Attendees v1.1](./v1dot1.attendees.html)
-* [Attendees v1](./v1.attendees.html)
+* [Attendees v2](#attendees-v2)
+* [Attendees v1.1](#attendees-v1)
+* [Attendees v1](#attendees-v1)
 
 #### <a name="get"></a>Retrieve all attendees owned by the specified user
 
@@ -292,7 +292,7 @@ PUT https://www.concursolutions.com/api/v3.0/expense/attendees/gWj3IHRYiHZOQ2T9N
 
 ToDo
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Attendees v3 - Schema
 
 #### <a name="schema-attendees"></a>Attendees
 

@@ -4,13 +4,13 @@
 
 Posts an exception to the report, and associates it with one of the following data levels: Report Header, Entry, Itemization, Allocation. This endpoint requires familiarity with the company's exception code configuration.
 
-* [Request](#request)
-  * [Request Schema](#req-schema)
-* [Response](#response)
-  * [Response Schema](#res-schema)
-* [Examples](#examples)
+* [Request](#create-an-exception-to-a-report-request)
+  * [Request Schema](#create-an-exception-to-a-report-request-schema)
+* [Response](#create-an-exception-to-a-report-response)
+  * [Response Schema](#create-an-exception-to-a-report-response-schema)
+* [Examples](#create-an-exception-to-a-report-examples)
 
-#### <a name="request"></a>Request
+#### <a name="request"></a>Create an exception to a report - Request
 
 #### Request Parameters
 
@@ -34,7 +34,7 @@ Authorization header with OAuth token for valid SAP Concur user. Required.
 #### Content-Type Header
 application/xml
 
-#### <a name="req-schema"></a>Request Schema
+#### <a name="req-schema"></a>Create an exception to a report - Request Schema
 This request should contain an **Exceptions** parent element with an **Exception** parent element for each exception included in the report. The **Exception** element contains the following child elements:  
 
 #### Exception Elements
@@ -46,12 +46,12 @@ ObjectType | Y | The type of object to assign the exception. Format: Report, Ent
 ObjectId | Y | The unique identifier for the object to associate with the exception. Returned by the [Get Report Details][1] function. Must be the value from one of the following fields:<br/>&nbsp;&nbsp;&nbsp;Entry or Itemization: Use the **RpeKey**.<br/>&nbsp;&nbsp;&nbsp;Allocation: Use **AllocationKey**.<br/>&nbsp;&nbsp;&nbsp;Report Header: Null value. When sending a Report level exception, the ObjectType and ObjectId can be null, as the report key is supplied in the URI.
 ExceptionCode | Y | The Exception Code for the exception to assign to the object. Must be a configured exception code in Expense. Example: NODATE
 
-####  <a name="response"></a>Response
+####  <a name="response"></a>Create an exception to a report - Response
 
 #### Content Types
 application/xml
 
-#### <a name="res-schema"></a>Response Schema
+#### <a name="res-schema"></a>Create an exception to a report - Response Schema
 This request will return an **exception-result** parent element.
 
 #### Exception-Result Elements
@@ -63,7 +63,7 @@ exceptions-failed | The number of exceptions processed that were not successfull
 errors | This will contain an **error** parent element for each record failure. The **error** element will contain the following child elements:<br/>&nbsp;&nbsp;&nbsp;Index: The exception's location in the batch.<br/>&nbsp;&nbsp;&nbsp;message: The error message.
 ExceptionDetails |This parent element will contain an **ExceptionInfo** parent element for all exceptions that did not cause an error, and will contain the following child elements:<br/>&nbsp;&nbsp;&nbsp;Index: The exception's location in the batch.<br/>&nbsp;&nbsp;&nbsp;Status: The status of the request.
 
-#### <a name="examples"></a>Examples
+#### <a name="examples"></a>Create an exception to a report - Examples
 
 ####  XML Example Request
 
@@ -111,5 +111,5 @@ Content-Type: application/xml
 
 
 
-[1]: /api-reference/expense/expense-report/v3.reports.html#getID
+[1]: #reports-v3
 [2]: https://developer.concur.com/reference/http-codes

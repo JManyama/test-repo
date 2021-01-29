@@ -4,9 +4,9 @@
 
 The SAP Concur Allocations API allows for the retrieval of allocation information as it relates to a Report ID, Entry ID, or Itemization ID. Using this API allows for an in-depth review of Expense Report Data and how that data has been allocated in SAP Concur. The Allocations API allows for the programmatic gathering of details on how the expense report data was allocated by the report owner, making it ideal for Data Gathering, Expense Reporting, and Validations. 
 
-* [Retrieve All Allocations Per Entry or Report](#get)
-* [Retrieve a Single Allocation by ID](#getID)
-* [Schema](#schema)
+* [Retrieve All Allocations Per Entry or Report](#retrieve-all-allocations-per-entry-or-report)
+* [Retrieve a Single Allocation by ID](#retrieve-a-single-allocation-by-id)
+* [Schema](#allocations-schema)
 
 ### Version
 3.0
@@ -106,7 +106,7 @@ https://www.concursolutions.com/api/v3.0/expense/allocations?limit=10
 
 #### Response
 
-[Allocations Schema](#schema)
+[Allocations Schema](#allocations-schema)
 
 
 #### <a name="getID"></a>Retrieve a Single Allocation by ID
@@ -123,7 +123,7 @@ https://www.concursolutions.com/api/v3.0/expense/allocations?limit=10
 
 
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Allocations - Schema
 
 #### <a name="allocations"></a>Allocations
 

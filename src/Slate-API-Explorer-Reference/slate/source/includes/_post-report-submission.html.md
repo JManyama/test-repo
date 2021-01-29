@@ -6,13 +6,13 @@ Triggers the Submit workflow action for the specified report.
 
 **Important Note**: This endpoint submits the expense report as if the original report owner had submitted it. Consult your company's Expense administrator to confirm that the web service should be allowed to submit reports on behalf of users. If you wish to enforce the expense report delegate functionality, use the [Get Expense Delegators][1] function to determine if the user in question has the correct permissions to submit on behalf of the report owner.
 
-* [Request](#request)
-* [Response](#response)
-  * [Schema](#schema)
+* [Request](#submit-an-expense-report-request)
+* [Response](#submit-an-expense-report-response)
+  * [Schema](#submit-an-expense-report-schema)
     * [Report Exception Schema](#report-exception)
-* [Examples](#examples)
+* [Examples](#submit-an-expense-report-examples)
 
-#### <a name="request"></a>Request
+#### <a name="request"></a>Submit An Expense Report - Request
 
 #### Request Parameters
 
@@ -35,9 +35,9 @@ application/xml
 **X_UserID**: This request requires an additional field in the authorization header, identifying the report owner. This identifier is the SAP Concur login for the user, and is often also the email address of the user. The field format is:  
 X_UserID: expenseuser@example.com
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Submit An Expense Report - Response
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Submit An Expense Report - Schema
 This request will return a **ReportStatus** parent element with the following child elements.
 
 #### Report Status Elements
@@ -66,7 +66,7 @@ If the report submission triggered an exception, a **ReportExceptions** parent e
 |  TransactionDate |  The date of the entry. |
 |  Type |  The exception type. |
 
-#### <a name="examples"></a>Examples
+#### <a name="examples"></a>Submit An Expense Report - Examples
 
 #### XML Example Request
 
@@ -85,8 +85,8 @@ X-UserID: cmiller@example.com
 </ReportStatus>
 ```
 
-[1]: /api-reference/expense/expense-report/expense-delegators.html#get
-[2]: /api-reference/expense/expense-report/v3.reports.html#get
-[3]: /api-reference/expense/expense-report/v3.reports.html#getID
-[4]: /api-reference/expense/expense-report/v3.reports.html#post
-[6]: https://developer.concur.com/reference/http-codes
+[1]: #expense-delegators
+[2]: #reports-v3
+[3]: #reports-v3
+[4]: #reports-v3
+[6]: #http-status-codes

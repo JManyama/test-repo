@@ -1,29 +1,29 @@
 
-## Get report details
+## Report details
 
 
 Retrieves the full set of information for the report. Includes the Report Header, Entry, Attendee, Itemization and Allocation details.  
 
 Some elements will appear only if the OAuth consumer has the Web Services Admin role. These include: The **ReportKey** element, the employee's credit card information, and the employee's bank account information, VAT information, Journal entries. Connectors that utilize this information go through a review process with SAP Concur that includes verification of secure data handling.
 
-GET list of reports can be found [here](/api-reference/expense/expense-report/v2.reports.html)
+GET list of reports can be found [here]((#reports-v2)
 
-* [Request](#request)
-* [Response](#response)
-  * [Schema](#schema)
+* [Request](#report-details-request)
+* [Response](#report-details-response)
+  * [Schema](#report-details-schema)
     * [Expense Entry](#expense-entry)
-    * [Itemization](#itemization)
-    * [Attendee](#attendee)
-    * [Allocation](#allocation)
+    * [Itemization](#report-details-itemization)
+    * [Attendee](#report-details-attendee)
+    * [Allocation](#report-details-allocation)
     * [Journal Entry](#journal-entry)
     * [VAT Data](#vat-data)
     * [Card Transaction](#card-transaction)
     * [Custom Fields](#custom-fields)
     * [Report Owner](#report-owner)
     * [Employee Bank Account](#employee-bank-account)
-* [Examples](#examples)
+* [Examples](#report-details-examples)
 
-### <a name="request"></a>Request
+### <a name="request"></a>Report Details - Request
 
 ### Request Parameters
 
@@ -46,12 +46,12 @@ These roles allow the user to manage data for the entire company.
 ### Accept Header
 application/xml
 
-### <a name="response"></a>Response
+### <a name="response"></a>Report Details - Response
 
 ### Content Types
 application/xml
 
-### <a name="schema"></a>Schema
+### <a name="schema"></a>Report Details - Schema
 This request will return a **ReportDetails** parent element.
 
 ### <a name="report-details"></a>ReportDetails
@@ -141,7 +141,7 @@ This request will return a **ReportDetails** parent element.
 |  CardTransaction |  This parent element includes the card transaction data found in the card transaction associated to this expense entry. This data is used in **Payment System** integrations where the payment system reimburses the card issuer for the indicated card account. Refer to the **CardTransaction elements** table. |
 |  ExpensePay |  Whether the entry was paid using the Expense Pay service. This element has a value if the report has reached the Processing Payment workflow step. Format: Yes/No |
 
-### <a name="itemization"></a>Itemization
+### <a name="itemization"></a>Report Details - Itemization
 
 |  Element |  Description |
 | -------- | ------------ |
@@ -165,7 +165,7 @@ This request will return a **ReportDetails** parent element.
 |  AttendeesList |  This parent element contains one **Attendee** element for each associated attendee. Refer to the **Attendee elements** table for more information. |  
 |  AllocationsList |  This parent element contains at least one **Allocation** element. It will contain multiple **Allocation** elements if there are multiple allocations for the itemization. Refer to the **Allocation elements** table. |
 
-### <a name="attendee"></a>Attendee
+### <a name="attendee"></a>Report Details - Attendee
 
 |  Element |  Description |
 | -------- | ------------ |
@@ -188,7 +188,7 @@ This request will return a **ReportDetails** parent element.
 |  AttendeeOwnerID |  The unique identifier for the person or system that owns the attendee. |
 |  CurrencyCode |  The [3-letter ISO 4217 currency code][1] for attendee related amounts. |
 
-### <a name="allocation"></a>Allocation
+### <a name="allocation"></a>Report Details - Allocation
 
 |  Element |  Description |
 | -------- | ------------ |
@@ -290,7 +290,7 @@ This request will return a **ReportDetails** parent element.
 |  PostalAddressCode |  The postal address code entered on the Bank Information page. Maximum 20 characters. |
 |  PostalAddressCountry |  The postal address country entered on the Bank Information page. Maximum 2 characters. Format: The [ISO 3166-1 alpha-2 country code][3]. Example: United States is US. |
 
-### <a name="examples"></a>Examples
+### <a name="examples"></a>Report Details - Examples
 
 ### XML Example Request
 

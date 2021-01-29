@@ -6,10 +6,10 @@ The corporate or credit card charges that are available for use in expense repor
 
 Retrieves a list of unassigned company card charges for the user specified in the OAuth access token.
 
-* [Request](#request)
-* [Response](#response)
-  * [Schema](#schema)
-* [Examples](#examples)
+* [Request](#company-card-transaction-request)
+* [Response](#company-card-transaction-response)
+  * [Schema](#company-card-transaction-schema)
+* [Examples](#company-card-transaction-examples)
 
 #### Version
 1.1
@@ -20,7 +20,7 @@ Retrieves a list of unassigned company card charges for the user specified in th
 #### Operations
 [GET](#get)
 
-#### <a name="request"></a>Request
+#### <a name="request"></a>Company Card Transaction - Request
 
 #### Request Parameters
 None.
@@ -31,12 +31,12 @@ application/xml
 #### Authorization Header
 Authorization header with OAuth token for valid SAP Concur user. Required.
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Company Card Transaction - Response
 
 #### Content Types
 application/xml
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Company Card Transaction - Schema
 
 This request will return a **CardCharges** parent element with a **CardCharge** child element for each transaction.
 
@@ -52,7 +52,7 @@ This request will return a **CardCharges** parent element with a **CardCharge** 
 |  TransactionCrnCode |  The currency code of the transaction amount. |
 |  TransactionDate |  The date of the transaction. |
 
-#### <a name="examples"></a>Examples
+#### <a name="examples"></a>Company Card Transaction - Examples
 
 #### XML Example Request
 

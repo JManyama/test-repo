@@ -19,7 +19,7 @@ Message to retrieve descriptive details about a given hotel. This may include te
   * [Schema](#ota_hoteldescriptiveinfors)
     * [Hotel Descriptive Contents](#hotel-desc-contents)
     * [Hotel Descriptive Content](#hotel-desc-content)
-    * [TPA Extensions](#tpa-extensions)
+    * [TPA Extensions](#descriptive-info-tpa_extensions)
     * [Description](#description)
     * [Multimedia Descriptions](#multi-descs)
     * [Multimedia Description](#multi-desc)
@@ -136,7 +136,7 @@ The maximum allowed size of `OTA_HotelDescriptiveInfoRS` is 150 KB. Any response
 |`TPA_Extensions`|`complex`|SAP Concur specific extensions.|
 |`MultimediaDescriptions`|`complex`|Multimedia information about a collection of multimedia objects. SAP Concur expects one (1) `MultimediaDescription` element.|
 
-#### <a name="tpa-extensions"></a>TPA_Extensions
+#### <a name="tpa-extensions"></a>Descriptive Info - TPA_Extensions
 
 |Name|Type|Description|
 |-------------|----------|-------------|

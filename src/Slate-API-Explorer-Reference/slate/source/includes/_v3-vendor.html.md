@@ -6,35 +6,35 @@ The Vendor API allows you to develop processes that can be used to manage your V
 
 > **Limitations**: This API is only available to partners who have been granted access by SAP Concur. Access to this documentation does not provide access to the API. This API is not available in the China data center.
 
-* [Products and Editions](#products-editions)
-* [Scope Usage](#scope-usage)
-* [Dependencies](#dependencies)
-* [Access Token Usage](#access-token-usage)
-* [Retrieve an existing vendor](#get)
-* [Create vendors](#post)
-* [Update existing vendors](#put)
-* [Delete vendors](#delete)
+* [Products and Editions](#vendor-v3-products-and-editions)
+* [Scope Usage](#vendor-v3-scope-usage)
+* [Dependencies](#vendor-v3-dependencies)
+* [Access Token Usage](#vendor-v3-access-token-usage)
+* [Retrieve an existing vendor](#retrieve-an-existing-vendor)
+* [Create vendors](#create-vendors)
+* [Update existing vendors](#update-existing-vendors)
+* [Delete vendors](#delete-vendor)
 * [Add/Update Vendor Banking](#vendorBankPut)
 * [Add Vendor Group](#vendorGroupPut)
 * [Delete Vendor Group](#vendorGroupDelete)
-* [Schema](#schema)
+* [Schema](#vendor-v3-schema)
 
-#### <a name="products-editions"></a>Products and Editions
+#### <a name="products-editions"></a>Vendor v3 - Products and Editions
 
 * Concur Invoice Professional Edition
 * Concur Invoice Standard Edition
 
-#### <a name="scope-usage"></a>Scope Usage
+#### <a name="scope-usage"></a>Vendor v3 - Scope Usage
 
 Name|Description|Endpoint
 ---|---|---
 `INVVEN`|Retrieves vendor information.|GET
 
-#### <a name="dependencies"></a>Dependencies
+#### <a name="dependencies"></a>Vendor v3 - Dependencies
 
 SAP Concur clients must purchase Concur Invoice in order to use this API.
 
-#### <a name="access-token-usage"></a>Access Token Usage
+#### <a name="access-token-usage"></a>Vendor v3 - Access Token Usage
 
 This API supports both company level and user level access tokens.
 
@@ -217,7 +217,7 @@ None.
 
 [Vendor Group Schema](#vendorgroups)
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Vendor v3 - Schema
 
 #### <a name="vendors"></a>Vendors  
 

@@ -12,23 +12,23 @@ Message to retrieved the availability of hotels.
 ---
 
 * [Request](#availability-request)
-  * [Schema](#OTA_HotelDescriptiveInfoRQ)
-    * [Available Request Segments](#availreqsegments)
-    * [Available Request Segment](#availreqsegment)
+  * [Schema](#ota_hotelavailrq)
+    * [Available Request Segments](#availrequestsegments)
+    * [Available Request Segment](#availrequestsegment)
     * [Hotel Search Criteria](#hotel-search-criteria)
-    * [Criterion](#criterion)
-    * [Stay Date Range](#stay-date-range)
+    * [Criterion](#availability-criterion)
+    * [Stay Date Range](#availability-staydaterange)
     * [Room Stay Candidates](#room-stay-candidates)
     * [Room Stay Candidate](#room-stay-candidate)
     * [Guest Counts](#guest-counts)
     * [Guest Count](#guest-count)
-* [Response](#availality-response)
-  * [Schema](#res-schema)
+* [Response](#availability-response)
+  * [Schema](#ota_hotelavailrs)
     * [Room Stays](#roomstays)
     * [Room Stay](#roomstay)
     * [Room Types](#roomtypes)
     * [Room Type](#roomtype)
-    * [Room Descriptions](#roomdescriptions)
+    * [Room Descriptions](#roomdescription)
     * [Rate Plans](#rateplans)
     * [Rate Plan](#rateplan)
     * [Rate Plan Description](#rateplandescription)
@@ -48,10 +48,10 @@ Message to retrieved the availability of hotels.
     * [Accepted Payments](#accepted-payments)
     * [Accepted Payment](#accepted-payment)
     * [Payment Card](#payment-card)
-    * [Card Type](#card-type)
+    * [Card Type](#cardtype)
     * [Total](#total)
-    * [Rate Descriptions](#rate-descriptions)
-    * [TPA Extensions](#tpa-extensions)
+    * [Rate Descriptions](#rate-description)
+    * [TPA Extensions](#availability-tpa_extensions)
     * [Timespan](#timespan)
     * [Basic Property Info](#basic-property-info)
 * [Relationship Between RoomID and RatePlanID](#relationship-roomid-rateplanid)
@@ -126,14 +126,14 @@ Message to retrieved the availability of hotels.
 |-----------|-----------|-------------|
 |`Criterion`|`complex`|**Required** Refer to `Criterion` in [Search](/api-reference/direct-connects/hotel-service-2/Search.html). Note that for Availability the `Criterion` will only have the `HotelRef` element. Other elements will not be sent. `HotelSearchCriteria` can contain multiple `Criterion` elements. Each will have a unique `HotelCode` per Availability request.|
 
-#### <a name="criterion"></a>Criterion
+#### <a name="criterion"></a>Availability - Criterion
 
 |Name|Type|Description|
 |---------|------------------|-------------|
 |`HotelRef/HotelCode`|`stringLength1to16`|The code that uniquely identifies a single hotel property. The hotel code is decided by vendors.|
 |`HotelRef/ChainCode`|`stringLength1to8`|The code that identifies a hotel chain or management group. The hotel chain code is decided between vendors. This attribute is optional if the hotel is an independent property that can be identified by the `HotelCode` attribute.|
 
-#### <a name="stay-date-range"></a>StayDateRange
+#### <a name="stay-date-range"></a>Availability - StayDateRange
 
 |Name|Type|Description|
 |---------|-------------------|-------------|
@@ -448,7 +448,7 @@ For a description of the relationship between the `RoomID` and `RatePlanID` refe
 |---------|-------------------|-------------|
 |`Text`|`stringLength1to32`|**Required** SAP Concur only expects one (1) text field for the rate description. Any excess text elements will be ignored. All text passed is HTML encoded.|
 
-#### <a name="tpa-extensions"></a>TPA_Extensions
+#### <a name="tpa-extensions"></a>Availability - TPA_Extensions
 
 |Name|Type|Description|
 |-------------------|-----------|-------------|

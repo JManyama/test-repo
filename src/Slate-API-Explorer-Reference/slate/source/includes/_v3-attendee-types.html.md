@@ -4,18 +4,18 @@
 
 The Attendee Type resource represents the type of attendee as configured in Concur.
 
-* [Retrieve all attendee types](#get)
-* [Retrieve attendee types by ID](#getID)
-* [Create a new attendee type](#post) **DEPRECATED: 05/19/2016 UNSUPPORTED: 11/19/2016**
-* [Update existing attendee type](#put)
-* [Delete an attendee type](#delete) **DEPRECATED: 05/19/2016 UNSUPPORTED: 11/19/2016**
-* [Schema](#schema)
+* [Retrieve all attendee types](#retrieve-all-attendees-types)
+* [Retrieve attendee types by ID](#retrieve-attendee-types-by-id)
+* [Create a new attendee type](#create-a-new-attendee-type) **DEPRECATED: 05/19/2016 UNSUPPORTED: 11/19/2016**
+* [Update existing attendee type](#update-existing-attendee-type)
+* [Delete an attendee type](#delete-an-attendee-type) **DEPRECATED: 05/19/2016 UNSUPPORTED: 11/19/2016**
+* [Schema](#attendee-type-schema)
 
 #### Version
 
 3.0
 
-[Attendee Types v1 (Deprecated)](/api-reference/expense/attendee-types/v1.attendee-types.html)
+[Attendee Types v1 (Deprecated)](#attendee-types-v1)
 
 #### <a name="get"></a>Retrieve all attendees types
 
@@ -151,11 +151,11 @@ Name | Type | Format | Description
 
 #### Input
 
-[Attendee Schema](#schema)
+[Attendee Schema](#attendee-type-schema)
 
 #### Response
 
-[Attendee Schema](#schema)
+[Attendee Schema](#attendee-type-schema)
 
 #### Request URL
 
@@ -187,11 +187,11 @@ Name | Type | Format | Description
 
 #### Input
 
-[Attendee Schema](#schema)
+[Attendee Schema](#attendee-type-schema)
 
 #### Response
 
-[Attendee Schema](#schema)
+[Attendee Schema](#attendee-type-schema)
 
 ### Request URL
 
@@ -215,11 +215,11 @@ Name | Type | Format | Description
 
 #### Input
 
-[Attendee Schema](#schema)
+[Attendee Schema](#attendee-type-schema)
 
 #### Response
 
-[Attendee Schema](#schema)
+[Attendee Schema](#attendee-type-schema)
 
 #### Request URL
 
@@ -227,7 +227,7 @@ Name | Type | Format | Description
 https://www.concursolutions.com/api/v3.0/expense/attendeetypes/gWjYOjomP3Jxp6dFC%24pIg%24sc99nQQ3q
 ```
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Attendee Type - Schema
 
 #### <a name="schema-attendee-type"></a>Attendee Type
 

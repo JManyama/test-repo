@@ -7,26 +7,26 @@ The Quick Expense API can be used to create an expense with basic information su
 
 > **Limitations**: This API is only available to partners who have been granted access by SAP Concur. Access to this documentation does not provide access to the API. This API is not available in Implementation environments.
 
-* [Products and Editions](#products-editions)
-* [Scope Usage](#scope-usage)
-* [Dependencies](#dependencies)
-* [Access Token Usage](#access-token-usage)
+* [Products and Editions](#quick-expense-products-and-editions)
+* [Scope Usage](#quick-expense-scope-usage)
+* [Dependencies](#quick-expense-dependencies)
+* [Access Token Usage](#quick-expense-access-token-usage)
 * [Create a Quick Expense](#create-quick-expense)
 * [Create a Quick Expense with an Image](#create-quick-expense-image)
-* [Schema](#schema)
+* [Schema](#quick-expense-schema)
   * [Quick Expense Request](#quick-expense-request-schema)
     * [Location](#location-schema)
     * [Amount](#amount-schema)
   * [Quick Expense Response](#quick-expense-response-schema)
-  * [Error](#schema-error)
+  * [Error](#quick-expense-error)
   * [Validation Errors](#schema-validation-errors)
 
-#### <a name="products-editions"></a>Products and Editions
+#### <a name="products-editions"></a>Quick Expense - Products and Editions
 
 * Concur Expense Professional Edition
 * Concur Expense Standard Edition
 
-#### <a name="scope-usage"></a>Scope Usage
+#### <a name="scope-usage"></a>Quick Expense - Scope Usage
 
 Required Scopes:
 
@@ -42,17 +42,17 @@ Name|Description|Endpoint
 ---|---|---
 `CONFIG`|Get Expense Configuration information, necessary for `expenseTypeId`.|POST
 
-#### <a name="dependencies"></a>Dependencies
+#### <a name="dependencies"></a>Quick Expense - Dependencies
 
 SAP Concur clients must purchase Concur Expense in order to use this API. This API requires the User v3.1 API which is currently only available to approved early access partners. Please contact your SAP Concur representative for more information.
 
 The partner may use the following SAP Concur APIs to get optional information:
-* [Expense Group Configurations v3.0](/api-reference/expense/expense-report/expense-group-configurations.html), to retrieve the `expenseTypeId`
-*  [Locations v3.0](/api-reference/common/locations/v3.locations.html), to retrieve the location `id`
+* [Expense Group Configurations v3.0](#expense-group-configurations), to retrieve the `expenseTypeId`
+*  [Locations v3.0](#locations-v3), to retrieve the location `id`
 
 **Japan Market**: If the partner is using this API to provide the e-Bunsho digital timestamp for the receipt, the partner should confirm that the client has e-Bunsho activated in SAP Concur.
 
-#### <a name="access-token-usage"></a>Access Token Usage
+#### <a name="access-token-usage"></a>Quick Expense - Access Token Usage
 
 This API supports both company level and user level access tokens.
 
@@ -62,7 +62,7 @@ Creates a quick expense without an image.
 
 #### Scopes
 
-`quickexpense.writeonly` - Refer to [Scope Usage](#scope-usage) for full details.
+`quickexpense.writeonly` - Refer to [Scope Usage](#quick-expense-scope-usage) for full details.
 
 #### Request
 
@@ -78,7 +78,7 @@ https://{datacenterURI}/quickexpense/v4/users/{userID}/context/{contextType}/qui
 
 Name|Type|Format|Description
 ---|---|---|---
-`userID`|`string`|-|**Required** The unique identifier of the SAP Concur user. Use [User Profile v1.0](/api-reference/profile/v1.user.html) to retrieve the `userID`.
+`userID`|`string`|-|**Required** The unique identifier of the SAP Concur user. Use [User Profile v1.0](#profile-v1-user) to retrieve the `userID`.
 `contextType`|`string`|-|**Required** The access level of the SAP Concur user, which determines the form fields they can view/modify. Supported value: TRAVELER.
 
 #### Headers
@@ -156,8 +156,8 @@ Creates a quick expense with an image.
 
 ### Scopes
 
-`quickexpense.writeonly` - Refer to [Scope Usage](#scope-usage) for full details.
-`receipts.writeonly` - Refer to [Scope Usage](#scope-usage) for full details.
+`quickexpense.writeonly` - Refer to [Scope Usage](#quick-expense-scope-usage) for full details.
+`receipts.writeonly` - Refer to [Scope Usage](#quick-expense-scope-usage) for full details.
 
 #### Request
 
@@ -173,7 +173,7 @@ https://{datacenterURI}/quickexpense/v4/users/{userID}/context/{contextType}/qui
 
 Name|Type|Format|Description
 ---|---|---|---
-`userID`|`string`|-|**Required** The unique identifier of the SAP Concur user. Use [User Profile v1.0](/api-reference/profile/v1.user.html) to retrieve the `userID`.
+`userID`|`string`|-|**Required** The unique identifier of the SAP Concur user. Use [User Profile v1.0](#profile-v1-user) to retrieve the `userID`.
 `contextType`|`string`|-|**Required** The access level of the SAP Concur user, which determines the form fields they can view/modify. Supported values: TRAVELER.
 `fileContent`|`file`|-|**Required** The quick expense image. Maximum size 5 MBs. Supported image types are: PNG, PDF, TIFF, JPEG
 
@@ -248,7 +248,7 @@ curl -X POST \
 
 ```
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Quick Expense - Schema
 
 #### <a name="quick-expense-request-schema"></a>Quick Expense Request
 
@@ -256,7 +256,7 @@ Name|Type|Format|Description
 ---|---|---|---
 `comment`|`string`|-|This is a comment attached to the quick expense.
 `entryDetails`|`string`|-|The quick expense entry details.
-`expenseTypeId`|`string`|-|**Required** This is the expense type id of quick expense. Use [Expense Group Configurations v3.0](/api-reference/expense/expense-report/expense-group-configurations.html) to retrieve the supported expense types. Supported values for a null value are: `UNDEF`, `NULL`. `NULL` can only be used on a POST operation and will be converted to `UNDEF`.
+`expenseTypeId`|`string`|-|**Required** This is the expense type id of quick expense. Use [Expense Group Configurations v3.0](#expense-group-configurations) to retrieve the supported expense types. Supported values for a null value are: `UNDEF`, `NULL`. `NULL` can only be used on a POST operation and will be converted to `UNDEF`.
 `location`|-|[Location](#location-schema)|The location where the quick expense occurred.
 `paymentTypeId`|`string`|-|This is the payment type id of quick expense. Supported values: `CASHX`, `CPAID`, `PENDC`.
 `transactionAmount`|-|[Amount](#amount-schema)|**Required** The amount of the quick expense.
@@ -286,7 +286,7 @@ Name|Type|Format|Description
 ---|---|---|---
 `quickExpenseIdUri`|`string`|-|The quick expense created resource url.
 
-#### <a name="schema-error"></a>Error
+#### <a name="schema-error"></a>Quick Expense - Error
 
 Name|Type|Format|Description
 ---|---|---|---

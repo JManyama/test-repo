@@ -2,15 +2,15 @@
 ## Get Started - Receipts v4
 
 
-* [Overview](#overview)
-* [Version](#version)
+* [Overview](#get-started-receipts-v4-overview)
+* [Version](#receipts-prior-versions)
 * [Regional Availability](#regional-availability)
 * [Explore the API](#explore-the-api)
   * [Prerequisites](#prerequisites)
   * [Acquire an Access Token](#retrieve-a-user-access-token)
   * [Explore the API in JavaScript](#explore-the-api-in-javascript)
 
-### Overview
+### Receipts v4 - Overview
 
 The Receipts V4 API accepts three different formulae for posting a receipt:
 
@@ -30,11 +30,11 @@ These two different resources are sent/fetched from the Receipts V4 API via diff
 
 > **Note**: The Receipts V4 API only provides GET access to individual or user’s receipts that have been submitted through this API, and, therefore the response will not be comprehensive of every user receipt within SAP Concur. All other images should be obtained via the [Image v1 API](https://developer.concur.com/api-reference/image/v1.image.html). Additionally, only the receipts will be returned, there will not be any corresponding entry data. Examples of Enterprise apps that should use the Image v1 API include: ERP integrations for financial journal entry postings, VAT reclaim integrations that obtain transactions to calculate VAT reclaim, project billing integrations used to substantiate expenses billed back, etc. 
 
-### Prior Versions
+### Receipts - Prior Versions
 
 * Receipts v3 (Deprecated) documentation is available [here](./v3.receipts.html)
 
-### Overview of Version 4.0
+### Get Started - Receipts v4 - Overview of Version 4.0
 
 Version 4.0 of the Receipts API offers features like more receipt types, automatic e-receipt generation in end user’s preferred language and ability for partners to provide detailed tax information. Unlike version 3.0, we are discontinuing the use of matching facts; instead the partner will have to create a receipt for a specific end user. Receipts 4.0 works only with the new [Authentication API](https://developer.concur.com/api-reference/authentication/apidoc.html).
 

@@ -3,16 +3,16 @@
 
 
 
-* [Retrieve reports owned by the user based on search criteria](#get)
-* [Retrieve a report by ID](#getID)
-* [Create a new report](#post)
-* [Update a report](#put)
-* [Schema](#schema)
+* [Retrieve reports owned by the user based on search criteria](#retrieve-reports-owned-by-the-user-based-on-search-criteria)
+* [Retrieve a report by ID](#retrieve-a-report-by-id)
+* [Create a new report](#create-a-new-report)
+* [Update a report](#update-a-report)
+* [Schema](#reports-v3-schema)
 
 #### Prior Versions
 
-* [Expense Reports v2](/api-reference/expense/expense-report/v2.reports.html)
-* [Expense Report Header 1.1](/api-reference/expense/expense-report/v1dot1.reports.html)
+* [Expense Reports v2](#reports-v2)
+* [Expense Report Header 1.1](#expense-reports-list-v1-1)
 
 ### <a name="get"></a>Retrieve reports owned by the user based on search criteria
 
@@ -264,7 +264,7 @@ Name|Type|Format|Description
 
 
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Reports v3 - Schema
 
 
 #### Reports

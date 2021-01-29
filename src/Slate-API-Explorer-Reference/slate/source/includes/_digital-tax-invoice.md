@@ -4,10 +4,10 @@
 
 The Digital Tax Invoice web service allows digital tax invoice validators to view tax invoices and update them with a validation status. This web service currently supports the Comprobante Fiscal Digital (CFD) digital tax invoice format used in Mexico. Other countries may be supported in future releases.
 
-* [Retrieve All Digital Tax Invoices That Can Be Validated by the User Based On the Search Criteria](#get)
-* [Retrieve a Single Digital Tax Invoice by ID](#getID)
-* [Update a Specified Digital Tax Invoice](#put)
-* [Schema](#schema)
+* [Retrieve All Digital Tax Invoices That Can Be Validated by the User Based On the Search Criteria](#retrieve-all-digital-tax-invoices-that-can-be-validated-by-the-user-based-on-the-search-criteria)
+* [Retrieve a Single Digital Tax Invoice by ID](#retrieve-a-single-digital-tax-invoice-by-id)
+* [Update a Specified Digital Tax Invoice](#update-a-specified-digital-tax-invoice)
+* [Schema](#digital-tax-invoices-schema)
 
 #### Version
 3.0
@@ -65,7 +65,7 @@ https://www.concursolutions.com/api/v3.0/expense/digitaltaxinvoices/gWj3IHRYiHZG
 |`id`	|	`path`	|	`string`	|	**Required** The ID of the digital tax invoice to update.
 
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Digital Tax Invoices - Schema
 
 
 #### <a name="digitaltaxinvoices"></a>Digital Tax Invoices

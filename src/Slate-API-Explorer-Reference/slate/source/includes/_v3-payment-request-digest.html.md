@@ -3,9 +3,9 @@
 
 
 
-* [Retrieves All Invoice Digests Based On the Search Criteria](#get)
-* [Retrieves an Invoice Digest Based On ID](#getID)
-* [Schema](#schema)
+* [Retrieves All Invoice Digests Based On the Search Criteria](#retrieves-all-invoice-digests-based-on-the-search-criteria)
+* [Retrieves an Invoice Digest Based On ID](#retrieves-an-invoice-digest-based-on-id)
+* [Schema](#retrieve-invoice-digests-v3-schema)
 
 ### Version
 
@@ -52,7 +52,7 @@ Name|Type|Format|Description
 ---|---|---|---
 `id`|`string`|`path`|**Required** The invoice ID
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Retrieve Invoice Digests v3 - Schema
 
 #### Payment Request Digests
 

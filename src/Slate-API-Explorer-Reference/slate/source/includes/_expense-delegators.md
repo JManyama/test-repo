@@ -6,10 +6,10 @@ Users that have granted delegate permissions to the another Expense user.
 
 Retrieves the list of users that have granted delegate permissions to the user specified in the OAuth access token.
 
-* [Request](#request)
-* [Response](#response)
-  * [Schema](#schema)
-* [Examples](#examples)
+* [Request](#expense-delegators-request)
+* [Response](#expense-delegators-response)
+  * [Schema](#expense-delegators-schema)
+* [Examples](#expense-delegators-examples)
 
 #### Version
 1.1
@@ -20,7 +20,7 @@ Retrieves the list of users that have granted delegate permissions to the user s
 #### Operations
 [GET](#get)  
 
-#### <a name="request"></a>Request
+#### <a name="request"></a>Expense Delegators - Request
 
 #### Request Parameters
 None.
@@ -33,12 +33,12 @@ Authorization header with OAuth token for valid SAP Concur user. Required.
 #### Accept Header
 application/xml
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Expense Delegators- Response
 
 #### Content Types
 application/xml
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Expense Delegators - Schema
 
 This request will return a **DelegatorsList** parent element with a **Delegator** parent element for each user that has granted delegate rights to the OAuth consumer.
 
@@ -55,7 +55,7 @@ This request will return a **DelegatorsList** parent element with a **Delegator*
 |  ReceivesEmails |  Whether the delegate also receives the SAP Concur emails sent to the delegator. |
 |  DelegatorXUserID |  The user ID of the delegator. |
 
-#### <a name="examples"></a>Examples
+#### <a name="examples"></a>Expense Delegators - Examples
 
 #### XML Example Request
 

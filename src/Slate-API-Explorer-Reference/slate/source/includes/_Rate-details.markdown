@@ -13,49 +13,49 @@ Message to retrieved the details of a hotel rate.
 
 * [Request](#rate-details-request)
   * [Schema](#rate-details-schema)
-    * [Available Request Segments](#availrequestsegments)
-    * [Available Request Segment](#availrequestsegment)
-    * [Hotel Search Criteria](#hotelsearchcriteria)
-    * [Criterion](#criterion)
-    * [RatePlanCandidate](#rate-plan-candidate)
-    * [Stay Date Range](#stay-date-range)
-    * [Room Stay Candidates](#room-stay-cadidates)
-    * [Room Stay Candidate](#room-stay-candidate)
-    * [Guest Counts](#guest-counds)
-    * [Guest Count](#guest-count)
-* [Response](#response)
-  * [Schema](#res-schema)
-    * [Room Stays](#room-stays)
-    * [Room Stay](#room-stay)
-    * [Room Types](#room-types)
-    * [Room Type](#room-type)
-    * [Room Descriptions](#room-descriptions)
-    * [Rate Plans](#rate-plans)
-    * [Rate Plan](#rate-plan)
-    * [Rate Plan Description](#rate-plan-description)
-    * [Guarantee](#guarantee)
-    * [Supported Guarantee Types](#supported-guarantee-types)
-    * [Supported Guarantee Required](#supported-guarantee-required)
-    * [Deadline](#deadline)
-    * [Cancel Penalties](#cancel-penalties)
-    * [Cancel Penalty](#cancel-penalty)
-    * [Meals Included](#meal-included)
-    * [Rooms Rates](#room-rates)
-    * [Room Rate](#room-rate)
-    * [Rates](#rates)
-    * [Rate](#rate)
-    * [RoomRateDescription](#room-rate-description)
-    * [Payment Policies](#payment-policies)
-    * [Guarantee Payment](#guarantee-payment)
-    * [Accepted Payments](#accepted-payments)
-    * [Accepted Payment](#accepted-payment)
-    * [Payment Card](#payment-card)
-    * [Card Type](#cardtype)
-    * [Total](#total)
-    * [Rate Descriptions](#ratedescription)
-    * [TPA Extensions](#tpa-extensions)
-    * [Timespan](#timespan)
-    * [Basic Property Info](#basic-property-info)
+    * [Available Request Segments](#rate-details-availrequestsegments)
+    * [Available Request Segment](#rate-details-availrequestsegment)
+    * [Hotel Search Criteria](#rate-details-hotelsearchcriteria)
+    * [Criterion](#rate-details-criterion)
+    * [RatePlanCandidate](#rate-details-rateplancandidate)
+    * [Stay Date Range](#rate-details-staydaterange)
+    * [Room Stay Candidates](#rate-details-roomstaycandidates)
+    * [Room Stay Candidate](#rate-details-roomstaycandidate)
+    * [Guest Counts](#rate-details-guestcounts)
+    * [Guest Count](#rate-details-guestcount)
+* [Response](#rate-details-response)
+  * [Schema](#ota_hotelavailrs)
+    * [Room Stays](#rate-details-roomstays)
+    * [Room Stay](#rate-details-roomstay)
+    * [Room Types](#rate-details-roomtypes)
+    * [Room Type](#rate-details-roomtype)
+    * [Room Descriptions](#rate-details-roomdescription)
+    * [Rate Plans](#rate-details-rateplans)
+    * [Rate Plan](#rate-details-rateplan)
+    * [Rate Plan Description](#rate-details-rateplandescription)
+    * [Guarantee](#rate-details-guarantee)
+    * [Supported Guarantee Types](#rate-details-supported-guaranteetypes)
+    * [Supported Guarantee Required](#rate-details-supported-guaranteerequired)
+    * [Deadline](#rate-details-deadline)
+    * [Cancel Penalties](#rate-details-cancelpenalties)
+    * [Cancel Penalty](#rate-details-cancelpenalty)
+    * [Meals Included](#rate-details-mealsincluded)
+    * [Rooms Rates](#rate-details-roomrates)
+    * [Room Rate](#rate-details-roomrate)
+    * [Rates](#rate-details-rates)
+    * [Rate](#rate-details-rate)
+    * [RoomRateDescription](#rate-details-roomratedescription)
+    * [Payment Policies](#rate-details-paymentpolicies)
+    * [Guarantee Payment](#rate-details-guaranteepayment)
+    * [Accepted Payments](#rate-details-acceptedpayments)
+    * [Accepted Payment](#rate-details-acceptedpayment)
+    * [Payment Card](#rate-details-paymentcard)
+    * [Card Type](#rate-details-cardtype)
+    * [Total](#rate-details-total)
+    * [Rate Descriptions](#rate-details-ratedescription)
+    * [TPA Extensions](#rate-details-tpa_extensions)
+    * [Timespan](#rate-details-timespan)
+    * [Basic Property Info](#rate-details-basicpropertyinfo)
 
 ### <a name="request"></a>Rate Details Request
 
@@ -114,13 +114,13 @@ Message to retrieved the details of a hotel rate.
 |`RateDetailsInd`|`boolean`|**Required** Always set to `true` for `ratedetails`.|
 |`AvailRequestSegments`|`complex`|**Required** A collection of `AvailRequestSegment`. Each segment includes a collection of criteria that requests a bookable entity, which may include designated rate plans, room types, amenities or services. The request can be used for guest rooms or other inventory items for which availability is sought. Each segment will be presumed to have a unique date range for each request. SAP Concur will only ever send one `AvailRequestSegments`.|
 
-#### <a name="available-request-segments"></a>AvailRequestSegments
+#### <a name="#available-request-segment"></a>Rate Details - AvailRequestSegments
 
 |Name|Type|Description|
 |---------------------|-----------|-------------|
 |`AvailRequestSegment`|`complex`|**Required** To accommodate the ability to perform multiple requests within one message, the availability request contains the repeating element, `AvailRequestSegment`. Each segment includes a collection of criteria that requests a bookable entity, which may include designated rate plans, room types, amenities or services. The request can be used for guest rooms or other inventory items for which availability is sought. Each segment will be presumed to have a unique date range for each request. SAP Concur will only ever send one `AvailRequestSegment`.|
 
-#### <a name="available-request-segment"></a>AvailRequestSegment
+#### <a name="available-request-segments"></a>Rate Details - AvailRequestSegment
 
 |Name|Type|Description|
 |---------------------|-----------|-------------|
@@ -128,19 +128,19 @@ Message to retrieved the details of a hotel rate.
 |`StayDateRange`|`complex`|Range of dates using ISO 8601.|
 |`TPA_Extensions/SearchSessionToken`|`stringLength1to128`|The token obtained from [Search](/api-reference/direct-connects/hotel-service-2/Search.html) response that links the Search results to [Availability](#request) and [Reservation](/api-reference/direct-connects/hotel-service-2/Reservation.html) requests.|
 
-#### <a name="hotel-search-criteria"></a>HotelSearchCriteria
+#### <a name="hotel-search-criteria"></a>Rate Details - HotelSearchCriteria
 
 |Name|Type|Description|
 |-----------|-----------|-------------|
 |`Criterion`|`complex`|**Required** Refer to `Criterion` in [Search](/api-reference/direct-connects/hotel-service-2/Search.html). Note that for Rate Details the `Criterion` will only have one `RatePlanCandidate` element.
 
-#### <a name="criterion"></a>Criterion
+#### <a name="criterion"></a>Rate Details - Criterion
 
 |Name|Type|Description|
 |---------|------------------|-------------|
 |`RatePlanCandidates/RatePlanCandidate`|`complex`|**Required** Specified rate plan candidate.|
 
-#### <a name="rate-plan-candidate"></a>RatePlanCandidate
+#### <a name="rate-plan-candidate"></a>Rate Details - RatePlanCandidate
 
 |Name|Type|Description|
 |---------|------------------|-------------|
@@ -148,32 +148,32 @@ Message to retrieved the details of a hotel rate.
 |`HotelRefs/HotelRef/HotelCode`|`stringLength1to16`|The code that uniquely identifies a single hotel property. The hotel code is decided by vendors.|
 |`HotelRefs/HotelRef/ChainCode`|`stringLength1to8`|The code that identifies a hotel chain or management group. The hotel chain code is decided between vendors. This attribute is optional if the hotel is an independent property that can be identified by the `HotelCode` attribute.|
 
-#### <a name="stay-date-range"></a>StayDateRange
+#### <a name="stay-date-range"></a>Rate Details - StayDateRange
 
 |Name|Type|Description|
 |---------|-------------------|-------------|
 |`Start`|`date`, or `time`, or `datetime`|**Required** The starting value of the time span.|
 |`End`|`date`, or `time`, or `datetime`|**Required** The ending value of the time span.|
 
-#### <a name="room-stay-candidates"></a>RoomStayCandidates
+#### <a name="room-stay-candidates"></a>Rate Details - RoomStayCandidates
 
 |Name|Type|Description|
 |-------------------|-----------|-------------|
 |`RoomStayCandidate`|`complex`|**Required** Element used to identify available room products.|
 
-#### <a name="room-stay-candidate"></a>RoomStayCandidate
+#### <a name="room-stay-candidate"></a>Rate Details - RoomStayCandidate
 
 |Name|Type|Description|
 |-------------|-----------|-------------|
 |`GuestCounts`|`complex`|**Required** A collection of guest counts associated with room stay.|
 
-#### <a name="guest-counts"></a>GuestCounts
+#### <a name="guest-counts"></a>Rate Details - GuestCounts
 
 |Name|Type|Description|
 |------------|-----------|-------------|
 |`GuestCount`|`complex`|**Required** A recurring element that identifies the number of guests and ages of the guests. It currently contains hardcoded values only. See `GuestCount` below. |
 
-#### <a name="guest-count"></a>GuestCount
+#### <a name="guest-count"></a>Rate Details - GuestCount
 
 |Name|Type|Description|
 |---------------------|-----------|-------------|
@@ -182,7 +182,7 @@ Message to retrieved the details of a hotel rate.
 
 ---
 
-### <a name="response"></a>Response
+### <a name="response"></a>Rate Details - Response
 
 The maximum allowed size of `OTA_HotelAvailRS` is 5 MB. Any response that exceeds this limit shall be dropped.
 
@@ -261,7 +261,7 @@ The maximum allowed size of `OTA_HotelAvailRS` is 5 MB. Any response that exceed
 </soap:Envelope>
 ```
 
-### <a name="res-schema"></a>Schema
+### <a name="res-schema"></a>Rate Details - Schema
 
 #### OTA_HotelAvailRS
 
@@ -270,13 +270,13 @@ The maximum allowed size of `OTA_HotelAvailRS` is 5 MB. Any response that exceed
 |`RoomStays`|`complex`|**Required** A collection of details on the room stay including time span of this room stay, and financial information related to the room stay, including guarantee, deposit, payment, and cancellation penalties.|
 |`TPA_Extensions/RateDetailsInd`|`boolean`|Always set to `true` for `ratedetails`.|
 
-#### <a name="room-stays"></a>RoomStays
+#### <a name="room-stays"></a>Rate Details - RoomStays
 
 |Name|Type|Description|
 |----------|-----------|-------------|
 |`RoomStay`|`complex`|**Required** Details on the room stay including time span of this room stay, and financial information related to the room stay, including guarantee, deposit, payment, and cancellation penalties. A room stay represents one (1) hotel.|
 
-#### <a name="room-stay"></a>RoomStay
+#### <a name="room-stay"></a>Rate Details - RoomStay
 
 For a description of the relationship between the `RoomID` and `RatePlanID` refer to "Relationship between RoomID and RatePlanID".
 
@@ -288,32 +288,32 @@ For a description of the relationship between the `RoomID` and `RatePlanID` refe
 |`TimeSpan`|`datetimespan` |**Required** The time span which covers the room stay. The attributes of the OTA `DateTimeSpan` data type are based on the W3C base data types of `timeInstant` and `timeDuration` using ISO 8601.|
 |`BasicPropertyInfo`|`complex`|Property Information for the room stay.|
 
-#### <a name="room-types"></a>RoomTypes
+#### <a name="room-types"></a>Rate Details - RoomTypes
 
 |Name|Type|Description|
 |----------|-----------|-------------|
 |`RoomType`|`complex`|**Required** Provides details regarding rooms, usually guest rooms. The room description text will be used for each room (defined as a `RoomRate`) which specifies the same `RoomID`.|
 
-#### <a name="room-type"></a>RoomType
+#### <a name="room-type"></a>Rate Details - RoomType
 
 |Name|Type|Description|
 |-----------------|-------------------|-------------|
 |`RoomID`|`stringLength1to16`|**Required** A string value representing the unique identification of a room if the request is looking for a specific room type.|
 |`RoomDescription`|`complex`|Textual information regarding the room.|
 
-#### <a name="room-description"></a>RoomDescription
+#### <a name="room-description"></a>Rate Details - RoomDescription
 
 |Name|Type|Description|
 |---------|-------------------|-------------|
 |`Text`|`stringLength1to32`|**Required** Only one (1) text element is supported. If multiple text elements are specified, the last one is used and all others are dropped. All text passed is HTML encoded.|
 
-#### <a name="rate-plans"></a>RatePlans
+#### <a name="rate-plans"></a>Rate Details - RatePlans
 
 |Name|Type|Description|
 |----------|-----------|-------------|
 |`RatePlan`|`complex`|**Required** Defines the details of the rate plan as used in the booking process. Policies and descriptions that apply to a rate plan. Information significant to defining a rate plan.|
 
-#### <a name="rate-plan"></a>RatePlan
+#### <a name="rate-plan"></a>Rate Details - RatePlan
 
 |Name|Type|Description|
 |----------------------|-------------------|-------------|
@@ -324,20 +324,20 @@ For a description of the relationship between the `RoomID` and `RatePlanID` refe
 |`MealsIncluded`|`complex`|**Required if `RateDetailsInd` is `true`** Defines which meals are included with this rate program.|
 |`RatePlanDescription`|`complex`|Textual information regarding the Rate Plan.|
 
-#### <a name="rate-plan-description"></a>RatePlanDescription
+#### <a name="rate-plan-description"></a>Rate Details - RatePlanDescription
 
 |Name|Type|Description|
 |---------|-------------------|-------------|
 |`Text`|`stringLength1to32`|**Required** Only one (1) text element is supported. If multiple text elements are specified, the last one is used and all others are dropped. All text passed is HTML encoded.|
 
-#### <a name="guarantee"></a>Guarantee
+#### <a name="guarantee"></a>Rate Details - Guarantee
 
 |Name|Type|Description|
 |-----------------|-----------|-------------|
 |`GuaranteeType`|`string`|**Required** The guarantee information to hold a reservation.|
 |`Deadline`|`complex`|**Required** Guarantee deadline, absolute or relative.|
 
-#### <a name="supported-guarantee-types"></a>Supported GuaranteeTypes
+#### <a name="supported-guarantee-types"></a>Rate Details - Supported GuaranteeTypes
 
 |GuaranteeType|Description|
 |-------------------|-------------|  
@@ -348,7 +348,7 @@ For a description of the relationship between the `RoomID` and `RatePlanID` refe
 |`None`|In SAP Concur this value is seen as `Never`. No guarantee is required if user books a room with this type.|
 |`GuaranteeRequired`|`RequiredGuarantee`. If the Guarantee type cannot be mapped to any accepted type, it will be set to `RequiredGuarantee`. This value is the default.|
 
-#### <a name="supported-gurantee-required"></a>Supported GuaranteeRequired
+#### <a name="supported-gurantee-required"></a>Rate Details - Supported GuaranteeRequired
 
 |GuaranteeRequired|Description|
 |-------------------|-------------|  
@@ -356,44 +356,44 @@ For a description of the relationship between the `RoomID` and `RatePlanID` refe
 |`never`|Guarantee is never required.|
 |`default`|Guarantee is required if no deposit account is set up.|
 
-#### <a name="deadline"></a>Deadline
+#### <a name="deadline"></a>Rate Details - Deadline
 
 |Name|Type|Description|
 |------------------------|--------------------|-------------|
 |`AbsoluteDeadline`|`time` or `datetime` |**Required** Defines the absolute deadline. Either this or the offset attributes may be used.|
 
-#### <a name="cancel-penalties"></a>CancelPenalties
+#### <a name="cancel-penalties"></a>Rate Details - CancelPenalties
 
 |Name|Type|Description|
 |---------------|-----------|-------------|
 |`CancelPenalty`|`complex`|**Required** Defines the cancellation penalty of the hotel facility.|
 
-#### <a name="cancel-penalty"></a>CancelPenalty
+#### <a name="cancel-penalty"></a>Rate Details - CancelPenalty
 
 |Name|Type|Description|
 |--------------------|-----------|-------------|
 |`PenaltyDescription`|`complex`|Text description of the penalty in a given language. This element may contain a maximum of 9 children text fields. Any excess text elements are dropped.|
 |`Deadline`|`complex`|**Required** Cancellation deadline, absolute or relative. See Deadline above.|
 
-#### <a name="penalty-description"></a>PenaltyDescription
+#### <a name="penalty-description"></a>Rate Details - PenaltyDescription
 
 |Name|Type|Description|
 |---------|----------|-----------------------|
 |`Text`|`formattedText`|**Required** Formatted text content in a given language. All text passed is HTML encoded.|
 
-#### <a name="meals-included"></a>MealsIncluded
+#### <a name="meals-included"></a>Rate Details - MealsIncluded
 
 |Name|Type|Description|
 |-------------|-----------|-------------|
 |`Breakfast`|`boolean`|**Required** If `true`, indicates breakfast is included. If `false`, indicates it is excluded. In both cases this information is shown to a customer in the rate description.|
 
-#### <a name="room-rates"></a>RoomRates
+#### <a name="room-rates"></a>Rate Details - RoomRates
 
 |Name|Type|Description|
 |----------|-----------|-------------|
 |`RoomRate`|`complex`|**Required** Contains the rate details.|
 
-#### <a name="room-rate"></a>RoomRate
+#### <a name="room-rate"></a>Rate Details - RoomRate
 
 |Name|Type|Description|
 |--------------|-----------|-------------|
@@ -402,13 +402,13 @@ For a description of the relationship between the `RoomID` and `RatePlanID` refe
 |`Rates`|`complex`|**Required** Contains the rate for the given room.  SAP Concur only expects one (1) `Rate` inside the `Rates` element if `AvailabilityStatus` is `AvailableForSale`. It is optional to include multiple `Rate` for `ChangeDuringStay`|
 |`RoomRateDescription`|`complex`|The description or name of a room rate.|
 
-#### <a name="rates"></a>Rates
+#### <a name="rates"></a>Rate Details - Rates
 
 |Name|Type|Description|
 |---------|-----------|-------------|
 |`Rate`|`complex`|**Required** Contains the rate for the given room. Only one (1) Rate element is expected if `AvailabilityStatus` is `AvailableForSale`. It is optional to include multiple `Rate` for `ChangeDuringStay`|
 
-#### <a name="rate"></a>Rate
+#### <a name="rate"></a>Rate Details - Rate
 
 |Name|Type|Description|
 |-------------------|-----------|-------------|
@@ -420,50 +420,50 @@ For a description of the relationship between the `RoomID` and `RatePlanID` refe
 |`RateDescription`|`complex`|A textual description of a rate. Only one (1) Rate Description element is expected.|
 |`TPA_extensions`|`complex`|TPA extensions for a rate.|
 
-#### <a name="room-rate-description"></a>RoomRateDescription
+#### <a name="room-rate-description"></a>Rate Details - RoomRateDescription
 
 |Name|Type|Description|
 |------------------|-----------|-------------|
 |`Text`|`formattedText`|**Required** Formatted text content in a given language. All text passed is HTML encoded.|
 
-#### <a name="payment-policies"></a>PaymentPolicies
+#### <a name="payment-policies"></a>Rate Details - PaymentPolicies
 
 |Name|Type|Description|
 |------------------|-----------|-------------|
 |`GuaranteePayment`|`complex`|Element containing the guarantee payment type.|
 
-#### <a name="guarantee-payment"></a>GuaranteePayment
+#### <a name="guarantee-payment"></a>Rate Details - GuaranteePayment
 
 |Name|Type|Description|
 |------------------|-----------|-------------|
 |`AcceptedPayments`|`complex`|**Required** If used, at least one (1) `AcceptedPayment` should be present.|
 
-#### <a name="accepted-payments"></a>AcceptedPayments
+#### <a name="accepted-payments"></a>Rate Details - AcceptedPayments
 
 |Name|Type|Description|
 |-----------------|-----------|-------------|
 |`AcceptedPayment`|`complex`|**Required** Accepted payment type.|
 
-#### <a name="accepted-payment"></a>AcceptedPayment
+#### <a name="accepted-payment"></a>Rate Details - AcceptedPayment
 
 |Name|Type|Description|
 |-------------|-----------|-------------|
 |`PaymentCard`|`complex`|**Required** Description of payment type.|
 
-#### <a name="payment-card"></a>PaymentCard
+#### <a name="payment-card"></a>Rate Details - PaymentCard
 
 |Name|Type|Description|
 |----------|-----------|-------------|
 |`CardType`|`complex`|**Required** String representation of a card type. Allowed values: `AmericanExpress`, `BankOfAmerica`, `BritishAirways`, `CapitalOne`, `Chase`, `Citibank`, `ContinentalAirlines`, `DeltaAirlines`, `DiscoverCard`, `Disney`, `Eurocard`, `Hilton`, `Hyatt`, `Mariott`, `Mastercard`, `RitzCarlton`, `SouthwestAirlines`, `StarwoodHotels`, `UnitedAirlines`, `USAirways`, `VISA`, `Other_`. See `Code` and `Description` if card type is `other_`.|
 
-#### <a name="cardtype"></a>CardType
+#### <a name="cardtype"></a>Rate Details - CardType
 
 |Name|Type|Description|
 |----------|-----------|-------------|
 |`Code`|`string`|If `CardType` is `Other_`, use this attribute for card code. Examples: `AX`, `VI`.|
 |`Description`|`string`|If `CardType` is `Other_`, use this attribute for card description.|
 
-#### <a name="total"></a>Total
+#### <a name="total"></a>Rate Details - Total
 
 |Name|Type|Description|
 |-------------------|--------------|-------------|
@@ -472,26 +472,26 @@ For a description of the relationship between the `RoomID` and `RatePlanID` refe
 |`CurrencyCode`|`alphaLength3`|**Required** Currency code.|
 |`DecimalPlaces`|`integer`|Decimal places for currency code. This is an ISO 4217 standard "minor unit" for the number of decimal places for a particular currency.|
 
-#### <a name="rate-description"></a>RateDescription
+#### <a name="rate-description"></a>Rate Details - RateDescription
 
 |Name|Type|Description|
 |---------|-------------------|-------------|
 |`Text`|`stringLength1to32`|**Required** SAP Concur only expects one (1) text field for the rate description. Any excess text elements will be ignored. All text passed is HTML encoded.|
 
-#### <a name="tpa-extensions"></a>TPA_Extensions
+#### <a name="tpa-extensions"></a>Rate Details - TPA_Extensions
 
 |Name|Type|Description|
 |-------------------|-----------|-------------|
 |`RequireSeriesCode`|`boolean`|**Required** If `true`, the CVV code is required for the given rate.|
 
-#### <a name="timespan"></a>Timespan
+#### <a name="timespan"></a>Rate Details - Timespan
 
 |Name|Type|Description|
 |---------|--------------------------|-------------|
 |`Start`|`date`, `time`, or `datetime`|**Required** The starting value of the time span.|
 |`End`|`date`, `time`, or `datetime`|**Required** The ending value of the time span.|
 
-#### <a name="basic-property-info"></a>BasicPropertyInfo
+#### <a name="basic-property-info"></a>Rate Details - BasicPropertyInfo
 
 |Name|Type|Description|
 |----------------|-----------|-------------|

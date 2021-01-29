@@ -2,7 +2,7 @@
 ## Report Full Details v1.1
 
 <div id="attn-depr">
-<p>This API has been deprecated.</p>
+<p><b>This API has been deprecated.</b></p>
 
 <p>Partners and customers using a deprecated API should contact SAP Concur and discuss moving to the latest versions.</p>
 </div>
@@ -72,7 +72,7 @@ Element|Description
 `WorkflowActionURL`|The URL to post a workflow action to the report using the [Post Report Workflow Action](/api-reference/expense/expense-report/post-report-workflow-action.html) endpoint.
 `Entries`|This parent element has a Count attribute indicating the number of entries (not including itemization entries) that are included in the report. It has an `ExpenseEntry` child element for each entry. Refer to the [Expense Entry Child Elements](#expentrychild) table for more information.
 
-##### <a name="expentrychild" id="expentrychild"></a>Expense Entry Child Elements
+#### <a name="expentrychild" id="expentrychild"></a>Expense Entry Child Elements
 
 Element|Description
 ---|---
@@ -114,7 +114,7 @@ Element|Description
 `LastModifiedDate`|The date the expense entry was last changed.
 `ItemizationList`|The list of itemizations for the expense entry. This parent element is empty if there are no itemizations. When the report has itemizations, this element contains an `ItemizationEntry` Details element for each itemization. Refer to the [Itemization Entry Details Child Elements](#itementrychild) table for more information.
 
-##### <a name="itementrychild" id="itementrychild"></a>Itemization Entry Details Child Elements
+#### <a name="itementrychild" id="itementrychild"></a>Itemization Entry Details Child Elements
 
 Element|Description
 ---|---
@@ -134,7 +134,7 @@ Element|Description
 `Allocations`|This element appears once for each allocation associated with the expense entry if the entry is **not** itemized. This element will be empty if there are no allocations, or if the `ItemizationList` element contains the allocation data. This element contains [child elements](#alochild).
 `AttendeeDetails`|This parent element appears once for each associated attendee, and contains [child elements](#attchild).
 
-##### <a name="allocchild" id="allocchild"></a>Allocations List Child Elements
+#### <a name="allocchild" id="allocchild"></a>Allocations List Child Elements
 
 Element|Description
 ---|---
@@ -144,7 +144,7 @@ Element|Description
 `AccountCode1`|The account code for the allocation.
 `AccountCode2`|The second account code for the allocation. This is only populated in rare cases, such as when using travel allowance, where one expense might have an account code for the allowed amount, and a second account code for the overage.
 
-##### <a name="alochild" id="alochild"></a>Allocations Child Elements
+#### <a name="alochild" id="alochild"></a>Allocations Child Elements
 
 Element|Description
 ---|---
@@ -154,7 +154,7 @@ Element|Description
 `allocKey`|The unique alphanumeric identifier for the allocation.
 `percentage`|The percentage of the expense that is included in this allocation.
 
-##### <a name="attchild" id="attchild"></a>Attendee Details Child Elements
+#### <a name="attchild" id="attchild"></a>Attendee Details Child Elements
 
 Element|Description
 ---|---

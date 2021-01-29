@@ -56,6 +56,9 @@ includes:
   - xsd-schema
   - expense-allocations
   - v3-attendee-types
+  - v1.attendee-types
+  - v2.attendees
+  - v1.attendees
   - digital-tax-invoice
   - v3-attendees
   - company-card-transaction-resource
@@ -65,14 +68,21 @@ includes:
   - expense-form-field
   - expense-form
   - expense-group-configurations
+  - v1dot1.expense-entry
+  - v1dot1.report-full-details
   - expense-itemization
+  - v1dot1.expense-itemization
   - integration-status
   - post-report-exceptions
   - post-report-submission
   - post-report-workflow-action
   - v3-reports
+  - v2.reports
+  - v1dot1.reports-list
   - expense-report-get
   - v1-payment-batches
+  - v1.user
+  - v1.getting-started
   - v4-quick-expense
   - v4-financial-integration
   - v4-financial-integration-service-use-cases

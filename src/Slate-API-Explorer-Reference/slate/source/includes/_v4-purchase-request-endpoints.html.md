@@ -3,41 +3,41 @@
 
 
 
-* [Create a New Purchase Request](#post)
-* [Get Purchase Request Details](#get)
-* [Schema](#schema)
+* [Create a New Purchase Request](#purchase-request-v4-endpoints-create-a-new-purchase-request)
+* [Get Purchase Request Details](#purchase-request-v4-endpoints-get-purchase-request-details)
+* [Schema](#purchase-request-v4-endpoints-schema)
   * [Create Purchase Request Schema](#schema-create-purchase-request)
     * [LineItem](#schema-line-item)
   * [Create Purchase Request Response Schema](#schema-create-purchase-request-response)
   * [Get Purchase Request Response Schema](#schema-get-purchase-request-response)
     * [PurchaseOrders](#schema-purchase-orders)
     * [PurchaseRequestExceptions](#schema-purchase-request-exceptions)
-  * [Error](#schema-error)
-* [Error Codes When the HTTP Status Code is 4xx](#error-codes)
+  * [Error](#purchase-request-v4-endpoints-error)
+* [Error Codes When the HTTP Status Code is 4xx](#error-codes-when-the-http-status-code-is-4xx)
 
 ### Version
 
 4.0
 
-#### <a name="post"></a>Create a New Purchase Request
+#### <a name="post"></a>Purchase Request v4 - Endpoints - Create a New Purchase Request
 
 Create a Purchase Request based on provided header and line item details. If the request is valid it creates a purchase request and returns back a unique identifier to get the purchase request details.
 
 ### Scopes
 
-`purchaserequest.write` - Refer to [Scope Usage](/api-reference/invoice/v4.purchase-request-get-started.html#scope-usage) for full details.
+`purchaserequest.write` - Refer to [Scope Usage](#purchase-request-v4-get-started) for full details.
 
 ### Request
 
 #### URI
 
-##### Template
+#### Template
 
 ```shell
 POST /purchaserequest/v4/purchaserequests
 ```
 
-##### Parameters
+#### Parameters
 
 None
 
@@ -161,19 +161,19 @@ concur-correlationid: 1234abcd-12ab-34cd-56ef-123456abcdef
 }
 ```
 
-#### <a name="get"></a>Get Purchase Request Details
+#### <a name="get"></a>Purchase Request v4 - Endpoints - Get Purchase Request Details
 
 Gets purchase request details. The supported mode is COMPACT, which returns basic info about the purchase request along with any exceptions.
 
 ### Scopes
 
-`purchaserequest.read` - Refer to [Scope Usage](/api-reference/invoice/v4.purchase-request-get-started.html#scope-usage) for full details.
+`purchaserequest.read` - Refer to [Scope Usage](#purchase-request-v4-get-started) for full details.
 
 ### Request
 
 #### URI
 
-##### Template
+#### Template
 
 ```shell
 GET /purchaserequest/v4/purchaserequests/{id}?mode=COMPACT
@@ -259,7 +259,7 @@ concur-correlationid: 1234abcd-12ab-34cd-56ef-123456abcdef
 }
 ```
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Purchase Request v4 - Endpoints - Schema
 
 #### <a name="schema-create-purchase-request"></a>Create Purchase Request Schema
 
@@ -335,7 +335,7 @@ Name|Type|Format|Description
 `prExceptionId`|`string`|-|The unique exception id of the purchase request.
 `message`|`string`|-|The message of the exception with details.
 
-#### <a name="schema-error"></a>Error
+#### <a name="schema-error"></a>Purchase Request v4 - Endpoints - Error
 
 Name|Type|Format|Description
 ---|---|---|---

@@ -53,4 +53,4 @@ Name | Type | Format | Description
 `URI`	|	`string`	|	-	|	The URI to the resource.					
 
 
-# Invoice
+# Invoice Docs

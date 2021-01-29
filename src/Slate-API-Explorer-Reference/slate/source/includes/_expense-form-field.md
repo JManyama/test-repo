@@ -5,9 +5,9 @@
 The configured fields for the specified expense form.
 
 * [Get a List of Form Fields](#get-list-form-fields)
-  * [Request](#request)
-  * [Response](#response)
-    * [Response Schema](#res-schema)
+  * [Request](#expense-form-field-request)
+  * [Response](#expense-form-field-response)
+    * [Response Schema](#expense-form-field-response-schema)
   * [Example Request](#ex-req)
   * [Example Response](#ex-res)
 
@@ -25,7 +25,7 @@ Retrieves the details of the configured form fields for the specified form.
 
 **NOTE**: When sending in requests using these fields, be sure to include the required fields from the form and any additional required fields specified in the request documentation.
 
-#### <a name="request"></a>Request
+#### <a name="request"></a>Expense Form Field - Request
 
 #### Request Parameters
 
@@ -45,9 +45,9 @@ Authorization header with OAuth token for valid SAP Concur user. Required.
 #### Accept Header
 application/xml
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Expense Form Field - Response
 
-#### <a name="res-schema"></a>Response Schema
+#### <a name="res-schema"></a>Expense Form Field - Response Schema
 This request will return a **FormFieldsList** parent element with a **FormField** parent element for each configured form field.
 
 #### FormField Elements

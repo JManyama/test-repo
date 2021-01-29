@@ -4,14 +4,14 @@
 
 Purchase order receipts are records that indicate purchase order lines were completed and received. This API provides methods to create a new purchase order receipt, and retrieve, update, or delete an existing purchase order receipt.
 
-* [Create a new purchase order receipt](#post)
-* [Update purchase order line item with receipt information](#put-receipts)
-* [Get existing purchase order receipt](#get)
-* [Delete existing purchase order receipt](#delete)
-* [Schema](#schema-receipt)
-* [Response schema](#schema-response)
-* [Receipt schema](#schema-receipt)
-* [Error codes](#error-codes)
+* [Create a new purchase order receipt](#create-a-new-purchase-order-receipt)
+* [Update purchase order line item-receipt information](#update-purchase-order-line-item-receipt-information)
+* [Get existing purchase order receipt](#get-existing-purchase-order-receipt)
+* [Delete existing purchase order receipt](#delete-existing-purchase-order-receipt)
+* [Schema](#get-schema-receipt)
+* [Response schema](#purchase-order-receipt-v3-response-schema)
+* [Receipt schema](#purchase-order-receipt-v3-receipt-schema)
+* [Error codes](#purchase-order-receipt-v3-error-codes)
 
 ### Version
 
@@ -55,7 +55,7 @@ Name|Type|Format|Description
 
 [Response schema](#schema-response)
 
-#### <a name="put-receipts"></a>Update purchase order line item with receipt information  
+#### <a name="put-receipts"></a>Update purchase order line item - receipt information  
 
 ```
 PUT /api/v3.0/invoice/purchaseorderreceipts
@@ -121,7 +121,7 @@ None.
 
 [Response schema](#schema-response)
 
-#### <a name="schema-response"></a>Response schema  
+#### <a name="schema-response"></a>Purchase Order Receipt v3 - Response schema  
 
 Name|Type|Format|Description
 ---|---|---|---
@@ -143,7 +143,7 @@ Name|Type|Format|Description
 `Info`|`string`|-|Any additional information messages. Currently a maximum of 2000 PO receipts will be returned.
 
 
-#### <a name="schema-receipt"></a>Receipt schema  
+#### <a name="schema-receipt"></a>Purchase Order Receipt v3 - Receipt schema  
 
 Name|Type|Format|Description
 ---|---|---|---
@@ -160,7 +160,7 @@ Name|Type|Format|Description
 `Version`|`string`|-|The version of purchase order line item receipt. Use Version 2.0 here unless doing receipt confirmation only.
 
 
-#### <a name="error-codes"></a>Error codes  
+#### <a name="error-codes"></a>Purchase Order Receipt v3 - Error codes  
 
 The Purchase Order Receipt API’s error responses
 

@@ -6,25 +6,25 @@ The Purchase Orders API gives SAP Concur clients the ability to leverage externa
 
 > **Limitations**: This API is not available in the China Data center. This API is only available for direct integrations with an existing SAP Concur client. This API can only be used to create new purchase requests and get the details of the created purchase request. This API cannot update, edit, or delete purchase requests. All edits or processing of the purchase request after it is sent to SAP Concur and created must be done in SAP Concur.
 
-* [Products and Editions](#products-editions)
-* [Scope Usage](#scope-usage)
-* [Dependencies](#dependencies)
-* [Access Token Usage](#access-token-usage)
-* [Create a New Purchase Order](#post)
+* [Products and Editions](#purchase-orders-v3-products-and-editions)
+* [Scope Usage](#purchase-orders-v3-scope-usage)
+* [Dependencies](#purchase-orders-v3-dependencies)
+* [Access Token Usage](#purchase-orders-v3-access-token-usage)
+* [Create a New Purchase Order](#create-a-new-purchase-order)
 * [Update Purchase Order Line Item with Receipt Information](#put-receipts)
-* [Update an Existing Purchase Order](#put)
-* [Get an Existing Purchase Order](#get)
-* [Schema](#schema)
+* [Update an Existing Purchase Order](#update-an-existing-purchase-order)
+* [Get an Existing Purchase Order](#purchase-orders-v3-get-an-existing-purchase-order)
+* [Schema](#purchase-orders-v3-schema)
 * [Response Schema](#schema-response)
 * [Receipt Schema](#schema-receipt)
 * [Error Codes](#error-codes)
 
-#### <a name="products-editions"></a>Products and Editions
+#### <a name="products-editions"></a>Purchase Orders v3 - Products and Editions
 
 * Concur Invoice Professional Edition
 * Concur Invoice Standard Edition
 
-#### <a name="scope-usage"></a>Scope Usage
+#### <a name="scope-usage"></a>Purchase Orders v3 - Scope Usage
 
 Required Scopes:
 
@@ -32,7 +32,7 @@ Name|Description|Endpoint
 ---|---|---
 `INVPO`|Create, update, and retrieve purchase orders.|POST, PUT, GET
 
-#### <a name="dependencies"></a>Dependencies
+#### <a name="dependencies"></a>Purchase Orders v3 - Dependencies
 
 SAP Concur clients must purchase Concur Invoice, Concur Purchase Order, and Concur Web Services in order to use this API. Concur Invoice with Concur Purchase Order must be configured before using this API.
 
@@ -41,7 +41,7 @@ To create purchase orders, you need to supply a Vendor Code and Vendor Address C
 If your purchase order form in SAP Concur has required custom fields that are tied to lists, you will need to supply the Item Code for the list items. You can access **List Management** in SAP Concur to see your list items and list item codes. If you need to get this data from SAP Concur using web services, you can use the [List Item v3](/api-reference/common/list-item/v3.list-item.html) API to retrieve the `Level1Code` value for the list items.
 
 
-#### <a name="access-token-usage"></a>Access Token Usage
+#### <a name="access-token-usage"></a>Purchase Orders v3 - Access Token Usage
 
 This API will work with both company or user access tokens. A company access token is required if the integration will create purchase orders for multiple requestors. Using a user access token to create purchase order results in the purchase order being assigned to the user that generated the user access token, not the user set in the payload. A user access token can be used for testing purposes.
 
@@ -142,7 +142,7 @@ PUT /api/v3.0/invoice/purchaseorderreceipts
 
 * [Response schema](#schema-response)
 
-#### <a name="put"></a>Update an Existing Purchase Order
+#### <a name="put"></a>Purchase Orders v3 - Update an Existing Purchase Order
 
 ```
 PUT /api/v3.0/invoice/purchaseorders
@@ -156,7 +156,7 @@ PUT /api/v3.0/invoice/purchaseorders
 
 * [Response schema](#schema-response)
 
-#### <a name="get"></a>Get an Existing Purchase Order
+#### <a name="get"></a>Purchase Orders v3 - Get an Existing Purchase Order
 
 ```
 GET /api/v3.0/invoice/purchaseorders/{id}
@@ -176,7 +176,7 @@ None
 
 * [purchaseOrder](#schema-purchaseOrder)
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Purchase Orders v3 - Schema
 
 #### <a name="schema-purchaseOrder"></a>purchaseOrder
 

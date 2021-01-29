@@ -396,10 +396,6 @@
                     
                   </li>
                   <li>
-                    <a href="#layout-reference" class="toc-h2 toc-link" data-title="layout: reference">layout: reference</a>
-                    
-                  </li>
-                  <li>
                     <a href="#launch-an-external-url-request" class="toc-h2 toc-link" data-title="Launch an External URL Request">Launch an External URL Request</a>
                     
                   </li>
@@ -8252,8 +8248,7 @@ The desired status for the notification. Required. Currently supports <strong>fa
     </span><span class="nl">"ObjectURI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.concursolutions.com/api/expense/expensereport/v1.1/reportfulldetails/nxxKgLlnROzz$sHcpnRHQ$pALxamClaFfdC"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><hr>
-<h2 id='layout-reference'>layout: reference</h2><h2 id='launch-an-external-url-request'>Launch an External URL Request</h2>
+</span></code></pre></div><h2 id='launch-an-external-url-request'>Launch an External URL Request</h2>
 <p>SAP Concur will send a request with the information in an encoded query string when the user clicks the button.</p>
 
 <ul>
@@ -19280,8 +19275,8 @@ Currently OTA Warnings are not supported and will be ignored.</p>
 
 <ul>
 <li><a href="#rate-details-schema">Schema</a></li>
-<li><a href="#availrequestsegments">Available Request Segments</a></li>
-<li><a href="#availrequestsegment">Available Request Segment</a></li>
+<li><a href="#rate-details-availrequestsegments">Available Request Segments</a></li>
+<li><a href="#availrequestsegment2">Available Request Segment</a></li>
 <li><a href="#hotelsearchcriteria">Hotel Search Criteria</a></li>
 <li><a href="#criterion">Criterion</a></li>
 <li><a href="#rate-plan-candidate">RatePlanCandidate</a></li>
@@ -19391,7 +19386,7 @@ Currently OTA Warnings are not supported and will be ignored.</p>
 <td><strong>Required</strong> A collection of <code>AvailRequestSegment</code>. Each segment includes a collection of criteria that requests a bookable entity, which may include designated rate plans, room types, amenities or services. The request can be used for guest rooms or other inventory items for which availability is sought. Each segment will be presumed to have a unique date range for each request. SAP Concur will only ever send one <code>AvailRequestSegments</code>.</td>
 </tr>
 </tbody></table>
-<h4 id='availrequestsegments'><a name="available-request-segments"></a>AvailRequestSegments</h4>
+<h4 id='availrequestsegments'><a name="#available-request-segment"></a>AvailRequestSegments</h4>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -19405,7 +19400,7 @@ Currently OTA Warnings are not supported and will be ignored.</p>
 <td><strong>Required</strong> To accommodate the ability to perform multiple requests within one message, the availability request contains the repeating element, <code>AvailRequestSegment</code>. Each segment includes a collection of criteria that requests a bookable entity, which may include designated rate plans, room types, amenities or services. The request can be used for guest rooms or other inventory items for which availability is sought. Each segment will be presumed to have a unique date range for each request. SAP Concur will only ever send one <code>AvailRequestSegment</code>.</td>
 </tr>
 </tbody></table>
-<h4 id='availrequestsegment'><a name="available-request-segment"></a>AvailRequestSegment</h4>
+<h4 id='availrequestsegment'><a name="available-request-segments"></a>AvailRequestSegment</h4>
 <table><thead>
 <tr>
 <th>Name</th>

@@ -2,10 +2,10 @@
 ## Invoice v3
 
 
-* [Retrieve an Invoice](#get)
-* [Create a New Invoice](#post)
-* [Update an Invoice](#put)
-* [Schema](#schema)
+* [Retrieve an Invoice](#retrieve-an-invoice)
+* [Create a New Invoice](#create-a-new-invoice)
+* [Update an Invoice](#update-an-invoice)
+* [Schema](#invoice-v3-schema)
 
 ### Version
 
@@ -43,7 +43,7 @@ PUT /api/v3.0/invoice/paymentrequest
 
 * [paymentrequest](#schema-paymentRequest)
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Invoice v3 - Schema
 
 #### <a name="schema-paymentRequest"></a>Payment Request
 

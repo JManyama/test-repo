@@ -1,19 +1,19 @@
 
 ##  Itemizations
 
-* [Retrieve all expense itemizations owned by the user](#get) **DEPRECATED: 05/19/2016 UNSUPPORTED: 11/19/2016**
-* [Retrieve an expense itemization by ID](#getID)
-* [Create a new expense itemization](#post)
-* [Update an expense itemization](#put) **DEPRECATED: 05/19/2016 UNSUPPORTED: 11/19/2016**
-* [Delete an expense itemization](#delete) **DEPRECATED: 05/19/2016 UNSUPPORTED: 11/19/2016**
-* [Schema](#schema)
+* [Retrieve all expense itemizations owned by the user](#retrieve-all-expense-itemizations-owned-by-the-user) **DEPRECATED: 05/19/2016 UNSUPPORTED: 11/19/2016**
+* [Retrieve an expense itemization by ID](#retrieve-an-expense-itemization-by-id)
+* [Create a new expense itemization](#create-a-new-expense-itemization)
+* [Update an expense itemization](#update-an-expense-itemization) **DEPRECATED: 05/19/2016 UNSUPPORTED: 11/19/2016**
+* [Delete an expense itemization](#delete-an-expense-itemization) **DEPRECATED: 05/19/2016 UNSUPPORTED: 11/19/2016**
+* [Schema](#itemizations-schema)
 
 
 #### Version
 
 3.0 Note that some methods are deprecated  
 
-1.1 documentation is available [here](/api-reference/expense/expense-report/v1dot1.expense-itemization.html)  
+1.1 documentation is available [here](#expense-entry-itemization-v1-1)  
 
 #### <a name="get"></a>Retrieve all expense itemizations owned by the user
 
@@ -302,7 +302,7 @@ https://www.concursolutions.com/api/v3.0/expense/itemizations/gWidFO7ikXV6%24pcZ
 no content
 ```
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Itemizations - Schema
 
 
 #### <a name="itemizations"></a>Itemizations

@@ -10,21 +10,21 @@ Message to perform the initial search for hotels.
 
 ---
 
-* [Request](#request)
-  * [Schema](#req-schema)
+* [Request](#search-request)
+  * [Schema](#ota_hotelsearchrq)
     * [Criteria](#criteria)
     * [Criterion](#criterion)
     * [TPA Extensions](#req-tpa-extensions)
-    * [Custom Fields](#custom-fields)
+    * [Custom Fields](#search-customfields)
     * [Position](#position)
     * [Hotel Ref](#hotel-ref)
     * [Radius](#radius)
     * [Stay Date Range](#stay-date-range)
-* [Response](#response)
-  * [Schema](#res-schema)
+* [Response](#search-response)
+  * [Schema](#ota_hotelsearchrs)
     * [Properties](#properties)
     * [Property](#property)
-    * [Address](#address)
+    * [Address](#search-address)
     * [State Prov](#state-prov)
     * [Country Name](#country-name)
     * [Contact Numbers](#contact-numbers)
@@ -34,7 +34,7 @@ Message to perform the initial search for hotels.
     * [TPA Extensions](#res-tpa-extensions)
     * [TPA Hotel Preview Image URI](#tpa-hotel-preview)
 
-### <a name="request"></a>Request
+### <a name="request"></a>Search - Request
 
 ```xml
 <Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
@@ -103,7 +103,7 @@ The criterion is used to define the search criteria.  Currently we support only 
 |--------------|----------|--------------------------|
 |`CustomFields`|`complex`|This adds Org Unit name.|
 
-#### <a name="custom-fields"></a>CustomFields
+#### <a name="custom-fields"></a>Search - CustomFields
 
 |Name|Type|Description|
 |-------------|-----------|-------------|
@@ -141,7 +141,7 @@ The radius element is used along with the Hotel Preference to categorize the sea
 |`Start`|`date`, `time`, or `datetime`|**Required** The starting value of the time span.|
 |`End`|`date`, `time`, or `datetime`|**Required** The ending value of the time span.|
 
-### <a name="response"></a>Response
+### <a name="response"></a>Search - Response
 
 The maximum allowed size of `OTA_HotelSearchRS` is 1 MB. Any response that exceeds this limit will be dropped.
 
@@ -210,7 +210,7 @@ The maximum allowed size of `OTA_HotelSearchRS` is 1 MB. Any response that excee
 |`HotelAmenity`|`complex`|List of hotel amenities.|
 |`TPA_Extensions`|`complex`|SAP Concur-specific extension of OTA spec. This adds support for extra property fields.|
 
-#### <a name="address"></a>Address
+#### <a name="address"></a>Search - Address
 
 |Name|Type|Description|
 |-------------|-----------|--------------|

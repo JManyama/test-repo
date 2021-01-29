@@ -8,11 +8,11 @@ Posts a workflow action for the supplied expense report. The workflow action mov
 * [Workflow Roles](#workflow-roles)
   * [System Role](#system-role)
   * [Approver Role](#approver-role)
-* [Request](#request)
-  * [Request Schema](#req-schema)
-* [Response](#response)
-  * [Response Schema](#res-schema)
-* [Examples](#examples)
+* [Request](#post-an-expense-report-workflow-action-request)
+  * [Request Schema](#post-an-expense-report-workflow-action-request-schema)
+* [Response](#post-an-expense-report-workflow-action-response)
+  * [Response Schema](#post-an-expense-report-workflow-action-response-schema)
+* [Examples](#post-an-expense-report-workflow-action-examples)
 
 #### <a name="workflow-actions"></a>Workflow Actions
 
@@ -42,7 +42,7 @@ The expense report owner must have an approver or processor assigned to them bef
 
 The Approver role is used when the workflow action should be completed by a particular user. Developers who want to present a list of reports to approve and send the workflow action when the reports have been evaluated by the approver use the Approver role. This role requires that a user with the correct SAP Concur role (Expense Approver, Authorized Approver, Cost Object Approver, or Expense Processor for Professional, or the Can Administer or Can Approve Reports roles for Standard) authenticates using Standard OAuth before supplying the workflow action. The user must also have access (be a valid approver or processor) for the supplied report ID.
 
-#### <a name="request"></a>Request
+#### <a name="request"></a>Post an expense report workflow action - Request
 
 #### Request Parameters
 
@@ -68,7 +68,7 @@ application/xml
 
 #### Request Body
 
-#### <a name="req-schema"></a>Request Schema
+#### <a name="req-schema"></a>Post an expense report workflow action - Request Schema
 
 This request should contain a **WorkflowAction** parent element with the following child elements.
 
@@ -79,9 +79,9 @@ This request should contain a **WorkflowAction** parent element with the followi
 |  Action |  required |  The name of the workflow action. Possible values are: **Approve**, **Send Back to Employee**, or **Recall to Employee**. Must be one of the workflow actions available for the workflow step. Consult Expense Admin > Workflow to learn details. |
 |  Comment |  required, for Send Back to Employee |  Must be used with the **Send Back to Employee** workflow action. This comment is visible wherever report comments are available to the employee, approver, authorization request administrator, and/or processor. Max length: 2000 |
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Post an expense report workflow action - Response
 
-#### <a name="res-schema"></a>Response Schema
+#### <a name="res-schema"></a>Post an expense report workflow action - Response Schema
 
 This request will return an **ActionStatus** parent element with the following child elements.
 
@@ -92,7 +92,7 @@ This request will return an **ActionStatus** parent element with the following c
 |  Message |  The error message. Only appears if a workflow action error was generated. |
 |  Status | The status of the report workflow action. |
 
-#### <a name="examples"></a>Examples
+#### <a name="examples"></a>Post an expense report workflow action - Examples
 
 ####  XML Example Request
 
@@ -128,5 +128,5 @@ Authorization: OAuth {access token}
 ```
 
 
-[1]: /api-reference/expense/expense-report/v3.reports.html#getID
-[2]: https://developer.concur.com/reference/http-codes
+[1]: #reports-v3
+[2]: #http-status-codes

@@ -2,15 +2,15 @@
 ## Invoice Pay v4
 
 
-* [Overview](#overview)
-* [Process Flow](#process-flow)
-* [Products and Editions](#products-editions)
-* [Scope Usage](#scope-usage)
-* [Dependencies](#dependencies)
-* [Access Token Usage](#access-token-usage)
-* [Obtaining Payments](#obtain-payment)
+* [Overview](#invoice-pay-v4-overview)
+* [Process Flow](#invoice-pay-v4-process-flow)
+* [Products and Editions](#invoice-pay-v4-products-and-editions)
+* [Scope Usage](#invoice-pay-v4-scope-usage)
+* [Dependencies](#invoice-pay-v4-dependencies)
+* [Access Token Usage](#invoice-pay-v4-access-token-usage)
+* [Obtaining Payments](#invoice-pay-v4-obtain-payment)
 * [Updating a Payment With Status](#updating-payment)
-* [Schema](#schema)
+* [Schema](#invoice-pay-v4-schema)
   * [Payments](#schema-payments)
   * [Payment](#schema-payment)
   * [Invoice](#schema-invoice)
@@ -19,40 +19,40 @@
   * [Payment Update](#schema-payment-update)
   * [Payment Update Result](#schema-payment-update-result)
   * [Errors](#schema-errors)
-* [Definitions](#definitions)
+* [Definitions](#invoice-pay-v4-definitions)
   * [Payment Update Status](#schema-payment-update-status)
   * [Payment Provider Method](#schema-payment-provider-method)
 
-#### <a name="overview"></a>Overview
+#### <a name="overview"></a>Invoice Pay v4 - Overview
 
 SAP Concur partners with external payment providers for processing invoice payments. These payment providers are listed on the App Center and can integrate with the Invoice product by using the Invoice Pay APIs. Payment providers can get a list of all the payments authorized to be processed by them, and send back status of those payments.
 
 > **Limitations**: This API is only available for use by payment partners who will be processing invoice payments. This API can accept a maximum of 1,000 requests per minute across all payment providers. This API is available only in the North America Data Center.
 
-#### <a name="process-flow"></a>Process Flow
+#### <a name="process-flow"></a>Invoice Pay v4 - Process Flow
 
 ![A process flow diagram of the Invoice Pay API](./images/v4-invoice-pay-process-flow.png)
 
-#### <a name="products-editions"></a>Products and Editions
+#### <a name="products-editions"></a>Invoice Pay v4 - Products and Editions
 
 * Concur Invoice Professional Edition
 * Concur Invoice Standard Edition
 
-#### <a name="scope-usage"></a>Scope Usage
+#### <a name="scope-usage"></a>Invoice Pay v4 - Scope Usage
 
 Name|Description|Endpoint
 ---|---|---
 `invoice.providerpayment.write`|Read access to pending payments, and write access to payment status|GET,POST
 
-#### <a name="dependencies"></a>Dependencies
+#### <a name="dependencies"></a>Invoice Pay v4 - Dependencies
 
 This API can only be used with SAP Concur clients who have purchased Concur Invoice.
 
-#### <a name="access-token-usage"></a>Access Token Usage
+#### <a name="access-token-usage"></a>Invoice Pay v4 - Access Token Usage
 
 This API supports only Company access tokens.
 
-#### <a name="obtain-payment"></a>Obtaining payments
+#### <a name="obtain-payment"></a>Invoice Pay v4 - Obtaining payments
 
 Payment providers can use this endpoint to get a list of payments.
 * This method will return all payments with a status [PENDING_RETRIEVAL](#schema-payment-update-status) and payment method `PAVPVD`. After an invoice is approved and extracted it will be converted into a payment with status [PENDING_RETRIEVAL](#schema-payment-update-status).
@@ -264,7 +264,7 @@ Content-Type: application/json
 }
 ```
 
-#### <a name="schema"></a>Schema
+#### <a name="schema"></a>Invoice Pay v4 - Schema
 
 #### <a name="schema-payments"></a>Payments
 
@@ -366,7 +366,7 @@ Name | Type | Format | Description
 `errorCode`|`string`|-|**Required** Machine readable code associated with the error.
 `errorMessage`|`string`|-|**Required** Human readable message associated with the error.
 
-#### <a name="definitions"></a>Definitions
+#### <a name="definitions"></a>Invoice Pay v4 - Definitions
 
 #### <a name="schema-payment-update-status"></a>Payment Update Status
 

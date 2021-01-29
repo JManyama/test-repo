@@ -4,31 +4,31 @@
 
 > **Limitations**: This API is only available to partners who have been granted access by SAP Concur. Access to this documentation does not provide access to the API. This API is not available in Implementation environments.
 
-* [Products and Editions](#products-editions)
-* [Scope Usage](#scope-usage)
-* [Dependencies](#dependencies)
-* [Get Invoices for Calculating Tax](#get)
-* [Update Invoices with the Calculated Tax Amount and Tax Rate](#put)
-* [Schema](#schema)
-  * [Invoice](#invoice)
-  * [Bill To Address](#bill-to-address)
-  * [Line Item](#line-item)
-  * [Allocation](#allocation)
-  * [Vendor](#vendor)
+* [Products and Editions](#sales-tax-validation-v3-products-and-editions)
+* [Scope Usage](#sales-tax-validation-v3-scope-usage)
+* [Dependencies](#sales-tax-validation-v3-dependencies)
+* [Get Invoices for Calculating Tax](#get-invoices-for-calculating-tax)
+* [Update Invoices with the Calculated Tax Amount and Tax Rate](#update-invoices-with-a-calculated-tax-amount-and-tax-rate)
+* [Schema](#invoices-schema)
+  * [Invoice](#sales-tax-validation-v3-invoice)
+  * [Bill To Address](#sales-tax-validation-v3-billtoaddress)
+  * [Line Item](#sales-tax-validation-v3-lineitem)
+  * [Allocation](#sales-tax-validation-v3-allocation)
+  * [Vendor](#sales-tax-validation-v3-vendor)
   * [Ship To Address](#ship-to-address)
 * [Status Schema](#schema-status)
 
-#### <a name="products-editions"></a>Products and Editions
+#### <a name="products-editions"></a>Sales Tax Validation v3 - Products and Editions
 
 * Concur Invoice Professional Edition
 
-#### <a name="scope-usage"></a>Scope Usage
+#### <a name="scope-usage"></a>Sales Tax Validation v3 - Scope Usage
 
 Name|Description|Endpoint
 ---|---|---
 `INVTV`|Invoice - Tax Validation|GET, PUT
 
-#### <a name="dependencies"></a>Dependencies
+#### <a name="dependencies"></a>Sales Tax Validation v3 - Dependencies
 
 None.
 
@@ -421,7 +421,7 @@ https://{datacenterURI}//api/v3.0/invoice/salestaxvalidationrequest
 
 #### <a name="schema"></a>Invoices Schema
 
-### Invoices
+### Sales Tax Validation v3 - Invoices
 
 | Name | Type | Format | Description|
 |-----|------|--------|------------|
@@ -460,7 +460,7 @@ https://{datacenterURI}//api/v3.0/invoice/salestaxvalidationrequest
 |`URI`|`string`|-|The URI to the resource.
 |`VendorInvoiceNumber`|`string`|-|The vendor invoice number that is associated with the invoice.
 
-#### <a name="bill-to-address"></a>BillToAddress  
+#### <a name="bill-to-address"></a>Sales Tax Validation v3 - BillToAddress  
 
 |Name | Type | Format | Description
 |-----|------|--------|------------
@@ -475,7 +475,7 @@ https://{datacenterURI}//api/v3.0/invoice/salestaxvalidationrequest
 |`State`|`string`|-|**Required** The state of the billing address.
 |`StateProvince`|`string`|-|**Required** The province of the billing address.
 
-#### <a name="line-item"></a>LineItem  
+#### <a name="line-item"></a>Sales Tax Validation v3 - LineItem  
 
 |Name | Type | Format | Description
 |-----|------|--------|------------
@@ -491,7 +491,7 @@ https://{datacenterURI}//api/v3.0/invoice/salestaxvalidationrequest
 |`UnitPrice`|`string`|-|The unit price for the line item.
 |`Vendor`|`object`|[`InvoiceVendor`](#Vendor)|Details about the vendor for each line item.
 
-#### <a name="allocation"></a>Allocation  
+#### <a name="allocation"></a>Sales Tax Validation v3 - Allocation  
 
 |Name | Type | Format | Description
 |-----|------|--------|------------
@@ -499,7 +499,7 @@ https://{datacenterURI}//api/v3.0/invoice/salestaxvalidationrequest
 |`Custom1 through Custom20`|`string`|-|**Not available for PUT.** The code from the Custom fields. These fields may not have data, depending on the configuration.
 |`Custom1Value through Custom20Value`|`string`|-|**Not available for PUT.** The value from the Custom fields. These fields may not have data, depending on the configuration.
 
-#### <a name="vendor"></a>Vendor  
+#### <a name="vendor"></a>Sales Tax Validation v3 - Vendor  
 
 |Name | Type | Format | Description
 |-----|------|--------|------------
@@ -514,7 +514,7 @@ https://{datacenterURI}//api/v3.0/invoice/salestaxvalidationrequest
 |`VendorName`|`string`|-|**Required** The name of the vendor.
 |`VendorCode`|`string`|-|**Required** The code associated with the vendor.
 
-#### <a name="ship-to-address"></a>ShipToAddress  
+#### <a name="ship-to-address"></a>Sales Tax Validation v3 - ShipToAddress  
 
 |Name | Type | Format | Description
 |-----|------|--------|------------

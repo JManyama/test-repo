@@ -9,7 +9,7 @@ The Travel Profile resource represents a Concur Travel profile that contains tra
 * [Get a travel profile](#get-a-travel-profile)
 * [Create / Update a travel profile](#create-or-update-a-travel-profile)
 * [Schema](#schema)
-  * [General](#schema-general)
+  * [General](#travel-profile-v2-general)
   * [EmergencyContact](#schema-emergency-contact)
   * [Address](#schema-address)
   * [Phone List](#schema-phone-list)
@@ -137,7 +137,7 @@ The Profile root element contains:
 * [SouthwestUnusedTickets](#SouthwestUnusedTickets)
 * [AdvantageMemberships](#AdvantageMemberships)
 
-#### <a name="schema-general"></a>General
+#### <a name="schema-general"></a>Travel Profile v2 - General
 
 * Some elements require specific scopes be enabled to receive the data, refer to the table below.
 * Profile fields, such as cost center and division, must be enabled and populated in the Travel site for data to return.

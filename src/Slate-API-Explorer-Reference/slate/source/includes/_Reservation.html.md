@@ -17,12 +17,12 @@ Message to reserve a hotel.
   * [Schema](#ota_hotelresrq)
     * [Hotel Reservation](#req-hotel-reservation)
     * [Room Stays](#req-room-stays)
-    * [Guest Counts](#guest-counts)
-    * [Guest Count](#guest-count)
+    * [Guest Counts](#reservation-guestcounts)
+    * [Guest Count](#reservation-guestcount)
     * [Rate Plan](#req-rate-plan)
-    * [Guarantee](#guarantee)
+    * [Guarantee](#reservation-guarantee)
     * [Guarantees Accepted](#guarantees-accepted)
-    * [Payment Card](#payment-card)
+    * [Payment Card](#reservation-paymentcard)
     * [Series Code](#series-code)
     * [Comments](#comments-one)
     * [Comment](#comment-one)
@@ -39,22 +39,22 @@ Message to reserve a hotel.
     * [Membership](#membership)
     * [Comments](#comments-two)
     * [Comment](#comment-two)
-    * [TPA Extensions](#tpa-extensions)
+    * [TPA Extensions](#reservation-tpa-extensions)
     * [Notify Emails](#notify-emails)
     * [Custom Fields](#reservation-customfields)
     * [Custom Field](#reservation-customfield)
 * [Response](#reservation-response)
-  * [Schema](#ota_hotelResrs)
+  * [Schema](#ota_hotelresrs)
     * [Res Response Type](#res-response-type)
-    * [Hotel Reservations](#hotel-reservations)
-    * [Hotel Reservation](#hotel-reservation-2)
-    * [Unique ID](#unique-id)
+    * [Hotel Reservations](#reservation-hotelreservations)
+    * [Hotel Reservation](#reservation-hotelreservation)
+    * [Unique ID](#uniqueid)
     * [Type](#type-possible-values)
-    * [Room Stays](#room-stays-2)
-    * [Room Stay](#roomstay)
-    * [Rate Plan](#res-rate-plan)
-    * [Cancel Penalty](#reservation-cancel-penalty)
-    * [Penalty Description](#reservation-penalty-description)
+    * [Room Stays](#reservation-roomstays)
+    * [Room Stay](#reservation-roomstay)
+    * [Rate Plan](#res-rateplan)
+    * [Cancel Penalty](#reservation-cancelpenalty)
+    * [Penalty Description](#reservation-penaltydescription)
 
 ### <a name="request"></a>Reservation Request
 
@@ -181,7 +181,7 @@ Message to reserve a hotel.
 |-------------------|-----------|-------------|
 |`HotelReservations`|`complex`|**Required** A collection of hotel reservations. SAP Concur will only send one (1) hotel reservation.|
 
-#### <a name="req-hotel-reservation"></a>HotelReservation
+#### <a name="req-hotel-reservation"></a>Reservation - HotelReservation
 
 |Name|Type|Description|
 |---------------|-----------|-------------|
@@ -199,13 +199,13 @@ Message to reserve a hotel.
 |`BasicPropertyInfo`|`complex`|**Required** See [Availability](/api-reference/direct-connects/hotel-service-2/Availability.html).|
 |`Comments`|`complex`| Comments from the user which are passed on to the hotel.|
 
-#### <a name="guest-counts"></a>GuestCounts
+#### <a name="guest-counts"></a>Reservation - GuestCounts
 
 |Name|Type|Description|
 |---------------|-----------|-------------|
 |`GuestCounts`|`complex`|**Required** **Please note: this field is currently being discussed with our partners as the plan to remove `GuestCounts` from `OTA_HotelAvailRQ`**. A recurring element that identifies the number of guests.|
 
-#### <a name="guest-count"></a>GuestCount
+#### <a name="guest-count"></a>Reservation - GuestCount
 
 |Name|Type|Description|
 |---------------|-----------|-------------|
@@ -218,7 +218,7 @@ Message to reserve a hotel.
 |`RatePlanID`|`stringLength1to64`|A text field used to provide a special ID code that is associated with the rate and is required in the reservation request in order to obtain the rate.|
 |`Guarantee`|`complex`|**Required** Refer to `Guarantee` in [Availability](/api-reference/direct-connects/hotel-service-2/Availability.html).|
 
-#### <a name="guarantee"></a>Guarantee
+#### <a name="guarantee"></a>Reservation - Guarantee
 
 |Name|Type|Description|
 |--------------------|-------------------|-------------|
@@ -237,7 +237,7 @@ Message to reserve a hotel.
 |`InterbankNbrReqInd`|`boolean`|If `true`, the credit card interbank number is required. If `false`, it is not required.|
 |`PaymentCard`|`complex`|**Required** Specific payment card information.|
 
-#### <a name="payment-card"></a>PaymentCard
+#### <a name="payment-card"></a>Reservation - PaymentCard
 
 |Name|Type|Description|
 |----------------|-------------------|-------------|
@@ -360,7 +360,7 @@ Message to reserve a hotel.
 |`Name`|`stringLength1to64`|Attribute containing comment title.|
 |`Text`|`string`|**Required** Comment payload. Up to 3 Text elements in the comment. Up to 200 characters in the text.|
 
-#### <a name="tpa-extensions"></a>TPA Extensions
+#### <a name="tpa-extensions"></a>Reservation - TPA Extensions
 
 |Name|Type|Description|
 |--------------|---------|-------------|
@@ -529,13 +529,13 @@ The maximum allowed size of `OTA_HotelResRS` is 150 KB. Any response that exceed
 |`Unsuccessful`|-|
 |`Reserved`|The item is reserved.|
 
-#### <a name="hotel-reservations"></a>HotelReservations
+#### <a name="hotel-reservations"></a>Reservation - HotelReservations
 
 |Name|Type|Description|
 |---------|------------|-------------|
 |`HotelReservation`|`complex`|**Required** A reference to identify the booking.|
 
-#### <a name="hotel-reservation"></a>HotelReservation
+#### <a name="hotel-reservation"></a>Reservation - HotelReservation
 
 |Name|Type|Description|
 |---------|------------|-------------|
@@ -559,32 +559,32 @@ The maximum allowed size of `OTA_HotelResRS` is 150 KB. Any response that exceed
 |`40`|Confirmation number for future use (not used now).|
 |`1000`|Cancellation/modification code. This will be rendered on itinerary page and can be used to change the reservation outside of the SAP Concur system. SAP Concur-specific OTA extension. |
 
-#### <a name="room-stays"></a>RoomStays
+#### <a name="room-stays"></a>Reservation - RoomStays
 
 |Name|Type|Description|
 |---------|------------|-------------|
 |`RoomStay`|`complex`|**Required** Details on the room stay including time span of this room stay, pointers to res guests, comments and special requests pertaining to this particular room stay. Financial information related to the room stay, including guarantee, deposit, payment, and cancellation penalties.|
 
-#### <a name="room-stay"></a>RoomStay
+#### <a name="room-stay"></a>Reservation - RoomStay
 
 |Name|Type|Description|
 |---------|------------|-------------|
 |`RatePlans`|`complex`|**Required** A collection of rate plans associated with a particular room stay.|
 
-#### <a name="rate-plan"></a>RatePlan
+#### <a name="rate-plan"></a>Reservation - RatePlan
 
 |Name|Type|Description|
 |---------|------------|-------------|
 |`CancelPenalties`|`complex`|Collection of cancellation penalties.|
 |`CancelPolicyIndicator`|`boolean`|If `true`, indicates a cancel policy exists. If `false`, no cancel policy exists. Typically this indicator is used when details are not being sent.|
 
-#### <a name="cancel-penalty"></a>CancelPenalty
+#### <a name="cancel-penalty"></a>Reservation - CancelPenalty
 
 |Name|Type|Description|
 |---------|------------|-------------|
 |`PenaltyDescription`|`complex`|Text description of the penalty in a given language. Maximum elements: `9`|
 
-#### <a name="penalty-description"></a>PenaltyDescription
+#### <a name="penalty-description"></a>Reservation - PenaltyDescription
 
 |Name|Type|Description|
 |---------|------------|-------------|
