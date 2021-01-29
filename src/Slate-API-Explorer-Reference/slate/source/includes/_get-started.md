@@ -61,7 +61,7 @@ Once you have registered your application, read about the [API endpoints](/api-r
   <img src="https://run.pstmn.io/button.svg" alt="Run in Postman">
 </a>
 
-#### Retrieve a User Access Token:
+#### Retrieve a User Access Token
 
 Before making requests to the Receipts API, you must [obtain an access token from the Authentication API](https://developer.concur.com/api-reference/authentication/getting-started.html).
 
